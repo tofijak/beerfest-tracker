@@ -1,16 +1,21 @@
+import {
+  Box,
+  Button,
+  Card,
+  CardContent,
+  Chip,
+  IconButton,
+  List,
+  ListItem,
+  ListItemText,
+  Typography,
+} from "@mui/material";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import OpenInNewIcon from "@mui/icons-material/OpenInNew";
+import StarIcon from "@mui/icons-material/Star";
 import { FESTIVALS, festivalStats, findBeer } from "../festivals";
 import { hasFestivalActivity, ratedCountFrom } from "../lib/storage";
 import { formatBeerMeta, untappdSearchUrl } from "../utils";
-import {
-  Button,
-  Card,
-  Chip,
-  EmptyState,
-  IconBeer,
-  IconButton,
-  IconExternal,
-  IconStar,
-} from "../ui";
 
 function collectRatedBeers(allProgress) {
   const rated = [];
@@ -55,33 +60,41 @@ function collectFavorites(allProgress) {
 
 function BeerRow({ item }) {
   return (
-    <div className="rated-row">
-      <div>
-        <div className="cluster">
-          <strong>{item.beer.name}</strong>
-          {item.rating > 0 ? <Chip tone="yellow">{item.rating.toFixed(2)}</Chip> : null}
-          {item.favorite ? <IconStar filled size={16} /> : null}
-        </div>
-        <p className="muted" style={{ margin: "0.25rem 0 0", fontSize: "var(--fs-sm)" }}>
-          {item.brewery.name}
-          {formatBeerMeta(item.beer) ? ` · ${formatBeerMeta(item.beer)}` : ""}
-        </p>
-        <p className="muted" style={{ margin: "0.15rem 0 0", fontSize: "var(--fs-xs)" }}>
-          {item.festival.name}
-          {item.festival.edition ? ` ${item.festival.edition}` : ""}
-        </p>
-      </div>
-      {item.beer.name !== "TBA" ? (
-        <IconButton
-          href={untappdSearchUrl(item.beer.name, item.brewery.name)}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`Search ${item.beer.name} on Untappd`}
-        >
-          <IconExternal />
-        </IconButton>
-      ) : null}
-    </div>
+    <ListItem
+      secondaryAction={
+        item.beer.name !== "TBA" ? (
+          <IconButton
+            href={untappdSearchUrl(item.beer.name, item.brewery.name)}
+            target="_blank"
+            rel="noopener noreferrer"
+            edge="end"
+          >
+            <OpenInNewIcon fontSize="small" />
+          </IconButton>
+        ) : null
+      }
+    >
+      <ListItemText
+        primary={
+          <Box sx={{ display: "flex", alignItems: "center", gap: 1, flexWrap: "wrap", pr: 4 }}>
+            <Typography variant="body1" fontWeight={600}>
+              {item.beer.name}
+            </Typography>
+            {item.rating > 0 ? (
+              <Chip label={item.rating.toFixed(2)} size="small" color="secondary" />
+            ) : null}
+            {item.favorite ? <StarIcon fontSize="small" color="warning" /> : null}
+          </Box>
+        }
+        secondary={
+          <>
+            {item.brewery.name}
+            {formatBeerMeta(item.beer) ? ` · ${formatBeerMeta(item.beer)}` : ""}
+            {` · ${item.festival.name}${item.festival.edition ? ` ${item.festival.edition}` : ""}`}
+          </>
+        }
+      />
+    </ListItem>
   );
 }
 
@@ -91,17 +104,15 @@ export function HistoryView({ allProgress, activeSlug, onSelectFestival }) {
   const favorites = collectFavorites(allProgress).slice(0, 20);
 
   return (
-    <div className="stack" style={{ gap: "var(--space-6)" }}>
-      <div>
-        <h2 className="display" style={{ margin: "0 0 0.4rem", fontSize: "var(--fs-2xl)" }}>
-          Your festival passport
-        </h2>
-        <p className="lede">
-          {visited.length === 0
-            ? "No stamps yet — check off a beer and this page starts filling in."
-            : `${visited.length} festival${visited.length === 1 ? "" : "s"} on your card.`}
-        </p>
-      </div>
+    <Box>
+      <Typography variant="h6" gutterBottom>
+        Your festival passport
+      </Typography>
+      <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+        {visited.length === 0
+          ? "No stamps yet — check off a beer and this page starts filling in."
+          : `${visited.length} festival${visited.length === 1 ? "" : "s"} on your card.`}
+      </Typography>
 
       {FESTIVALS.map((festival) => {
         const stats = festivalStats(festival);
@@ -112,75 +123,78 @@ export function HistoryView({ allProgress, activeSlug, onSelectFestival }) {
         const stars = progress.favoriteBeers?.length ?? 0;
 
         return (
-          <Card key={festival.slug} className="passport-card" active={festival.slug === activeSlug}>
-            <div className="brewery-head">
-              <div>
-                <h3 className="display" style={{ margin: 0, fontSize: "var(--fs-xl)" }}>
-                  {festival.name}
-                </h3>
-                <p className="muted" style={{ margin: "0.4rem 0 0", fontSize: "var(--fs-sm)" }}>
-                  {festival.venue}
-                  {festival.dateLabel || festival.date
-                    ? ` · ${festival.dateLabel || festival.date}`
-                    : ""}
-                </p>
-              </div>
-              <Chip tone={visitedFest ? "green" : undefined}>
-                {visitedFest ? "Been there" : "On the list"}
-              </Chip>
-            </div>
-            <p className="muted" style={{ margin: "0 0 1rem", fontSize: "var(--fs-sm)" }}>
-              {stats.beerCount} beers · {stats.breweryCount} breweries
-              {visitedFest ? ` · ${rated} rated · ${tried} tried · ${stars} starred` : ""}
-            </p>
-            {festival.slug !== activeSlug ? (
-              <Button onClick={() => onSelectFestival(festival.slug)}>Open this festival</Button>
-            ) : (
-              <p className="muted" style={{ margin: 0, fontSize: "var(--fs-xs)" }}>
-                You are here
-              </p>
-            )}
+          <Card key={festival.slug} sx={{ mb: 2 }}>
+            <CardContent>
+              <Box sx={{ display: "flex", justifyContent: "space-between", gap: 2, flexWrap: "wrap" }}>
+                <Box>
+                  <Typography variant="h6">{festival.name}</Typography>
+                  <Box sx={{ display: "flex", alignItems: "center", gap: 0.5, mt: 0.5 }}>
+                    <LocationOnIcon fontSize="small" color="action" />
+                    <Typography variant="body2" color="text.secondary">
+                      {festival.venue}
+                      {festival.dateLabel || festival.date
+                        ? ` · ${festival.dateLabel || festival.date}`
+                        : ""}
+                    </Typography>
+                  </Box>
+                </Box>
+                <Chip
+                  label={visitedFest ? "Been there" : "On the list"}
+                  color={visitedFest ? "success" : "default"}
+                  size="small"
+                />
+              </Box>
+              <Typography variant="body2" color="text.secondary" sx={{ mt: 1.5 }}>
+                {stats.beerCount} beers · {stats.breweryCount} breweries
+                {visitedFest ? ` · ${rated} rated · ${tried} tried · ${stars} starred` : ""}
+              </Typography>
+              {festival.slug !== activeSlug ? (
+                <Button sx={{ mt: 1.5 }} variant="outlined" onClick={() => onSelectFestival(festival.slug)}>
+                  Open this festival
+                </Button>
+              ) : (
+                <Typography variant="caption" color="primary" sx={{ display: "block", mt: 1.5 }}>
+                  You are here
+                </Typography>
+              )}
+            </CardContent>
           </Card>
         );
       })}
 
-      <div>
-        <h2 className="display" style={{ margin: "0 0 0.6rem", fontSize: "var(--fs-2xl)" }}>
-          All-time hall of foam
-        </h2>
-        {topRated.length === 0 ? (
-          <EmptyState
-            icon={<IconBeer size={28} />}
-            title="No scores yet"
-            body="Rate a pour and it lands here — across every festival you visit."
-          />
-        ) : (
-          <Card padding="md">
+      <Typography variant="h6" sx={{ mt: 3 }} gutterBottom>
+        All-time hall of foam
+      </Typography>
+      {topRated.length === 0 ? (
+        <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
+          Rate a pour and it will land here — across every festival you visit.
+        </Typography>
+      ) : (
+        <Card sx={{ mb: 3 }}>
+          <List dense>
             {topRated.map((item) => (
               <BeerRow key={item.key} item={item} />
             ))}
-          </Card>
-        )}
-      </div>
+          </List>
+        </Card>
+      )}
 
-      <div>
-        <h2 className="display" style={{ margin: "0 0 0.6rem", fontSize: "var(--fs-2xl)" }}>
-          Starred across fests
-        </h2>
-        {favorites.length === 0 ? (
-          <EmptyState
-            icon={<IconStar size={28} />}
-            title="No stars yet"
-            body="Star a beer and it stays in your passport."
-          />
-        ) : (
-          <Card padding="md">
+      <Typography variant="h6" gutterBottom>
+        Starred across fests
+      </Typography>
+      {favorites.length === 0 ? (
+        <Typography variant="body2" color="text.secondary">
+          Star a beer and it stays in your passport.
+        </Typography>
+      ) : (
+        <Card>
+          <List dense>
             {favorites.map((item) => (
               <BeerRow key={item.key} item={item} />
             ))}
-          </Card>
-        )}
-      </div>
-    </div>
+          </List>
+        </Card>
+      )}
+    </Box>
   );
 }

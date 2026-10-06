@@ -1,11 +1,26 @@
 import { useState } from "react";
-import { Button, Chip, IconButton, IconLogin, IconLogout, Input, Sheet, useToast } from "../ui";
+import {
+  Alert,
+  Box,
+  Button,
+  Chip,
+  CircularProgress,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  IconButton,
+  TextField,
+  Tooltip,
+  Typography,
+} from "@mui/material";
+import LoginIcon from "@mui/icons-material/Login";
+import LogoutIcon from "@mui/icons-material/Logout";
 
 export function AuthControls({ auth }) {
   const [open, setOpen] = useState(false);
   const [email, setEmail] = useState("");
   const [confirmEmail, setConfirmEmail] = useState("");
-  const toast = useToast();
 
   if (!auth.configured) return null;
 
@@ -14,81 +29,111 @@ export function AuthControls({ auth }) {
   return (
     <>
       {signedIn ? (
-        <Chip as="button" type="button" onClick={auth.logout} title={auth.user.email || "Signed in"}>
-          {auth.user.email?.split("@")[0] || "In"}
-          <IconLogout size={14} />
-        </Chip>
+        <Tooltip title={auth.user.email || "Signed in"}>
+          <Chip
+            label={auth.user.email?.split("@")[0] || "Signed in"}
+            onDelete={auth.logout}
+            deleteIcon={<LogoutIcon />}
+            size="small"
+            sx={{ bgcolor: "rgba(255,255,255,0.16)", color: "#fff", maxWidth: 140, mr: 1 }}
+          />
+        </Tooltip>
       ) : (
-        <IconButton aria-label="Sign in" onClick={() => setOpen(true)}>
-          <IconLogin />
-        </IconButton>
+        <Tooltip title="Sign in with a magic link">
+          <IconButton color="inherit" onClick={() => setOpen(true)} aria-label="Sign in">
+            {auth.pendingLink ? <CircularProgress size={20} color="inherit" /> : <LoginIcon />}
+          </IconButton>
+        </Tooltip>
       )}
 
-      <Sheet open={open && !signedIn} onClose={() => setOpen(false)} title="Sign in with a magic link">
-        <p className="lede">
-          We email you a one-time link. Ratings on this device merge into your account on first
-          sign-in, then sync across phones.
-        </p>
-        <Input
-          type="email"
-          autoComplete="email"
-          placeholder="you@email.com"
-          value={email}
-          onChange={(event) => setEmail(event.target.value)}
-          disabled={auth.busy}
-        />
-        {auth.emailSent ? (
-          <p className="muted" style={{ marginTop: "0.75rem" }}>
-            Link sent. Open it on this device if you can.
-          </p>
-        ) : null}
-        {auth.error ? (
-          <p style={{ color: "var(--danger)", marginTop: "0.75rem" }}>{auth.error}</p>
-        ) : null}
-        <div className="cluster" style={{ marginTop: "1.25rem" }}>
+      <Dialog open={open && !signedIn} onClose={() => setOpen(false)} fullWidth maxWidth="xs">
+        <DialogTitle>Sign in with a magic link</DialogTitle>
+        <DialogContent>
+          <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+            We email you a one-time link. Ratings on this device merge into your account on first
+            sign-in, then sync across phones.
+          </Typography>
+          <TextField
+            autoFocus
+            fullWidth
+            type="email"
+            label="Email"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+            disabled={auth.busy}
+          />
+          {auth.emailSent ? (
+            <Alert severity="success" sx={{ mt: 2 }}>
+              Link sent. Open it on this device if you can.
+            </Alert>
+          ) : null}
+          {auth.error ? (
+            <Alert severity="error" sx={{ mt: 2 }}>
+              {auth.error}
+            </Alert>
+          ) : null}
+        </DialogContent>
+        <DialogActions sx={{ px: 3, pb: 2 }}>
           <Button onClick={() => setOpen(false)}>Close</Button>
           <Button
-            variant="primary"
+            variant="contained"
             disabled={auth.busy || !email.includes("@")}
-            onClick={async () => {
-              const sent = await auth.sendLink(email.trim());
-              if (sent) toast.push("Magic link sent — check your inbox.", "success");
-            }}
+            onClick={() => auth.sendLink(email.trim())}
           >
             {auth.busy ? "Sending…" : "Send magic link"}
           </Button>
-        </div>
-      </Sheet>
+        </DialogActions>
+      </Dialog>
 
-      <Sheet open={auth.needsEmail} onClose={() => {}} title="Confirm your email">
-        <p className="lede">
-          This magic link was opened on a new device. Type the email you asked the link for.
-        </p>
-        <Input
-          type="email"
-          autoComplete="email"
-          placeholder="you@email.com"
-          value={confirmEmail}
-          onChange={(event) => setConfirmEmail(event.target.value)}
-        />
-        {auth.error ? (
-          <p style={{ color: "var(--danger)", marginTop: "0.75rem" }}>{auth.error}</p>
-        ) : null}
-        <div style={{ marginTop: "1.25rem" }}>
+      <Dialog open={auth.needsEmail} fullWidth maxWidth="xs">
+        <DialogTitle>Confirm your email</DialogTitle>
+        <DialogContent>
+          <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+            This magic link was opened on a new device. Type the email you asked the link for.
+          </Typography>
+          <TextField
+            autoFocus
+            fullWidth
+            type="email"
+            label="Email"
+            value={confirmEmail}
+            onChange={(event) => setConfirmEmail(event.target.value)}
+          />
+          {auth.error ? (
+            <Alert severity="error" sx={{ mt: 2 }}>
+              {auth.error}
+            </Alert>
+          ) : null}
+        </DialogContent>
+        <DialogActions sx={{ px: 3, pb: 2 }}>
           <Button
-            variant="primary"
+            variant="contained"
             disabled={auth.busy || !confirmEmail.includes("@")}
             onClick={() => auth.completeLink(confirmEmail.trim())}
           >
             {auth.busy ? "Signing in…" : "Finish sign-in"}
           </Button>
-        </div>
-      </Sheet>
+        </DialogActions>
+      </Dialog>
 
       {auth.pendingLink && !auth.needsEmail ? (
-        <div className="splash" style={{ cursor: "default" }}>
-          <p>Signing you in…</p>
-        </div>
+        <Box
+          sx={{
+            position: "fixed",
+            inset: 0,
+            zIndex: 1500,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            bgcolor: "rgba(27, 94, 32, 0.72)",
+            color: "#fff",
+            flexDirection: "column",
+            gap: 2,
+          }}
+        >
+          <CircularProgress color="inherit" />
+          <Typography>Signing you in…</Typography>
+        </Box>
       ) : null}
     </>
   );

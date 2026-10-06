@@ -1,4 +1,28 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import {
+  AppBar,
+  Badge,
+  Box,
+  Checkbox,
+  Chip,
+  Container,
+  CssBaseline,
+  FormControlLabel,
+  InputAdornment,
+  Tab,
+  Tabs,
+  TextField,
+  ThemeProvider,
+  Toolbar,
+  Typography,
+  createTheme,
+} from "@mui/material";
+import SportsBarIcon from "@mui/icons-material/SportsBar";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import StarIcon from "@mui/icons-material/Star";
+import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
+import SearchIcon from "@mui/icons-material/Search";
+import HistoryIcon from "@mui/icons-material/History";
 import { AchievementDialog, AchievementWall } from "./components/Achievements";
 import { AuthControls } from "./components/AuthControls";
 import { MemoBreweryCard } from "./components/BeerList";
@@ -21,28 +45,18 @@ import {
 } from "./lib/storage";
 import { mergeAllFestivalsForUser } from "./lib/sync";
 import { sessionFilterValue } from "./utils";
-import {
-  Checkbox,
-  Chip,
-  EmptyState,
-  IconBeer,
-  IconButton,
-  IconChevron,
-  IconHistory,
-  IconSearch,
-  IconStar,
-  IconSun,
-  IconTrophy,
-  Input,
-  Segmented,
-  useTheme,
-} from "./ui";
 
 migrateLegacyStorage();
 
+const theme = createTheme({
+  palette: {
+    primary: { main: "#1b5e20" },
+    secondary: { main: "#f9a825" },
+  },
+});
+
 export default function App() {
   const auth = useAuth();
-  const { toggleTheme } = useTheme();
   const [activeSlug, setActiveSlug] = useLocalStorage(activeFestivalKey(), DEFAULT_FESTIVAL_SLUG);
   const festival = getFestival(activeSlug) ?? FESTIVALS[0];
   const stats = festivalStats(festival);
@@ -51,7 +65,7 @@ export default function App() {
     auth.user,
   );
 
-  const [tab, setTab] = useState("beers");
+  const [tab, setTab] = useState(0);
   const [query, setQuery] = useState("");
   const [festivalOpen, setFestivalOpen] = useState(false);
   const [allProgress, setAllProgress] = useState(() =>
@@ -177,11 +191,11 @@ export default function App() {
     resetMilestones();
     setQueue([]);
     setActiveAchievement(null);
-    setTab("beers");
+    setTab(0);
   }, [resetMilestones]);
 
   const tapRef = useRef({ count: 0, lastTap: 0 });
-  const handleLogoTap = useCallback(() => {
+  const handleTitleTap = useCallback(() => {
     const now = Date.now();
     tapRef.current =
       now - tapRef.current.lastTap <= 600
@@ -208,7 +222,7 @@ export default function App() {
       if (!next) return;
       setActiveSlug(next.slug);
       setQuery("");
-      setTab("beers");
+      setTab(0);
       try {
         setSplashOpen(sessionStorage.getItem(splashStorageKey(next.slug)) !== "1");
       } catch {
@@ -234,15 +248,17 @@ export default function App() {
     [progress.achievedMilestones],
   );
   const hasAchievements = unlocked.length > 0;
+  const historyTab = hasAchievements ? 3 : 2;
+  const achievementTab = 2;
 
   useEffect(() => {
-    if (!hasAchievements && tab === "achievements") setTab("beers");
-  }, [hasAchievements, tab]);
+    if (!hasAchievements && tab === achievementTab) setTab(0);
+  }, [achievementTab, hasAchievements, tab]);
 
   const sessionFilters = useMemo(() => {
     if (!festival.sessions?.length) return [];
     return [
-      { value: "all", label: "All" },
+      { value: "all", label: "All sessions" },
       ...festival.sessions.map((session) => ({
         value: sessionFilterValue(session),
         label: session.label,
@@ -251,185 +267,231 @@ export default function App() {
   }, [festival.sessions]);
 
   const visitedCount = FESTIVALS.filter((item) => hasFestivalActivity(allProgress[item.slug])).length;
-  const showSearch = tab === "beers" || tab === "favorites";
-  const showFilters = showSearch;
-
-  const navOptions = [
-    { id: "beers", label: "Beers", icon: <IconBeer size={18} /> },
-    {
-      id: "favorites",
-      label: "Stars",
-      icon: <IconStar size={18} />,
-      badge: progress.favoriteBeers.length,
-    },
-    ...(hasAchievements
-      ? [{ id: "achievements", label: "Crew", icon: <IconTrophy size={18} />, badge: unlocked.length }]
-      : []),
-    { id: "history", label: "Passport", icon: <IconHistory size={18} />, badge: visitedCount },
-  ];
+  const showFilters = tab === 0 || tab === 1;
 
   return (
-    <div className="app-shell">
-      <header className="app-header">
-        <IconButton aria-label="Beerfest Tracker" onClick={handleLogoTap}>
-          <IconBeer />
-        </IconButton>
-        <button
-          type="button"
-          className="grow"
-          onClick={() => setFestivalOpen(true)}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 4,
-            minWidth: 0,
-            border: 0,
-            background: "transparent",
-            textAlign: "left",
-          }}
-        >
-          <span
-            className="display"
-            style={{
-              fontSize: "var(--fs-xl)",
-              overflow: "hidden",
-              textOverflow: "ellipsis",
-              whiteSpace: "nowrap",
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Box sx={{ flexGrow: 1 }}>
+        <AppBar position="static">
+          <Toolbar>
+            <SportsBarIcon sx={{ mr: 2 }} />
+            <Typography
+              variant="h6"
+              component="div"
+              onClick={handleTitleTap}
+              onTouchEnd={handleTitleTap}
+              sx={{ flexGrow: 1, userSelect: "none" }}
+            >
+              Beerfest Tracker
+            </Typography>
+            <AuthControls auth={auth} />
+            <Typography variant="body2">
+              {ratedCount} rated · {progress.drunkBeers.length}/{stats.beerCount} tried
+            </Typography>
+          </Toolbar>
+        </AppBar>
+        <Container maxWidth="md" sx={{ mt: 3, mb: 3 }}>
+          <Box
+            onClick={() => setFestivalOpen(true)}
+            sx={{
+              display: "inline-flex",
+              alignItems: "center",
+              cursor: "pointer",
+              userSelect: "none",
+              mb: 0.5,
             }}
           >
-            {festival.name}
-          </span>
-          <IconChevron size={18} />
-        </button>
-        <AuthControls auth={auth} />
-        <IconButton aria-label="Toggle theme" onClick={toggleTheme}>
-          <IconSun />
-        </IconButton>
-      </header>
-
-      <main className="app-main">
-        <p className="kicker">
-          {[festival.venue, festival.dateLabel || festival.date].filter(Boolean).join(" · ")}
-        </p>
-        {festival.tagline ? <p className="lede">{festival.tagline}</p> : null}
-        <p className="muted" style={{ marginTop: "-0.6rem", fontSize: "var(--fs-sm)" }}>
-          <span className="mono">{ratedCount}</span> rated ·{" "}
-          <span className="mono">
-            {progress.drunkBeers.length}/{stats.beerCount}
-          </span>{" "}
-          tried
-        </p>
-
-        {showSearch ? (
-          <Input
-            icon={<IconSearch />}
-            placeholder="Search breweries or beers"
-            value={query}
-            onChange={(event) => setQuery(event.target.value)}
-            aria-label="Search breweries or beers"
-          />
-        ) : null}
-
-        {showFilters && sessionFilters.length > 0 ? (
-          <div className="toolbar-row">
-            {sessionFilters.map((filter) => (
-              <Chip
-                key={filter.value}
-                as="button"
-                type="button"
-                active={progress.sessionFilter === filter.value}
-                onClick={() => patch((current) => ({ ...current, sessionFilter: filter.value }))}
-              >
-                {filter.label}
-              </Chip>
-            ))}
-          </div>
-        ) : null}
-
-        {showFilters ? (
-          <div className="toolbar-row">
-            <Checkbox
-              checked={progress.hideDrunkBeers}
-              onChange={(checked) => patch((current) => ({ ...current, hideDrunkBeers: checked }))}
-              label="Hide tried"
-            />
-            <Checkbox
-              checked={progress.showOnlyUnrated}
-              onChange={(checked) => patch((current) => ({ ...current, showOnlyUnrated: checked }))}
-              label="Unrated only"
-            />
-          </div>
-        ) : null}
-
-        {tab === "beers" &&
-          (filteredBreweries.length === 0 ? (
-            <EmptyState
-              title="Nothing poured up"
-              body={`No breweries match “${debouncedQuery}”.`}
-            />
+            <Typography variant="body2" color="text.secondary">
+              {[festival.name, festival.venue, festival.dateLabel || festival.date]
+                .filter(Boolean)
+                .join(" · ")}
+            </Typography>
+            <ExpandMoreIcon fontSize="small" color="action" />
+          </Box>
+          {festival.tagline ? (
+            <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+              {festival.tagline}
+            </Typography>
           ) : (
-            filteredBreweries.map((brewery) => (
-              <MemoBreweryCard
-                key={brewery.id}
-                brewery={brewery}
-                festival={festival}
-                drunkBeers={progress.drunkBeers}
-                favoriteBeers={progress.favoriteBeers}
-                beerRatings={progress.beerRatings}
-                onToggleDrunk={toggleDrunk}
-                onToggleFavorite={toggleFavorite}
-                onRatingChange={changeRating}
-                hideDrunkBeers={progress.hideDrunkBeers}
-                showOnlyUnrated={progress.showOnlyUnrated}
-                sessionFilter={progress.sessionFilter}
-              />
-            ))
-          ))}
-
-        {tab === "favorites" &&
-          (progress.favoriteBeers.length === 0 ? (
-            <EmptyState
-              icon={<IconStar size={28} />}
-              title="No favorites yet"
-              body="Star a beer and it will glow here."
+            <Box sx={{ mb: 2 }} />
+          )}
+          {tab !== historyTab && (
+            <TextField
+              fullWidth
+              variant="outlined"
+              placeholder="Search breweries..."
+              value={query}
+              onChange={(event) => setQuery(event.target.value)}
+              sx={{ mb: 2 }}
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <SearchIcon />
+                  </InputAdornment>
+                ),
+              }}
             />
-          ) : (
-            filteredBreweries.map((brewery) => (
-              <MemoBreweryCard
-                key={brewery.id}
-                brewery={brewery}
-                festival={festival}
-                drunkBeers={progress.drunkBeers}
-                favoriteBeers={progress.favoriteBeers}
-                beerRatings={progress.beerRatings}
-                onToggleDrunk={toggleDrunk}
-                onToggleFavorite={toggleFavorite}
-                onRatingChange={changeRating}
-                showOnlyFavorites
-                hideDrunkBeers={progress.hideDrunkBeers}
-                showOnlyUnrated={progress.showOnlyUnrated}
-                sessionFilter={progress.sessionFilter}
+          )}
+          <Tabs
+            value={tab}
+            onChange={(_event, value) => setTab(value)}
+            centered
+            variant="scrollable"
+            allowScrollButtonsMobile
+            sx={{ mb: 2 }}
+          >
+            <Tab icon={<SportsBarIcon />} label="All Beers" iconPosition="start" />
+            <Tab
+              icon={
+                <Badge badgeContent={progress.favoriteBeers.length} color="secondary">
+                  <StarIcon />
+                </Badge>
+              }
+              label="Favorites"
+              iconPosition="start"
+            />
+            {hasAchievements && (
+              <Tab
+                icon={
+                  <Badge badgeContent={unlocked.length} color="secondary">
+                    <EmojiEventsIcon />
+                  </Badge>
+                }
+                label="Achievements"
+                iconPosition="start"
               />
-            ))
-          ))}
-
-        {hasAchievements && tab === "achievements" ? (
-          <AchievementWall achievements={unlocked} />
-        ) : null}
-
-        {tab === "history" ? (
-          <HistoryView
-            allProgress={allProgress}
-            activeSlug={festival.slug}
-            onSelectFestival={selectFestival}
-          />
-        ) : null}
-      </main>
-
-      <nav className="app-nav" aria-label="Primary">
-        <Segmented options={navOptions} value={tab} onChange={setTab} />
-      </nav>
-
+            )}
+            <Tab
+              icon={
+                <Badge badgeContent={visitedCount} color="secondary">
+                  <HistoryIcon />
+                </Badge>
+              }
+              label="History"
+              iconPosition="start"
+            />
+          </Tabs>
+          {showFilters && sessionFilters.length > 0 && (
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                mb: 2,
+                gap: 1,
+                flexWrap: "wrap",
+              }}
+            >
+              {sessionFilters.map((filter) => (
+                <Chip
+                  key={filter.value}
+                  label={filter.label}
+                  onClick={() => patch((current) => ({ ...current, sessionFilter: filter.value }))}
+                  color={progress.sessionFilter === filter.value ? "primary" : "default"}
+                  variant={progress.sessionFilter === filter.value ? "filled" : "outlined"}
+                />
+              ))}
+            </Box>
+          )}
+          {showFilters && (
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                mb: 3,
+                gap: 4,
+                flexWrap: "wrap",
+              }}
+            >
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={progress.hideDrunkBeers}
+                    onChange={(event) =>
+                      patch((current) => ({ ...current, hideDrunkBeers: event.target.checked }))
+                    }
+                    color="primary"
+                  />
+                }
+                label="Hide already drunk beers"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={progress.showOnlyUnrated}
+                    onChange={(event) =>
+                      patch((current) => ({ ...current, showOnlyUnrated: event.target.checked }))
+                    }
+                    color="primary"
+                  />
+                }
+                label="Show only unrated drunk beers"
+              />
+            </Box>
+          )}
+          {tab === 0 && (
+            <Box>
+              {filteredBreweries.length === 0 ? (
+                <Typography variant="body1" color="text.secondary" align="center" sx={{ mt: 4 }}>
+                  {`No breweries found matching "${debouncedQuery}"`}
+                </Typography>
+              ) : (
+                filteredBreweries.map((brewery) => (
+                  <MemoBreweryCard
+                    key={brewery.id}
+                    brewery={brewery}
+                    festival={festival}
+                    drunkBeers={progress.drunkBeers}
+                    favoriteBeers={progress.favoriteBeers}
+                    beerRatings={progress.beerRatings}
+                    onToggleDrunk={toggleDrunk}
+                    onToggleFavorite={toggleFavorite}
+                    onRatingChange={changeRating}
+                    hideDrunkBeers={progress.hideDrunkBeers}
+                    showOnlyUnrated={progress.showOnlyUnrated}
+                    sessionFilter={progress.sessionFilter}
+                  />
+                ))
+              )}
+            </Box>
+          )}
+          {tab === 1 && (
+            <Box>
+              {progress.favoriteBeers.length === 0 ? (
+                <Typography variant="body1" color="text.secondary" align="center" sx={{ mt: 4 }}>
+                  No favorite beers yet. Star some beers to see them here!
+                </Typography>
+              ) : (
+                filteredBreweries.map((brewery) => (
+                  <MemoBreweryCard
+                    key={brewery.id}
+                    brewery={brewery}
+                    festival={festival}
+                    drunkBeers={progress.drunkBeers}
+                    favoriteBeers={progress.favoriteBeers}
+                    beerRatings={progress.beerRatings}
+                    onToggleDrunk={toggleDrunk}
+                    onToggleFavorite={toggleFavorite}
+                    onRatingChange={changeRating}
+                    showOnlyFavorites
+                    hideDrunkBeers={progress.hideDrunkBeers}
+                    showOnlyUnrated={progress.showOnlyUnrated}
+                    sessionFilter={progress.sessionFilter}
+                  />
+                ))
+              )}
+            </Box>
+          )}
+          {hasAchievements && tab === achievementTab && <AchievementWall achievements={unlocked} />}
+          {tab === historyTab && (
+            <HistoryView
+              allProgress={allProgress}
+              activeSlug={festival.slug}
+              onSelectFestival={selectFestival}
+            />
+          )}
+        </Container>
+      </Box>
       <Splash open={splashOpen} festival={festival} onDismiss={dismissSplash} />
       <AchievementDialog
         achievement={activeAchievement}
@@ -442,6 +504,6 @@ export default function App() {
         allProgress={allProgress}
         onSelect={selectFestival}
       />
-    </div>
+    </ThemeProvider>
   );
 }

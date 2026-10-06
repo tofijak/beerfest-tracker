@@ -1,18 +1,40 @@
-import { memo, useState } from "react";
-import { sessionMetaMap } from "../festivals";
+import { memo } from "react";
 import {
-  beerMatchesSession,
-  FALLBACK_SESSION_META,
-  formatBeerMeta,
-  untappdSearchUrl,
-} from "../utils";
-import { Card, Checkbox, Chip, IconButton, IconExternal, IconStar, Slider } from "../ui";
+  Box,
+  Card,
+  CardContent,
+  Checkbox,
+  Chip,
+  Divider,
+  IconButton,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  Slider,
+  Typography,
+} from "@mui/material";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import OpenInNewIcon from "@mui/icons-material/OpenInNew";
+import StarIcon from "@mui/icons-material/Star";
+import StarBorderIcon from "@mui/icons-material/StarBorder";
+import { sessionMetaMap } from "../festivals";
+import { beerMatchesSession, formatBeerMeta, SESSION_META, untappdSearchUrl } from "../utils";
 
-function SessionChip({ session, festival }) {
-  const meta =
-    sessionMetaMap(festival)[session] ?? FALLBACK_SESSION_META[session] ?? FALLBACK_SESSION_META.all;
-  const tone = session === "all" ? "nolo" : session;
-  return <Chip tone={tone}>{meta.label}</Chip>;
+function SessionChip({ session, festival, size = "small" }) {
+  const meta = sessionMetaMap(festival)[session] ?? SESSION_META[session] ?? SESSION_META.all;
+  return (
+    <Chip
+      label={meta.label}
+      size={size}
+      sx={{
+        height: 22,
+        fontWeight: 600,
+        bgcolor: meta.color,
+        color: session === "yellow" ? "#3e2723" : "#fff",
+      }}
+    />
+  );
 }
 
 function BeerItem({
@@ -26,62 +48,108 @@ function BeerItem({
   onToggleFavorite,
   onRatingChange,
 }) {
-  const [pop, setPop] = useState(false);
   const meta = formatBeerMeta(beer);
   const showSession = Boolean(beer.session && festival?.sessions?.length);
 
   return (
-    <div className="beer-row" data-drunk={isDrunk} data-favorite={isFavorite}>
-      <Checkbox checked={isDrunk} onChange={() => onToggleDrunk(beer.id)} label="" />
-      <div>
-        <div className="cluster">
-          <p className="beer-name">{beer.name}</p>
-          {showSession ? <SessionChip session={beer.session} festival={festival} /> : null}
-          {beer.name !== "TBA" ? (
-            <IconButton
-              href={untappdSearchUrl(beer.name, brewery.name)}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Search ${beer.name} on Untappd`}
-              style={{ width: 32, height: 32 }}
-              onClick={(event) => event.stopPropagation()}
+    <ListItem
+      sx={{
+        borderLeft: isDrunk ? "4px solid #4caf50" : "none",
+        bgcolor: isDrunk ? "rgba(76, 175, 80, 0.05)" : "transparent",
+        alignItems: "flex-start",
+      }}
+    >
+      <ListItemIcon sx={{ minWidth: 42, mt: 0.5 }}>
+        <Checkbox checked={isDrunk} onChange={() => onToggleDrunk(beer.id)} color="success" />
+      </ListItemIcon>
+      <ListItemText
+        primary={
+          <Box sx={{ display: "flex", alignItems: "center", gap: 1, flexWrap: "wrap" }}>
+            <Typography
+              variant="body1"
+              sx={{
+                textDecoration: isDrunk ? "line-through" : "none",
+                fontWeight: isFavorite ? "bold" : "normal",
+              }}
             >
-              <IconExternal />
-            </IconButton>
-          ) : null}
-        </div>
-        {meta ? (
-          <p className="muted" style={{ margin: "0.25rem 0 0", fontSize: "var(--fs-sm)" }}>
-            {meta}
-          </p>
-        ) : null}
-        {beer.notes ? (
-          <p className="muted" style={{ margin: "0.2rem 0 0", fontSize: "var(--fs-xs)" }}>
-            {beer.notes}
-          </p>
-        ) : null}
-        {isDrunk ? (
-          <div style={{ marginTop: "0.75rem" }}>
-            <Slider
-              value={rating || 0}
-              onChange={(value) => onRatingChange(beer.id, Math.round(value * 4) / 4)}
-            />
-          </div>
-        ) : null}
-      </div>
+              {beer.name}
+            </Typography>
+            {showSession ? <SessionChip session={beer.session} festival={festival} /> : null}
+            {beer.name !== "TBA" && (
+              <IconButton
+                href={untappdSearchUrl(beer.name, brewery.name)}
+                target="_blank"
+                rel="noopener noreferrer"
+                size="small"
+                sx={{ display: "flex", alignItems: "center" }}
+              >
+                <OpenInNewIcon fontSize="small" />
+              </IconButton>
+            )}
+          </Box>
+        }
+        secondary={
+          <Box sx={{ display: "flex", flexDirection: "column", gap: 0.5, mt: 0.5 }}>
+            {meta && (
+              <Typography variant="body2" color="text.secondary">
+                {meta}
+              </Typography>
+            )}
+            {beer.notes && (
+              <Typography variant="caption" color="text.secondary">
+                {beer.notes}
+              </Typography>
+            )}
+            {isDrunk && (
+              <Box sx={{ display: "flex", flexDirection: "column", gap: 0.5, mt: 1, mb: 0.5 }}>
+                <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                  <Typography variant="caption" color="text.secondary" sx={{ minWidth: "3rem" }}>
+                    Rating:
+                  </Typography>
+                  <Typography variant="body2" fontWeight="medium" sx={{ minWidth: "2.5rem" }}>
+                    {rating > 0 ? rating.toFixed(2) : "0.00"}
+                  </Typography>
+                </Box>
+                <Slider
+                  value={rating || 0}
+                  onChange={(_event, value) => {
+                    const next = typeof value === "number" ? Math.round(value * 4) / 4 : 0;
+                    onRatingChange(beer.id, next);
+                  }}
+                  min={0}
+                  max={5}
+                  step={0.25}
+                  marks={[
+                    { value: 0, label: "0" },
+                    { value: 1, label: "1" },
+                    { value: 2, label: "2" },
+                    { value: 3, label: "3" },
+                    { value: 4, label: "4" },
+                    { value: 5, label: "5" },
+                  ]}
+                  valueLabelDisplay="auto"
+                  valueLabelFormat={(value) => value.toFixed(2)}
+                  sx={{
+                    width: "100%",
+                    maxWidth: { xs: "100%", sm: "300px" },
+                    "& .MuiSlider-thumb": { width: 24, height: 24 },
+                    "& .MuiSlider-mark": { display: { xs: "none", sm: "block" } },
+                    "& .MuiSlider-markLabel": { fontSize: "0.75rem" },
+                  }}
+                />
+              </Box>
+            )}
+          </Box>
+        }
+      />
       <IconButton
-        active={isFavorite}
-        pop={pop}
-        aria-label={isFavorite ? "Unstar beer" : "Star beer"}
-        onClick={() => {
-          setPop(true);
-          window.setTimeout(() => setPop(false), 240);
-          onToggleFavorite(beer.id);
-        }}
+        onClick={() => onToggleFavorite(beer.id)}
+        color={isFavorite ? "warning" : "default"}
+        sx={{ mt: 0.5 }}
       >
-        <IconStar filled={isFavorite} />
+        {isFavorite ? <StarIcon /> : <StarBorderIcon />}
       </IconButton>
-    </div>
+    </ListItem>
   );
 }
 
@@ -119,39 +187,56 @@ function BreweryCard({
     : brewery.location;
 
   return (
-    <Card className="passport-card" padding="md" active={tried === beers.length && tried > 0}>
-      <div className="brewery-head">
-        <div>
-          <div className="cluster">
-            <h2 className="brewery-title">{brewery.name}</h2>
-            {brewery.noLow ? <Chip tone="nolo">No/Low</Chip> : null}
-          </div>
-          {locationLabel ? (
-            <p className="muted" style={{ margin: "0.35rem 0 0", fontSize: "var(--fs-sm)" }}>
-              {locationLabel}
-            </p>
-          ) : null}
-        </div>
-        <Chip tone={tried === beers.length ? "green" : undefined}>
-          {tried}/{beers.length} tried
-        </Chip>
-      </div>
-      <div>
-        {beers.map((beer) => (
-          <MemoBeerItem
-            key={beer.id}
-            beer={beer}
-            brewery={brewery}
-            festival={festival}
-            isDrunk={drunkBeers.includes(beer.id)}
-            isFavorite={favoriteBeers.includes(beer.id)}
-            rating={beerRatings[beer.id] || 0}
-            onToggleDrunk={onToggleDrunk}
-            onToggleFavorite={onToggleFavorite}
-            onRatingChange={onRatingChange}
+    <Card sx={{ mb: 2 }}>
+      <CardContent>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "flex-start",
+            mb: 1,
+          }}
+        >
+          <Box>
+            <Box sx={{ display: "flex", alignItems: "center", gap: 1, flexWrap: "wrap" }}>
+              <Typography variant="h6" component="h2">
+                {brewery.name}
+              </Typography>
+              {brewery.noLow ? <Chip label="No/Low" size="small" /> : null}
+            </Box>
+            {locationLabel ? (
+              <Box sx={{ display: "flex", alignItems: "center", gap: 0.5, mt: 0.5 }}>
+                <LocationOnIcon fontSize="small" color="action" />
+                <Typography variant="body2" color="text.secondary">
+                  {locationLabel}
+                </Typography>
+              </Box>
+            ) : null}
+          </Box>
+          <Chip
+            label={`${tried}/${beers.length} tried`}
+            color={tried === beers.length ? "success" : "default"}
+            size="small"
           />
-        ))}
-      </div>
+        </Box>
+        <Divider sx={{ my: 1 }} />
+        <List dense>
+          {beers.map((beer) => (
+            <MemoBeerItem
+              key={beer.id}
+              beer={beer}
+              brewery={brewery}
+              festival={festival}
+              isDrunk={drunkBeers.includes(beer.id)}
+              isFavorite={favoriteBeers.includes(beer.id)}
+              rating={beerRatings[beer.id] || 0}
+              onToggleDrunk={onToggleDrunk}
+              onToggleFavorite={onToggleFavorite}
+              onRatingChange={onRatingChange}
+            />
+          ))}
+        </List>
+      </CardContent>
     </Card>
   );
 }

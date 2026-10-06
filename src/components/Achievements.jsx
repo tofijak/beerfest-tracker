@@ -1,54 +1,124 @@
-import { Avatar, Button, Card, EmptyState, IconTrophy, Modal } from "../ui";
+import {
+  Box,
+  Button,
+  Card,
+  CardContent,
+  CardMedia,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  Grid,
+  Slide,
+  Typography,
+} from "@mui/material";
+import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
+
+const DialogSlide = Slide;
 
 export function AchievementDialog({ achievement, onClose }) {
   return (
-    <Modal open={!!achievement} onClose={onClose} celebrate>
-      {achievement ? (
+    <Dialog
+      open={!!achievement}
+      onClose={onClose}
+      TransitionComponent={DialogSlide}
+      keepMounted
+      fullWidth
+      maxWidth="sm"
+      PaperProps={{
+        sx: {
+          textAlign: "center",
+          borderRadius: { xs: 0, sm: 4 },
+          p: { xs: 3, sm: 2 },
+          bgcolor: "#c8e6c9",
+          backgroundImage: "linear-gradient(135deg, #c8e6c9, #f9a825)",
+          backgroundColor: "#c8e6c9",
+          backgroundBlendMode: "multiply",
+        },
+      }}
+    >
+      {achievement && (
         <>
-          <p className="kicker">Unlocked</p>
-          <h2 className="display" style={{ margin: "0 0 0.5rem", fontSize: "var(--fs-3xl)" }}>
+          <DialogTitle sx={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 1 }}>
+            <EmojiEventsIcon color="secondary" fontSize="large" />
             {achievement.name}
-          </h2>
-          <p className="lede">{achievement.subtitle}</p>
-          <Avatar src={achievement.image} alt={achievement.name} size="lg" />
-          <p className="muted" style={{ margin: "1.25rem 0 1.5rem" }}>
-            {achievement.description}
-          </p>
-          <Button variant="primary" onClick={onClose}>
-            Cheers!
-          </Button>
+          </DialogTitle>
+          <DialogContent>
+            <Typography variant="h6" sx={{ mb: 2 }}>
+              {achievement.subtitle}
+            </Typography>
+            <Box
+              component="img"
+              src={achievement.image}
+              alt={achievement.name}
+              sx={{
+                width: "70%",
+                maxWidth: 280,
+                aspectRatio: "1",
+                objectFit: "cover",
+                borderRadius: "50%",
+                boxShadow: 6,
+                mb: 2,
+                bgcolor: "#fff",
+              }}
+            />
+            <Typography variant="body1" color="text.secondary">
+              {achievement.description}
+            </Typography>
+          </DialogContent>
+          <DialogActions sx={{ justifyContent: "center", pb: 2 }}>
+            <Button
+              onClick={onClose}
+              variant="contained"
+              color="primary"
+              size="large"
+              sx={{ px: 4, borderRadius: 999 }}
+            >
+              Cheers!
+            </Button>
+          </DialogActions>
         </>
-      ) : null}
-    </Modal>
+      )}
+    </Dialog>
   );
 }
 
 export function AchievementWall({ achievements }) {
   if (achievements.length === 0) {
     return (
-      <EmptyState
-        icon={<IconTrophy size={32} />}
-        title="The trophy wall awaits"
-        body="Rate a few beers to meet the crew."
-      />
+      <Box sx={{ mt: 4, textAlign: "center" }}>
+        <Typography variant="h6" gutterBottom>
+          The trophy wall awaits
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          Rate a few beers to meet the crew.
+        </Typography>
+      </Box>
     );
   }
 
   return (
-    <div className="achieve-grid">
+    <Grid container spacing={3} sx={{ mt: 1 }}>
       {achievements.map((achievement) => (
-        <Card key={achievement.count} padding="sm" className="achieve-card">
-          <img src={achievement.image} alt={achievement.name} />
-          <div style={{ padding: "0.9rem 0.75rem 0.5rem" }}>
-            <h3 className="display" style={{ margin: 0, fontSize: "var(--fs-xl)" }}>
-              {achievement.name}
-            </h3>
-            <p className="muted" style={{ margin: "0.35rem 0 0", fontSize: "var(--fs-sm)" }}>
-              {achievement.subtitle}
-            </p>
-          </div>
-        </Card>
+        <Grid key={achievement.count} size={{ xs: 12, sm: 6 }}>
+          <Card sx={{ borderRadius: 3, boxShadow: 4 }}>
+            <CardMedia
+              component="img"
+              image={achievement.image}
+              alt={achievement.name}
+              sx={{ height: 280, objectFit: "cover" }}
+            />
+            <CardContent>
+              <Typography variant="h6" gutterBottom>
+                {achievement.name}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                {achievement.subtitle}
+              </Typography>
+            </CardContent>
+          </Card>
+        </Grid>
       ))}
-    </div>
+    </Grid>
   );
 }

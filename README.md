@@ -109,10 +109,6 @@ VITE_FIREBASE_APP_ID
 
 Locally, copy `.env.example` to `.env.local`. On first sign-in, device ratings merge into the account (union of check-offs / stars / milestones; highest rating wins).
 
-## Design system
-
-Dark-first tokens and primitives live in `src/styles/tokens.css` + `src/ui/`. See [docs/design-system.md](docs/design-system.md).
-
 ## Deploy
 
 Firebase Hosting config is included (`.firebaserc` project id is a placeholder). A GitHub Pages workflow can build with `vite --base=/beerfest-tracker/`.

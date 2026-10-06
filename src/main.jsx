@@ -1,15 +1,10 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import "./index.css";
 import App from "./App.jsx";
-import "./styles/global.css";
-import { ThemeProvider, ToastProvider } from "./ui";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <ThemeProvider>
-      <ToastProvider>
-        <App />
-      </ToastProvider>
-    </ThemeProvider>
+    <App />
   </StrictMode>,
 );

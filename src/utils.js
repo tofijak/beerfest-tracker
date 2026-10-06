@@ -23,7 +23,7 @@ export function sessionFilterValue(session) {
   return session.id === "all" ? "nolo" : session.id;
 }
 
-export const FALLBACK_SESSION_META = {
+export const SESSION_META = {
   green: { label: "Green", color: "#2e7d32" },
   yellow: { label: "Yellow", color: "#f9a825" },
   red: { label: "Red", color: "#c62828" },
