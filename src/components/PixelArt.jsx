@@ -4,9 +4,26 @@ const PALETTES = {
   mug: { o: "#0b0b1a", g: "#ffd23f", f: "#fff7d6", h: "#ffffff", m: "#8fd8ff", d: "#2a2a4a" },
   hop: { o: "#0b0b1a", g: "#39ff88", d: "#0f9d4f", l: "#b6ffd2" },
   can: { o: "#0b0b1a", a: "#00e5ff", b: "#ff2bd6", w: "#ffffff", s: "#9aa4c7" },
+  logo: { w: "#e9e4ff", h: "#ffffff", d: "#8f86c9" },
 };
 
 const SPRITES = {
+  logo: [
+    "....hhhhhh....hhhhhh....",
+    "...hwwwwwd....hwwwwwh...",
+    "..hwwwwwwd....hwwwwwwh..",
+    ".hwwwwwwwd....hwwwwwwwh.",
+    "hwwwwddddd....hddddwwwwh",
+    "hwwwd.....hhhh.....hwwwd",
+    "hwwwd.....hwwd.....hwwwd",
+    "hwwwd.....hwwd.....hwwwd",
+    "hwwwd.....hddd.....hwwwd",
+    "hwwwwhhhhh....hhhhhwwwwd",
+    ".hwwwwwwwd....hwwwwwwwd.",
+    "..hwwwwwwd....hwwwwwwd..",
+    "...hwwwwwd....hwwwwwd...",
+    "....hddddd....hddddd....",
+  ],
   mug: [
     "..hhhhhhhh......",
     ".hffhhfhfhh.....",
@@ -67,7 +84,9 @@ const SPRITES = {
 export function PixelSprite({ sprite = "mug", size = 96, depth = 8, spin = true, sx }) {
   const rows = SPRITES[sprite];
   const palette = PALETTES[sprite];
-  const cell = size / 16;
+  const cols = rows[0].length;
+  const cell = size / cols;
+  const height = cell * rows.length;
   const layers = Array.from({ length: depth }, (_, index) => index);
 
   return (
@@ -75,7 +94,7 @@ export function PixelSprite({ sprite = "mug", size = 96, depth = 8, spin = true,
       aria-hidden
       sx={{
         width: size,
-        height: size,
+        height,
         perspective: 700,
         pointerEvents: "none",
         ...sx,
@@ -95,13 +114,13 @@ export function PixelSprite({ sprite = "mug", size = 96, depth = 8, spin = true,
           <Box
             key={layer}
             component="svg"
-            viewBox="0 0 16 16"
+            viewBox={`0 0 ${cols} ${rows.length}`}
             shapeRendering="crispEdges"
             sx={{
               position: "absolute",
               inset: 0,
-              width: cell * 16,
-              height: cell * 16,
+              width: size,
+              height,
               transform: `translateZ(${(layer - depth / 2) * (cell * 0.6)}px)`,
               filter: layer === depth - 1 ? "none" : `brightness(${0.45 + (layer / depth) * 0.4})`,
             }}

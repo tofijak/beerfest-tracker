@@ -346,24 +346,40 @@ export default function App() {
           }}
         >
           <Toolbar>
-            <PixelSprite sprite="mug" size={44} depth={5} sx={{ mr: 2 }} />
-            <Typography
-              variant="h6"
-              component="div"
+            <Box
               onClick={handleTitleTap}
               onTouchEnd={handleTitleTap}
-              sx={{
-                flexGrow: 1,
-                userSelect: "none",
-                fontWeight: 700,
-                letterSpacing: "0.04em",
-                background: "linear-gradient(90deg, #00e5ff, #ff2bd6)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}
+              sx={{ flexGrow: 1, display: "flex", alignItems: "center", gap: { xs: 1, sm: 1.5 }, userSelect: "none" }}
             >
-              RAISE THE BAR
-            </Typography>
+              <PixelSprite sprite="mug" size={52} depth={5} />
+              <Typography
+                component="span"
+                sx={{
+                  fontFamily: PIXEL_FONT,
+                  fontWeight: 700,
+                  fontSize: { xs: "1.2rem", sm: "1.6rem" },
+                  color: "#ff2bd6",
+                  textShadow: "1px 1px 0 #a0128a, 2px 2px 0 #6a0b5c, 3px 3px 0 #2a1458",
+                }}
+              >
+                ×
+              </Typography>
+              <PixelSprite sprite="logo" size={64} depth={6} />
+              <Typography
+                component="span"
+                sx={{
+                  fontFamily: PIXEL_FONT,
+                  fontWeight: 700,
+                  fontSize: { xs: "1.25rem", sm: "1.7rem" },
+                  letterSpacing: "0.02em",
+                  color: "#f4f1ff",
+                  textShadow:
+                    "1px 1px 0 #b8aef0, 2px 2px 0 #8f86c9, 3px 3px 0 #6a60a8, 4px 4px 0 #3b3270, 5px 5px 0 #2a1458",
+                }}
+              >
+                serpier
+              </Typography>
+            </Box>
             <Typography variant="body2" sx={{ fontFamily: PIXEL_FONT, fontSize: "0.7rem" }}>
               {ratedCount} rated · {drunkBeers.length}/{TOTAL_BEERS} tried
             </Typography>
