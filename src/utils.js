@@ -1,5 +1,3 @@
-import { UNTAPPD } from "./data/untappd";
-
 export function untappdSearchUrl(beerName, breweryName) {
   return `https://untappd.com/search?q=${encodeURIComponent(`${beerName} ${breweryName}`)}&type=beer`;
 }
@@ -21,6 +19,10 @@ export function beerMatchesSession(beer, sessionFilter) {
   return beer.session === sessionFilter || beer.session === "all";
 }
 
+export function sessionFilterValue(session) {
+  return session.id === "all" ? "nolo" : session.id;
+}
+
 export const SESSION_META = {
   green: { label: "Green", color: "#2e7d32" },
   yellow: { label: "Yellow", color: "#f9a825" },
@@ -28,8 +30,8 @@ export const SESSION_META = {
   all: { label: "No/Low", color: "#546e7a" },
 };
 
-export function ratingOf(beerId) {
-  return UNTAPPD[beerId]?.rating ?? null;
+export function ratingOf(beer) {
+  return beer?.untappd?.rating ?? null;
 }
 
 export function ratingColor(rating) {
@@ -79,4 +81,14 @@ export function styleBadgeData(beer) {
   return { category, ...STYLE_META[category] };
 }
 
-export const STAND_COLORS = { 1: "#39ff88", 2: "#00e5ff", 3: "#ff2bd6" };
+const STAND_PALETTE = ["#39ff88", "#00e5ff", "#ff2bd6", "#ffd23f", "#ff7a59", "#b39ddb"];
+
+export function standColor(stand) {
+  return STAND_PALETTE[(Math.max(1, Number(stand) || 1) - 1) % STAND_PALETTE.length];
+}
+
+/** Session label/color from the festival definition, falling back to the built-in palette. */
+export function sessionMeta(festival, session) {
+  const fromFestival = festival?.sessions?.find((item) => item.id === session);
+  return fromFestival ?? SESSION_META[session] ?? SESSION_META.all;
+}

@@ -1,8 +1,8 @@
 import { Box, Button, Typography } from "@mui/material";
 import { PixelBackdrop, PixelSprite } from "./PixelArt";
 
-export function Splash({ open, onDismiss }) {
-  if (!open) return null;
+export function Splash({ open, festival, onDismiss }) {
+  if (!open || !festival) return null;
 
   return (
     <Box
@@ -26,16 +26,18 @@ export function Splash({ open, onDismiss }) {
       <PixelBackdrop />
       <PixelSprite sprite="mug" size={140} depth={10} sx={{ mb: 3, position: "relative" }} />
       <Typography variant="overline" sx={{ position: "relative", letterSpacing: 3, mb: 1, color: "#00e5ff" }}>
-        Serpier × Raise the Bar
+        {festival.name}
+        {festival.edition ? ` · ${festival.edition}` : ""}
       </Typography>
       <Typography variant="h4" sx={{ position: "relative", fontWeight: 700, mb: 2, maxWidth: 520 }}>
-        Fri bar 17–21 — planlæg hvad I skal smage
+        {festival.tagline || "Check it. Star it. Rate it."}
       </Typography>
       <Typography variant="body1" sx={{ position: "relative", maxWidth: 440, mb: 4, color: "#9aa4c7" }}>
-        Ridehuset, Aarhus · fredag 9. oktober 2026. Rate øl undervejs og lås holdet op.
+        {festival.splashBody ||
+          [festival.venue, festival.dateLabel || festival.date].filter(Boolean).join(" · ")}
       </Typography>
       <Button variant="contained" color="secondary" onClick={onDismiss} sx={{ position: "relative", borderRadius: 999, px: 3 }}>
-        Vi er klar
+        {festival.splashCta || "Let's go"}
       </Button>
     </Box>
   );

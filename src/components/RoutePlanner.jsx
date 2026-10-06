@@ -1,9 +1,11 @@
 import { useMemo, useState } from "react";
 import { Box, Button, Card, CardContent, Checkbox, Chip, Typography } from "@mui/material";
-import { breweries } from "../data/beers";
-import { SESSION_META, STAND_COLORS, ratingColor, ratingOf } from "../utils";
+import { sessionMeta, standColor, ratingColor, ratingOf } from "../utils";
 
-const SESSION_ORDER = ["green", "yellow", "red", "all"];
+
+function sessionOrder(festival) {
+  return (festival.sessions ?? []).map((session) => session.id);
+}
 
 const MIN_RATINGS = [4.3, 4.2, 4.1, 4.0, 3.8];
 import { BODY_FONT, PIXEL_FONT } from "../theme";
@@ -15,8 +17,9 @@ import { pixelCheckboxProps } from "./PixelUI";
  * Legs are session colors: the start color first, then the rest by how many targets they hold.
  * Within a leg, breweries are visited stand by stand.
  */
-function buildRoute({ drunkBeers, favoriteBeers, minRating, startSession }) {
-  const legs = SESSION_ORDER.map((session) => ({
+function buildRoute({ festival, drunkBeers, favoriteBeers, minRating, startSession }) {
+  const breweries = festival.breweries;
+  const legs = sessionOrder(festival).map((session) => ({
     session,
     stops: breweries
       .map((brewery) => ({
@@ -24,9 +27,9 @@ function buildRoute({ drunkBeers, favoriteBeers, minRating, startSession }) {
         targets: brewery.beers
           .filter((beer) => beer.session === session && !drunkBeers.includes(beer.id))
           .filter(
-            (beer) => favoriteBeers.includes(beer.id) || (ratingOf(beer.id) ?? 0) >= minRating,
+            (beer) => favoriteBeers.includes(beer.id) || (ratingOf(beer) ?? 0) >= minRating,
           )
-          .sort((a, b) => (ratingOf(b.id) ?? 0) - (ratingOf(a.id) ?? 0)),
+          .sort((a, b) => (ratingOf(b) ?? 0) - (ratingOf(a) ?? 0)),
       }))
       .filter(({ targets }) => targets.length > 0)
       .sort((a, b) => a.brewery.stand - b.brewery.stand || a.brewery.name.localeCompare(b.brewery.name)),
@@ -41,6 +44,7 @@ function buildRoute({ drunkBeers, favoriteBeers, minRating, startSession }) {
 }
 
 function AutoRoute({
+  festival,
   drunkBeers,
   favoriteBeers,
   minRating,
@@ -50,8 +54,8 @@ function AutoRoute({
   onToggleDrunk,
 }) {
   const route = useMemo(
-    () => buildRoute({ drunkBeers, favoriteBeers, minRating, startSession }),
-    [drunkBeers, favoriteBeers, minRating, startSession],
+    () => buildRoute({ festival, drunkBeers, favoriteBeers, minRating, startSession }),
+    [festival, drunkBeers, favoriteBeers, minRating, startSession],
   );
   const total = route.reduce((n, leg) => n + leg.stops.reduce((m, s) => m + s.targets.length, 0), 0);
 
@@ -75,16 +79,16 @@ function AutoRoute({
       </Box>
       <Typography sx={{ fontFamily: PIXEL_FONT, fontSize: "0.7rem", mb: 1 }}>START WITH</Typography>
       <Box sx={{ display: "flex", gap: 1, mb: 3 }}>
-        {SESSION_ORDER.map((session) => (
+        {sessionOrder(festival).map((session) => (
           <Chip
             key={session}
-            label={SESSION_META[session].label}
+            label={sessionMeta(festival, session).label}
             onClick={() => onStartSessionChange(session)}
             variant={session === startSession ? "filled" : "outlined"}
             sx={
               session === startSession
-                ? { bgcolor: `${SESSION_META[session].color} !important`, color: "#07070f !important" }
-                : { color: SESSION_META[session].color, borderColor: `${SESSION_META[session].color} !important` }
+                ? { bgcolor: `${sessionMeta(festival, session).color} !important`, color: "#07070f !important" }
+                : { color: sessionMeta(festival, session).color, borderColor: `${sessionMeta(festival, session).color} !important` }
             }
           />
         ))}
@@ -99,7 +103,7 @@ function AutoRoute({
             {total} beers · {route.reduce((n, leg) => n + leg.stops.length, 0)} breweries
           </Typography>
           {route.map((leg, index) => {
-            const color = SESSION_META[leg.session].color;
+            const color = sessionMeta(festival, leg.session).color;
             return (
               <Box key={leg.session} sx={{ display: "flex", gap: 2 }}>
                 <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
@@ -133,18 +137,18 @@ function AutoRoute({
                 <Card sx={{ flex: 1, mb: 3, borderColor: color }}>
                   <CardContent>
                     <Typography variant="h6" sx={{ color }}>
-                      {SESSION_META[leg.session].label} session
+                      {sessionMeta(festival, leg.session).label} session
                     </Typography>
                     {leg.stops.map(({ brewery, targets }) => (
                       <Box key={brewery.id} sx={{ mt: 1.5 }}>
                         <Typography sx={{ fontFamily: PIXEL_FONT, fontSize: "0.8rem" }}>
                           {brewery.name}{" "}
-                          <Box component="span" sx={{ color: STAND_COLORS[brewery.stand] }}>
+                          <Box component="span" sx={{ color: standColor(brewery.stand) }}>
                             · stand {brewery.stand}
                           </Box>
                         </Typography>
                         {targets.map((beer) => {
-                                                    const rating = ratingOf(beer.id);
+                                                    const rating = ratingOf(beer);
                           return (
                             <Box
                               key={beer.id}
@@ -194,14 +198,18 @@ function AutoRoute({
   );
 }
 
-const BEER_LOOKUP = new Map(
-  breweries.flatMap((brewery) => brewery.beers.map((beer) => [beer.id, { beer, brewery }])),
-);
-
 /** User-built route: beers added via the list icon, freely reordered. */
-function MyRoute({ plannedBeers, onPlannedChange, favoriteBeers, drunkBeers, onToggleDrunk }) {
+function MyRoute({ festival, plannedBeers, onPlannedChange, favoriteBeers, drunkBeers, onToggleDrunk }) {
   const [copied, setCopied] = useState(false);
-  const items = plannedBeers.map((id) => BEER_LOOKUP.get(id)).filter(Boolean);
+  const lookup = useMemo(
+    () =>
+      new Map(
+        festival.breweries.flatMap((brewery) => brewery.beers.map((beer) => [beer.id, { beer, brewery }])),
+      ),
+    [festival],
+  );
+  const order = sessionOrder(festival);
+  const items = plannedBeers.map((id) => lookup.get(id)).filter(Boolean);
 
   const move = (index, delta) => {
     const next = [...plannedBeers];
@@ -216,7 +224,7 @@ function MyRoute({ plannedBeers, onPlannedChange, favoriteBeers, drunkBeers, onT
       [...items]
         .sort(
           (a, b) =>
-            SESSION_ORDER.indexOf(a.beer.session) - SESSION_ORDER.indexOf(b.beer.session) ||
+            order.indexOf(a.beer.session) - order.indexOf(b.beer.session) ||
             a.brewery.stand - b.brewery.stand ||
             a.brewery.name.localeCompare(b.brewery.name),
         )
@@ -271,8 +279,8 @@ function MyRoute({ plannedBeers, onPlannedChange, favoriteBeers, drunkBeers, onT
         </Typography>
       ) : (
         items.map(({ beer, brewery }, index) => {
-          const color = (SESSION_META[beer.session] ?? SESSION_META.all).color;
-          const rating = ratingOf(beer.id);
+          const color = sessionMeta(festival, beer.session).color;
+          const rating = ratingOf(beer);
           return (
             <Box
               key={beer.id}
@@ -320,7 +328,7 @@ function MyRoute({ plannedBeers, onPlannedChange, favoriteBeers, drunkBeers, onT
                   {beer.name}
                 </Typography>
                 <Typography variant="caption" color="text.secondary">
-                  {brewery.name} · stand {brewery.stand} · {(SESSION_META[beer.session] ?? SESSION_META.all).label}
+                  {brewery.name} · stand {brewery.stand} · {sessionMeta(festival, beer.session).label}
                 </Typography>
               </Box>
               {rating != null && (
@@ -349,7 +357,7 @@ function MyRoute({ plannedBeers, onPlannedChange, favoriteBeers, drunkBeers, onT
   );
 }
 
-export function RoutePlanner({ plannedBeers, onPlannedChange, ...autoProps }) {
+export function RoutePlanner({ festival, plannedBeers, onPlannedChange, ...autoProps }) {
   const [mode, setMode] = useState("mine");
   return (
     <Box>
@@ -369,6 +377,7 @@ export function RoutePlanner({ plannedBeers, onPlannedChange, ...autoProps }) {
       </Box>
       {mode === "mine" ? (
         <MyRoute
+          festival={festival}
           plannedBeers={plannedBeers}
           onPlannedChange={onPlannedChange}
           favoriteBeers={autoProps.favoriteBeers}
@@ -376,7 +385,7 @@ export function RoutePlanner({ plannedBeers, onPlannedChange, ...autoProps }) {
           onToggleDrunk={autoProps.onToggleDrunk}
         />
       ) : (
-        <AutoRoute {...autoProps} />
+        <AutoRoute festival={festival} {...autoProps} />
       )}
     </Box>
   );

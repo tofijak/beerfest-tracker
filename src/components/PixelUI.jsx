@@ -1,6 +1,6 @@
 import { Box, SvgIcon } from "@mui/material";
 import { BODY_FONT, PIXEL_FONT } from "../theme";
-import { STAND_COLORS, STYLE_META } from "../utils";
+import { standColor, STYLE_META } from "../utils";
 
 /** Pixel checkbox glyphs for MUI's `icon` / `checkedIcon` props. */
 export function PixelBoxIcon() {
@@ -108,8 +108,8 @@ export function StyleBadge({ category, size = "small" }) {
 
 /** Colored pixel badge for the stand a beer is poured at. */
 export function StandBadge({ stand, size = "small" }) {
-  const color = STAND_COLORS[stand];
-  if (!color) return null;
+  if (!stand) return null;
+  const color = standColor(stand);
   return (
     <Box
       component="span"

@@ -1,10 +1,8 @@
 import { memo } from "react";
 import { Box, Card, CardContent, Checkbox, Chip, Slider, Typography } from "@mui/material";
-import { UNTAPPD } from "../data/untappd";
-import { DESCRIPTIONS } from "../data/descriptions";
 import {
-  SESSION_META,
-  STAND_COLORS,
+  sessionMeta,
+  standColor,
   formatBeerMeta,
   styleCategory,
   ratingColor,
@@ -14,6 +12,7 @@ import { PixelIcon, PixelIconButton } from "./PixelIcons";
 import { PixelBar, ScorePlate, StandBadge, StyleBadge, pixelCheckboxProps } from "./PixelUI";
 
 function BeerItem({
+  festival,
   beer,
   brewery,
   isDrunk,
@@ -28,8 +27,8 @@ function BeerItem({
   onOpen,
 }) {
   const meta = formatBeerMeta(beer);
-  const untappd = UNTAPPD[beer.id];
-  const session = SESSION_META[beer.session] ?? SESSION_META.all;
+  const untappd = beer.untappd;
+  const session = sessionMeta(festival, beer.session);
 
   return (
     <Box
@@ -73,7 +72,7 @@ function BeerItem({
         </Typography>
         {showBrewery && (
           <Typography variant="caption" color="text.secondary" sx={{ display: "block" }}>
-            {brewery.name} · stand {brewery.stand}
+            {brewery.name}{brewery.stand ? ` · stand ${brewery.stand}` : ""}
           </Typography>
         )}
         <Box sx={{ display: "flex", gap: 0.75, alignItems: "center", flexWrap: "wrap", mt: 0.5 }}>
@@ -98,13 +97,13 @@ function BeerItem({
             </Typography>
           )}
         </Box>
-        {DESCRIPTIONS[beer.id] && (
+        {beer.description && (
           <Typography
             variant="caption"
             color="text.secondary"
             sx={{ display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden", mt: 0.25 }}
           >
-            {DESCRIPTIONS[beer.id].text}
+            {beer.description.text}
           </Typography>
         )}
         {beer.notes && (
@@ -189,6 +188,7 @@ function BeerItem({
 export const MemoBeerItem = memo(BeerItem);
 
 function BreweryCard({
+  festival,
   brewery,
   beers,
   drunkBeers,
@@ -202,7 +202,7 @@ function BreweryCard({
   onOpen,
 }) {
   const tried = beers.filter((beer) => drunkBeers.includes(beer.id)).length;
-  const color = STAND_COLORS[brewery.stand] ?? "#9aa4c7";
+  const color = standColor(brewery.stand);
 
   return (
     <Card sx={{ mb: 3, borderColor: color }}>
@@ -233,7 +233,7 @@ function BreweryCard({
               {brewery.noLow ? <Chip label="No/Low" size="small" /> : null}
             </Box>
             <Typography variant="caption" color="text.secondary">
-              {brewery.location} · stand {brewery.stand}
+              {[brewery.location, brewery.stand ? `stand ${brewery.stand}` : null].filter(Boolean).join(" · ")}
             </Typography>
           </Box>
           <Box sx={{ textAlign: { xs: "left", sm: "right" }, width: { xs: "100%", sm: "auto" } }}>
@@ -246,6 +246,7 @@ function BreweryCard({
         {beers.map((beer) => (
           <MemoBeerItem
             key={beer.id}
+            festival={festival}
             beer={beer}
             brewery={brewery}
             isDrunk={drunkBeers.includes(beer.id)}

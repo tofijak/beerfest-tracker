@@ -1,8 +1,6 @@
-import { breweries } from "./data/beers";
 import { ratingOf, styleCategory } from "./utils";
 
-const ALL_ABV = breweries.flatMap((brewery) => brewery.beers.map((beer) => beer.abv)).filter((v) => typeof v === "number");
-export const ABV_MAX = Math.ceil(Math.max(...ALL_ABV));
+export const ABV_MAX = 20;
 export const RATING_MIN = 3;
 export const RATING_MAX = 4.6;
 
@@ -69,7 +67,7 @@ function beerMatches(beer, brewery, filters, state, needle) {
   if (abvLo > 0 || abvHi < ABV_MAX) {
     if (typeof beer.abv !== "number" || beer.abv < abvLo || beer.abv > abvHi) return false;
   }
-  const rating = ratingOf(beer.id);
+  const rating = ratingOf(beer);
   const [rLo, rHi] = filters.rating;
   if (rLo > RATING_MIN || rHi < RATING_MAX) {
     if (rating == null || rating < rLo || rating > rHi) return false;
@@ -79,7 +77,7 @@ function beerMatches(beer, brewery, filters, state, needle) {
 }
 
 /** Returns grouped `{ brewery, beers }[]`, or a single flat sorted group when a sort is chosen. */
-export function applyFilters(filters, state, query) {
+export function applyFilters(filters, state, query, breweries) {
   const needle = query.toLowerCase().trim();
   const groups = breweries
     .map((brewery) => ({
@@ -92,7 +90,7 @@ export function applyFilters(filters, state, query) {
 
   const flat = groups.flatMap(({ brewery, beers }) => beers.map((beer) => ({ beer, brewery })));
   const sorters = {
-    rating: (a, b) => (ratingOf(b.beer.id) ?? -1) - (ratingOf(a.beer.id) ?? -1),
+    rating: (a, b) => (ratingOf(b.beer) ?? -1) - (ratingOf(a.beer) ?? -1),
     abv: (a, b) => (b.beer.abv ?? -1) - (a.beer.abv ?? -1),
     name: (a, b) => a.beer.name.localeCompare(b.beer.name),
   };
