@@ -173,7 +173,7 @@ export default function App() {
   const [openedBeerId, setOpenedBeerId] = useState(null);
   const [plannedBeers, setPlannedBeers] = useLocalStorage(`${STORAGE_PREFIX}plannedBeers`, []);
   const [minRating, setMinRating] = useLocalStorage(`${STORAGE_PREFIX}routeMinRating`, 4.1);
-  const [startStand, setStartStand] = useLocalStorage(`${STORAGE_PREFIX}routeStartStand`, 1);
+  const [startSession, setStartSession] = useLocalStorage(`${STORAGE_PREFIX}routeStartSession`, "green");
   const [achievedMilestones, setAchievedMilestones] = useLocalStorage(
     `${STORAGE_PREFIX}achievedMilestones`,
     [],
@@ -480,9 +480,9 @@ export default function App() {
               drunkBeers={drunkBeers}
               favoriteBeers={favoriteBeers}
               minRating={minRating}
-              startStand={startStand}
+              startSession={startSession}
               onMinRatingChange={setMinRating}
-              onStartStandChange={setStartStand}
+              onStartSessionChange={setStartSession}
               plannedBeers={plannedBeers}
               onPlannedChange={setPlannedBeers}
               onToggleDrunk={toggleDrunk}

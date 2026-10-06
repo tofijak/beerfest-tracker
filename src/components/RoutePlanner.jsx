@@ -4,7 +4,9 @@ import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { breweries } from "../data/beers";
-import { STAND_COLORS, ratingColor, ratingOf } from "../utils";
+import { SESSION_META, STAND_COLORS, ratingColor, ratingOf } from "../utils";
+
+const SESSION_ORDER = ["green", "yellow", "red", "all"];
 
 const MIN_RATINGS = [4.3, 4.2, 4.1, 4.0, 3.8];
 import { PIXEL_FONT } from "../theme";
@@ -12,60 +14,53 @@ import { pixelCheckboxProps } from "./PixelUI";
 
 /**
  * Targets = favorites plus untried beers rated at or above `minRating`.
- * Stands are visited start-first, then by how many targets they hold; within a stand,
- * breweries are ordered by their best target.
+ * Legs are session colors: the start color first, then the rest by how many targets they hold.
+ * Within a leg, breweries are visited stand by stand.
  */
-function buildRoute({ drunkBeers, favoriteBeers, minRating, startStand }) {
-  const stops = breweries
-    .map((brewery) => ({
-      brewery,
-      targets: brewery.beers
-        .filter((beer) => !drunkBeers.includes(beer.id))
-        .filter(
-          (beer) =>
-            favoriteBeers.includes(beer.id) || (ratingOf(beer.id) ?? 0) >= minRating,
-        )
-        .sort((a, b) => (ratingOf(b.id) ?? 0) - (ratingOf(a.id) ?? 0)),
-    }))
-    .filter(({ targets }) => targets.length > 0);
+function buildRoute({ drunkBeers, favoriteBeers, minRating, startSession }) {
+  const legs = SESSION_ORDER.map((session) => ({
+    session,
+    stops: breweries
+      .map((brewery) => ({
+        brewery,
+        targets: brewery.beers
+          .filter((beer) => beer.session === session && !drunkBeers.includes(beer.id))
+          .filter(
+            (beer) => favoriteBeers.includes(beer.id) || (ratingOf(beer.id) ?? 0) >= minRating,
+          )
+          .sort((a, b) => (ratingOf(b.id) ?? 0) - (ratingOf(a.id) ?? 0)),
+      }))
+      .filter(({ targets }) => targets.length > 0)
+      .sort((a, b) => a.brewery.stand - b.brewery.stand || a.brewery.name.localeCompare(b.brewery.name)),
+  })).filter((leg) => leg.stops.length > 0);
 
-  const best = (stop) => -(ratingOf(stop.targets[0].id) ?? 0);
-  const standCount = (stand) =>
-    stops.filter((stop) => stop.brewery.stand === stand).reduce((n, s) => n + s.targets.length, 0);
-  const order = [1, 2, 3]
-    .filter((stand) => stand !== startStand)
-    .sort((a, b) => standCount(b) - standCount(a));
-  order.unshift(startStand);
-
-  return order
-    .map((stand) => ({
-      stand,
-      stops: stops
-        .filter((stop) => stop.brewery.stand === stand)
-        .sort((a, b) => best(a) - best(b) || a.brewery.name.localeCompare(b.brewery.name)),
-    }))
-    .filter((leg) => leg.stops.length > 0);
+  const size = (leg) => leg.stops.reduce((n, stop) => n + stop.targets.length, 0);
+  return legs.sort((a, b) => {
+    if (a.session === startSession) return -1;
+    if (b.session === startSession) return 1;
+    return size(b) - size(a);
+  });
 }
 
 function AutoRoute({
   drunkBeers,
   favoriteBeers,
   minRating,
-  startStand,
+  startSession,
   onMinRatingChange,
-  onStartStandChange,
+  onStartSessionChange,
   onToggleDrunk,
 }) {
   const route = useMemo(
-    () => buildRoute({ drunkBeers, favoriteBeers, minRating, startStand }),
-    [drunkBeers, favoriteBeers, minRating, startStand],
+    () => buildRoute({ drunkBeers, favoriteBeers, minRating, startSession }),
+    [drunkBeers, favoriteBeers, minRating, startSession],
   );
   const total = route.reduce((n, leg) => n + leg.stops.reduce((m, s) => m + s.targets.length, 0), 0);
 
   return (
     <Box>
       <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-        Your must-try beers (favorites + untried beers rated at or above the minimum) ordered by stand.
+        Your must-try beers (favorites + untried beers rated at or above the minimum) grouped by session color, stand by stand.
         Ticking a beer marks it as tried.
       </Typography>
       <Typography sx={{ fontFamily: PIXEL_FONT, fontSize: "0.7rem", mb: 1 }}>MIN UNTAPPD RATING</Typography>
@@ -80,15 +75,19 @@ function AutoRoute({
           />
         ))}
       </Box>
-      <Typography sx={{ fontFamily: PIXEL_FONT, fontSize: "0.7rem", mb: 1 }}>START AT</Typography>
+      <Typography sx={{ fontFamily: PIXEL_FONT, fontSize: "0.7rem", mb: 1 }}>START WITH</Typography>
       <Box sx={{ display: "flex", gap: 1, mb: 3 }}>
-        {[1, 2, 3].map((stand) => (
+        {SESSION_ORDER.map((session) => (
           <Chip
-            key={stand}
-            label={`Stand ${stand}`}
-            onClick={() => onStartStandChange(stand)}
-            color={stand === startStand ? "primary" : "default"}
-            variant={stand === startStand ? "filled" : "outlined"}
+            key={session}
+            label={SESSION_META[session].label}
+            onClick={() => onStartSessionChange(session)}
+            variant={session === startSession ? "filled" : "outlined"}
+            sx={
+              session === startSession
+                ? { bgcolor: `${SESSION_META[session].color} !important`, color: "#07070f !important" }
+                : { color: SESSION_META[session].color, borderColor: `${SESSION_META[session].color} !important` }
+            }
           />
         ))}
       </Box>
@@ -102,9 +101,9 @@ function AutoRoute({
             {total} beers · {route.reduce((n, leg) => n + leg.stops.length, 0)} breweries
           </Typography>
           {route.map((leg, index) => {
-            const color = STAND_COLORS[leg.stand];
+            const color = SESSION_META[leg.session].color;
             return (
-              <Box key={leg.stand} sx={{ display: "flex", gap: 2 }}>
+              <Box key={leg.session} sx={{ display: "flex", gap: 2 }}>
                 <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
                   <Box
                     sx={{
@@ -137,12 +136,15 @@ function AutoRoute({
                 <Card sx={{ flex: 1, mb: 3, borderColor: color }}>
                   <CardContent>
                     <Typography variant="h6" sx={{ color }}>
-                      Stand {leg.stand}
+                      {SESSION_META[leg.session].label} session
                     </Typography>
                     {leg.stops.map(({ brewery, targets }) => (
                       <Box key={brewery.id} sx={{ mt: 1.5 }}>
                         <Typography sx={{ fontFamily: PIXEL_FONT, fontSize: "0.8rem" }}>
-                          {brewery.name}
+                          {brewery.name}{" "}
+                          <Box component="span" sx={{ color: STAND_COLORS[brewery.stand] }}>
+                            · stand {brewery.stand}
+                          </Box>
                         </Typography>
                         {targets.map((beer) => {
                                                     const rating = ratingOf(beer.id);
@@ -162,7 +164,7 @@ function AutoRoute({
                                   {beer.name}
                                 </Typography>
                                 <Typography variant="caption" color="text.secondary">
-                                  {beer.session}
+                                  {beer.style}
                                   {typeof beer.abv === "number" ? ` · ${beer.abv}% ABV` : ""}
                                 </Typography>
                               </Box>
@@ -212,6 +214,17 @@ function MyRoute({ plannedBeers, onPlannedChange, favoriteBeers, drunkBeers, onT
     onPlannedChange(next);
   };
   const remove = (id) => onPlannedChange(plannedBeers.filter((value) => value !== id));
+  const sortBySession = () =>
+    onPlannedChange(
+      [...items]
+        .sort(
+          (a, b) =>
+            SESSION_ORDER.indexOf(a.beer.session) - SESSION_ORDER.indexOf(b.beer.session) ||
+            a.brewery.stand - b.brewery.stand ||
+            a.brewery.name.localeCompare(b.brewery.name),
+        )
+        .map(({ beer }) => beer.id),
+    );
   const sortByStand = () =>
     onPlannedChange(
       [...items]
@@ -239,6 +252,9 @@ function MyRoute({ plannedBeers, onPlannedChange, favoriteBeers, drunkBeers, onT
         Build your own route: tap the list-add icon on any beer, then reorder it here.
       </Typography>
       <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap", mb: 3 }}>
+        <Button size="small" variant="contained" onClick={sortBySession} disabled={items.length < 2}>
+          Sort by color
+        </Button>
         <Button size="small" variant="contained" onClick={sortByStand} disabled={items.length < 2}>
           Sort by stand
         </Button>
@@ -258,7 +274,7 @@ function MyRoute({ plannedBeers, onPlannedChange, favoriteBeers, drunkBeers, onT
         </Typography>
       ) : (
         items.map(({ beer, brewery }, index) => {
-          const color = STAND_COLORS[brewery.stand];
+          const color = (SESSION_META[beer.session] ?? SESSION_META.all).color;
           const rating = ratingOf(beer.id);
           return (
             <Box
@@ -307,7 +323,7 @@ function MyRoute({ plannedBeers, onPlannedChange, favoriteBeers, drunkBeers, onT
                   {beer.name}
                 </Typography>
                 <Typography variant="caption" color="text.secondary">
-                  {brewery.name} · stand {brewery.stand}
+                  {brewery.name} · stand {brewery.stand} · {(SESSION_META[beer.session] ?? SESSION_META.all).label}
                 </Typography>
               </Box>
               {rating != null && (
@@ -348,7 +364,7 @@ function MyRoute({ plannedBeers, onPlannedChange, favoriteBeers, drunkBeers, onT
 }
 
 export function RoutePlanner({ plannedBeers, onPlannedChange, ...autoProps }) {
-  const [mode, setMode] = useState(plannedBeers.length > 0 ? "mine" : "auto");
+  const [mode, setMode] = useState("mine");
   return (
     <Box>
       <Box sx={{ display: "flex", gap: 1, mb: 3 }}>
