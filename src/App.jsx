@@ -41,7 +41,12 @@ import StarIcon from "@mui/icons-material/Star";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import SearchIcon from "@mui/icons-material/Search";
+import MapIcon from "@mui/icons-material/Map";
+import RouteIcon from "@mui/icons-material/Route";
 import { Splash } from "./components/Splash";
+import { VenueMap } from "./components/Map";
+import { RoutePlanner } from "./components/RoutePlanner";
+import { UNTAPPD } from "./data/untappd";
 import { ACHIEVEMENTS } from "./data/achievements";
 import { breweries } from "./data/beers";
 import { useDebouncedValue, useLocalStorage } from "./hooks/useLocalStorage";
@@ -49,6 +54,7 @@ import {
   SESSION_META,
   beerMatchesSession,
   formatBeerMeta,
+  gradeColor,
   untappdSearchUrl,
 } from "./utils";
 
@@ -96,6 +102,7 @@ function BeerItem({
   onRatingChange,
 }) {
   const meta = formatBeerMeta(beer);
+  const untappd = UNTAPPD[beer.id];
 
   return (
     <ListItem
@@ -125,9 +132,25 @@ function BeerItem({
               {beer.name}
             </Typography>
             <SessionChip session={beer.session} />
+            {untappd?.grade && (
+              <Chip
+                label={`${untappd.grade}${untappd.gradeUncertain ? "*" : ""}`}
+                size="small"
+                sx={{ height: 22, fontWeight: 700, bgcolor: gradeColor(untappd.grade), color: "#fff" }}
+              />
+            )}
+            {untappd?.rating && (
+              <Chip
+                icon={<StarIcon />}
+                label={`${untappd.rating.toFixed(2)} (${untappd.count})`}
+                size="small"
+                variant="outlined"
+                sx={{ height: 22 }}
+              />
+            )}
             {beer.name !== "TBA" && (
               <IconButton
-                href={untappdSearchUrl(beer.name, brewery.name)}
+                href={untappd?.url ?? untappdSearchUrl(beer.name, brewery.name)}
                 target="_blank"
                 rel="noopener noreferrer"
                 size="small"
@@ -423,6 +446,8 @@ export default function App() {
     `${STORAGE_PREFIX}showOnlyUnrated`,
     false,
   );
+  const [minGrade, setMinGrade] = useLocalStorage(`${STORAGE_PREFIX}routeMinGrade`, "A-");
+  const [startStand, setStartStand] = useLocalStorage(`${STORAGE_PREFIX}routeStartStand`, 1);
   const [achievedMilestones, setAchievedMilestones] = useLocalStorage(
     `${STORAGE_PREFIX}achievedMilestones`,
     [],
@@ -553,7 +578,7 @@ export default function App() {
   const hasAchievements = unlocked.length > 0;
 
   useEffect(() => {
-    if (!hasAchievements && tab === 2) setTab(0);
+    if (!hasAchievements && tab === 4) setTab(0);
   }, [hasAchievements, tab]);
 
   return (
@@ -615,6 +640,8 @@ export default function App() {
               label="Favorites"
               iconPosition="start"
             />
+            <Tab icon={<MapIcon />} label="Map" iconPosition="start" />
+            <Tab icon={<RouteIcon />} label="Route" iconPosition="start" />
             {hasAchievements && (
               <Tab
                 icon={
@@ -743,7 +770,19 @@ export default function App() {
               )}
             </Box>
           )}
-          {hasAchievements && tab === 2 && <AchievementWall achievements={unlocked} />}
+          {tab === 2 && <VenueMap drunkBeers={drunkBeers} />}
+          {tab === 3 && (
+            <RoutePlanner
+              drunkBeers={drunkBeers}
+              favoriteBeers={favoriteBeers}
+              minGrade={minGrade}
+              startStand={startStand}
+              onMinGradeChange={setMinGrade}
+              onStartStandChange={setStartStand}
+              onToggleDrunk={toggleDrunk}
+            />
+          )}
+          {hasAchievements && tab === 4 && <AchievementWall achievements={unlocked} />}
         </Container>
       </Box>
       <Splash open={splashOpen} onDismiss={dismissSplash} />

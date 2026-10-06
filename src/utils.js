@@ -25,3 +25,20 @@ export const SESSION_META = {
   red: { label: "Red", color: "#c62828" },
   all: { label: "No/Low", color: "#546e7a" },
 };
+
+export const GRADES = ["A+", "A", "A-", "B+", "B", "B-", "C+", "C"];
+
+/** Lower is better; ungraded beers sort last. */
+export function gradeRank(grade) {
+  const index = GRADES.indexOf(grade);
+  return index === -1 ? GRADES.length : index;
+}
+
+export function gradeColor(grade) {
+  if (!grade) return "#546e7a";
+  if (grade.startsWith("A")) return "#2e7d32";
+  if (grade.startsWith("B")) return "#f9a825";
+  return "#8d6e63";
+}
+
+export const STAND_COLORS = { 1: "#2e7d32", 2: "#1565c0", 3: "#c62828" };
