@@ -1,10 +1,5 @@
 import { memo } from "react";
-import { Box, Card, CardContent, Checkbox, Chip, IconButton, Slider, Typography } from "@mui/material";
-import OpenInNewIcon from "@mui/icons-material/OpenInNew";
-import StarIcon from "@mui/icons-material/Star";
-import StarBorderIcon from "@mui/icons-material/StarBorder";
-import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
-import PlaylistAddCheckIcon from "@mui/icons-material/PlaylistAddCheck";
+import { Box, Card, CardContent, Checkbox, Chip, Slider, Typography } from "@mui/material";
 import { UNTAPPD } from "../data/untappd";
 import { DESCRIPTIONS } from "../data/descriptions";
 import {
@@ -15,6 +10,7 @@ import {
   ratingColor,
 } from "../utils";
 import { BODY_FONT, PIXEL_FONT } from "../theme";
+import { PixelIcon, PixelIconButton } from "./PixelIcons";
 import { PixelBar, ScorePlate, StandBadge, StyleBadge, pixelCheckboxProps } from "./PixelUI";
 
 function BeerItem({
@@ -126,7 +122,7 @@ function BeerItem({
             size="small"
             variant="outlined"
             color="secondary"
-            icon={<OpenInNewIcon />}
+            icon={<PixelIcon name="external" size={14} />}
             label="Untappd"
             sx={{ mt: 0.75, height: 24 }}
           />
@@ -165,23 +161,25 @@ function BeerItem({
             color={ratingColor(untappd?.rating ?? null)}
           />
         )}
-        <Box sx={{ display: "flex", flexDirection: { xs: "row", sm: "column" } }}>
-          <IconButton
+        <Box sx={{ display: "flex", flexDirection: { xs: "row", sm: "column" }, gap: 0.75 }}>
+          <PixelIconButton
+            icon="star"
+            label={isFavorite ? "Remove favorite" : "Add favorite"}
+            active={isFavorite}
+            color="#ffd23f"
+            size={34}
+            iconSize={18}
             onClick={() => onToggleFavorite(beer.id)}
-            color={isFavorite ? "warning" : "default"}
-            aria-label={isFavorite ? "Remove favorite" : "Add favorite"}
-            size="small"
-          >
-            {isFavorite ? <StarIcon /> : <StarBorderIcon />}
-          </IconButton>
-          <IconButton
+          />
+          <PixelIconButton
+            icon={isPlanned ? "check" : "plus"}
+            label={isPlanned ? "Remove from my route" : "Add to my route"}
+            active={isPlanned}
+            color="#39ff88"
+            size={34}
+            iconSize={18}
             onClick={() => onTogglePlan(beer.id)}
-            color={isPlanned ? "primary" : "default"}
-            aria-label={isPlanned ? "Remove from my route" : "Add to my route"}
-            size="small"
-          >
-            {isPlanned ? <PlaylistAddCheckIcon /> : <PlaylistAddIcon />}
-          </IconButton>
+          />
         </Box>
       </Box>
     </Box>

@@ -1,8 +1,5 @@
 import { useMemo, useState } from "react";
-import { Box, Button, Card, CardContent, Checkbox, Chip, IconButton, Typography } from "@mui/material";
-import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
-import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
-import DeleteIcon from "@mui/icons-material/Delete";
+import { Box, Button, Card, CardContent, Checkbox, Chip, Typography } from "@mui/material";
 import { breweries } from "../data/beers";
 import { SESSION_META, STAND_COLORS, ratingColor, ratingOf } from "../utils";
 
@@ -10,6 +7,7 @@ const SESSION_ORDER = ["green", "yellow", "red", "all"];
 
 const MIN_RATINGS = [4.3, 4.2, 4.1, 4.0, 3.8];
 import { BODY_FONT, PIXEL_FONT } from "../theme";
+import { PixelIconButton } from "./PixelIcons";
 import { pixelCheckboxProps } from "./PixelUI";
 
 /**
@@ -338,21 +336,10 @@ function MyRoute({ plannedBeers, onPlannedChange, favoriteBeers, drunkBeers, onT
                   {rating.toFixed(2)}
                 </Box>
               )}
-              <Box sx={{ display: "flex", flexShrink: 0 }}>
-                <IconButton size="small" onClick={() => move(index, -1)} disabled={index === 0} aria-label="Move up">
-                  <ArrowUpwardIcon fontSize="small" />
-                </IconButton>
-                <IconButton
-                  size="small"
-                  onClick={() => move(index, 1)}
-                  disabled={index === items.length - 1}
-                  aria-label="Move down"
-                >
-                  <ArrowDownwardIcon fontSize="small" />
-                </IconButton>
-                <IconButton size="small" onClick={() => remove(beer.id)} aria-label="Remove">
-                  <DeleteIcon fontSize="small" />
-                </IconButton>
+              <Box sx={{ display: "flex", flexShrink: 0, gap: 0.5 }}>
+                <PixelIconButton icon="up" label="Move up" size={30} iconSize={16} disabled={index === 0} onClick={() => move(index, -1)} />
+                <PixelIconButton icon="down" label="Move down" size={30} iconSize={16} disabled={index === items.length - 1} onClick={() => move(index, 1)} />
+                <PixelIconButton icon="trash" label="Remove" size={30} iconSize={16} color="#ff5252" onClick={() => remove(beer.id)} />
               </Box>
             </Box>
           );

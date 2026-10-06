@@ -1,14 +1,9 @@
-import { Box, Button, Checkbox, Chip, Dialog, DialogContent, FormControlLabel, IconButton, Slider, Typography } from "@mui/material";
-import CloseIcon from "@mui/icons-material/Close";
-import OpenInNewIcon from "@mui/icons-material/OpenInNew";
-import StarIcon from "@mui/icons-material/Star";
-import StarBorderIcon from "@mui/icons-material/StarBorder";
-import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
-import PlaylistAddCheckIcon from "@mui/icons-material/PlaylistAddCheck";
+import { Box, Button, Checkbox, Chip, Dialog, DialogContent, FormControlLabel, Slider, Typography } from "@mui/material";
 import { UNTAPPD } from "../data/untappd";
 import { DESCRIPTIONS } from "../data/descriptions";
 import { SESSION_META, STAND_COLORS, ratingColor, styleCategory } from "../utils";
 import { BODY_FONT, PIXEL_FONT } from "../theme";
+import { PixelIcon, PixelIconButton } from "./PixelIcons";
 import { CrtTransition } from "./CrtTransition";
 import { StandBadge, StyleBadge, pixelCheckboxProps } from "./PixelUI";
 
@@ -37,9 +32,9 @@ export function BeerDialog({ entry, drunkBeers, favoriteBeers, plannedBeers, bee
       PaperProps={{ className: "crt-paper", sx: { position: "relative", m: { xs: 1.5, sm: 4 }, border: `3px solid ${beer ? STAND_COLORS[brewery.stand] : "#00e5ff"}`, boxShadow: "6px 6px 0 #2a1458", backgroundImage: "linear-gradient(160deg,#0b1a2e,#1d0f3a)", "&::after": { content: '""', position: "absolute", inset: 0, pointerEvents: "none", backgroundImage: "repeating-linear-gradient(0deg, rgba(0,0,0,0.35) 0, rgba(0,0,0,0.35) 1px, transparent 1px, transparent 3px)", animation: "crtFlicker 3s steps(6) infinite" } } }}>
       {beer && (
         <DialogContent sx={{ position: "relative" }}>
-          <IconButton onClick={onClose} aria-label="Close" sx={{ position: "absolute", top: 8, right: 8 }}>
-            <CloseIcon />
-          </IconButton>
+<Box sx={{ position: "absolute", top: 12, right: 12 }}>
+            <PixelIconButton icon="close" label="Close" onClick={onClose} size={34} iconSize={16} />
+          </Box>
           <Typography variant="overline" sx={{ color: STAND_COLORS[brewery.stand] }}>
             {brewery.name} · {brewery.location} · stand {brewery.stand}
           </Typography>
@@ -104,14 +99,14 @@ export function BeerDialog({ entry, drunkBeers, favoriteBeers, plannedBeers, bee
           </Box>
           <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap", alignItems: "center", mt: 2 }}>
             <FormControlLabel control={<Checkbox {...pixelCheckboxProps} checked={drunkBeers.includes(beer.id)} onChange={() => onToggleDrunk(beer.id)} />} label="Tried" />
-            <Button size="small" variant="contained" color={isFavorite ? "warning" : "primary"} startIcon={isFavorite ? <StarIcon /> : <StarBorderIcon />} onClick={() => onToggleFavorite(beer.id)}>
+            <Button size="small" variant="contained" color={isFavorite ? "warning" : "primary"} startIcon={<PixelIcon name="star" size={16} />} onClick={() => onToggleFavorite(beer.id)}>
               Favorite
             </Button>
-            <Button size="small" variant="contained" color={isPlanned ? "success" : "primary"} startIcon={isPlanned ? <PlaylistAddCheckIcon /> : <PlaylistAddIcon />} onClick={() => onTogglePlan(beer.id)}>
+            <Button size="small" variant="contained" color={isPlanned ? "success" : "primary"} startIcon={<PixelIcon name={isPlanned ? "check" : "plus"} size={16} />} onClick={() => onTogglePlan(beer.id)}>
               My route
             </Button>
             {untappd?.rating != null && untappd.url && (
-              <Button size="small" variant="contained" color="secondary" component="a" target="_blank" rel="noopener noreferrer" startIcon={<OpenInNewIcon />} href={untappd.url}>
+              <Button size="small" variant="contained" color="secondary" component="a" target="_blank" rel="noopener noreferrer" startIcon={<PixelIcon name="external" size={16} />} href={untappd.url}>
                 Untappd
               </Button>
             )}
