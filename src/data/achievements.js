@@ -6,7 +6,7 @@ export const ACHIEVEMENTS = [
     title: "Simon Toft",
     subtitle: "3 rated — højt skum, vi er i gang",
     description: "First pours are on the list. Planlæg hvad I skal smage.",
-    image: "/achievements/simon-toft.jpg",
+    image: `${import.meta.env.BASE_URL}achievements/simon-toft.jpg`,
   },
   {
     count: 6,
@@ -14,7 +14,7 @@ export const ACHIEVEMENTS = [
     title: "Nicholas Erlin Putra",
     subtitle: "6 rated — passet er stemplet",
     description: "Nicholas har overblikket. Næste stand venter.",
-    image: "/achievements/nicholas-erlin-putra.jpg",
+    image: `${import.meta.env.BASE_URL}achievements/nicholas-erlin-putra.jpg`,
   },
   {
     count: 10,
@@ -22,7 +22,7 @@ export const ACHIEVEMENTS = [
     title: "Simon Holm",
     subtitle: "10 rated — double digits",
     description: "Palates warmed up. Holm nikker, og runden fortsætter.",
-    image: "/achievements/simon-holm.png",
+    image: `${import.meta.env.BASE_URL}achievements/simon-holm.png`,
   },
   {
     count: 15,
@@ -30,7 +30,7 @@ export const ACHIEVEMENTS = [
     title: "Christian Dam",
     subtitle: "15 rated — dam good flight",
     description: "Roligt, præcist, og listen begynder at ligne en plan.",
-    image: "/achievements/christian-dam.jpg",
+    image: `${import.meta.env.BASE_URL}achievements/christian-dam.jpg`,
   },
   {
     count: 20,
@@ -38,7 +38,7 @@ export const ACHIEVEMENTS = [
     title: "Kamilla Kjøbmand",
     subtitle: "20 rated — kilde: jeres egne glas",
     description: "Tyve noter. Kamilla ville spørge til kilden. Den er Ridehuset.",
-    image: "/achievements/kamilla-kjoebmand.jpg",
+    image: `${import.meta.env.BASE_URL}achievements/kamilla-kjoebmand.jpg`,
   },
   {
     count: 25,
@@ -46,7 +46,7 @@ export const ACHIEVEMENTS = [
     title: "Thomas Grástein",
     subtitle: "25 rated — granit under glasset",
     description: "Et kvart århundrede i glas. Thomas-energi: det holder.",
-    image: "/achievements/thomas-grastein.png",
+    image: `${import.meta.env.BASE_URL}achievements/thomas-grastein.png`,
   },
   {
     count: 35,
@@ -54,7 +54,7 @@ export const ACHIEVEMENTS = [
     title: "Nicklas",
     subtitle: "35 rated — gulvet er stadig tørt. Nogenlunde.",
     description: "Favoritterne hober sig op. Nicklas smiler alligevel.",
-    image: "/achievements/nicklas.jpg",
+    image: `${import.meta.env.BASE_URL}achievements/nicklas.jpg`,
   },
   {
     count: 50,
@@ -62,7 +62,7 @@ export const ACHIEVEMENTS = [
     title: "Jacob Schwartz Sørensen",
     subtitle: "50 rated — halv hundrede",
     description: "Halvtreds glas med holdet. Jacob har styr på de mørke og de lyse.",
-    image: "/achievements/jacob-schwartz.png",
+    image: `${import.meta.env.BASE_URL}achievements/jacob-schwartz.png`,
   },
   {
     count: 75,
@@ -70,6 +70,6 @@ export const ACHIEVEMENTS = [
     title: "Steffen Sørensen",
     subtitle: "75 rated — shortlisten er lang nu",
     description: "I raised the bar. Steffen’s overblik: I kom i mål, og I kom sammen.",
-    image: "/achievements/steffen-soerensen.png",
+    image: `${import.meta.env.BASE_URL}achievements/steffen-soerensen.png`,
   },
 ];
