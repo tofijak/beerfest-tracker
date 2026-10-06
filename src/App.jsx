@@ -33,7 +33,7 @@ import { MemoBeerItem, MemoBreweryCard } from "./components/BeerList";
 import { BeerDialog } from "./components/BeerDialog";
 import { FilterPanel } from "./components/FilterPanel";
 import { DEFAULT_FILTERS, applyFilters } from "./filters";
-import { theme } from "./theme";
+import { PIXEL_FONT, theme } from "./theme";
 import { PixelBackdrop, PixelSprite } from "./components/PixelArt";
 import { Splash } from "./components/Splash";
 import { VenueMap } from "./components/Map";
@@ -364,7 +364,7 @@ export default function App() {
             >
               RAISE THE BAR
             </Typography>
-            <Typography variant="body2" sx={{ fontFamily: "\"Silkscreen\", monospace", fontSize: "0.7rem" }}>
+            <Typography variant="body2" sx={{ fontFamily: PIXEL_FONT, fontSize: "0.7rem" }}>
               {ratedCount} rated · {drunkBeers.length}/{TOTAL_BEERS} tried
             </Typography>
           </Toolbar>

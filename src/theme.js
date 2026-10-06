@@ -1,6 +1,6 @@
 import { createTheme } from "@mui/material";
 
-export const PIXEL_FONT = '"Silkscreen", "Press Start 2P", ui-monospace, monospace';
+export const PIXEL_FONT = '"Pixelify Sans", "Silkscreen", ui-monospace, monospace';
 const INK = "#07070f";
 const EDGE = "#00e5ff";
 const SHADOW = "#2a1458";
@@ -26,7 +26,7 @@ export const theme = createTheme({
   },
   shape: { borderRadius: 0 },
   typography: {
-    fontFamily: '"Space Grotesk", "Inter", sans-serif',
+    fontFamily: PIXEL_FONT,
     h4: { fontFamily: PIXEL_FONT, fontWeight: 700 },
     h5: { fontFamily: PIXEL_FONT, fontWeight: 700 },
     h6: { fontFamily: PIXEL_FONT, fontWeight: 700, letterSpacing: "0.02em" },
