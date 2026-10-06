@@ -1,19 +1,17 @@
 {
-  "name": "green-session-beer-tracker",
+  "name": "beer-fest-tracker",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite --host 127.0.0.1 --port 43173",
     "build": "vite build",
     "lint": "oxlint",
-    "preview": "vite preview --host 127.0.0.1 --port 43173"
+    "preview": "vite preview --host 127.0.0.1 --port 43173",
+    "import-festival": "node scripts/import-festival.mjs"
   },
   "dependencies": {
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.1",
-    "@mui/icons-material": "^7.3.5",
-    "@mui/material": "^7.3.5",
+    "firebase": "^12.4.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
   },
