@@ -2369,28 +2369,28 @@ export const breweries = [
         "id": 5001,
         "name": "British Helles",
         "style": "Helles Lager",
-        "abv": null,
+        "abv": 0.5,
         "session": "all"
       },
       {
         "id": 5002,
         "name": "Top w/ Lemoon",
         "style": "Helles Lager",
-        "abv": null,
+        "abv": 0.5,
         "session": "all"
       },
       {
         "id": 5003,
         "name": "Grapefruit",
         "style": "Helles Lager",
-        "abv": null,
+        "abv": 0.5,
         "session": "all"
       },
       {
         "id": 5004,
         "name": "Peach",
         "style": "Helles Lager",
-        "abv": null,
+        "abv": 0.5,
         "session": "all"
       }
     ]

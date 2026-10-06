@@ -1,5 +1,6 @@
 import { createTheme } from "@mui/material";
 
+export const BODY_FONT = '"JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace';
 export const PIXEL_FONT = '"Pixelify Sans", "Silkscreen", ui-monospace, monospace';
 const INK = "#07070f";
 const EDGE = "#00e5ff";
@@ -26,7 +27,10 @@ export const theme = createTheme({
   },
   shape: { borderRadius: 0 },
   typography: {
-    fontFamily: PIXEL_FONT,
+    fontFamily: BODY_FONT,
+    body1: { fontSize: "0.95rem", lineHeight: 1.5 },
+    body2: { fontSize: "0.85rem", lineHeight: 1.5 },
+    caption: { fontSize: "0.75rem", lineHeight: 1.45 },
     h4: { fontFamily: PIXEL_FONT, fontWeight: 700 },
     h5: { fontFamily: PIXEL_FONT, fontWeight: 700 },
     h6: { fontFamily: PIXEL_FONT, fontWeight: 700, letterSpacing: "0.02em" },

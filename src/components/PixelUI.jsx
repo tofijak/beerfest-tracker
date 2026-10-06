@@ -1,5 +1,5 @@
 import { Box, SvgIcon } from "@mui/material";
-import { PIXEL_FONT } from "../theme";
+import { BODY_FONT } from "../theme";
 
 /** Pixel checkbox glyphs for MUI's `icon` / `checkedIcon` props. */
 export function PixelBoxIcon() {
@@ -62,9 +62,9 @@ export function ScorePlate({ rating, count, color }) {
           color: rating != null ? "#07070f" : "#9aa4c7",
           border: "3px solid #07070f",
           boxShadow: "3px 3px 0 #2a1458",
-          fontFamily: PIXEL_FONT,
+          fontFamily: BODY_FONT,
           fontWeight: 700,
-          fontSize: { xs: "0.85rem", sm: "1rem" },
+          fontSize: { xs: "0.9rem", sm: "1.05rem" },
         }}
       >
         {rating != null ? rating.toFixed(2) : "–"}
