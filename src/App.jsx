@@ -65,7 +65,7 @@ export default function App() {
     auth.user,
   );
 
-  const [tab, setTab] = useState(0);
+  const [tab, setTab] = useState("beers");
   const [query, setQuery] = useState("");
   const [festivalOpen, setFestivalOpen] = useState(false);
   const [allProgress, setAllProgress] = useState(() =>
@@ -191,7 +191,7 @@ export default function App() {
     resetMilestones();
     setQueue([]);
     setActiveAchievement(null);
-    setTab(0);
+    setTab("beers");
   }, [resetMilestones]);
 
   const tapRef = useRef({ count: 0, lastTap: 0 });
@@ -222,7 +222,7 @@ export default function App() {
       if (!next) return;
       setActiveSlug(next.slug);
       setQuery("");
-      setTab(0);
+      setTab("beers");
       try {
         setSplashOpen(sessionStorage.getItem(splashStorageKey(next.slug)) !== "1");
       } catch {
@@ -248,12 +248,10 @@ export default function App() {
     [progress.achievedMilestones],
   );
   const hasAchievements = unlocked.length > 0;
-  const historyTab = hasAchievements ? 3 : 2;
-  const achievementTab = 2;
 
   useEffect(() => {
-    if (!hasAchievements && tab === achievementTab) setTab(0);
-  }, [achievementTab, hasAchievements, tab]);
+    if (!hasAchievements && tab === "achievements") setTab("beers");
+  }, [hasAchievements, tab]);
 
   const sessionFilters = useMemo(() => {
     if (!festival.sessions?.length) return [];
@@ -267,7 +265,7 @@ export default function App() {
   }, [festival.sessions]);
 
   const visitedCount = FESTIVALS.filter((item) => hasFestivalActivity(allProgress[item.slug])).length;
-  const showFilters = tab === 0 || tab === 1;
+  const showFilters = tab === "beers" || tab === "favorites";
 
   return (
     <ThemeProvider theme={theme}>
@@ -316,7 +314,7 @@ export default function App() {
           ) : (
             <Box sx={{ mb: 2 }} />
           )}
-          {tab !== historyTab && (
+          {tab !== "history" && (
             <TextField
               fullWidth
               variant="outlined"
@@ -337,12 +335,11 @@ export default function App() {
             value={tab}
             onChange={(_event, value) => setTab(value)}
             centered
-            variant="scrollable"
-            allowScrollButtonsMobile
             sx={{ mb: 2 }}
           >
-            <Tab icon={<SportsBarIcon />} label="All Beers" iconPosition="start" />
+            <Tab value="beers" icon={<SportsBarIcon />} label="All Beers" iconPosition="start" />
             <Tab
+              value="favorites"
               icon={
                 <Badge badgeContent={progress.favoriteBeers.length} color="secondary">
                   <StarIcon />
@@ -353,6 +350,7 @@ export default function App() {
             />
             {hasAchievements && (
               <Tab
+                value="achievements"
                 icon={
                   <Badge badgeContent={unlocked.length} color="secondary">
                     <EmojiEventsIcon />
@@ -363,6 +361,7 @@ export default function App() {
               />
             )}
             <Tab
+              value="history"
               icon={
                 <Badge badgeContent={visitedCount} color="secondary">
                   <HistoryIcon />
@@ -429,7 +428,7 @@ export default function App() {
               />
             </Box>
           )}
-          {tab === 0 && (
+          {tab === "beers" && (
             <Box>
               {filteredBreweries.length === 0 ? (
                 <Typography variant="body1" color="text.secondary" align="center" sx={{ mt: 4 }}>
@@ -455,7 +454,7 @@ export default function App() {
               )}
             </Box>
           )}
-          {tab === 1 && (
+          {tab === "favorites" && (
             <Box>
               {progress.favoriteBeers.length === 0 ? (
                 <Typography variant="body1" color="text.secondary" align="center" sx={{ mt: 4 }}>
@@ -482,8 +481,8 @@ export default function App() {
               )}
             </Box>
           )}
-          {hasAchievements && tab === achievementTab && <AchievementWall achievements={unlocked} />}
-          {tab === historyTab && (
+          {hasAchievements && tab === "achievements" && <AchievementWall achievements={unlocked} />}
+          {tab === "history" && (
             <HistoryView
               allProgress={allProgress}
               activeSlug={festival.slug}
