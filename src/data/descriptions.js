@@ -56,10 +56,6 @@ export const DESCRIPTIONS = {
     "text": "Cryo Fresh edition of Ebeltoft's Wildflower NEIPA, built on pilsner malt, rye and wheat, here with Mosaic. Wildflower has pineapple and lime notes, a near full body and is very drinkable.",
     "source": "https://www.loegismose.dk/produkter/ebeltoft-wildflower-ipa-59--33cl/82663/"
   },
-  "902": {
-    "text": "Cryo Fresh edition of Ebeltoft's Wildflower NEIPA, built on pilsner malt, rye and wheat, here with Simcoe. Wildflower has pineapple and lime notes, a near full body and is very drinkable.",
-    "source": "https://www.loegismose.dk/produkter/ebeltoft-wildflower-ipa-59--33cl/82663/"
-  },
   "1101": {
     "text": "Bourbon-barrel-aged barleywine blended with aged old ale. Toffee and brown sugar with black cherry, fig and raisin, plus whiskey, wood char and vanilla.",
     "source": "https://www.tavour.com/b/the-great-northern-barrel-aged-series-57-b582567"
@@ -95,14 +91,6 @@ export const DESCRIPTIONS = {
   "1404": {
     "text": "Juicy, lush hazy IPA hopped with Citra and Motueka, soft and tropical with a strong hop flavour.",
     "source": "https://flyingcouch.dk/products/golden-axe"
-  },
-  "1405": {
-    "text": "Soft, hazy NEIPA with Waimea, Riwaka, Nectaron and Nelson Sauvin: citrus, lime and passionfruit, ripe peach and nectarine, and a white-wine grape edge.",
-    "source": "https://flyingcouch.dk/products/smack-my-batch-up"
-  },
-  "1406": {
-    "text": "Traditional English best bitter with biscuit, toasted bread and caramel malt, plus earthy, gently spicy East Kent Goldings. Balanced and crushable.",
-    "source": "https://flyingcouch.dk/products/bitter-now-than-never"
   },
   "1501": {
     "text": "Slightly hazy deep-amber Helles with dried apricot, fresh peach, bread and wheat notes, a crisp bitterness and a dry, long finish.",
@@ -327,10 +315,6 @@ export const DESCRIPTIONS = {
   "3901": {
     "text": "Low-strength pale ale on Maris Otter and rolled oats with batch-varying hops; soft, rounded body, gentle carbonation and restrained bitterness.",
     "source": "https://store.thekernelbrewery.com/products/table-beer-500ml"
-  },
-  "3903": {
-    "text": "Stout based on an 1890s recipe: creamy head, dark chocolate and espresso bitterness with vanilla and dried fruit, rich smooth texture.",
-    "source": "https://mons-cheese.co.uk/products/kernel-export-stout"
   },
   "3905": {
     "text": "Flemish-style brown ale, rich and sour: brown bread, red fruit, a hint of strawberry, then balsamic and tannic notes with a sharp, spritzy acidity.",

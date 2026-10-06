@@ -1,10 +1,5 @@
 /** Untappd rating, rating count and beer page, keyed by beer id. */
 export const UNTAPPD = {
-  "101": {
-    "rating": null,
-    "count": null,
-    "url": null
-  },
   "102": {
     "rating": 4.34,
     "count": 95,
@@ -34,11 +29,6 @@ export const UNTAPPD = {
     "rating": 3.59,
     "count": 25,
     "url": "https://untappd.com/b/alefarm-brewing-season-to-give/6895046"
-  },
-  "204": {
-    "rating": null,
-    "count": null,
-    "url": "https://untappd.com/b/alefarm-brewing-no-place-like-gnome/6895048"
   },
   "205": {
     "rating": 3.63,
@@ -205,11 +195,6 @@ export const UNTAPPD = {
     "count": 25,
     "url": "https://untappd.com/b/ebeltoft-gardbryggeri-wildflower-ipa-cryo-fresh-1-mosaic/6860579"
   },
-  "902": {
-    "rating": null,
-    "count": 9,
-    "url": "https://untappd.com/b/ebeltoft-gardbryggeri-wildflower-cryo-fresh-2-simcoe/6860580"
-  },
   "903": {
     "rating": 3.51,
     "count": 250,
@@ -264,11 +249,6 @@ export const UNTAPPD = {
     "rating": 4.43,
     "count": 165,
     "url": "https://untappd.com/b/evil-twin-brewing-nyc-the-great-northern-barrel-aged-series-57-released-03-13-26/6630568"
-  },
-  "1102": {
-    "rating": null,
-    "count": null,
-    "url": null
   },
   "1103": {
     "rating": 4.29,
@@ -369,16 +349,6 @@ export const UNTAPPD = {
     "rating": 3.69,
     "count": 1729,
     "url": "https://untappd.com/b/flying-couch-brewing-golden-axe/3419179"
-  },
-  "1405": {
-    "rating": null,
-    "count": 8,
-    "url": "https://untappd.com/b/flying-couch-brewing-smack-my-batch-up/6920695"
-  },
-  "1406": {
-    "rating": null,
-    "count": 3,
-    "url": "https://untappd.com/b/flying-couch-brewing-bitter-know-than-never/6920698"
   },
   "1501": {
     "rating": 3.45,
@@ -540,11 +510,6 @@ export const UNTAPPD = {
     "count": 548,
     "url": "https://untappd.com/b/justone-tropical-thirst-trap/6577308"
   },
-  "2101": {
-    "rating": null,
-    "count": null,
-    "url": null
-  },
   "2102": {
     "rating": 3.3,
     "count": 169,
@@ -594,11 +559,6 @@ export const UNTAPPD = {
     "rating": 3.6,
     "count": 686,
     "url": "https://untappd.com/b/brasserie-la-malpolon-nova-saison/2553881"
-  },
-  "2301": {
-    "rating": null,
-    "count": 3,
-    "url": "https://untappd.com/b/mariatorgets-mikrobryggeri-nelson/6819565"
   },
   "2302": {
     "rating": 4.34,
@@ -795,11 +755,6 @@ export const UNTAPPD = {
     "count": 278,
     "url": "https://untappd.com/b/paihalas-brewery-dead-noise/6156681"
   },
-  "3001": {
-    "rating": null,
-    "count": null,
-    "url": null
-  },
   "3002": {
     "rating": 4.05,
     "count": 75,
@@ -930,11 +885,6 @@ export const UNTAPPD = {
     "count": 107,
     "url": "https://untappd.com/b/slowburn-brewing-co-op-slow-down/6580879"
   },
-  "3502": {
-    "rating": null,
-    "count": null,
-    "url": null
-  },
   "3503": {
     "rating": 3.67,
     "count": 1009,
@@ -954,11 +904,6 @@ export const UNTAPPD = {
     "rating": 3.67,
     "count": 3952,
     "url": "https://untappd.com/b/slowburn-brewing-co-op-vox-populi/3133964"
-  },
-  "3601": {
-    "rating": null,
-    "count": null,
-    "url": null
   },
   "3602": {
     "rating": 3.59,
@@ -1125,11 +1070,6 @@ export const UNTAPPD = {
     "count": 370,
     "url": "https://untappd.com/b/y-not-brewing-no-fucks-given-2024/6114229"
   },
-  "4305": {
-    "rating": null,
-    "count": 8,
-    "url": "https://untappd.com/b/y-not-brewing-clean-as-a-whistle/6999228"
-  },
   "4306": {
     "rating": 4.41,
     "count": 96,
@@ -1154,11 +1094,6 @@ export const UNTAPPD = {
     "rating": 3.72,
     "count": 20,
     "url": "https://untappd.com/b/olsnedkeren-hurtig-karl/6911176"
-  },
-  "4405": {
-    "rating": null,
-    "count": 3,
-    "url": "https://untappd.com/b/olsnedkeren-to-til-tango/6986007"
   },
   "4406": {
     "rating": 3.27,
@@ -1194,56 +1129,6 @@ export const UNTAPPD = {
     "rating": 3.82,
     "count": 3619,
     "url": "https://untappd.com/b/aben-mumbo-jumbo-1-passion-fruit-guava-raspberry/5230635"
-  },
-  "4601": {
-    "rating": null,
-    "count": null,
-    "url": null
-  },
-  "4701": {
-    "rating": null,
-    "count": null,
-    "url": null
-  },
-  "4702": {
-    "rating": null,
-    "count": null,
-    "url": null
-  },
-  "4703": {
-    "rating": null,
-    "count": null,
-    "url": null
-  },
-  "4704": {
-    "rating": null,
-    "count": null,
-    "url": null
-  },
-  "4801": {
-    "rating": null,
-    "count": null,
-    "url": null
-  },
-  "4901": {
-    "rating": null,
-    "count": null,
-    "url": null
-  },
-  "4902": {
-    "rating": null,
-    "count": null,
-    "url": null
-  },
-  "4903": {
-    "rating": null,
-    "count": null,
-    "url": null
-  },
-  "4904": {
-    "rating": null,
-    "count": null,
-    "url": null
   },
   "5001": {
     "rating": 2.96,
