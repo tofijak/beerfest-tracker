@@ -443,7 +443,9 @@ export default function App() {
               <FilterPanel
                 festival={festival}
                 filters={effectiveFilters}
-                onChange={setFilters}
+                onChange={(next) =>
+                  setFilters(tab === "favorites" ? { ...next, status: filters.status } : next)
+                }
                 resultCount={resultCount}
               />
               {resultCount === 0 ? (
