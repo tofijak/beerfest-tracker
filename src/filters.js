@@ -11,6 +11,7 @@ export const DEFAULT_FILTERS = {
   sessions: [],
   stands: [],
   styles: [],
+  excludeStyles: [],
   abv: [0, ABV_MAX],
   rating: [RATING_MIN, RATING_MAX],
   onlyRated: false,
@@ -23,6 +24,7 @@ export function activeFilterCount(filters) {
     (filters.sessions.length > 0) +
     (filters.stands.length > 0) +
     (filters.styles.length > 0) +
+    (filters.excludeStyles.length > 0) +
     (filters.abv[0] > 0 || filters.abv[1] < ABV_MAX) +
     (filters.rating[0] > RATING_MIN || filters.rating[1] < RATING_MAX) +
     filters.onlyRated
@@ -59,7 +61,9 @@ function beerMatches(beer, brewery, filters, state, needle) {
     if (!ok) return false;
   }
   if (filters.stands.length && !filters.stands.includes(brewery.stand)) return false;
-  if (filters.styles.length && !filters.styles.includes(styleCategory(beer))) return false;
+  const category = styleCategory(beer);
+  if (filters.styles.length && !filters.styles.includes(category)) return false;
+  if (filters.excludeStyles.includes(category)) return false;
 
   const [abvLo, abvHi] = filters.abv;
   if (abvLo > 0 || abvHi < ABV_MAX) {

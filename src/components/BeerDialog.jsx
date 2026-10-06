@@ -9,12 +9,12 @@ import { UNTAPPD } from "../data/untappd";
 import { DESCRIPTIONS } from "../data/descriptions";
 import { SESSION_META, STAND_COLORS, ratingColor, styleCategory } from "../utils";
 import { BODY_FONT } from "../theme";
-import { pixelCheckboxProps } from "./PixelUI";
+import { StyleBadge, pixelCheckboxProps } from "./PixelUI";
 
 function Stat({ label, value, color }) {
   return (
     <Box sx={{ flex: 1, minWidth: 90, p: 1.5, border: "3px solid #07070f", bgcolor: color ?? "#241a4d", color: color ? "#07070f" : "#eef1ff", boxShadow: "3px 3px 0 #2a1458" }}>
-      <Typography sx={{ fontFamily: BODY_FONT, fontWeight: 700, fontSize: "1.4rem", lineHeight: 1.1 }}>{value}</Typography>
+      <Typography sx={{ fontFamily: BODY_FONT, fontWeight: 400, fontSize: "1.8rem", lineHeight: 1.1 }}>{value}</Typography>
       <Typography sx={{ fontSize: "0.65rem", textTransform: "uppercase", opacity: 0.8 }}>{label}</Typography>
     </Box>
   );
@@ -45,7 +45,7 @@ export function BeerDialog({ entry, drunkBeers, favoriteBeers, plannedBeers, onT
           </Typography>
           <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap", mb: 2 }}>
             <Chip size="small" label={session.label} sx={{ bgcolor: session.color, color: beer.session === "yellow" ? "#3e2723" : "#fff" }} />
-            <Chip size="small" variant="outlined" label={styleCategory(beer)} />
+            <StyleBadge category={styleCategory(beer)} size="large" />
           </Box>
           <Box sx={{ display: "flex", gap: 1.5, flexWrap: "wrap", mb: 2 }}>
             <Stat label={untappd?.count != null ? `Untappd · ${untappd.count} ratings` : "Untappd"} value={untappd?.rating != null ? untappd.rating.toFixed(2) : "n/a"} color={untappd?.rating != null ? ratingColor(untappd.rating) : undefined} />

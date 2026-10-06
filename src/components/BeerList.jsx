@@ -11,10 +11,11 @@ import {
   SESSION_META,
   STAND_COLORS,
   formatBeerMeta,
+  styleCategory,
   ratingColor,
 } from "../utils";
 import { PIXEL_FONT } from "../theme";
-import { PixelBar, ScorePlate, pixelCheckboxProps } from "./PixelUI";
+import { PixelBar, ScorePlate, StyleBadge, pixelCheckboxProps } from "./PixelUI";
 
 function BeerItem({
   beer,
@@ -93,6 +94,7 @@ function BeerItem({
           >
             {session.label}
           </Box>
+          <StyleBadge category={styleCategory(beer)} />
           {meta && (
             <Typography variant="caption" color="text.secondary">
               {meta}

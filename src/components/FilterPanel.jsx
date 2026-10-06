@@ -2,7 +2,16 @@ import { useState } from "react";
 import { Badge, Box, Button, Chip, Collapse, Slider, Typography } from "@mui/material";
 import TuneIcon from "@mui/icons-material/Tune";
 import { ABV_MAX, DEFAULT_FILTERS, RATING_MAX, RATING_MIN, activeFilterCount } from "../filters";
-import { STAND_COLORS, STYLE_CATEGORIES } from "../utils";
+import { breweries } from "../data/beers";
+import { STAND_COLORS, STYLE_CATEGORIES, STYLE_META, styleCategory } from "../utils";
+
+const STYLE_COUNTS = breweries
+  .flatMap((brewery) => brewery.beers)
+  .reduce((acc, beer) => {
+    const category = styleCategory(beer);
+    acc[category] = (acc[category] ?? 0) + 1;
+    return acc;
+  }, {});
 import { PIXEL_FONT } from "../theme";
 
 const STATUS = [
@@ -103,12 +112,38 @@ export function FilterPanel({ filters, onChange, resultCount }) {
             ))}
           </Box>
 
-          <Label>STYLE</Label>
-          <ChipRow
-            options={STYLE_CATEGORIES.map((c) => [c, c])}
-            isActive={(v) => filters.styles.includes(v)}
-            onPick={(v) => set({ styles: toggle(filters.styles, v) })}
-          />
+          <Label>STYLE · tap to include, tap again to hide</Label>
+          <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap" }}>
+            {STYLE_CATEGORIES.map((category) => {
+              const included = filters.styles.includes(category);
+              const excluded = filters.excludeStyles.includes(category);
+              const color = STYLE_META[category].color;
+              const cycle = () => {
+                if (!included && !excluded) set({ styles: [...filters.styles, category] });
+                else if (included)
+                  set({
+                    styles: filters.styles.filter((v) => v !== category),
+                    excludeStyles: [...filters.excludeStyles, category],
+                  });
+                else set({ excludeStyles: filters.excludeStyles.filter((v) => v !== category) });
+              };
+              return (
+                <Chip
+                  key={category}
+                  onClick={cycle}
+                  label={`${excluded ? "✕ " : included ? "✓ " : ""}${category} (${STYLE_COUNTS[category] ?? 0})`}
+                  variant={included ? "filled" : "outlined"}
+                  sx={
+                    included
+                      ? { bgcolor: `${color} !important`, color: "#07070f !important" }
+                      : excluded
+                        ? { color: "#ff5252", borderColor: "#ff5252 !important", textDecoration: "line-through" }
+                        : { color, borderColor: `${color} !important` }
+                  }
+                />
+              );
+            })}
+          </Box>
 
           <Label>
             ABV {filters.abv[0]}–{filters.abv[1]}%

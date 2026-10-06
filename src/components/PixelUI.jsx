@@ -1,5 +1,6 @@
 import { Box, SvgIcon } from "@mui/material";
-import { BODY_FONT } from "../theme";
+import { BODY_FONT, PIXEL_FONT } from "../theme";
+import { STYLE_META } from "../utils";
 
 /** Pixel checkbox glyphs for MUI's `icon` / `checkedIcon` props. */
 export function PixelBoxIcon() {
@@ -72,6 +73,35 @@ export function ScorePlate({ rating, count, color }) {
       <Box sx={{ fontSize: "0.62rem", mt: 0.5, color: "text.secondary" }}>
         {count != null ? `${count} ratings` : "no rating"}
       </Box>
+    </Box>
+  );
+}
+
+/** Colored pixel badge for a beer style category. */
+export function StyleBadge({ category, size = "small" }) {
+  const meta = STYLE_META[category];
+  if (!meta) return null;
+  return (
+    <Box
+      component="span"
+      title={category}
+      sx={{
+        display: "inline-flex",
+        alignItems: "center",
+        gap: 0.5,
+        px: 0.75,
+        height: size === "small" ? 18 : 24,
+        fontFamily: PIXEL_FONT,
+        fontSize: size === "small" ? "0.62rem" : "0.8rem",
+        textTransform: "uppercase",
+        bgcolor: meta.color,
+        color: "#07070f",
+        border: "2px solid #07070f",
+        boxShadow: "2px 2px 0 #2a1458",
+        whiteSpace: "nowrap",
+      }}
+    >
+      {meta.short}
     </Box>
   );
 }
