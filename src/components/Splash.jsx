@@ -1,4 +1,5 @@
 import { Box, Button, Typography } from "@mui/material";
+import { PIXEL_FONT } from "../theme";
 import { PixelBackdrop, PixelSprite } from "./PixelArt";
 
 export function Splash({ open, festival, onDismiss }) {
@@ -24,7 +25,22 @@ export function Splash({ open, festival, onDismiss }) {
       }}
     >
       <PixelBackdrop />
-      <PixelSprite sprite="mug" size={140} depth={10} sx={{ mb: 3, position: "relative" }} />
+      <Box sx={{ position: "relative", display: "flex", alignItems: "center", gap: { xs: 1.5, sm: 3 }, mb: 4 }}>
+        <PixelSprite sprite="mug" size={120} depth={10} />
+        <Typography
+          component="span"
+          sx={{
+            fontFamily: PIXEL_FONT,
+            fontWeight: 700,
+            fontSize: { xs: "2rem", sm: "3rem" },
+            color: "#ff2bd6",
+            textShadow: "2px 2px 0 #a0128a, 4px 4px 0 #6a0b5c, 6px 6px 0 #2a1458",
+          }}
+        >
+          ×
+        </Typography>
+        <PixelSprite sprite="logo" size={170} depth={12} />
+      </Box>
       <Typography variant="overline" sx={{ position: "relative", letterSpacing: 3, mb: 1, color: "#00e5ff" }}>
         {festival.name}
         {festival.edition ? ` · ${festival.edition}` : ""}
