@@ -1,4 +1,4 @@
-import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   AppBar,
   Badge,
@@ -15,16 +15,9 @@ import {
   DialogActions,
   DialogContent,
   DialogTitle,
-  Divider,
   FormControlLabel,
   Grid,
-  IconButton,
   InputAdornment,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  Slider,
   Slide,
   Tab,
   Tabs,
@@ -32,315 +25,33 @@ import {
   ThemeProvider,
   Toolbar,
   Typography,
-  createTheme,
 } from "@mui/material";
 import SportsBarIcon from "@mui/icons-material/SportsBar";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
-import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import StarIcon from "@mui/icons-material/Star";
-import StarBorderIcon from "@mui/icons-material/StarBorder";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import SearchIcon from "@mui/icons-material/Search";
 import MapIcon from "@mui/icons-material/Map";
 import RouteIcon from "@mui/icons-material/Route";
+import { MemoBreweryCard } from "./components/BeerList";
+import { theme } from "./theme";
+import { pixelCheckboxProps } from "./components/PixelUI";
 import { PixelBackdrop, PixelSprite } from "./components/PixelArt";
 import { Splash } from "./components/Splash";
 import { VenueMap } from "./components/Map";
 import { RoutePlanner } from "./components/RoutePlanner";
-import { UNTAPPD } from "./data/untappd";
 import { ACHIEVEMENTS } from "./data/achievements";
 import { breweries } from "./data/beers";
 import { useDebouncedValue, useLocalStorage } from "./hooks/useLocalStorage";
-import {
-  SESSION_META,
-  beerMatchesSession,
-  formatBeerMeta,
-  beerGrade,
-  gradeColor,
-  untappdSearchUrl,
-} from "./utils";
 
 const STORAGE_PREFIX = "greenSession.serpier.";
 const SPLASH_KEY = `${STORAGE_PREFIX}splashSeen`;
 const TOTAL_BEERS = breweries.reduce((sum, brewery) => sum + brewery.beers.length, 0);
-
-const theme = createTheme({
-  palette: {
-    mode: "dark",
-    primary: { main: "#00e5ff" },
-    secondary: { main: "#ff2bd6" },
-    success: { main: "#39ff88" },
-    background: { default: "#07070f", paper: "rgba(18, 18, 38, 0.72)" },
-    text: { secondary: "#9aa4c7" },
-  },
-  shape: { borderRadius: 14 },
-  typography: {
-    fontFamily: '"Space Grotesk", "Inter", sans-serif',
-    h6: { fontWeight: 700, letterSpacing: "-0.01em" },
-  },
-  components: {
-    MuiCard: {
-      styleOverrides: {
-        root: {
-          backgroundImage: "none",
-          backdropFilter: "blur(14px)",
-          border: "1px solid rgba(0, 229, 255, 0.18)",
-          boxShadow: "0 0 24px rgba(0, 229, 255, 0.06), inset 0 1px 0 rgba(255,255,255,0.05)",
-        },
-      },
-    },
-    MuiChip: { styleOverrides: { root: { fontWeight: 600 } } },
-    MuiTab: { styleOverrides: { root: { textTransform: "none", fontWeight: 600 } } },
-  },
-});
 
 const DialogSlide = Slide;
 
 function ratedCountFrom(ratings) {
   return Object.values(ratings).filter((value) => typeof value === "number" && value > 0).length;
 }
-
-function SessionChip({ session, size = "small" }) {
-  const meta = SESSION_META[session] ?? SESSION_META.all;
-  return (
-    <Chip
-      label={meta.label}
-      size={size}
-      sx={{
-        height: 22,
-        fontWeight: 600,
-        bgcolor: meta.color,
-        color: session === "yellow" ? "#3e2723" : "#fff",
-      }}
-    />
-  );
-}
-
-function BeerItem({
-  beer,
-  brewery,
-  isDrunk,
-  isFavorite,
-  rating,
-  onToggleDrunk,
-  onToggleFavorite,
-  onRatingChange,
-}) {
-  const meta = formatBeerMeta(beer);
-  const untappd = UNTAPPD[beer.id];
-  const grade = beerGrade(beer.id);
-
-  return (
-    <ListItem
-      sx={{
-        borderLeft: isDrunk ? "3px solid #39ff88" : "3px solid transparent",
-        bgcolor: isDrunk ? "rgba(57, 255, 136, 0.06)" : "transparent",
-        alignItems: "flex-start",
-      }}
-    >
-      <ListItemIcon sx={{ minWidth: 42, mt: 0.5 }}>
-        <Checkbox
-          checked={isDrunk}
-          onChange={() => onToggleDrunk(beer.id)}
-          color="success"
-        />
-      </ListItemIcon>
-      <ListItemText
-        primary={
-          <Box sx={{ display: "flex", alignItems: "center", gap: 1, flexWrap: "wrap" }}>
-            <Typography
-              variant="body1"
-              sx={{
-                textDecoration: isDrunk ? "line-through" : "none",
-                fontWeight: isFavorite ? "bold" : "normal",
-              }}
-            >
-              {beer.name}
-            </Typography>
-            <SessionChip session={beer.session} />
-            {grade && (
-              <Chip
-                label={grade}
-                size="small"
-                sx={{ height: 22, fontWeight: 700, bgcolor: gradeColor(grade), color: "#07070f" }}
-              />
-            )}
-            {untappd?.rating != null && (
-              <Chip
-                icon={<StarIcon />}
-                label={`${untappd.rating.toFixed(2)} (${untappd.count})`}
-                size="small"
-                variant="outlined"
-                sx={{ height: 22 }}
-              />
-            )}
-            {beer.name !== "TBA" && (
-              <IconButton
-                href={untappd?.url ?? untappdSearchUrl(beer.name, brewery.name)}
-                target="_blank"
-                rel="noopener noreferrer"
-                size="small"
-                sx={{ display: "flex", alignItems: "center" }}
-              >
-                <OpenInNewIcon fontSize="small" />
-              </IconButton>
-            )}
-          </Box>
-        }
-        secondary={
-          <Box sx={{ display: "flex", flexDirection: "column", gap: 0.5, mt: 0.5 }}>
-            {meta && (
-              <Typography variant="body2" color="text.secondary">
-                {meta}
-              </Typography>
-            )}
-            {beer.notes && (
-              <Typography variant="caption" color="text.secondary">
-                {beer.notes}
-              </Typography>
-            )}
-            {isDrunk && (
-              <Box sx={{ display: "flex", flexDirection: "column", gap: 0.5, mt: 1, mb: 0.5 }}>
-                <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-                  <Typography
-                    variant="caption"
-                    color="text.secondary"
-                    sx={{ minWidth: "3rem" }}
-                  >
-                    Rating:
-                  </Typography>
-                  <Typography variant="body2" fontWeight="medium" sx={{ minWidth: "2.5rem" }}>
-                    {rating > 0 ? rating.toFixed(2) : "0.00"}
-                  </Typography>
-                </Box>
-                <Slider
-                  value={rating || 0}
-                  onChange={(_event, value) => {
-                    const next = typeof value === "number" ? Math.round(value * 4) / 4 : 0;
-                    onRatingChange(beer.id, next);
-                  }}
-                  min={0}
-                  max={5}
-                  step={0.25}
-                  marks={[
-                    { value: 0, label: "0" },
-                    { value: 1, label: "1" },
-                    { value: 2, label: "2" },
-                    { value: 3, label: "3" },
-                    { value: 4, label: "4" },
-                    { value: 5, label: "5" },
-                  ]}
-                  valueLabelDisplay="auto"
-                  valueLabelFormat={(value) => value.toFixed(2)}
-                  sx={{
-                    width: "100%",
-                    maxWidth: { xs: "100%", sm: "300px" },
-                    "& .MuiSlider-thumb": { width: 24, height: 24 },
-                    "& .MuiSlider-mark": { display: { xs: "none", sm: "block" } },
-                    "& .MuiSlider-markLabel": { fontSize: "0.75rem" },
-                  }}
-                />
-              </Box>
-            )}
-          </Box>
-        }
-      />
-      <IconButton
-        onClick={() => onToggleFavorite(beer.id)}
-        color={isFavorite ? "warning" : "default"}
-        sx={{ mt: 0.5 }}
-      >
-        {isFavorite ? <StarIcon /> : <StarBorderIcon />}
-      </IconButton>
-    </ListItem>
-  );
-}
-
-const MemoBeerItem = memo(BeerItem);
-
-function BreweryCard({
-  brewery,
-  drunkBeers,
-  favoriteBeers,
-  beerRatings,
-  onToggleDrunk,
-  onToggleFavorite,
-  onRatingChange,
-  showOnlyFavorites = false,
-  hideDrunkBeers = false,
-  showOnlyUnrated = false,
-  sessionFilter = "all",
-}) {
-  let beers = brewery.beers.filter((beer) => beerMatchesSession(beer, sessionFilter));
-  if (showOnlyFavorites) beers = beers.filter((beer) => favoriteBeers.includes(beer.id));
-  if (showOnlyUnrated) {
-    beers = beers.filter(
-      (beer) => drunkBeers.includes(beer.id) && beerRatings[beer.id] === undefined,
-    );
-  } else if (hideDrunkBeers) {
-    beers = beers.filter((beer) => !drunkBeers.includes(beer.id));
-  }
-
-  if (beers.length === 0) return null;
-
-  const tried = beers.filter((beer) => drunkBeers.includes(beer.id)).length;
-  const locationLabel = brewery.stand
-    ? `${brewery.location} · stand ${brewery.stand}`
-    : brewery.location;
-
-  return (
-    <Card sx={{ mb: 2 }}>
-      <CardContent>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "flex-start",
-            mb: 1,
-          }}
-        >
-          <Box>
-            <Box sx={{ display: "flex", alignItems: "center", gap: 1, flexWrap: "wrap" }}>
-              <Typography variant="h6" component="h2">
-                {brewery.name}
-              </Typography>
-              {brewery.noLow ? <Chip label="No/Low" size="small" /> : null}
-            </Box>
-            <Box sx={{ display: "flex", alignItems: "center", gap: 0.5, mt: 0.5 }}>
-              <LocationOnIcon fontSize="small" color="action" />
-              <Typography variant="body2" color="text.secondary">
-                {locationLabel}
-              </Typography>
-            </Box>
-          </Box>
-          <Chip
-            label={`${tried}/${beers.length} tried`}
-            color={tried === beers.length ? "success" : "default"}
-            size="small"
-          />
-        </Box>
-        <Divider sx={{ my: 1 }} />
-        <List dense>
-          {beers.map((beer) => (
-            <MemoBeerItem
-              key={beer.id}
-              beer={beer}
-              brewery={brewery}
-              isDrunk={drunkBeers.includes(beer.id)}
-              isFavorite={favoriteBeers.includes(beer.id)}
-              rating={beerRatings[beer.id] || 0}
-              onToggleDrunk={onToggleDrunk}
-              onToggleFavorite={onToggleFavorite}
-              onRatingChange={onRatingChange}
-            />
-          ))}
-        </List>
-      </CardContent>
-    </Card>
-  );
-}
-
-const MemoBreweryCard = memo(BreweryCard);
 
 function AchievementDialog({ achievement, onClose }) {
   return (
@@ -640,7 +351,7 @@ export default function App() {
             >
               RAISE THE BAR
             </Typography>
-            <Typography variant="body2">
+            <Typography variant="body2" sx={{ fontFamily: "\"Silkscreen\", monospace", fontSize: "0.7rem" }}>
               {ratedCount} rated · {drunkBeers.length}/{TOTAL_BEERS} tried
             </Typography>
           </Toolbar>
@@ -670,8 +381,10 @@ export default function App() {
           <Tabs
             value={tab}
             onChange={(_event, value) => setTab(value)}
-            centered
-            sx={{ mb: 2 }}
+            variant="scrollable"
+            scrollButtons="auto"
+            allowScrollButtonsMobile
+            sx={{ mb: 3, px: 0.5, pb: 1 }}
           >
             <Tab icon={<SportsBarIcon />} label="All Beers" iconPosition="start" />
             <Tab
@@ -734,6 +447,7 @@ export default function App() {
             <FormControlLabel
               control={
                 <Checkbox
+                  {...pixelCheckboxProps}
                   checked={hideDrunkBeers}
                   onChange={(event) => setHideDrunkBeers(event.target.checked)}
                   color="primary"
@@ -744,6 +458,7 @@ export default function App() {
             <FormControlLabel
               control={
                 <Checkbox
+                  {...pixelCheckboxProps}
                   checked={showOnlyUnrated}
                   onChange={(event) => setShowOnlyUnrated(event.target.checked)}
                   color="primary"

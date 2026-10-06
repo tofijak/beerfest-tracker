@@ -1,19 +1,10 @@
 import { useMemo } from "react";
-import {
-  Box,
-  Card,
-  CardContent,
-  Checkbox,
-  Chip,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  Typography,
-} from "@mui/material";
+import { Box, Card, CardContent, Checkbox, Chip, Typography } from "@mui/material";
 import { breweries } from "../data/beers";
 import { UNTAPPD } from "../data/untappd";
-import { GRADES, STAND_COLORS, beerGrade, gradeRank } from "../utils";
+import { GRADES, STAND_COLORS, beerGrade, gradeColor, gradeRank } from "../utils";
+import { PIXEL_FONT } from "../theme";
+import { pixelCheckboxProps } from "./PixelUI";
 
 /**
  * Targets = favorites plus untried beers graded at or above `minGrade`.
@@ -70,14 +61,12 @@ export function RoutePlanner({
 
   return (
     <Box>
-      <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+      <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
         Your must-try beers (favorites + untried beers at or above the grade) ordered by stand.
         Ticking a beer marks it as tried.
       </Typography>
-      <Typography variant="caption" color="text.secondary">
-        Minimum grade
-      </Typography>
-      <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap", mb: 1.5 }}>
+      <Typography sx={{ fontFamily: PIXEL_FONT, fontSize: "0.7rem", mb: 1 }}>MIN GRADE</Typography>
+      <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap", mb: 2 }}>
         {GRADES.slice(0, 5).map((grade) => (
           <Chip
             key={grade}
@@ -88,10 +77,8 @@ export function RoutePlanner({
           />
         ))}
       </Box>
-      <Typography variant="caption" color="text.secondary">
-        Start at stand
-      </Typography>
-      <Box sx={{ display: "flex", gap: 1, mb: 2 }}>
+      <Typography sx={{ fontFamily: PIXEL_FONT, fontSize: "0.7rem", mb: 1 }}>START AT</Typography>
+      <Box sx={{ display: "flex", gap: 1, mb: 3 }}>
         {[1, 2, 3].map((stand) => (
           <Chip
             key={stand}
@@ -108,49 +95,98 @@ export function RoutePlanner({
         </Typography>
       ) : (
         <>
-          <Typography variant="subtitle2" sx={{ mb: 1 }}>
-            {total} beers across {route.reduce((n, leg) => n + leg.stops.length, 0)} breweries
+          <Typography sx={{ fontFamily: PIXEL_FONT, fontSize: "0.8rem", mb: 2, color: "#ffd23f" }}>
+            {total} beers · {route.reduce((n, leg) => n + leg.stops.length, 0)} breweries
           </Typography>
-          {route.map((leg, index) => (
-            <Card key={leg.stand} sx={{ mb: 2, borderLeft: `6px solid ${STAND_COLORS[leg.stand]}` }}>
-              <CardContent>
-                <Typography variant="h6">
-                  {index + 1}. Stand {leg.stand}
-                </Typography>
-                {leg.stops.map(({ brewery, targets }) => (
-                  <Box key={brewery.id} sx={{ mt: 1 }}>
-                    <Typography variant="subtitle2">{brewery.name}</Typography>
-                    <List dense disablePadding>
-                      {targets.map((beer) => {
-                        const info = UNTAPPD[beer.id];
-                        return (
-                          <ListItem key={beer.id} disableGutters>
-                            <ListItemIcon sx={{ minWidth: 42 }}>
+          {route.map((leg, index) => {
+            const color = STAND_COLORS[leg.stand];
+            return (
+              <Box key={leg.stand} sx={{ display: "flex", gap: 2 }}>
+                <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                  <Box
+                    sx={{
+                      width: 44,
+                      height: 44,
+                      display: "grid",
+                      placeItems: "center",
+                      bgcolor: color,
+                      color: "#07070f",
+                      border: "3px solid #07070f",
+                      boxShadow: "4px 4px 0 #2a1458",
+                      fontFamily: PIXEL_FONT,
+                      fontWeight: 700,
+                      fontSize: "1.2rem",
+                    }}
+                  >
+                    {index + 1}
+                  </Box>
+                  {index < route.length - 1 && (
+                    <Box
+                      sx={{
+                        flex: 1,
+                        width: 0,
+                        my: 0.5,
+                        borderLeft: `4px dotted ${color}`,
+                      }}
+                    />
+                  )}
+                </Box>
+                <Card sx={{ flex: 1, mb: 3, borderColor: color }}>
+                  <CardContent>
+                    <Typography variant="h6" sx={{ color }}>
+                      Stand {leg.stand}
+                    </Typography>
+                    {leg.stops.map(({ brewery, targets }) => (
+                      <Box key={brewery.id} sx={{ mt: 1.5 }}>
+                        <Typography sx={{ fontFamily: PIXEL_FONT, fontSize: "0.8rem" }}>
+                          {brewery.name}
+                        </Typography>
+                        {targets.map((beer) => {
+                          const info = UNTAPPD[beer.id];
+                          const grade = beerGrade(beer.id);
+                          return (
+                            <Box
+                              key={beer.id}
+                              sx={{ display: "flex", alignItems: "center", gap: 0.5, mt: 0.5 }}
+                            >
                               <Checkbox
-                                color="success"
+                                {...pixelCheckboxProps}
                                 checked={drunkBeers.includes(beer.id)}
                                 onChange={() => onToggleDrunk(beer.id)}
+                                inputProps={{ "aria-label": `Tried ${beer.name}` }}
                               />
-                            </ListItemIcon>
-                            <ListItemText
-                              primary={beer.name}
-                              secondary={[
-                                beerGrade(beer.id),
-                                info?.rating ? `Untappd ${info.rating.toFixed(2)}` : null,
-                                beer.session,
-                              ]
-                                .filter(Boolean)
-                                .join(" · ")}
-                            />
-                          </ListItem>
-                        );
-                      })}
-                    </List>
-                  </Box>
-                ))}
-              </CardContent>
-            </Card>
-          ))}
+                              <Box sx={{ flex: 1, minWidth: 0 }}>
+                                <Typography variant="body2" sx={{ overflowWrap: "anywhere" }}>
+                                  {beer.name}
+                                </Typography>
+                                <Typography variant="caption" color="text.secondary">
+                                  {beer.session}
+                                  {info?.rating != null ? ` · Untappd ${info.rating.toFixed(2)}` : ""}
+                                </Typography>
+                              </Box>
+                              {grade && (
+                                <Box
+                                  sx={{
+                                    px: 1,
+                                    fontFamily: PIXEL_FONT,
+                                    fontSize: "0.75rem",
+                                    bgcolor: gradeColor(grade),
+                                    color: "#07070f",
+                                  }}
+                                >
+                                  {grade}
+                                </Box>
+                              )}
+                            </Box>
+                          );
+                        })}
+                      </Box>
+                    ))}
+                  </CardContent>
+                </Card>
+              </Box>
+            );
+          })}
         </>
       )}
     </Box>
