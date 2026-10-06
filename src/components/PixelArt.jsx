@@ -157,7 +157,7 @@ export function PixelBackdrop() {
             position: "absolute",
             ...pos,
             opacity: 0.55,
-            display: { xs: index < 2 ? "block" : "none", md: "block" },
+            display: { xs: "none", md: "block" },
             animation: "floatY 6s ease-in-out infinite",
             animationDelay: delay,
             "@media (prefers-reduced-motion: reduce)": { animation: "none" },

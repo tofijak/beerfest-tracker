@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { Box, Card, CardContent, Typography } from "@mui/material";
 import { breweries } from "../data/beers";
-import { STAND_COLORS, beerGrade, gradeColor, gradeRank } from "../utils";
+import { STAND_COLORS, ratingColor, ratingOf } from "../utils";
 import { PIXEL_FONT } from "../theme";
 import { PixelBar } from "./PixelUI";
 
@@ -14,7 +14,7 @@ function zoneStats(stand, drunkBeers) {
     breweries: list,
     total: beers.length,
     tried: beers.filter((beer) => drunkBeers.includes(beer.id)).length,
-    top: beers.filter((beer) => beerGrade(beer.id)?.startsWith("A")).length,
+    top: beers.filter((beer) => (ratingOf(beer.id) ?? 0) >= 4.2).length,
   };
 }
 
@@ -30,8 +30,8 @@ function Tower({ stand, total, active, onSelect }) {
       sx={{
         all: "unset",
         cursor: "pointer",
-        width: 104,
-        height: 104,
+        width: { xs: 72, sm: 104 },
+        height: { xs: 72, sm: 104 },
         position: "relative",
         transformStyle: "preserve-3d",
         transition: "transform 160ms",
@@ -82,11 +82,11 @@ export function VenueMap({ drunkBeers }) {
       <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
         Schematic of the three stand areas at Ridehuset — tower height is beer count. Tap a tower.
       </Typography>
-      <Box sx={{ height: 280, display: "grid", placeItems: "center", perspective: 900, mb: 2 }}>
+      <Box sx={{ height: { xs: 200, sm: 280 }, display: "grid", placeItems: "center", perspective: 900, mb: 2 }}>
         <Box
           sx={{
             display: "flex",
-            gap: 4,
+            gap: { xs: 3, sm: 4 },
             transformStyle: "preserve-3d",
             transform: "rotateX(58deg) rotateZ(-38deg)",
           }}
@@ -102,7 +102,7 @@ export function VenueMap({ drunkBeers }) {
           ))}
         </Box>
       </Box>
-      <Box sx={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 1.5, mb: 3 }}>
+      <Box sx={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: { xs: 1, sm: 1.5 }, mb: 3 }}>
         {STANDS.map((stand) => {
           const { tried, total, top } = stats[stand];
           return (
@@ -116,12 +116,12 @@ export function VenueMap({ drunkBeers }) {
               }}
             >
               <CardContent sx={{ p: 1.5, "&:last-child": { pb: 1.5 } }}>
-                <Typography variant="h6" sx={{ color: STAND_COLORS[stand] }}>
+                <Typography variant="h6" sx={{ color: STAND_COLORS[stand], fontSize: { xs: "0.85rem", sm: "1.25rem" } }}>
                   Stand {stand}
                 </Typography>
                 <PixelBar value={tried} total={total} color={STAND_COLORS[stand]} />
                 <Typography variant="caption" color="text.secondary" sx={{ display: "block", mt: 0.5 }}>
-                  {tried}/{total} tried · {top} A-grade
+                  {tried}/{total} tried · {top} 4.2+
                 </Typography>
               </CardContent>
             </Card>
@@ -135,9 +135,9 @@ export function VenueMap({ drunkBeers }) {
           </Typography>
           {active.breweries.map((brewery) => {
             const best = brewery.beers
-              .map((beer) => beerGrade(beer.id))
-              .filter(Boolean)
-              .sort((a, b) => gradeRank(a) - gradeRank(b))[0];
+              .map((beer) => ratingOf(beer.id))
+              .filter((value) => value != null)
+              .sort((a, b) => b - a)[0];
             return (
               <Box
                 key={brewery.id}
@@ -158,11 +158,11 @@ export function VenueMap({ drunkBeers }) {
                       px: 1,
                       fontFamily: PIXEL_FONT,
                       fontSize: "0.7rem",
-                      bgcolor: gradeColor(best),
+                      bgcolor: ratingColor(best),
                       color: "#07070f",
                     }}
                   >
-                    {best}
+                    {best.toFixed(2)}
                   </Box>
                 )}
               </Box>

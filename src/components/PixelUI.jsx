@@ -47,34 +47,31 @@ export function PixelBar({ value, total, color = "#39ff88", segments = 10 }) {
   );
 }
 
-/** Square grade plate with the Untappd score underneath. */
-export function ScorePlate({ grade, rating, count, color }) {
+/** Square plate with the Untappd rating (the number itself) and rating count underneath. */
+export function ScorePlate({ rating, count, color }) {
   return (
-    <Box sx={{ textAlign: "center", minWidth: 58 }}>
+    <Box sx={{ textAlign: "center", minWidth: { xs: 48, sm: 58 } }}>
       <Box
         sx={{
-          width: 52,
-          height: 44,
+          width: { xs: 48, sm: 56 },
+          height: { xs: 38, sm: 44 },
           mx: "auto",
           display: "grid",
           placeItems: "center",
-          bgcolor: grade ? color : "#241a4d",
-          color: "#07070f",
+          bgcolor: rating != null ? color : "#241a4d",
+          color: rating != null ? "#07070f" : "#9aa4c7",
           border: "3px solid #07070f",
           boxShadow: "3px 3px 0 #2a1458",
           fontFamily: PIXEL_FONT,
           fontWeight: 700,
-          fontSize: "1.15rem",
+          fontSize: { xs: "0.85rem", sm: "1rem" },
         }}
       >
-        {grade ?? "–"}
+        {rating != null ? rating.toFixed(2) : "–"}
       </Box>
-      <Box sx={{ fontFamily: PIXEL_FONT, fontSize: "0.7rem", mt: 0.75, color: "#eef1ff" }}>
-        {rating != null ? rating.toFixed(2) : "n/a"}
+      <Box sx={{ fontSize: "0.62rem", mt: 0.5, color: "text.secondary" }}>
+        {count != null ? `${count} ratings` : "no rating"}
       </Box>
-      {count != null && (
-        <Box sx={{ fontSize: "0.62rem", color: "text.secondary" }}>{count} ratings</Box>
-      )}
     </Box>
   );
 }

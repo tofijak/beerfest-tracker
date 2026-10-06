@@ -28,32 +28,42 @@ export const SESSION_META = {
   all: { label: "No/Low", color: "#546e7a" },
 };
 
-export const GRADES = ["A+", "A", "A-", "B+", "B", "B-", "C+", "C"];
-
-/** Minimum Untappd rating for each grade, best first. */
-const GRADE_CUTOFFS = [4.35, 4.2, 4.1, 4.0, 3.85, 3.7, 3.55, 0];
-
-export function gradeFromRating(rating) {
-  if (typeof rating !== "number") return null;
-  return GRADES[GRADE_CUTOFFS.findIndex((cutoff) => rating >= cutoff)];
+export function ratingOf(beerId) {
+  return UNTAPPD[beerId]?.rating ?? null;
 }
 
-/** Lower is better; unrated beers sort last. */
-export function gradeRank(grade) {
-  const index = GRADES.indexOf(grade);
-  return index === -1 ? GRADES.length : index;
-}
-
-export function gradeColor(grade) {
-  if (!grade) return "#546e7a";
-  if (grade.startsWith("A")) return "#39ff88";
-  if (grade.startsWith("B")) return "#ffd23f";
+export function ratingColor(rating) {
+  if (rating == null) return "#546e7a";
+  if (rating >= 4.2) return "#39ff88";
+  if (rating >= 3.9) return "#ffd23f";
   return "#ff7a59";
 }
 
-/** Grade for a beer id, derived from its Untappd rating. */
-export function beerGrade(beerId) {
-  return gradeFromRating(UNTAPPD[beerId]?.rating);
+/** Broad style bucket for filtering; the PDF's style strings are free text. */
+export const STYLE_CATEGORIES = [
+  "IPA",
+  "Pale Ale",
+  "Stout / Porter",
+  "Sour / Wild",
+  "Lager / Pils",
+  "Saison",
+  "Barleywine / Strong",
+  "Mead / Other",
+  "No / Low",
+];
+
+export function styleCategory(beer) {
+  if (beer.session === "all") return "No / Low";
+  const style = (beer.style ?? "").toLowerCase();
+  if (/barley ?wine|wee heavy|strong ale/.test(style)) return "Barleywine / Strong";
+  if (/stout|porter/.test(style)) return "Stout / Porter";
+  if (/sour|wild|lambic|gose|flanders|oud bruin|gruit|brett|grisette|smoothie|proxy/.test(style))
+    return "Sour / Wild";
+  if (/ipa|tipa/.test(style)) return "IPA";
+  if (/saison|farmhouse|table beer/.test(style)) return "Saison";
+  if (/pils|lager|helles|märzen|festbier|keller|bock|shandy/.test(style)) return "Lager / Pils";
+  if (/pale ale|bitter|brown ale|witbier/.test(style)) return "Pale Ale";
+  return "Mead / Other";
 }
 
 export const STAND_COLORS = { 1: "#39ff88", 2: "#00e5ff", 3: "#ff2bd6" };

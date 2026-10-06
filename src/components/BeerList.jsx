@@ -3,14 +3,14 @@ import { Box, Card, CardContent, Checkbox, Chip, IconButton, Slider, Typography 
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import StarIcon from "@mui/icons-material/Star";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
+import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
+import PlaylistAddCheckIcon from "@mui/icons-material/PlaylistAddCheck";
 import { UNTAPPD } from "../data/untappd";
 import {
   SESSION_META,
   STAND_COLORS,
-  beerGrade,
-  beerMatchesSession,
   formatBeerMeta,
-  gradeColor,
+  ratingColor,
   untappdSearchUrl,
 } from "../utils";
 import { PIXEL_FONT } from "../theme";
@@ -21,27 +21,30 @@ function BeerItem({
   brewery,
   isDrunk,
   isFavorite,
+  isPlanned,
+  showBrewery = false,
   rating,
   onToggleDrunk,
   onToggleFavorite,
+  onTogglePlan,
   onRatingChange,
+  onOpen,
 }) {
   const meta = formatBeerMeta(beer);
   const untappd = UNTAPPD[beer.id];
-  const grade = beerGrade(beer.id);
   const session = SESSION_META[beer.session] ?? SESSION_META.all;
 
   return (
     <Box
       sx={{
         display: "flex",
-        gap: 1,
+        gap: { xs: 0.25, sm: 1 },
         alignItems: "stretch",
         mb: 1.25,
         bgcolor: isDrunk ? "rgba(57,255,136,0.08)" : "rgba(255,255,255,0.03)",
         border: "2px solid",
         borderColor: isDrunk ? "rgba(57,255,136,0.55)" : "rgba(154,164,199,0.2)",
-        borderLeft: `8px solid ${session.color}`,
+        borderLeft: { xs: `6px solid ${session.color}`, sm: `8px solid ${session.color}` },
         transition: "background-color 120ms, border-color 120ms",
         "&:hover": { borderColor: "rgba(0,229,255,0.7)" },
       }}
@@ -50,12 +53,19 @@ function BeerItem({
         {...pixelCheckboxProps}
         checked={isDrunk}
         onChange={() => onToggleDrunk(beer.id)}
-        sx={{ alignSelf: "flex-start", mt: 0.5 }}
+        sx={{ alignSelf: "flex-start", mt: 0.5, p: { xs: 0.5, sm: 1 } }}
         inputProps={{ "aria-label": `Tried ${beer.name}` }}
       />
       <Box sx={{ flex: 1, minWidth: 0, py: 1 }}>
         <Typography
+          component="button"
+          onClick={() => onOpen(beer.id)}
           sx={{
+            all: "unset",
+            cursor: "pointer",
+            display: "block",
+            "&:hover": { color: "#00e5ff" },
+            "&:focus-visible": { outline: "2px solid #ffd23f" },
             fontWeight: isFavorite ? 700 : 500,
             textDecoration: isDrunk ? "line-through" : "none",
             opacity: isDrunk ? 0.65 : 1,
@@ -64,6 +74,11 @@ function BeerItem({
         >
           {beer.name}
         </Typography>
+        {showBrewery && (
+          <Typography variant="caption" color="text.secondary" sx={{ display: "block" }}>
+            {brewery.name} · stand {brewery.stand}
+          </Typography>
+        )}
         <Box sx={{ display: "flex", gap: 0.75, alignItems: "center", flexWrap: "wrap", mt: 0.5 }}>
           <Box
             component="span"
@@ -130,61 +145,59 @@ function BeerItem({
           </Box>
         )}
       </Box>
-      <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", py: 1, pr: 0.5, gap: 0.5 }}>
+      <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", py: 1, pr: 0.5, gap: 0.5, flexShrink: 0 }}>
         {beer.name !== "TBA" && (
           <ScorePlate
-            grade={grade}
             rating={untappd?.rating ?? null}
             count={untappd?.count ?? null}
-            color={gradeColor(grade)}
+            color={ratingColor(untappd?.rating ?? null)}
           />
         )}
-        <IconButton
-          onClick={() => onToggleFavorite(beer.id)}
-          color={isFavorite ? "warning" : "default"}
-          aria-label={isFavorite ? "Remove favorite" : "Add favorite"}
-        >
-          {isFavorite ? <StarIcon /> : <StarBorderIcon />}
-        </IconButton>
+        <Box sx={{ display: "flex", flexDirection: { xs: "row", sm: "column" } }}>
+          <IconButton
+            onClick={() => onToggleFavorite(beer.id)}
+            color={isFavorite ? "warning" : "default"}
+            aria-label={isFavorite ? "Remove favorite" : "Add favorite"}
+            size="small"
+          >
+            {isFavorite ? <StarIcon /> : <StarBorderIcon />}
+          </IconButton>
+          <IconButton
+            onClick={() => onTogglePlan(beer.id)}
+            color={isPlanned ? "primary" : "default"}
+            aria-label={isPlanned ? "Remove from my route" : "Add to my route"}
+            size="small"
+          >
+            {isPlanned ? <PlaylistAddCheckIcon /> : <PlaylistAddIcon />}
+          </IconButton>
+        </Box>
       </Box>
     </Box>
   );
 }
 
-const MemoBeerItem = memo(BeerItem);
+export const MemoBeerItem = memo(BeerItem);
 
 function BreweryCard({
   brewery,
+  beers,
   drunkBeers,
   favoriteBeers,
+  plannedBeers,
   beerRatings,
   onToggleDrunk,
   onToggleFavorite,
+  onTogglePlan,
   onRatingChange,
-  showOnlyFavorites = false,
-  hideDrunkBeers = false,
-  showOnlyUnrated = false,
-  sessionFilter = "all",
+  onOpen,
 }) {
-  let beers = brewery.beers.filter((beer) => beerMatchesSession(beer, sessionFilter));
-  if (showOnlyFavorites) beers = beers.filter((beer) => favoriteBeers.includes(beer.id));
-  if (showOnlyUnrated) {
-    beers = beers.filter(
-      (beer) => drunkBeers.includes(beer.id) && beerRatings[beer.id] === undefined,
-    );
-  } else if (hideDrunkBeers) {
-    beers = beers.filter((beer) => !drunkBeers.includes(beer.id));
-  }
-
-  if (beers.length === 0) return null;
-
   const tried = beers.filter((beer) => drunkBeers.includes(beer.id)).length;
   const color = STAND_COLORS[brewery.stand] ?? "#9aa4c7";
 
   return (
     <Card sx={{ mb: 3, borderColor: color }}>
-      <CardContent>
-        <Box sx={{ display: "flex", gap: 1.5, alignItems: "center", mb: 2 }}>
+      <CardContent sx={{ px: { xs: 1.25, sm: 2 } }}>
+        <Box sx={{ display: "flex", gap: 1.5, alignItems: "center", flexWrap: "wrap", mb: 2 }}>
           <Box
             sx={{
               flexShrink: 0,
@@ -214,7 +227,7 @@ function BreweryCard({
               {brewery.location} · stand {brewery.stand}
             </Typography>
           </Box>
-          <Box sx={{ textAlign: "right" }}>
+          <Box sx={{ textAlign: { xs: "left", sm: "right" }, width: { xs: "100%", sm: "auto" } }}>
             <PixelBar value={tried} total={beers.length} color={color} />
             <Typography sx={{ fontFamily: PIXEL_FONT, fontSize: "0.65rem", mt: 0.5 }}>
               {tried}/{beers.length} tried
@@ -228,10 +241,13 @@ function BreweryCard({
             brewery={brewery}
             isDrunk={drunkBeers.includes(beer.id)}
             isFavorite={favoriteBeers.includes(beer.id)}
+            isPlanned={plannedBeers.includes(beer.id)}
             rating={beerRatings[beer.id] || 0}
             onToggleDrunk={onToggleDrunk}
             onToggleFavorite={onToggleFavorite}
+            onTogglePlan={onTogglePlan}
             onRatingChange={onRatingChange}
+            onOpen={onOpen}
           />
         ))}
       </CardContent>

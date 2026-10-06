@@ -7,15 +7,12 @@ import {
   Card,
   CardContent,
   CardMedia,
-  Checkbox,
-  Chip,
   Container,
   CssBaseline,
   Dialog,
   DialogActions,
   DialogContent,
   DialogTitle,
-  FormControlLabel,
   Grid,
   InputAdornment,
   Slide,
@@ -32,9 +29,11 @@ import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import SearchIcon from "@mui/icons-material/Search";
 import MapIcon from "@mui/icons-material/Map";
 import RouteIcon from "@mui/icons-material/Route";
-import { MemoBreweryCard } from "./components/BeerList";
+import { MemoBeerItem, MemoBreweryCard } from "./components/BeerList";
+import { BeerDialog } from "./components/BeerDialog";
+import { FilterPanel } from "./components/FilterPanel";
+import { DEFAULT_FILTERS, applyFilters } from "./filters";
 import { theme } from "./theme";
-import { pixelCheckboxProps } from "./components/PixelUI";
 import { PixelBackdrop, PixelSprite } from "./components/PixelArt";
 import { Splash } from "./components/Splash";
 import { VenueMap } from "./components/Map";
@@ -164,25 +163,16 @@ function AchievementWall({ achievements }) {
 export default function App() {
   const [tab, setTab] = useState(0);
   const [query, setQuery] = useState("");
-  const [sessionFilter, setSessionFilter] = useLocalStorage(
-    `${STORAGE_PREFIX}sessionFilter`,
-    "all",
-  );
   const [drunkBeers, setDrunkBeers] = useLocalStorage(`${STORAGE_PREFIX}drunkBeers`, []);
   const [favoriteBeers, setFavoriteBeers] = useLocalStorage(
     `${STORAGE_PREFIX}favoriteBeers`,
     [],
   );
-  const [hideDrunkBeers, setHideDrunkBeers] = useLocalStorage(
-    `${STORAGE_PREFIX}hideDrunkBeers`,
-    false,
-  );
   const [beerRatings, setBeerRatings] = useLocalStorage(`${STORAGE_PREFIX}beerRatings`, {});
-  const [showOnlyUnrated, setShowOnlyUnrated] = useLocalStorage(
-    `${STORAGE_PREFIX}showOnlyUnrated`,
-    false,
-  );
-  const [minGrade, setMinGrade] = useLocalStorage(`${STORAGE_PREFIX}routeMinGrade`, "A-");
+  const [filters, setFilters] = useLocalStorage(`${STORAGE_PREFIX}filters`, DEFAULT_FILTERS);
+  const [openedBeerId, setOpenedBeerId] = useState(null);
+  const [plannedBeers, setPlannedBeers] = useLocalStorage(`${STORAGE_PREFIX}plannedBeers`, []);
+  const [minRating, setMinRating] = useLocalStorage(`${STORAGE_PREFIX}routeMinRating`, 4.1);
   const [startStand, setStartStand] = useLocalStorage(`${STORAGE_PREFIX}routeStartStand`, 1);
   const [achievedMilestones, setAchievedMilestones] = useLocalStorage(
     `${STORAGE_PREFIX}achievedMilestones`,
@@ -256,6 +246,15 @@ export default function App() {
     [setFavoriteBeers],
   );
 
+  const togglePlan = useCallback(
+    (beerId) => {
+      setPlannedBeers((current) =>
+        current.includes(beerId) ? current.filter((id) => id !== beerId) : [...current, beerId],
+      );
+    },
+    [setPlannedBeers],
+  );
+
   const changeRating = useCallback(
     (beerId, rating) => {
       setBeerRatings((current) => ({ ...current, [beerId]: rating }));
@@ -297,15 +296,29 @@ export default function App() {
   }, []);
 
   const debouncedQuery = useDebouncedValue(query, 100);
-  const filteredBreweries = useMemo(() => {
-    const needle = debouncedQuery.toLowerCase().trim();
-    if (!needle) return breweries;
-    return breweries.filter(
-      (brewery) =>
-        brewery.name.toLowerCase().includes(needle) ||
-        brewery.beers.some((beer) => beer.name.toLowerCase().includes(needle)),
-    );
-  }, [debouncedQuery]);
+  const effectiveFilters = useMemo(
+    () => ({ ...DEFAULT_FILTERS, ...filters, ...(tab === 1 ? { status: "favorites" } : {}) }),
+    [filters, tab],
+  );
+  const result = useMemo(
+    () =>
+      applyFilters(
+        effectiveFilters,
+        { drunkBeers, favoriteBeers, plannedBeers, beerRatings },
+        debouncedQuery,
+      ),
+    [effectiveFilters, drunkBeers, favoriteBeers, plannedBeers, beerRatings, debouncedQuery],
+  );
+  const resultCount = result.groups.reduce((n, group) => n + group.beers.length, 0);
+  const openBeer = useCallback((id) => setOpenedBeerId(id), []);
+  const openedEntry = useMemo(() => {
+    if (openedBeerId == null) return null;
+    for (const brewery of breweries) {
+      const beer = brewery.beers.find((item) => item.id === openedBeerId);
+      if (beer) return { beer, brewery };
+    }
+    return null;
+  }, [openedBeerId]);
 
   const unlocked = useMemo(
     () => ACHIEVEMENTS.filter((item) => achievedMilestones.includes(item.count)),
@@ -356,7 +369,7 @@ export default function App() {
             </Typography>
           </Toolbar>
         </AppBar>
-        <Container maxWidth="md" sx={{ mt: 3, mb: 3 }}>
+        <Container maxWidth="md" sx={{ mt: { xs: 2, sm: 3 }, mb: 3, px: { xs: 1.5, sm: 3 } }}>
           <Typography variant="body2" color="text.secondary" sx={{ mb: 0.5 }}>
             Serpier × Raise the Bar · Ridehuset, Aarhus · fredag 9. oktober 2026
           </Typography>
@@ -366,7 +379,7 @@ export default function App() {
           <TextField
             fullWidth
             variant="outlined"
-            placeholder="Search breweries..."
+            placeholder="Search beers, breweries, styles..."
             value={query}
             onChange={(event) => setQuery(event.target.value)}
             sx={{ mb: 2 }}
@@ -410,139 +423,84 @@ export default function App() {
               />
             )}
           </Tabs>
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              mb: 2,
-              gap: 1,
-              flexWrap: "wrap",
-            }}
-          >
-            {[
-              ["all", "All sessions"],
-              ["green", "Green"],
-              ["yellow", "Yellow"],
-              ["red", "Red"],
-              ["nolo", "No/Low"],
-            ].map(([value, label]) => (
-              <Chip
-                key={value}
-                label={label}
-                onClick={() => setSessionFilter(value)}
-                color={sessionFilter === value ? "primary" : "default"}
-                variant={sessionFilter === value ? "filled" : "outlined"}
-              />
-            ))}
-          </Box>
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              mb: 3,
-              gap: 4,
-              flexWrap: "wrap",
-            }}
-          >
-            <FormControlLabel
-              control={
-                <Checkbox
-                  {...pixelCheckboxProps}
-                  checked={hideDrunkBeers}
-                  onChange={(event) => setHideDrunkBeers(event.target.checked)}
-                  color="primary"
-                />
-              }
-              label="Hide already drunk beers"
-            />
-            <FormControlLabel
-              control={
-                <Checkbox
-                  {...pixelCheckboxProps}
-                  checked={showOnlyUnrated}
-                  onChange={(event) => setShowOnlyUnrated(event.target.checked)}
-                  color="primary"
-                />
-              }
-              label="Show only unrated drunk beers"
-            />
-          </Box>
-          {tab === 0 && (
-            <Box>
-              {filteredBreweries.length === 0 ? (
-                <Typography
-                  variant="body1"
-                  color="text.secondary"
-                  align="center"
-                  sx={{ mt: 4 }}
-                >
-                  {`No breweries found matching "${debouncedQuery}"`}
+          {tab <= 1 && (
+            <>
+              <FilterPanel filters={effectiveFilters} onChange={setFilters} resultCount={resultCount} />
+              {resultCount === 0 ? (
+                <Typography variant="body1" color="text.secondary" align="center" sx={{ mt: 4 }}>
+                  {tab === 1 && favoriteBeers.length === 0
+                    ? "No favorite beers yet. Star some beers to see them here!"
+                    : "No beers match these filters."}
                 </Typography>
+              ) : result.flat ? (
+                <Card sx={{ mb: 3 }}>
+                  <CardContent sx={{ px: { xs: 1.25, sm: 2 } }}>
+                    {result.flat.map(({ beer, brewery }) => (
+                      <MemoBeerItem
+                        key={beer.id}
+                        beer={beer}
+                        brewery={brewery}
+                        showBrewery
+                        isDrunk={drunkBeers.includes(beer.id)}
+                        isFavorite={favoriteBeers.includes(beer.id)}
+                        isPlanned={plannedBeers.includes(beer.id)}
+                        rating={beerRatings[beer.id] || 0}
+                        onToggleDrunk={toggleDrunk}
+                        onToggleFavorite={toggleFavorite}
+                        onTogglePlan={togglePlan}
+                        onRatingChange={changeRating}
+                        onOpen={openBeer}
+                      />
+                    ))}
+                  </CardContent>
+                </Card>
               ) : (
-                filteredBreweries.map((brewery) => (
+                result.groups.map(({ brewery, beers }) => (
                   <MemoBreweryCard
                     key={brewery.id}
                     brewery={brewery}
+                    beers={beers}
                     drunkBeers={drunkBeers}
                     favoriteBeers={favoriteBeers}
+                    plannedBeers={plannedBeers}
                     beerRatings={beerRatings}
                     onToggleDrunk={toggleDrunk}
                     onToggleFavorite={toggleFavorite}
+                    onTogglePlan={togglePlan}
                     onRatingChange={changeRating}
-                    hideDrunkBeers={hideDrunkBeers}
-                    showOnlyUnrated={showOnlyUnrated}
-                    sessionFilter={sessionFilter}
+                    onOpen={openBeer}
                   />
                 ))
               )}
-            </Box>
-          )}
-          {tab === 1 && (
-            <Box>
-              {favoriteBeers.length === 0 ? (
-                <Typography
-                  variant="body1"
-                  color="text.secondary"
-                  align="center"
-                  sx={{ mt: 4 }}
-                >
-                  No favorite beers yet. Star some beers to see them here!
-                </Typography>
-              ) : (
-                filteredBreweries.map((brewery) => (
-                  <MemoBreweryCard
-                    key={brewery.id}
-                    brewery={brewery}
-                    drunkBeers={drunkBeers}
-                    favoriteBeers={favoriteBeers}
-                    beerRatings={beerRatings}
-                    onToggleDrunk={toggleDrunk}
-                    onToggleFavorite={toggleFavorite}
-                    onRatingChange={changeRating}
-                    showOnlyFavorites
-                    hideDrunkBeers={hideDrunkBeers}
-                    showOnlyUnrated={showOnlyUnrated}
-                    sessionFilter={sessionFilter}
-                  />
-                ))
-              )}
-            </Box>
+            </>
           )}
           {tab === 2 && <VenueMap drunkBeers={drunkBeers} />}
           {tab === 3 && (
             <RoutePlanner
               drunkBeers={drunkBeers}
               favoriteBeers={favoriteBeers}
-              minGrade={minGrade}
+              minRating={minRating}
               startStand={startStand}
-              onMinGradeChange={setMinGrade}
+              onMinRatingChange={setMinRating}
               onStartStandChange={setStartStand}
+              plannedBeers={plannedBeers}
+              onPlannedChange={setPlannedBeers}
               onToggleDrunk={toggleDrunk}
             />
           )}
           {hasAchievements && tab === 4 && <AchievementWall achievements={unlocked} />}
         </Container>
       </Box>
+      <BeerDialog
+        entry={openedEntry}
+        drunkBeers={drunkBeers}
+        favoriteBeers={favoriteBeers}
+        plannedBeers={plannedBeers}
+        onToggleDrunk={toggleDrunk}
+        onToggleFavorite={toggleFavorite}
+        onTogglePlan={togglePlan}
+        onClose={() => setOpenedBeerId(null)}
+      />
       <Splash open={splashOpen} onDismiss={dismissSplash} />
       <AchievementDialog
         achievement={activeAchievement}

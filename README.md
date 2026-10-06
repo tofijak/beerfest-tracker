@@ -35,9 +35,11 @@ A local-only React + Vite + MUI app for checking off beers, starring favorites, 
 - TBA entries kept as TBA
 - Country codes and stand numbers from the official overview
 - Untappd search links on every named beer
-- Untappd rating, rating count and a grade (A+ → C) derived from the rating on 85 beers, linking straight to the Untappd page
+- Untappd rating + rating count on 223 of 275 beers, with a direct link to the Untappd page
+- Tap a beer for details (style, ABV, rating, quick actions)
+- Filters: status, session, stand, style, ABV range, rating range, only-rated, plus sort by rating / ABV / name
 - **Map** tab: schematic of the three stand areas with per-zone progress
-- **Route** tab: must-try route (favorites + untried beers above a chosen grade) ordered by stand
+- **Route** tab: build your own route (list-add icon on any beer, reorder, copy) or use the suggested must-try route by stand
 - Dark neon UI with voxel-style 3D pixel art (mug, hop, can)
 - Check-off, favorites, rating slider, search, and hide/unrated filters
 - All progress stored in `localStorage` under the `greenSession.serpier.` prefix
