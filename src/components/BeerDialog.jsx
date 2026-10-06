@@ -7,7 +7,7 @@ import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
 import PlaylistAddCheckIcon from "@mui/icons-material/PlaylistAddCheck";
 import { UNTAPPD } from "../data/untappd";
 import { DESCRIPTIONS } from "../data/descriptions";
-import { SESSION_META, STAND_COLORS, ratingColor, styleCategory, untappdSearchUrl } from "../utils";
+import { SESSION_META, STAND_COLORS, ratingColor, styleCategory } from "../utils";
 import { PIXEL_FONT } from "../theme";
 import { pixelCheckboxProps } from "./PixelUI";
 
@@ -77,8 +77,8 @@ export function BeerDialog({ entry, drunkBeers, favoriteBeers, plannedBeers, onT
             <Button size="small" variant="contained" color={isPlanned ? "success" : "primary"} startIcon={isPlanned ? <PlaylistAddCheckIcon /> : <PlaylistAddIcon />} onClick={() => onTogglePlan(beer.id)}>
               My route
             </Button>
-            {beer.name !== "TBA" && (
-              <Button size="small" variant="contained" color="secondary" component="a" target="_blank" rel="noopener noreferrer" startIcon={<OpenInNewIcon />} href={untappd?.url ?? untappdSearchUrl(beer.name, brewery.name)}>
+            {untappd?.rating != null && untappd.url && (
+              <Button size="small" variant="contained" color="secondary" component="a" target="_blank" rel="noopener noreferrer" startIcon={<OpenInNewIcon />} href={untappd.url}>
                 Untappd
               </Button>
             )}

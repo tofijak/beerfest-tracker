@@ -10,11 +10,25 @@ export const breweries = [
     "noLow": false,
     "beers": [
       {
+        "id": 101,
+        "name": "Oude Lambik S25/26 Blend no. 12",
+        "style": "Lambic",
+        "abv": null,
+        "session": "green"
+      },
+      {
         "id": 102,
         "name": "Zenne d’Auge S25/26 Blend no. 47",
         "style": "Calvados BA lambic",
         "abv": null,
         "session": "green"
+      },
+      {
+        "id": 103,
+        "name": "Riesling Druivenlambik S25/26 Blend no. 47",
+        "style": "Lambic w. riesling grapes",
+        "abv": null,
+        "session": "yellow"
       },
       {
         "id": 104,
@@ -23,6 +37,13 @@ export const breweries = [
         "abv": 9.1,
         "session": "yellow",
         "notes": "collab Alex Foillard"
+      },
+      {
+        "id": 105,
+        "name": "Sherry Oloroso Lambik S25/26 Blend no. 28",
+        "style": "Sherry BA lambic",
+        "abv": 6,
+        "session": "red"
       },
       {
         "id": 106,
@@ -59,6 +80,13 @@ export const breweries = [
         "name": "Season to Give",
         "style": "DIPA",
         "abv": 8,
+        "session": "yellow"
+      },
+      {
+        "id": 204,
+        "name": "No Place Like Gnome",
+        "style": "Brown Ale",
+        "abv": 5,
         "session": "yellow"
       },
       {
@@ -333,6 +361,36 @@ export const breweries = [
     ]
   },
   {
+    "id": 8,
+    "name": "Dry & Bitter",
+    "location": "DK",
+    "stand": 1,
+    "noLow": false,
+    "beers": [
+      {
+        "id": 801,
+        "name": "TBA",
+        "style": null,
+        "abv": null,
+        "session": "green"
+      },
+      {
+        "id": 802,
+        "name": "TBA",
+        "style": null,
+        "abv": null,
+        "session": "yellow"
+      },
+      {
+        "id": 803,
+        "name": "TBA",
+        "style": null,
+        "abv": null,
+        "session": "red"
+      }
+    ]
+  },
+  {
     "id": 9,
     "name": "Ebeltoft Gårdbryggeri",
     "location": "DK",
@@ -342,6 +400,13 @@ export const breweries = [
       {
         "id": 901,
         "name": "Wildflower Cryo Fresh #1 Mosaic",
+        "style": "NE IPA",
+        "abv": 5.9,
+        "session": "green"
+      },
+      {
+        "id": 902,
+        "name": "Wildflower Cryo Fresh #2 Simcoe",
         "style": "NE IPA",
         "abv": 5.9,
         "session": "green"
@@ -439,6 +504,13 @@ export const breweries = [
         "name": "The Great Northern Barrel Aged Series 57",
         "style": "BA Barley Wine",
         "abv": 14.1,
+        "session": "green"
+      },
+      {
+        "id": 1102,
+        "name": "Raise the Bar",
+        "style": "DDH NE TIPA",
+        "abv": 10,
         "session": "green"
       },
       {
@@ -608,6 +680,20 @@ export const breweries = [
         "style": "NE IPA",
         "abv": 5.5,
         "session": "yellow"
+      },
+      {
+        "id": 1405,
+        "name": "Smack My Batch Up",
+        "style": "NE IPA",
+        "abv": 6,
+        "session": "red"
+      },
+      {
+        "id": 1406,
+        "name": "Bitter Now Than Ever",
+        "style": "Best Bitter",
+        "abv": 4,
+        "session": "red"
       }
     ]
   },
@@ -751,6 +837,14 @@ export const breweries = [
         "style": "Lager w. pink grapefruit and earl grey",
         "abv": 4.7,
         "session": "yellow"
+      },
+      {
+        "id": 1705,
+        "name": "C:7",
+        "style": "NE TIPA",
+        "abv": 9.5,
+        "session": "red",
+        "notes": "BLAS collab"
       },
       {
         "id": 1706,
@@ -902,6 +996,13 @@ export const breweries = [
     "noLow": false,
     "beers": [
       {
+        "id": 2101,
+        "name": "Morgendug",
+        "style": "Saison",
+        "abv": 5.6,
+        "session": "green"
+      },
+      {
         "id": 2102,
         "name": "Røgslør",
         "style": "Smoked Märzen",
@@ -921,6 +1022,13 @@ export const breweries = [
         "style": "Baltic Porter",
         "abv": 7.8,
         "session": "yellow"
+      },
+      {
+        "id": 2105,
+        "name": "Havgus",
+        "style": "DH Gose",
+        "abv": 4.5,
+        "session": "red"
       },
       {
         "id": 2106,
@@ -991,6 +1099,13 @@ export const breweries = [
     "noLow": false,
     "beers": [
       {
+        "id": 2301,
+        "name": "Nelson",
+        "style": "WC IPA",
+        "abv": 6.5,
+        "session": "green"
+      },
+      {
         "id": 2302,
         "name": "Fatlagred Vaniljstout 2026",
         "style": "BA Stout w. vanilla",
@@ -1016,6 +1131,13 @@ export const breweries = [
         "name": "Källaröl",
         "style": "Kellerbier",
         "abv": 4.3,
+        "session": "red"
+      },
+      {
+        "id": 2306,
+        "name": "Nippitatum",
+        "style": "BA Barleywine",
+        "abv": 15,
         "session": "red"
       }
     ]
@@ -1164,6 +1286,13 @@ export const breweries = [
         "name": "Narangi",
         "style": "NE IPA",
         "abv": 6.8,
+        "session": "red"
+      },
+      {
+        "id": 2606,
+        "name": "TBA",
+        "style": null,
+        "abv": null,
         "session": "red"
       }
     ]
@@ -1328,6 +1457,13 @@ export const breweries = [
     "stand": 2,
     "noLow": false,
     "beers": [
+      {
+        "id": 3001,
+        "name": "TOP POT",
+        "style": "NE DIPA",
+        "abv": 8,
+        "session": "green"
+      },
       {
         "id": 3002,
         "name": "STATS",
@@ -1542,6 +1678,13 @@ export const breweries = [
         "abv": 6,
         "session": "yellow",
         "notes": "collab Humleland og Pissego"
+      },
+      {
+        "id": 3403,
+        "name": "TBA",
+        "style": null,
+        "abv": null,
+        "session": "red"
       }
     ]
   },
@@ -1558,6 +1701,14 @@ export const breweries = [
         "style": "German Pilsner",
         "abv": 4.8,
         "session": "green"
+      },
+      {
+        "id": 3502,
+        "name": "Zwaan & Tulp",
+        "style": "NE IPA",
+        "abv": 5.5,
+        "session": "green",
+        "notes": "collab Jopen and White Labs"
       },
       {
         "id": 3503,
@@ -1597,11 +1748,46 @@ export const breweries = [
     "noLow": false,
     "beers": [
       {
+        "id": 3601,
+        "name": "Kveikebaier - Citra",
+        "style": "Kveik Pilsner",
+        "abv": null,
+        "session": "green"
+      },
+      {
         "id": 3602,
         "name": "Svenskerkalkulen",
         "style": "Imperial Stout m. lakrids",
         "abv": 11.4,
         "session": "green"
+      },
+      {
+        "id": 3603,
+        "name": "Dobbeltsnyd",
+        "style": "NE DIPA",
+        "abv": 7.8,
+        "session": "yellow"
+      },
+      {
+        "id": 3604,
+        "name": "Mirror Bells",
+        "style": "Gose w. wild mirabell plum",
+        "abv": null,
+        "session": "yellow"
+      },
+      {
+        "id": 3605,
+        "name": "Kaffesnyd",
+        "style": "NE DIPA w. coffee from Sydhavnskaffe",
+        "abv": 7.8,
+        "session": "red"
+      },
+      {
+        "id": 3606,
+        "name": "Mirror Bells",
+        "style": "Gose w. wild mirabell plum",
+        "abv": null,
+        "session": "red"
       }
     ]
   },
@@ -1676,6 +1862,35 @@ export const breweries = [
         "style": "NE DIPA",
         "abv": 8.5,
         "session": "green"
+      },
+      {
+        "id": 3803,
+        "name": "Lunar Synthesis",
+        "style": "NE DIPA",
+        "abv": 8.5,
+        "session": "yellow"
+      },
+      {
+        "id": 3804,
+        "name": "Intercosmosis",
+        "style": "NE IPA",
+        "abv": 7,
+        "session": "yellow"
+      },
+      {
+        "id": 3805,
+        "name": "Tickets to the Sunset",
+        "style": "NE TIPA",
+        "abv": 10,
+        "session": "red",
+        "notes": "collab Evil Twin"
+      },
+      {
+        "id": 3806,
+        "name": "Divine Chord",
+        "style": "NE DIPA",
+        "abv": 8,
+        "session": "red"
       }
     ]
   },
@@ -1699,6 +1914,13 @@ export const breweries = [
         "style": "American Pale Ale",
         "abv": 5.2,
         "session": "green"
+      },
+      {
+        "id": 3903,
+        "name": "Export London Stout 1897",
+        "style": "Dry Stout",
+        "abv": 7.4,
+        "session": "yellow"
       },
       {
         "id": 3904,
@@ -1804,10 +2026,24 @@ export const breweries = [
         "session": "yellow"
       },
       {
+        "id": 4104,
+        "name": "Volej si švestky! 11°",
+        "style": "Sour w. plums",
+        "abv": 4.8,
+        "session": "yellow"
+      },
+      {
         "id": 4105,
         "name": "Sexy Hafanana 17°",
         "style": "DDH DIPA",
         "abv": 6.9,
+        "session": "red"
+      },
+      {
+        "id": 4106,
+        "name": "Výroční ležák 12°",
+        "style": "Lager",
+        "abv": null,
         "session": "red"
       }
     ]
@@ -1892,6 +2128,20 @@ export const breweries = [
         "session": "yellow"
       },
       {
+        "id": 4304,
+        "name": "Dippedut",
+        "style": "Imperial Stout w. pecans, pistachio praliné, vanilla beans and coca nips",
+        "abv": 11.3,
+        "session": "yellow"
+      },
+      {
+        "id": 4305,
+        "name": "Clean As A Whistle",
+        "style": "DDH WC DIPA",
+        "abv": 8,
+        "session": "red"
+      },
+      {
         "id": 4306,
         "name": "Bourbon Barrel Depths Of Black",
         "style": "BBA Imperial Stout",
@@ -1934,6 +2184,13 @@ export const breweries = [
         "style": "WC IPA",
         "abv": 6.2,
         "session": "yellow"
+      },
+      {
+        "id": 4405,
+        "name": "To Til Tango",
+        "style": "NE DIPA",
+        "abv": 8,
+        "session": "red"
       },
       {
         "id": 4406,
@@ -1992,6 +2249,112 @@ export const breweries = [
         "style": "Fruited Gose w. passionfruit, guava and raspberry",
         "abv": 6,
         "session": "red"
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "name": "Edwards & Lassen",
+    "location": "DK",
+    "stand": 2,
+    "noLow": true,
+    "beers": [
+      {
+        "id": 4601,
+        "name": "Sparkling Sauvignon Blanc",
+        "style": "Cuvée m. druer fra Lilleø",
+        "abv": null,
+        "session": "all"
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "name": "Arensbak",
+    "location": "DK",
+    "stand": 1,
+    "noLow": true,
+    "beers": [
+      {
+        "id": 4701,
+        "name": "ARENSBAK White",
+        "style": "Proxy, wine",
+        "abv": null,
+        "session": "all"
+      },
+      {
+        "id": 4702,
+        "name": "ARENSBAK Red",
+        "style": "Proxy, wine",
+        "abv": null,
+        "session": "all"
+      },
+      {
+        "id": 4703,
+        "name": "ARENSBAK Rose",
+        "style": "Proxy, wine",
+        "abv": null,
+        "session": "all"
+      },
+      {
+        "id": 4704,
+        "name": "ARENSBAK Effervascent",
+        "style": "Proxy, wine",
+        "abv": null,
+        "session": "all"
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "name": "Rå Mate",
+    "location": "DK",
+    "stand": 3,
+    "noLow": true,
+    "beers": [
+      {
+        "id": 4801,
+        "name": "Rå Mate",
+        "style": "Yeba Mate Iste",
+        "abv": null,
+        "session": "all"
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "name": "Quench & Tickle",
+    "location": "DK",
+    "stand": 1,
+    "noLow": true,
+    "beers": [
+      {
+        "id": 4901,
+        "name": "Bench Rafting",
+        "style": "For Dark 'n' Stormy Weather",
+        "abv": null,
+        "session": "all"
+      },
+      {
+        "id": 4902,
+        "name": "Camping Safari",
+        "style": "If You like Piña Colada",
+        "abv": null,
+        "session": "all"
+      },
+      {
+        "id": 4903,
+        "name": "Rooftop Hiking",
+        "style": "It's Not a Spritz",
+        "abv": null,
+        "session": "all"
+      },
+      {
+        "id": 4904,
+        "name": "Bike Lane Bowling",
+        "style": "A Mocca 'n Tonic",
+        "abv": null,
+        "session": "all"
       }
     ]
   },

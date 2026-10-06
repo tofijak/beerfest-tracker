@@ -3,7 +3,7 @@
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:f7b733,50:fc4a1a,100:8e2de2&height=220&section=header&text=Raise%20the%20Bar%20%F0%9F%8D%BA&fontSize=64&fontColor=ffffff&fontAlignY=38&desc=Serpier%20%C3%97%20Ridehuset%20Aarhus%20%C2%B7%209%20Oct%202026&descAlignY=60&descSize=20&animation=twinkling" width="100%" />
 
 <a href="https://raise-the-bar-rating.vercel.app">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&pause=900&color=F7B733&center=true&vCenter=true&width=640&lines=230+beers.+45+breweries.+4+hours.;Fri+bar+17%E2%80%9321+%F0%9F%8D%BB;Check+it.+Star+it.+Rate+it.;Sk%C3%A5l%2C+Serpier!" alt="Typing banner" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&pause=900&color=F7B733&center=true&vCenter=true&width=640&lines=275+beers.+50+breweries.+4+hours.;Fri+bar+17%E2%80%9321+%F0%9F%8D%BB;Check+it.+Star+it.+Rate+it.;Sk%C3%A5l%2C+Serpier!" alt="Typing banner" />
 </a>
 
 <br/>
@@ -12,8 +12,8 @@
 
 <br/>
 
-<img src="https://img.shields.io/badge/beers-230-f7b733?style=flat-square&labelColor=1a1a1a" />
-<img src="https://img.shields.io/badge/breweries-45-f7b733?style=flat-square&labelColor=1a1a1a" />
+<img src="https://img.shields.io/badge/beers-275-f7b733?style=flat-square&labelColor=1a1a1a" />
+<img src="https://img.shields.io/badge/breweries-50-f7b733?style=flat-square&labelColor=1a1a1a" />
 <img src="https://img.shields.io/badge/fri_bar-17%E2%80%9321-f7b733?style=flat-square&labelColor=1a1a1a" />
 <img src="https://img.shields.io/badge/React-Vite-646CFF?style=flat-square&logo=vite&logoColor=white&labelColor=1a1a1a" />
 <img src="https://img.shields.io/badge/data-localStorage_only-8e2de2?style=flat-square&labelColor=1a1a1a" />
@@ -30,11 +30,12 @@ A local-only React + Vite + MUI app for checking off beers, starring favorites, 
 
 ## What’s in the glass
 
-- Raise the Bar beers that have an Untappd rating (230 beers, 45 breweries), grouped by brewery
+- Full Raise the Bar / Green Session beverage list, grouped by brewery
 - Session colors (green / yellow / red) plus the No/Low section
+- TBA entries kept as TBA
 - Country codes and stand numbers from the official overview
 - Untappd search links on every named beer
-- Untappd rating + rating count on every beer, with a direct link to the Untappd page
+- Untappd rating + rating count on 230 of 275 beers (beers without one show no Untappd link)
 - Tap a beer for details (style, ABV, rating, quick actions)
 - Filters: status, session, stand, style, ABV range, rating range, only-rated, plus sort by rating / ABV / name
 - **Map** tab: schematic of the three stand areas with per-zone progress

@@ -12,7 +12,6 @@ import {
   STAND_COLORS,
   formatBeerMeta,
   ratingColor,
-  untappdSearchUrl,
 } from "../utils";
 import { PIXEL_FONT } from "../theme";
 import { PixelBar, ScorePlate, pixelCheckboxProps } from "./PixelUI";
@@ -114,11 +113,11 @@ function BeerItem({
             {beer.notes}
           </Typography>
         )}
-        {beer.name !== "TBA" && (
+        {untappd?.rating != null && untappd.url && (
           <Chip
             component="a"
             clickable
-            href={untappd?.url ?? untappdSearchUrl(beer.name, brewery.name)}
+            href={untappd.url}
             target="_blank"
             rel="noopener noreferrer"
             size="small"
