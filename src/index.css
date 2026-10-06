@@ -28,3 +28,24 @@ body {
   from { background-position: 0 0; }
   to { background-position: 0 48px; }
 }
+
+@keyframes crtOn {
+  0% { transform: scale(0, 0.004); filter: brightness(10); opacity: 1; }
+  45% { transform: scale(1, 0.004); filter: brightness(6); opacity: 1; }
+  100% { transform: scale(1, 1); filter: brightness(1); opacity: 1; }
+}
+
+@keyframes crtOff {
+  0% { transform: scale(1, 1); filter: brightness(1); opacity: 1; }
+  60% { transform: scale(1, 0.004); filter: brightness(6); opacity: 1; }
+  100% { transform: scale(0, 0.004); filter: brightness(12); opacity: 0; }
+}
+
+@keyframes crtFlicker {
+  0%, 100% { opacity: 0.16; }
+  50% { opacity: 0.1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .crt-paper, .crt-paper::after { animation: none !important; }
+}

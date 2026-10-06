@@ -9,6 +9,7 @@ import { UNTAPPD } from "../data/untappd";
 import { DESCRIPTIONS } from "../data/descriptions";
 import { SESSION_META, STAND_COLORS, ratingColor, styleCategory } from "../utils";
 import { BODY_FONT, PIXEL_FONT } from "../theme";
+import { CrtTransition } from "./CrtTransition";
 import { StyleBadge, pixelCheckboxProps } from "./PixelUI";
 
 function Stat({ label, value, color }) {
@@ -32,8 +33,8 @@ export function BeerDialog({ entry, drunkBeers, favoriteBeers, plannedBeers, bee
   const isPlanned = beer && plannedBeers.includes(beer.id);
 
   return (
-    <Dialog open={open} onClose={onClose} fullWidth maxWidth="sm" scroll="paper"
-      PaperProps={{ sx: { m: { xs: 1.5, sm: 4 }, border: `3px solid ${beer ? STAND_COLORS[brewery.stand] : "#00e5ff"}`, boxShadow: "6px 6px 0 #2a1458", backgroundImage: "linear-gradient(160deg,#0b1a2e,#1d0f3a)" } }}>
+    <Dialog open={open} onClose={onClose} fullWidth maxWidth="sm" scroll="paper" slots={{ transition: CrtTransition }}
+      PaperProps={{ className: "crt-paper", sx: { position: "relative", m: { xs: 1.5, sm: 4 }, border: `3px solid ${beer ? STAND_COLORS[brewery.stand] : "#00e5ff"}`, boxShadow: "6px 6px 0 #2a1458", backgroundImage: "linear-gradient(160deg,#0b1a2e,#1d0f3a)", "&::after": { content: '""', position: "absolute", inset: 0, pointerEvents: "none", backgroundImage: "repeating-linear-gradient(0deg, rgba(0,0,0,0.35) 0, rgba(0,0,0,0.35) 1px, transparent 1px, transparent 3px)", animation: "crtFlicker 3s steps(6) infinite" } } }}>
       {beer && (
         <DialogContent sx={{ position: "relative" }}>
           <IconButton onClick={onClose} aria-label="Close" sx={{ position: "absolute", top: 8, right: 8 }}>
