@@ -1,4 +1,4 @@
-import { Box, Button, Checkbox, Chip, Dialog, DialogContent, FormControlLabel, IconButton, Typography } from "@mui/material";
+import { Box, Button, Checkbox, Chip, Dialog, DialogContent, FormControlLabel, IconButton, Slider, Typography } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import StarIcon from "@mui/icons-material/Star";
@@ -8,7 +8,7 @@ import PlaylistAddCheckIcon from "@mui/icons-material/PlaylistAddCheck";
 import { UNTAPPD } from "../data/untappd";
 import { DESCRIPTIONS } from "../data/descriptions";
 import { SESSION_META, STAND_COLORS, ratingColor, styleCategory } from "../utils";
-import { BODY_FONT } from "../theme";
+import { BODY_FONT, PIXEL_FONT } from "../theme";
 import { StyleBadge, pixelCheckboxProps } from "./PixelUI";
 
 function Stat({ label, value, color }) {
@@ -20,12 +20,14 @@ function Stat({ label, value, color }) {
   );
 }
 
-export function BeerDialog({ entry, drunkBeers, favoriteBeers, plannedBeers, onToggleDrunk, onToggleFavorite, onTogglePlan, onClose }) {
+export function BeerDialog({ entry, drunkBeers, favoriteBeers, plannedBeers, beerRatings, onToggleDrunk, onToggleFavorite, onTogglePlan, onRatingChange, onClose }) {
   const { beer, brewery } = entry ?? {};
   const open = Boolean(entry);
   const untappd = beer ? UNTAPPD[beer.id] : null;
   const session = beer ? (SESSION_META[beer.session] ?? SESSION_META.all) : null;
   const description = beer ? DESCRIPTIONS[beer.id] : null;
+  const myRating = beer ? beerRatings[beer.id] || 0 : 0;
+  const isTried = beer && drunkBeers.includes(beer.id);
   const isFavorite = beer && favoriteBeers.includes(beer.id);
   const isPlanned = beer && plannedBeers.includes(beer.id);
 
@@ -49,9 +51,11 @@ export function BeerDialog({ entry, drunkBeers, favoriteBeers, plannedBeers, onT
           </Box>
           <Box sx={{ display: "flex", gap: 1.5, flexWrap: "wrap", mb: 2 }}>
             <Stat label={untappd?.count != null ? `Untappd · ${untappd.count} ratings` : "Untappd"} value={untappd?.rating != null ? untappd.rating.toFixed(2) : "n/a"} color={untappd?.rating != null ? ratingColor(untappd.rating) : undefined} />
+            <Stat label="Your rating" value={myRating > 0 ? myRating.toFixed(2) : "–"} color={myRating > 0 ? "#ffd23f" : undefined} />
             <Stat label="ABV" value={typeof beer.abv === "number" ? `${beer.abv}%` : "n/a"} />
           </Box>
-          {description && (
+          <Typography sx={{ fontFamily: PIXEL_FONT, fontSize: "0.75rem", color: "#ffd23f", mt: 1, mb: 0.5 }}>ABOUT</Typography>
+          {description ? (
             <Typography variant="body2" sx={{ mb: 1, p: 1.5, bgcolor: "rgba(0,229,255,0.08)", borderLeft: "4px solid #00e5ff" }}>
               {description.text}
               {description.source && (
@@ -59,6 +63,10 @@ export function BeerDialog({ entry, drunkBeers, favoriteBeers, plannedBeers, onT
                   source
                 </Box>
               )}
+            </Typography>
+          ) : (
+            <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+              No write-up found for this one yet.
             </Typography>
           )}
           <Typography variant="body2" sx={{ mb: 0.5 }}>
@@ -69,6 +77,29 @@ export function BeerDialog({ entry, drunkBeers, favoriteBeers, plannedBeers, onT
               <strong>Notes:</strong> {beer.notes}
             </Typography>
           )}
+          <Box sx={{ mt: 2, p: 1.5, border: "3px solid #ffd23f", bgcolor: "rgba(255,210,63,0.06)" }}>
+            <Typography sx={{ fontFamily: PIXEL_FONT, fontSize: "0.75rem", color: "#ffd23f" }}>
+              YOUR RATING {myRating > 0 ? myRating.toFixed(2) : ""}
+            </Typography>
+            <Typography variant="caption" color="text.secondary">
+              {isTried ? "Drag to rate." : "Drag to rate — this also marks it as tried."}
+            </Typography>
+            <Slider
+              value={myRating}
+              min={0}
+              max={5}
+              step={0.25}
+              marks={[0, 1, 2, 3, 4, 5].map((value) => ({ value, label: String(value) }))}
+              valueLabelDisplay="auto"
+              valueLabelFormat={(value) => value.toFixed(2)}
+              onChange={(_event, value) => {
+                const next = typeof value === "number" ? Math.round(value * 4) / 4 : 0;
+                if (next > 0 && !isTried) onToggleDrunk(beer.id);
+                onRatingChange(beer.id, next);
+              }}
+              sx={{ mt: 1, "& .MuiSlider-mark": { display: "none" } }}
+            />
+          </Box>
           <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap", alignItems: "center", mt: 2 }}>
             <FormControlLabel control={<Checkbox {...pixelCheckboxProps} checked={drunkBeers.includes(beer.id)} onChange={() => onToggleDrunk(beer.id)} />} label="Tried" />
             <Button size="small" variant="contained" color={isFavorite ? "warning" : "primary"} startIcon={isFavorite ? <StarIcon /> : <StarBorderIcon />} onClick={() => onToggleFavorite(beer.id)}>

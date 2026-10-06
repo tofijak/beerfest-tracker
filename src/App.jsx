@@ -496,6 +496,8 @@ export default function App() {
         drunkBeers={drunkBeers}
         favoriteBeers={favoriteBeers}
         plannedBeers={plannedBeers}
+        beerRatings={beerRatings}
+        onRatingChange={changeRating}
         onToggleDrunk={toggleDrunk}
         onToggleFavorite={toggleFavorite}
         onTogglePlan={togglePlan}
