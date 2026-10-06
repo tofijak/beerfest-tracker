@@ -364,21 +364,7 @@ export default function App() {
               >
                 ×
               </Typography>
-              <PixelSprite sprite="logo" size={64} depth={6} />
-              <Typography
-                component="span"
-                sx={{
-                  fontFamily: PIXEL_FONT,
-                  fontWeight: 700,
-                  fontSize: { xs: "1.25rem", sm: "1.7rem" },
-                  letterSpacing: "0.02em",
-                  color: "#f4f1ff",
-                  textShadow:
-                    "1px 1px 0 #b8aef0, 2px 2px 0 #8f86c9, 3px 3px 0 #6a60a8, 4px 4px 0 #3b3270, 5px 5px 0 #2a1458",
-                }}
-              >
-                serpier
-              </Typography>
+              <PixelSprite sprite="logo" size={76} depth={7} />
             </Box>
             <Typography variant="body2" sx={{ fontFamily: PIXEL_FONT, fontSize: "0.7rem" }}>
               {ratedCount} rated · {drunkBeers.length}/{TOTAL_BEERS} tried

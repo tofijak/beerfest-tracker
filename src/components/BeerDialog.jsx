@@ -10,7 +10,7 @@ import { DESCRIPTIONS } from "../data/descriptions";
 import { SESSION_META, STAND_COLORS, ratingColor, styleCategory } from "../utils";
 import { BODY_FONT, PIXEL_FONT } from "../theme";
 import { CrtTransition } from "./CrtTransition";
-import { StyleBadge, pixelCheckboxProps } from "./PixelUI";
+import { StandBadge, StyleBadge, pixelCheckboxProps } from "./PixelUI";
 
 function Stat({ label, value, color }) {
   return (
@@ -48,6 +48,7 @@ export function BeerDialog({ entry, drunkBeers, favoriteBeers, plannedBeers, bee
           </Typography>
           <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap", mb: 2 }}>
             <Chip size="small" label={session.label} sx={{ bgcolor: session.color, color: beer.session === "yellow" ? "#3e2723" : "#fff" }} />
+            <StandBadge stand={brewery.stand} size="large" />
             <StyleBadge category={styleCategory(beer)} size="large" />
           </Box>
           <Box sx={{ display: "flex", gap: 1.5, flexWrap: "wrap", mb: 2 }}>

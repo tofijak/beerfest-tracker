@@ -9,7 +9,7 @@ import { SESSION_META, STAND_COLORS, ratingColor, ratingOf } from "../utils";
 const SESSION_ORDER = ["green", "yellow", "red", "all"];
 
 const MIN_RATINGS = [4.3, 4.2, 4.1, 4.0, 3.8];
-import { PIXEL_FONT } from "../theme";
+import { BODY_FONT, PIXEL_FONT } from "../theme";
 import { pixelCheckboxProps } from "./PixelUI";
 
 /**
@@ -115,9 +115,8 @@ function AutoRoute({
                       color: "#07070f",
                       border: "3px solid #07070f",
                       boxShadow: "4px 4px 0 #2a1458",
-                      fontFamily: PIXEL_FONT,
-                      fontWeight: 700,
-                      fontSize: "1.2rem",
+                      fontFamily: BODY_FONT,
+                      fontSize: "1.8rem",
                     }}
                   >
                     {index + 1}
@@ -299,8 +298,8 @@ function MyRoute({ plannedBeers, onPlannedChange, favoriteBeers, drunkBeers, onT
                   placeItems: "center",
                   bgcolor: color,
                   color: "#07070f",
-                  fontFamily: PIXEL_FONT,
-                  fontWeight: 700,
+                  fontFamily: BODY_FONT,
+                  fontSize: "1.4rem",
                 }}
               >
                 {index + 1}

@@ -1,6 +1,6 @@
 import { Box, SvgIcon } from "@mui/material";
 import { BODY_FONT, PIXEL_FONT } from "../theme";
-import { STYLE_META } from "../utils";
+import { STAND_COLORS, STYLE_META } from "../utils";
 
 /** Pixel checkbox glyphs for MUI's `icon` / `checkedIcon` props. */
 export function PixelBoxIcon() {
@@ -102,6 +102,33 @@ export function StyleBadge({ category, size = "small" }) {
       }}
     >
       {meta.short}
+    </Box>
+  );
+}
+
+/** Colored pixel badge for the stand a beer is poured at. */
+export function StandBadge({ stand, size = "small" }) {
+  const color = STAND_COLORS[stand];
+  if (!color) return null;
+  return (
+    <Box
+      component="span"
+      sx={{
+        display: "inline-flex",
+        alignItems: "center",
+        px: 0.75,
+        height: size === "small" ? 18 : 24,
+        fontFamily: PIXEL_FONT,
+        fontSize: size === "small" ? "0.62rem" : "0.8rem",
+        textTransform: "uppercase",
+        bgcolor: color,
+        color: "#07070f",
+        border: "2px solid #07070f",
+        boxShadow: "2px 2px 0 #2a1458",
+        whiteSpace: "nowrap",
+      }}
+    >
+      Stand {stand}
     </Box>
   );
 }

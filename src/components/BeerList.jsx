@@ -14,8 +14,8 @@ import {
   styleCategory,
   ratingColor,
 } from "../utils";
-import { PIXEL_FONT } from "../theme";
-import { PixelBar, ScorePlate, StyleBadge, pixelCheckboxProps } from "./PixelUI";
+import { BODY_FONT, PIXEL_FONT } from "../theme";
+import { PixelBar, ScorePlate, StandBadge, StyleBadge, pixelCheckboxProps } from "./PixelUI";
 
 function BeerItem({
   beer,
@@ -94,6 +94,7 @@ function BeerItem({
           >
             {session.label}
           </Box>
+          <StandBadge stand={brewery.stand} />
           <StyleBadge category={styleCategory(beer)} />
           {meta && (
             <Typography variant="caption" color="text.secondary">
@@ -220,9 +221,8 @@ function BreweryCard({
               color: "#07070f",
               border: "3px solid #07070f",
               boxShadow: "4px 4px 0 #2a1458",
-              fontFamily: PIXEL_FONT,
-              fontWeight: 700,
-              fontSize: "1.4rem",
+              fontFamily: BODY_FONT,
+              fontSize: "2rem",
             }}
           >
             {brewery.stand || "?"}
