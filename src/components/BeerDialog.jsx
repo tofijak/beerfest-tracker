@@ -43,7 +43,7 @@ export function BeerDialog({ entry, drunkBeers, favoriteBeers, plannedBeers, bee
           <Typography variant="overline" sx={{ color: STAND_COLORS[brewery.stand] }}>
             {brewery.name} · {brewery.location} · stand {brewery.stand}
           </Typography>
-          <Typography variant="h5" sx={{ pr: 5, mb: 1.5, overflowWrap: "anywhere", fontSize: { xs: "1.1rem", sm: "1.5rem" } }}>
+          <Typography variant="h5" sx={{ pr: 5, mb: 1.5, overflowWrap: "anywhere", fontFamily: BODY_FONT, fontSize: { xs: "1.7rem", sm: "2.1rem" }, lineHeight: 1.05 }}>
             {beer.name}
           </Typography>
           <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap", mb: 2 }}>
