@@ -1,25 +1,28 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+import { readJson, writeJson } from "../lib/storage";
 
 export function useLocalStorage(key, initialValue) {
-  const [value, setValue] = useState(() => {
-    try {
-      const stored = window.localStorage.getItem(key);
-      return stored ? JSON.parse(stored) : initialValue;
-    } catch (error) {
-      console.error(`Error loading ${key} from localStorage:`, error);
-      return initialValue;
-    }
-  });
+  const [state, setState] = useState(() => ({
+    key,
+    value: readJson(key, initialValue),
+  }));
+
+  if (state.key !== key) {
+    setState({ key, value: readJson(key, initialValue) });
+  }
 
   useEffect(() => {
-    try {
-      window.localStorage.setItem(key, JSON.stringify(value));
-    } catch (error) {
-      console.error(`Error saving ${key} to localStorage:`, error);
-    }
-  }, [key, value]);
+    writeJson(state.key, state.value);
+  }, [state.key, state.value]);
 
-  return [value, setValue];
+  const setValue = useCallback((updater) => {
+    setState((current) => {
+      const next = typeof updater === "function" ? updater(current.value) : updater;
+      return { key: current.key, value: next };
+    });
+  }, []);
+
+  return [state.value, setValue];
 }
 
 export function useDebouncedValue(value, delay = 300) {

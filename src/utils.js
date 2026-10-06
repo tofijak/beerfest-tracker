@@ -19,6 +19,10 @@ export function beerMatchesSession(beer, sessionFilter) {
   return beer.session === sessionFilter || beer.session === "all";
 }
 
+export function sessionFilterValue(session) {
+  return session.id === "all" ? "nolo" : session.id;
+}
+
 export const SESSION_META = {
   green: { label: "Green", color: "#2e7d32" },
   yellow: { label: "Yellow", color: "#f9a825" },

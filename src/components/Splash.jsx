@@ -1,7 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
 
-export function Splash({ open, onDismiss }) {
-  if (!open) return null;
+export function Splash({ open, festival, onDismiss }) {
+  if (!open || !festival) return null;
 
   return (
     <Box
@@ -22,16 +22,18 @@ export function Splash({ open, onDismiss }) {
       }}
     >
       <Typography variant="overline" sx={{ letterSpacing: 3, mb: 1, color: "#c8e6c9" }}>
-        Serpier × Raise the Bar
+        {festival.name}
+        {festival.edition ? ` · ${festival.edition}` : ""}
       </Typography>
       <Typography variant="h4" sx={{ fontWeight: 700, mb: 2, maxWidth: 520 }}>
-        Fri bar 17–21 — planlæg hvad I skal smage
+        {festival.tagline || "Check it. Star it. Rate it."}
       </Typography>
       <Typography variant="body1" sx={{ maxWidth: 440, mb: 4, color: "#c8e6c9" }}>
-        Ridehuset, Aarhus · fredag 9. oktober 2026. Rate øl undervejs og lås holdet op.
+        {festival.splashBody ||
+          [festival.venue, festival.dateLabel || festival.date].filter(Boolean).join(" · ")}
       </Typography>
       <Button variant="contained" color="secondary" onClick={onDismiss} sx={{ borderRadius: 999, px: 3 }}>
-        Vi er klar
+        {festival.splashCta || "Let's go"}
       </Button>
     </Box>
   );
