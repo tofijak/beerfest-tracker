@@ -1,4 +1,4 @@
-# Beer Fest Tracker design system
+# Beerfest Tracker design system
 
 Small, dark-first system for a phone-in-the-hall festival app. Tokens are the source of truth. Primitives consume tokens. Screens do not invent new colors or radii.
 

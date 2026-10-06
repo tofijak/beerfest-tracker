@@ -73,7 +73,7 @@ export default function App() {
   }, [activeSlug, festival.slug, setActiveSlug]);
 
   useEffect(() => {
-    document.title = `${festival.name} · Beer Fest Tracker`;
+    document.title = `${festival.name} · Beerfest Tracker`;
   }, [festival.name]);
 
   useEffect(() => {
@@ -271,7 +271,7 @@ export default function App() {
   return (
     <div className="app-shell">
       <header className="app-header">
-        <IconButton aria-label="Beer Fest Tracker" onClick={handleLogoTap}>
+        <IconButton aria-label="Beerfest Tracker" onClick={handleLogoTap}>
           <IconBeer />
         </IconButton>
         <button
