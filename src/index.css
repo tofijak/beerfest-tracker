@@ -1,11 +1,90 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  -webkit-font-smoothing: antialiased;
+  font-family: "VT323", ui-monospace, monospace;
+  font-size: 18px;
+  font-smooth: never;
+  -webkit-font-smoothing: none;
   -moz-osx-font-smoothing: grayscale;
+  background: #07070f;
+  min-height: 100vh;
 }
 
 * {
   box-sizing: border-box;
+}
+
+@keyframes pixelSpin {
+  0% { transform: rotateX(-12deg) rotateY(-35deg); }
+  50% { transform: rotateX(-6deg) rotateY(35deg); }
+  100% { transform: rotateX(-12deg) rotateY(-35deg); }
+}
+
+@keyframes floatY {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -16px; }
+}
+
+@keyframes gridScroll {
+  from { background-position: 0 0; }
+  to { background-position: 0 48px; }
+}
+
+@keyframes crtOn {
+  0% { transform: scale(0, 0.004); filter: brightness(10); opacity: 1; }
+  45% { transform: scale(1, 0.004); filter: brightness(6); opacity: 1; }
+  100% { transform: scale(1, 1); filter: brightness(1); opacity: 1; }
+}
+
+@keyframes crtOff {
+  0% { transform: scale(1, 1); filter: brightness(1); opacity: 1; }
+  60% { transform: scale(1, 0.004); filter: brightness(6); opacity: 1; }
+  100% { transform: scale(0, 0.004); filter: brightness(12); opacity: 0; }
+}
+
+@keyframes crtFlicker {
+  0%, 100% { opacity: 0.16; }
+  50% { opacity: 0.1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .crt-paper, .crt-paper::after { animation: none !important; }
+}
+
+@keyframes splashOut {
+  0% { opacity: 1; transform: scale(1); filter: blur(0); }
+  100% { opacity: 0; transform: scale(1.35); filter: blur(8px); }
+}
+
+@keyframes popIn {
+  0% { opacity: 0; transform: translateY(-24px) scale(0.6); }
+  60% { opacity: 1; transform: translateY(4px) scale(1.08); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes riseIn {
+  0% { opacity: 0; transform: translateY(28px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeSwap {
+  0% { opacity: 0; transform: translateY(8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.rise {
+  animation: riseIn 420ms steps(7, end) both;
+  animation-delay: calc(var(--i, 0) * 70ms);
+}
+
+.fade-swap {
+  animation: fadeSwap 260ms steps(5, end) both;
+}
+
+.pop-in {
+  animation: popIn 520ms cubic-bezier(0.2, 0.9, 0.3, 1.2) both;
+  animation-delay: var(--d, 0ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise, .fade-swap, .pop-in { animation: none !important; }
 }

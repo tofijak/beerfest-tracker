@@ -3,11 +3,10 @@ import {
   AppBar,
   Badge,
   Box,
-  Checkbox,
-  Chip,
+  Card,
+  CardContent,
   Container,
   CssBaseline,
-  FormControlLabel,
   InputAdornment,
   Tab,
   Tabs,
@@ -15,7 +14,6 @@ import {
   ThemeProvider,
   Toolbar,
   Typography,
-  createTheme,
 } from "@mui/material";
 import SportsBarIcon from "@mui/icons-material/SportsBar";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -23,20 +21,29 @@ import StarIcon from "@mui/icons-material/Star";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import SearchIcon from "@mui/icons-material/Search";
 import HistoryIcon from "@mui/icons-material/History";
+import MapIcon from "@mui/icons-material/Map";
+import RouteIcon from "@mui/icons-material/Route";
 import { AchievementDialog, AchievementWall } from "./components/Achievements";
 import { AuthControls } from "./components/AuthControls";
-import { MemoBreweryCard } from "./components/BeerList";
+import { BeerDialog } from "./components/BeerDialog";
+import { MemoBeerItem, MemoBreweryCard } from "./components/BeerList";
+import { FilterPanel } from "./components/FilterPanel";
+import { VenueMap } from "./components/Map";
+import { PixelBackdrop, PixelSprite } from "./components/PixelArt";
+import { RoutePlanner } from "./components/RoutePlanner";
 import { FestivalDialog } from "./components/FestivalDialog";
 import { HistoryView } from "./components/HistoryView";
 import { Splash } from "./components/Splash";
 import { ACHIEVEMENTS } from "./data/achievements";
-import { FESTIVALS, festivalStats, getFestival } from "./festivals";
+import { DEFAULT_FILTERS, applyFilters } from "./filters";
+import { FESTIVALS, festivalStats, findBeer, getFestival } from "./festivals";
 import { useAuth } from "./hooks/useAuth";
 import { useFestivalProgress } from "./hooks/useFestivalProgress";
 import { useDebouncedValue, useLocalStorage } from "./hooks/useLocalStorage";
 import {
   activeFestivalKey,
   DEFAULT_FESTIVAL_SLUG,
+  festivalStorageKey,
   hasFestivalActivity,
   loadFestivalProgress,
   migrateLegacyStorage,
@@ -44,16 +51,9 @@ import {
   splashStorageKey,
 } from "./lib/storage";
 import { mergeAllFestivalsForUser } from "./lib/sync";
-import { sessionFilterValue } from "./utils";
+import { PIXEL_FONT, theme } from "./theme";
 
 migrateLegacyStorage();
-
-const theme = createTheme({
-  palette: {
-    primary: { main: "#1b5e20" },
-    secondary: { main: "#f9a825" },
-  },
-});
 
 export default function App() {
   const auth = useAuth();
@@ -65,6 +65,23 @@ export default function App() {
     auth.user,
   );
 
+  const [filters, setFilters] = useLocalStorage(
+    festivalStorageKey(festival.slug, "filters"),
+    DEFAULT_FILTERS,
+  );
+  const [plannedBeers, setPlannedBeers] = useLocalStorage(
+    festivalStorageKey(festival.slug, "plannedBeers"),
+    [],
+  );
+  const [minRating, setMinRating] = useLocalStorage(
+    festivalStorageKey(festival.slug, "routeMinRating"),
+    4.1,
+  );
+  const [startSession, setStartSession] = useLocalStorage(
+    festivalStorageKey(festival.slug, "routeStartSession"),
+    "green",
+  );
+  const [openedBeerId, setOpenedBeerId] = useState(null);
   const [tab, setTab] = useState("beers");
   const [query, setQuery] = useState("");
   const [festivalOpen, setFestivalOpen] = useState(false);
@@ -186,6 +203,15 @@ export default function App() {
     [patch],
   );
 
+  const togglePlan = useCallback(
+    (beerId) => {
+      setPlannedBeers((current) =>
+        current.includes(beerId) ? current.filter((id) => id !== beerId) : [...current, beerId],
+      );
+    },
+    [setPlannedBeers],
+  );
+
   const resetAchievements = useCallback(() => {
     activeRef.current = null;
     resetMilestones();
@@ -233,15 +259,35 @@ export default function App() {
   );
 
   const debouncedQuery = useDebouncedValue(query, 100);
-  const filteredBreweries = useMemo(() => {
-    const needle = debouncedQuery.toLowerCase().trim();
-    if (!needle) return festival.breweries;
-    return festival.breweries.filter(
-      (brewery) =>
-        brewery.name.toLowerCase().includes(needle) ||
-        brewery.beers.some((beer) => beer.name.toLowerCase().includes(needle)),
-    );
-  }, [debouncedQuery, festival.breweries]);
+  const effectiveFilters = useMemo(
+    () => ({ ...DEFAULT_FILTERS, ...filters, ...(tab === "favorites" ? { status: "favorites" } : {}) }),
+    [filters, tab],
+  );
+  const result = useMemo(
+    () =>
+      applyFilters(
+        effectiveFilters,
+        {
+          drunkBeers: progress.drunkBeers,
+          favoriteBeers: progress.favoriteBeers,
+          plannedBeers,
+          beerRatings: progress.beerRatings,
+        },
+        debouncedQuery,
+        festival.breweries,
+      ),
+    [effectiveFilters, progress, plannedBeers, debouncedQuery, festival.breweries],
+  );
+  const resultCount = result.groups.reduce((n, group) => n + group.beers.length, 0);
+  const openBeer = useCallback((id) => setOpenedBeerId(id), []);
+  const openedEntry = useMemo(
+    () => (openedBeerId == null ? null : findBeer(festival, openedBeerId)),
+    [festival, openedBeerId],
+  );
+  const hasStands = useMemo(
+    () => festival.breweries.some((brewery) => brewery.stand),
+    [festival],
+  );
 
   const unlocked = useMemo(
     () => ACHIEVEMENTS.filter((item) => progress.achievedMilestones.includes(item.count)),
@@ -251,45 +297,61 @@ export default function App() {
 
   useEffect(() => {
     if (!hasAchievements && tab === "achievements") setTab("beers");
-  }, [hasAchievements, tab]);
-
-  const sessionFilters = useMemo(() => {
-    if (!festival.sessions?.length) return [];
-    return [
-      { value: "all", label: "All sessions" },
-      ...festival.sessions.map((session) => ({
-        value: sessionFilterValue(session),
-        label: session.label,
-      })),
-    ];
-  }, [festival.sessions]);
+    if (!hasStands && (tab === "map" || tab === "route")) setTab("beers");
+  }, [hasAchievements, hasStands, tab]);
 
   const visitedCount = FESTIVALS.filter((item) => hasFestivalActivity(allProgress[item.slug])).length;
-  const showFilters = tab === "beers" || tab === "favorites";
+  const showList = tab === "beers" || tab === "favorites";
 
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static">
+      <PixelBackdrop />
+      <Box sx={{ flexGrow: 1, position: "relative", zIndex: 1 }}>
+        <AppBar
+          position="static"
+          elevation={0}
+          sx={{
+            bgcolor: "rgba(7, 7, 15, 0.7)",
+            backdropFilter: "blur(14px)",
+            borderBottom: "1px solid rgba(0, 229, 255, 0.3)",
+            boxShadow: "0 4px 30px rgba(0, 229, 255, 0.12)",
+          }}
+        >
           <Toolbar>
-            <SportsBarIcon sx={{ mr: 2 }} />
-            <Typography
-              variant="h6"
-              component="div"
+            <Box
               onClick={handleTitleTap}
               onTouchEnd={handleTitleTap}
-              sx={{ flexGrow: 1, userSelect: "none" }}
+              sx={{ flexGrow: 1, display: "flex", alignItems: "center", gap: { xs: 1, sm: 1.5 }, userSelect: "none" }}
             >
-              Beerfest Tracker
-            </Typography>
+              <Box className="pop-in" style={{ "--d": "100ms" }}>
+                <PixelSprite sprite="mug" size={52} depth={5} />
+              </Box>
+              <Typography
+                component="span"
+                className="pop-in"
+                style={{ "--d": "250ms" }}
+                sx={{
+                  fontFamily: PIXEL_FONT,
+                  fontWeight: 700,
+                  fontSize: { xs: "1.2rem", sm: "1.6rem" },
+                  color: "#ff2bd6",
+                  textShadow: "1px 1px 0 #a0128a, 2px 2px 0 #6a0b5c, 3px 3px 0 #2a1458",
+                }}
+              >
+                ×
+              </Typography>
+              <Box className="pop-in" style={{ "--d": "400ms" }}>
+                <PixelSprite sprite="logo" size={76} depth={7} />
+              </Box>
+            </Box>
             <AuthControls auth={auth} />
-            <Typography variant="body2">
+            <Typography variant="body2" sx={{ fontFamily: PIXEL_FONT, fontSize: "0.7rem", ml: 1 }}>
               {ratedCount} rated · {progress.drunkBeers.length}/{stats.beerCount} tried
             </Typography>
           </Toolbar>
         </AppBar>
-        <Container maxWidth="md" sx={{ mt: 3, mb: 3 }}>
+        <Container maxWidth="md" sx={{ mt: { xs: 2, sm: 3 }, mb: 3, px: { xs: 1.5, sm: 3 } }}>
           <Box
             onClick={() => setFestivalOpen(true)}
             sx={{
@@ -318,7 +380,7 @@ export default function App() {
             <TextField
               fullWidth
               variant="outlined"
-              placeholder="Search breweries..."
+              placeholder="Search beers, breweries, styles..."
               value={query}
               onChange={(event) => setQuery(event.target.value)}
               sx={{ mb: 2 }}
@@ -334,8 +396,10 @@ export default function App() {
           <Tabs
             value={tab}
             onChange={(_event, value) => setTab(value)}
-            centered
-            sx={{ mb: 2 }}
+            variant="scrollable"
+            scrollButtons="auto"
+            allowScrollButtonsMobile
+            sx={{ mb: 3, px: 0.5, pb: 1 }}
           >
             <Tab value="beers" icon={<SportsBarIcon />} label="All Beers" iconPosition="start" />
             <Tab
@@ -348,6 +412,8 @@ export default function App() {
               label="Favorites"
               iconPosition="start"
             />
+            {hasStands && <Tab value="map" icon={<MapIcon />} label="Map" iconPosition="start" />}
+            {hasStands && <Tab value="route" icon={<RouteIcon />} label="Route" iconPosition="start" />}
             {hasAchievements && (
               <Tab
                 value="achievements"
@@ -371,115 +437,82 @@ export default function App() {
               iconPosition="start"
             />
           </Tabs>
-          {showFilters && sessionFilters.length > 0 && (
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                mb: 2,
-                gap: 1,
-                flexWrap: "wrap",
-              }}
-            >
-              {sessionFilters.map((filter) => (
-                <Chip
-                  key={filter.value}
-                  label={filter.label}
-                  onClick={() => patch((current) => ({ ...current, sessionFilter: filter.value }))}
-                  color={progress.sessionFilter === filter.value ? "primary" : "default"}
-                  variant={progress.sessionFilter === filter.value ? "filled" : "outlined"}
-                />
-              ))}
-            </Box>
-          )}
-          {showFilters && (
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                mb: 3,
-                gap: 4,
-                flexWrap: "wrap",
-              }}
-            >
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={progress.hideDrunkBeers}
-                    onChange={(event) =>
-                      patch((current) => ({ ...current, hideDrunkBeers: event.target.checked }))
-                    }
-                    color="primary"
-                  />
+          <Box key={tab} className="fade-swap">
+          {showList && (
+            <>
+              <FilterPanel
+                festival={festival}
+                filters={effectiveFilters}
+                onChange={(next) =>
+                  setFilters(tab === "favorites" ? { ...next, status: filters.status } : next)
                 }
-                label="Hide already drunk beers"
+                resultCount={resultCount}
               />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={progress.showOnlyUnrated}
-                    onChange={(event) =>
-                      patch((current) => ({ ...current, showOnlyUnrated: event.target.checked }))
-                    }
-                    color="primary"
-                  />
-                }
-                label="Show only unrated drunk beers"
-              />
-            </Box>
-          )}
-          {tab === "beers" && (
-            <Box>
-              {filteredBreweries.length === 0 ? (
+              {resultCount === 0 ? (
                 <Typography variant="body1" color="text.secondary" align="center" sx={{ mt: 4 }}>
-                  {`No breweries found matching "${debouncedQuery}"`}
+                  {tab === "favorites" && progress.favoriteBeers.length === 0
+                    ? "No favorite beers yet. Star some beers to see them here!"
+                    : "No beers match these filters."}
                 </Typography>
+              ) : result.flat ? (
+                <Card sx={{ mb: 3 }}>
+                  <CardContent sx={{ px: { xs: 1.25, sm: 2 } }}>
+                    {result.flat.map(({ beer, brewery }) => (
+                      <MemoBeerItem
+                        key={beer.id}
+                        festival={festival}
+                        beer={beer}
+                        brewery={brewery}
+                        showBrewery
+                        isDrunk={progress.drunkBeers.includes(beer.id)}
+                        isFavorite={progress.favoriteBeers.includes(beer.id)}
+                        isPlanned={plannedBeers.includes(beer.id)}
+                        rating={progress.beerRatings[beer.id] || 0}
+                        onToggleDrunk={toggleDrunk}
+                        onToggleFavorite={toggleFavorite}
+                        onTogglePlan={togglePlan}
+                        onRatingChange={changeRating}
+                        onOpen={openBeer}
+                      />
+                    ))}
+                  </CardContent>
+                </Card>
               ) : (
-                filteredBreweries.map((brewery) => (
+                result.groups.map(({ brewery, beers }, index) => (
                   <MemoBreweryCard
                     key={brewery.id}
-                    brewery={brewery}
+                    index={index}
                     festival={festival}
+                    brewery={brewery}
+                    beers={beers}
                     drunkBeers={progress.drunkBeers}
                     favoriteBeers={progress.favoriteBeers}
+                    plannedBeers={plannedBeers}
                     beerRatings={progress.beerRatings}
                     onToggleDrunk={toggleDrunk}
                     onToggleFavorite={toggleFavorite}
+                    onTogglePlan={togglePlan}
                     onRatingChange={changeRating}
-                    hideDrunkBeers={progress.hideDrunkBeers}
-                    showOnlyUnrated={progress.showOnlyUnrated}
-                    sessionFilter={progress.sessionFilter}
+                    onOpen={openBeer}
                   />
                 ))
               )}
-            </Box>
+            </>
           )}
-          {tab === "favorites" && (
-            <Box>
-              {progress.favoriteBeers.length === 0 ? (
-                <Typography variant="body1" color="text.secondary" align="center" sx={{ mt: 4 }}>
-                  No favorite beers yet. Star some beers to see them here!
-                </Typography>
-              ) : (
-                filteredBreweries.map((brewery) => (
-                  <MemoBreweryCard
-                    key={brewery.id}
-                    brewery={brewery}
-                    festival={festival}
-                    drunkBeers={progress.drunkBeers}
-                    favoriteBeers={progress.favoriteBeers}
-                    beerRatings={progress.beerRatings}
-                    onToggleDrunk={toggleDrunk}
-                    onToggleFavorite={toggleFavorite}
-                    onRatingChange={changeRating}
-                    showOnlyFavorites
-                    hideDrunkBeers={progress.hideDrunkBeers}
-                    showOnlyUnrated={progress.showOnlyUnrated}
-                    sessionFilter={progress.sessionFilter}
-                  />
-                ))
-              )}
-            </Box>
+          {tab === "map" && <VenueMap festival={festival} drunkBeers={progress.drunkBeers} />}
+          {tab === "route" && (
+            <RoutePlanner
+              festival={festival}
+              drunkBeers={progress.drunkBeers}
+              favoriteBeers={progress.favoriteBeers}
+              minRating={minRating}
+              startSession={startSession}
+              onMinRatingChange={setMinRating}
+              onStartSessionChange={setStartSession}
+              plannedBeers={plannedBeers}
+              onPlannedChange={setPlannedBeers}
+              onToggleDrunk={toggleDrunk}
+            />
           )}
           {hasAchievements && tab === "achievements" && <AchievementWall achievements={unlocked} />}
           {tab === "history" && (
@@ -489,8 +522,22 @@ export default function App() {
               onSelectFestival={selectFestival}
             />
           )}
+          </Box>
         </Container>
       </Box>
+      <BeerDialog
+        festival={festival}
+        entry={openedEntry}
+        drunkBeers={progress.drunkBeers}
+        favoriteBeers={progress.favoriteBeers}
+        plannedBeers={plannedBeers}
+        beerRatings={progress.beerRatings}
+        onRatingChange={changeRating}
+        onToggleDrunk={toggleDrunk}
+        onToggleFavorite={toggleFavorite}
+        onTogglePlan={togglePlan}
+        onClose={() => setOpenedBeerId(null)}
+      />
       <Splash open={splashOpen} festival={festival} onDismiss={dismissSplash} />
       <AchievementDialog
         achievement={activeAchievement}

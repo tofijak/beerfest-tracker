@@ -33,6 +33,12 @@ A React + Vite app for checking off beers, starring favorites, and rating pours 
 - Raise the Bar 2026 is bundled as the first festival (275 beers / 50 breweries, session colors, No/Low)
 - TBA entries kept as TBA
 - Untappd search links on every named beer
+- Untappd rating + rating count on 230 of 275 beers (beers without one show no Untappd link)
+- Tap a beer for details (style, ABV, rating, quick actions)
+- Filters: status, session, stand, style, ABV range, rating range, only-rated, plus sort by rating / ABV / name
+- **Map** tab: schematic of the three stand areas with per-zone progress
+- **Route** tab: build your own route (list-add icon on any beer, reorder, copy) or use the suggested must-try route by stand
+- Dark neon UI with voxel-style 3D pixel art (mug, hop, can)
 - Check-off, favorites, rating slider, search, and hide/unrated filters
 - Per-festival achievements
 - Passport / history: festivals you’ve been to, plus an all-time hall of foam

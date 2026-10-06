@@ -51,7 +51,12 @@
           "name": "Zenne d’Auge S25/26 Blend no. 47",
           "style": "Calvados BA lambic",
           "abv": null,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 4.34,
+            "count": 95,
+            "url": "https://untappd.com/b/brouwerij-3-fonteinen-zenne-d-auge-calvados-barrel-aged-geuze-season-25-26-blend-no-4/6818050"
+          }
         },
         {
           "id": 103,
@@ -66,7 +71,12 @@
           "style": "Lambic w. gamay grapes",
           "abv": 9.1,
           "session": "yellow",
-          "notes": "collab Alex Foillard"
+          "notes": "collab Alex Foillard",
+          "untappd": {
+            "rating": 4.21,
+            "count": 60,
+            "url": "https://untappd.com/b/brouwerij-3-fonteinen-3-fonteinen-x-alex-foillard-druif-gamay-season-23-24-blend-no-58/6818005"
+          }
         },
         {
           "id": 105,
@@ -80,7 +90,12 @@
           "name": "Druif Chardonnay S21/22 Blend no. 76",
           "style": "Lambic w. chardonnay grapes",
           "abv": 8,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 4.18,
+            "count": 65,
+            "url": "https://untappd.com/b/brouwerij-3-fonteinen-3-fonteinen-druif-chardonnay-season-21-22-blend-no-76/5317774"
+          }
         }
       ]
     },
@@ -96,42 +111,76 @@
           "name": "Sparrows",
           "style": "DIPA",
           "abv": 8,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 3.99,
+            "count": 3735,
+            "url": "https://untappd.com/b/alefarm-brewing-sparrows/3345586"
+          },
+          "description": {
+            "text": "Hazy double IPA dry-hopped with Citra, Citra BBC, Ekuanot and Topaz, giving a hop-forward profile with lots of fruit character in the aftertaste.",
+            "source": "https://beercartel.com.au/products/alefarm-sparrows-hazy-dipa"
+          }
         },
         {
           "id": 202,
           "name": "Night Cap",
           "style": "DH Porter",
           "abv": 5,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 3.4,
+            "count": 136,
+            "url": "https://untappd.com/b/alefarm-brewing-night-cap/6474366"
+          }
         },
         {
           "id": 203,
           "name": "Season to Give",
           "style": "DIPA",
           "abv": 8,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 3.59,
+            "count": 25,
+            "url": "https://untappd.com/b/alefarm-brewing-season-to-give/6895046"
+          }
         },
         {
           "id": 204,
           "name": "No Place Like Gnome",
           "style": "Brown Ale",
           "abv": 5,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": null,
+            "count": null,
+            "url": "https://untappd.com/b/alefarm-brewing-no-place-like-gnome/6895048"
+          }
         },
         {
           "id": 205,
           "name": "Found",
           "style": "WC DIPA",
           "abv": 8,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 3.63,
+            "count": 928,
+            "url": "https://untappd.com/b/alefarm-brewing-found/6680856"
+          }
         },
         {
           "id": 206,
           "name": "Exit-Buddy",
           "style": "American IPA",
           "abv": 6.7,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 3.76,
+            "count": 126,
+            "url": "https://untappd.com/b/alefarm-brewing-exit-buddy/6826231"
+          }
         }
       ]
     },
@@ -147,42 +196,84 @@
           "name": "Minor Key",
           "style": "Session IPA",
           "abv": 3.5,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 4.1,
+            "count": 12,
+            "url": "https://untappd.com/b/apex-brewing-company-minor-key-ipa/6918629"
+          }
         },
         {
           "id": 302,
           "name": "Butterfly Protocol",
           "style": "NE IPA",
           "abv": 6.5,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 4.03,
+            "count": 279,
+            "url": "https://untappd.com/b/apex-brewing-company-butterfly-protocol-ipa/6829379"
+          }
         },
         {
           "id": 303,
           "name": "Kellerpils",
           "style": "Kellerpils",
           "abv": 5.2,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 3.44,
+            "count": 6263,
+            "url": "https://untappd.com/b/apex-brewing-company-kellerpils/4113523"
+          }
         },
         {
           "id": 304,
           "name": "NE Mosaic & Simcoe IPA",
           "style": "NE IPA",
           "abv": 6.5,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 3.9,
+            "count": 17328,
+            "url": "https://untappd.com/b/apex-brewing-company-ne-mosaic-and-simcoe-ipa/2822994"
+          },
+          "description": {
+            "text": "Hop-aromatic, fruity NE IPA with clear bitterness and slight sweetness; notes of pineapple, pine, passion fruit, sponge cake and grapefruit.",
+            "source": "https://www.systembolaget.se/33867"
+          }
         },
         {
           "id": 305,
           "name": "Ghost Frequency",
           "style": "NE IPA",
           "abv": 6.5,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 4.02,
+            "count": 375,
+            "url": "https://untappd.com/b/apex-brewing-company-ghost-frequency-ipa/6836433"
+          },
+          "description": {
+            "text": "Soft, juicy NEIPA on pilsner, pale ale and chit malt with oats, dry hopped with Citra, Galaxy and Nelson Sauvin for citrus, ripe tropical fruit and white grape.",
+            "source": "https://brill.se/ol/ipa/ghost-frequency-6-5-30-l-keykeg"
+          }
         },
         {
           "id": 306,
           "name": "Sonic Eclipse",
           "style": "NE IPA",
           "abv": 6.5,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 3.81,
+            "count": 397,
+            "url": "https://untappd.com/b/apex-brewing-company-sonic-eclipse-ipa/6746456"
+          },
+          "description": {
+            "text": "Hazy NE IPA with a soft, dense, silky body from wheat and oats, dry hopped with Strata, Galaxy and Citra for passion fruit, mango, pineapple and lime-grapefruit zest.",
+            "source": "https://brill.se/ol/ipa/sonic-eclipse-6-5-30-l-keykeg"
+          }
         }
       ]
     },
@@ -198,42 +289,80 @@
           "name": "Nøkken",
           "style": "TDH WC DIPA",
           "abv": 8.5,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 4.25,
+            "count": 315,
+            "url": "https://untappd.com/b/bad-seed-brewing-nokken/6909840"
+          }
         },
         {
           "id": 402,
           "name": "Extra Pilsner: Edelstein",
           "style": "German Style Pilsner",
           "abv": 5,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 3.76,
+            "count": 314,
+            "url": "https://untappd.com/b/bad-seed-brewing-extra-pilsner-edelstein/6811582"
+          }
         },
         {
           "id": 403,
           "name": "Hot Pot Jacuzzi",
           "style": "THD NE TIPA",
           "abv": 10,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 4.05,
+            "count": 1046,
+            "url": "https://untappd.com/b/bad-seed-brewing-hot-pot-jacuzzi/6637697"
+          },
+          "description": {
+            "text": "Bad Seed's first hazy triple IPA, triple dry hopped with Citra, Strata and Nelson Sauvin. Velvety, full body that isn't too sweet, with dank Nelson, pineapple, passionfruit, mandarin and peach.",
+            "source": "https://www.badseed.dk/p/hot-pot-jacuzzi"
+          }
         },
         {
           "id": 404,
           "name": "Slack Phillip",
           "style": "DDH Double Black IPA",
           "abv": 8.3,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 3.81,
+            "count": 541,
+            "url": "https://untappd.com/b/bad-seed-brewing-slack-phillip/6629714"
+          }
         },
         {
           "id": 405,
           "name": "Neu Pilsner",
           "style": "German Style Pilsner",
           "abv": 5,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 3.37,
+            "count": 3584,
+            "url": "https://untappd.com/b/bad-seed-brewing-neu-pilsner/3121886"
+          },
+          "description": {
+            "text": "The brewery's flagship North German-style pilsner: fresh, dry and bitter, with fresh-cut grass and citrus hop notes over a delicate malt base. Hopped with Hallertau Mittelfrüh and Tettnang.",
+            "source": "https://www.badseed.dk/p/neu-pilsner"
+          }
         },
         {
           "id": 406,
           "name": "Adambier",
           "style": "German Strong Ale",
           "abv": 10.5,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 3.78,
+            "count": 677,
+            "url": "https://untappd.com/b/bad-seed-brewing-adambier/5132828"
+          }
         }
       ]
     },
@@ -249,42 +378,84 @@
           "name": "Uncut Jams",
           "style": "Fruited Sour",
           "abv": 5.3,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 4.17,
+            "count": 1362,
+            "url": "https://untappd.com/b/blackstack-brewing-uncut-jams-strawberry-rhubarb/5788771"
+          },
+          "description": {
+            "text": "Foeder-fermented mixed-culture Berliner weisse loaded with strawberry, blueberry, raspberry and Madagascar vanilla, like a berry jam sour.",
+            "source": "https://www.beermenus.com/beers/457745-blackstack-uncut-jams"
+          }
         },
         {
           "id": 502,
           "name": "Empty Nesters",
           "style": "BBA Stout",
           "abv": 12.1,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 4.36,
+            "count": 230,
+            "url": "https://untappd.com/b/blackstack-brewing-empty-nesters/6682071"
+          }
         },
         {
           "id": 503,
           "name": "Local 755",
           "style": "NEIPA",
           "abv": 6.8,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 3.99,
+            "count": 18760,
+            "url": "https://untappd.com/b/blackstack-brewing-local-755/1994891"
+          },
+          "description": {
+            "text": "Hazy IPA with Amarillo, Azacca and Citra: grapefruit and sweet orange aroma, juicy tropical flavour, dry finish and a soft, pillowy body.",
+            "source": "https://www.porchdrinking.com/?p=214268"
+          }
         },
         {
           "id": 504,
           "name": "Slopes",
           "style": "Pilsner",
           "abv": 4.6,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 3.77,
+            "count": 3367,
+            "url": "https://untappd.com/b/blackstack-brewing-slopes/5641236"
+          },
+          "description": {
+            "text": "French-style pilsner with French malt, a bit of corn and Strisselspalt hops: grassy, biscuity and bready, with lemon pith, wildflower and spruce notes.",
+            "source": "https://tavour.com/b/slopes-b578131"
+          }
         },
         {
           "id": 505,
           "name": "I Think It Might Be Broken",
           "style": "NE DIPA",
           "abv": 8,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 4.19,
+            "count": 426,
+            "url": "https://untappd.com/b/blackstack-brewing-i-think-it-might-be-broken/6853474"
+          }
         },
         {
           "id": 506,
           "name": "Harvest Moon",
           "style": "WC IPA",
           "abv": 6.4,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 3.81,
+            "count": 719,
+            "url": "https://untappd.com/b/blackstack-brewing-harvest-moon-collab-w-second-harvest-heartland/6016633"
+          }
         }
       ]
     },
@@ -300,42 +471,76 @@
           "name": "Populus W/Nelson",
           "style": "NE IPA",
           "abv": 7.5,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 4.43,
+            "count": 290,
+            "url": "https://untappd.com/b/brujos-brewing-populus-w-nelson/6854355"
+          },
+          "description": {
+            "text": "Double dry-hopped hazy IPA with Nelson Sauvin, Citra and Mosaic on a soft, supple grist built to carry juicy hop character.",
+            "source": "https://www.beerandbrewing.com/brujos-populus-ddh-hazy-ipa"
+          }
         },
         {
           "id": 602,
           "name": "Where Flowers Burn",
           "style": "WC IPA",
           "abv": 7,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 4.3,
+            "count": 228,
+            "url": "https://untappd.com/b/brujos-brewing-where-flowers-burn/6867015"
+          }
         },
         {
           "id": 603,
           "name": "Fastened To The Five Points",
           "style": "NE Pale Ale",
           "abv": 5.5,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 4.32,
+            "count": 128,
+            "url": "https://untappd.com/b/brujos-brewing-fastened-to-the-five-points/6861229"
+          }
         },
         {
           "id": 604,
           "name": "What Fresh Hell",
           "style": "WC IPA",
           "abv": 6.66,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 4.37,
+            "count": 383,
+            "url": "https://untappd.com/b/brujos-brewing-what-fresh-hell/6410194"
+          }
         },
         {
           "id": 605,
           "name": "Imperator Murcielago",
           "style": "NE DIPA",
           "abv": 8.5,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 4.4,
+            "count": 237,
+            "url": "https://untappd.com/b/brujos-brewing-imperator-murcielago/6852823"
+          }
         },
         {
           "id": 606,
           "name": "Never Enough",
           "style": "WC IPA",
           "abv": 7.5,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 4.46,
+            "count": 13,
+            "url": "https://untappd.com/b/brujos-brewing-never-enough/6909579"
+          }
         }
       ]
     },
@@ -351,42 +556,84 @@
           "name": "Anniversaire",
           "style": "Farmhouse/Saison",
           "abv": 6.3,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 3.96,
+            "count": 57,
+            "url": "https://untappd.com/b/burning-sky-brewery-anniversaire-2026/6832728"
+          },
+          "description": {
+            "text": "Farmhouse beer fermented and aged in French Chardonnay barriques with a blend of wild yeast strains.",
+            "source": "https://www.beergonzo.co.uk/buy/beer/burning-sky-saison-anniversaire-p706"
+          }
         },
         {
           "id": 702,
           "name": "Piquette",
           "style": "Farmhouse/Saison",
           "abv": 5.2,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 3.95,
+            "count": 100,
+            "url": "https://untappd.com/b/burning-sky-brewery-piquette/6316688"
+          }
         },
         {
           "id": 703,
           "name": "Anniversaire Blackberry",
           "style": "Farmhouse/Saison",
           "abv": 6.3,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 4.02,
+            "count": 68,
+            "url": "https://untappd.com/b/burning-sky-brewery-anniversaire-blackberry/6818818"
+          }
         },
         {
           "id": 704,
           "name": "Quench",
           "style": "NZ Pale Ale",
           "abv": 5.2,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 3.75,
+            "count": 3521,
+            "url": "https://untappd.com/b/burning-sky-brewery-quench/5540456"
+          }
         },
         {
           "id": 705,
           "name": "Elderberry Monolith",
           "style": "Wild Dark Ale w. elderberries",
           "abv": 9.7,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 3.88,
+            "count": 825,
+            "url": "https://untappd.com/b/burning-sky-brewery-elderberry-monolith/4236172"
+          },
+          "description": {
+            "text": "Built on Burning Sky's Monolith, aged in a Chianti foudre with wild yeasts for chocolatey, vinous oak flavours and mild acidity.",
+            "source": "https://www.beergonzo.co.uk/buy/beer/burning-sky-monolith-p707"
+          }
         },
         {
           "id": 706,
           "name": "Luppoleto",
           "style": "Italian Pils",
           "abv": 4.6,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 3.68,
+            "count": 2356,
+            "url": "https://untappd.com/b/burning-sky-brewery-luppoleto-pils/4227205"
+          },
+          "description": {
+            "text": "Pilsner malt with noble German hops, fermented cold, then dry-hopped and lagered for an extended period.",
+            "source": "https://www.beergonzo.co.uk/buy/beer/burning-sky-saison-anniversaire-p706"
+          }
         }
       ]
     },
@@ -432,42 +679,80 @@
           "name": "Wildflower Cryo Fresh #1 Mosaic",
           "style": "NE IPA",
           "abv": 5.9,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 3.76,
+            "count": 25,
+            "url": "https://untappd.com/b/ebeltoft-gardbryggeri-wildflower-ipa-cryo-fresh-1-mosaic/6860579"
+          },
+          "description": {
+            "text": "Cryo Fresh edition of Ebeltoft's Wildflower NEIPA, built on pilsner malt, rye and wheat, here with Mosaic. Wildflower has pineapple and lime notes, a near full body and is very drinkable.",
+            "source": "https://www.loegismose.dk/produkter/ebeltoft-wildflower-ipa-59--33cl/82663/"
+          }
         },
         {
           "id": 902,
           "name": "Wildflower Cryo Fresh #2 Simcoe",
           "style": "NE IPA",
           "abv": 5.9,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": null,
+            "count": 9,
+            "url": "https://untappd.com/b/ebeltoft-gardbryggeri-wildflower-cryo-fresh-2-simcoe/6860580"
+          },
+          "description": {
+            "text": "Cryo Fresh edition of Ebeltoft's Wildflower NEIPA, built on pilsner malt, rye and wheat, here with Simcoe. Wildflower has pineapple and lime notes, a near full body and is very drinkable.",
+            "source": "https://www.loegismose.dk/produkter/ebeltoft-wildflower-ipa-59--33cl/82663/"
+          }
         },
         {
           "id": 903,
           "name": "Petroleum Cryo Fresh #1 Krush",
           "style": "WC IPA",
           "abv": 6.2,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 3.51,
+            "count": 250,
+            "url": "https://untappd.com/b/ebeltoft-gardbryggeri-petroleum-cryo-fresh-1-krush/6717803"
+          }
         },
         {
           "id": 904,
           "name": "Petroleum Cryo Fresh #2 Simcoe",
           "style": "WC IPA",
           "abv": 6.2,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 3.53,
+            "count": 220,
+            "url": "https://untappd.com/b/ebeltoft-gardbryggeri-petroleum-cryo-fresh-2-simcoe/6717805"
+          }
         },
         {
           "id": 905,
           "name": "Raw Power Cryo Fresh #1 Citra",
           "style": "NE DIPA",
           "abv": 8.5,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 3.6,
+            "count": 15,
+            "url": "https://untappd.com/b/ebeltoft-gardbryggeri-raw-power-cryo-fresh-1-citra/6860581"
+          }
         },
         {
           "id": 906,
           "name": "Raw Power Cryo Fresh #2 Krush",
           "style": "NE DIPA",
           "abv": 8.5,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 4,
+            "count": 11,
+            "url": "https://untappd.com/b/ebeltoft-gardbryggeri-raw-power-cryo-fresh-2-krush/6860582"
+          }
         }
       ]
     },
@@ -483,42 +768,72 @@
           "name": "tracing The Departed",
           "style": "NE DIPA",
           "abv": 8.2,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 4.22,
+            "count": 1060,
+            "url": "https://untappd.com/b/everywhere-tracing-the-departed/6282151"
+          }
         },
         {
           "id": 1002,
           "name": "hey!",
           "style": "Hard Seltzer",
           "abv": 5,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 4.01,
+            "count": 106,
+            "url": "https://untappd.com/b/everywhere-hey/5970501"
+          }
         },
         {
           "id": 1003,
           "name": "lost vectors",
           "style": "TDH WC IPA",
           "abv": 7.2,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 4.23,
+            "count": 773,
+            "url": "https://untappd.com/b/everywhere-lost-vectors/6100537"
+          }
         },
         {
           "id": 1004,
           "name": "vanishing points",
           "style": "DDH WC IPA",
           "abv": 6.4,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 4.13,
+            "count": 980,
+            "url": "https://untappd.com/b/everywhere-vanishing-points/5965708"
+          }
         },
         {
           "id": 1005,
           "name": "pink guava passion fruit",
           "style": "Hard Seltzer",
           "abv": 5.5,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 4.17,
+            "count": 174,
+            "url": "https://untappd.com/b/everywhere-pink-guava-passion-fruit/5210371"
+          }
         },
         {
           "id": 1006,
           "name": "shifted visions",
           "style": "NE IPA",
           "abv": 7.1,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 4.1,
+            "count": 1408,
+            "url": "https://untappd.com/b/everywhere-shifted-visions/5864573"
+          }
         }
       ]
     },
@@ -534,7 +849,16 @@
           "name": "The Great Northern Barrel Aged Series 57",
           "style": "BA Barley Wine",
           "abv": 14.1,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 4.43,
+            "count": 165,
+            "url": "https://untappd.com/b/evil-twin-brewing-nyc-the-great-northern-barrel-aged-series-57-released-03-13-26/6630568"
+          },
+          "description": {
+            "text": "Bourbon-barrel-aged barleywine blended with aged old ale. Toffee and brown sugar with black cherry, fig and raisin, plus whiskey, wood char and vanilla.",
+            "source": "https://www.tavour.com/b/the-great-northern-barrel-aged-series-57-b582567"
+          }
         },
         {
           "id": 1102,
@@ -548,7 +872,16 @@
           "name": "The Great Northern Barrel Aged Series 58",
           "style": "BA Barley Wine",
           "abv": 13.2,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 4.29,
+            "count": 45,
+            "url": "https://untappd.com/b/evil-twin-brewing-nyc-the-great-northern-barrel-aged-series-58-released-6-5-26/6737186"
+          },
+          "description": {
+            "text": "Rich malty barleywine aged 43 months in new charred American oak. Woody vanilla and barrel char over date, caramel and toffee, with a nutty, mellowed finish.",
+            "source": "https://beerdb.tavour.com/b/the-great-northern-barrel-aged-series-58-b583302"
+          }
         },
         {
           "id": 1104,
@@ -556,21 +889,48 @@
           "style": "Smoothie Sour",
           "abv": 7.16,
           "session": "yellow",
-          "notes": "collab Burley Oak"
+          "notes": "collab Burley Oak",
+          "untappd": {
+            "rating": 4.37,
+            "count": 819,
+            "url": "https://untappd.com/b/evil-twin-brewing-nyc-even-more-dumb-j-r-e-a-m-16-year-anniversary-beer/6679647"
+          },
+          "description": {
+            "text": "Tangy fruited sour packed with blackberry, strawberry and apricot plus peanut butter, a PB&J in a glass. Jammy, juicy and creamy with a nutty finish.",
+            "source": "https://beerdb.tavour.com/b/even-more-dumb-jream-15-year-anniversary-beer-b580251"
+          }
         },
         {
           "id": 1105,
           "name": "The Great Northern Barrel Aged Series 55",
           "style": "BA Stout",
           "abv": 16,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 4.39,
+            "count": 141,
+            "url": "https://untappd.com/b/evil-twin-brewing-the-great-northern-series-55/6714506"
+          },
+          "description": {
+            "text": "Blend of whiskey- and maple-syrup-barrel-aged stouts conditioned on macadamia nuts and vanilla. Massive chocolate, whiskey caramel, maple and nuttiness with creamy vanilla.",
+            "source": "https://tavour.com/b/the-great-northern-barrel-aged-series-55-b582366"
+          }
         },
         {
           "id": 1106,
           "name": "Luxurious Luxury Volume Sixteen",
           "style": "Fruited sour",
           "abv": 9.16,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 4.26,
+            "count": 784,
+            "url": "https://untappd.com/b/evil-twin-brewing-nyc-luxurious-luxury-volume-sixteen-16-year-anniversary-beer/6679648"
+          },
+          "description": {
+            "text": "Evil Twin x The Veil anniversary sour on a tangy, lightly salted base with pineapple, banana and marshmallow, topped with edible gold. Thick, tropical and creamy.",
+            "source": "https://beerdb.tavour.com/b/luxurious-luxury-volume-sixteen-16-year-anniversary-beer-b582995"
+          }
         }
       ]
     },
@@ -586,42 +946,72 @@
           "name": "Straight Outta Fanø",
           "style": "WC IPA",
           "abv": 7.5,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 3.61,
+            "count": 218,
+            "url": "https://untappd.com/b/fano-bryghus-straight-outta-fano/6736993"
+          }
         },
         {
           "id": 1202,
           "name": "Gorm The Old - Skibsrom Edition",
           "style": "Imperial Stout",
           "abv": 12.5,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 4.21,
+            "count": 346,
+            "url": "https://untappd.com/b/fano-bryghus-gorm-the-old-fano-skibsrom-edition/6171657"
+          }
         },
         {
           "id": 1203,
           "name": "Imellem #3",
           "style": "India Pale Lager",
           "abv": 5.5,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 3.54,
+            "count": 491,
+            "url": "https://untappd.com/b/fano-bryghus-imellem-esbjerg-og-fano-3/4684446"
+          }
         },
         {
           "id": 1204,
           "name": "Whisky Business",
           "style": "BA Russian Imperial Stout",
           "abv": 12.3,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 3.99,
+            "count": 328,
+            "url": "https://untappd.com/b/fano-bryghus-whisky-business/6122890"
+          }
         },
         {
           "id": 1205,
           "name": "Fanø Hell",
           "style": "Helles",
           "abv": 4.6,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 3.25,
+            "count": 135,
+            "url": "https://untappd.com/b/fano-bryghus-fano-hell-german-style-lager/6716116"
+          }
         },
         {
           "id": 1206,
           "name": "Red Wedding (2024)",
           "style": "BA Imperial Stout w. coffee and lactose",
           "abv": 13.5,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 4.13,
+            "count": 582,
+            "url": "https://untappd.com/b/fano-bryghus-red-wedding-2024/5692014"
+          }
         }
       ]
     },
@@ -637,42 +1027,72 @@
           "name": "Le Cri des Antipodes",
           "style": "DDH NZ DIPA",
           "abv": 8,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 4.17,
+            "count": 232,
+            "url": "https://untappd.com/b/fauve-le-cri-des-antipodes/6780372"
+          }
         },
         {
           "id": 1302,
           "name": "Clair d'Orage",
           "style": "BBA Imperial Stout",
           "abv": 12,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 4.12,
+            "count": 467,
+            "url": "https://untappd.com/b/fauve-clair-d-orage/6456628"
+          }
         },
         {
           "id": 1303,
           "name": "Cèdre et Pamplemousse",
           "style": "DDH NE DIPA",
           "abv": 8,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 4.2,
+            "count": 82,
+            "url": "https://untappd.com/b/fauve-cedre-et-pamplemousse/6843528"
+          }
         },
         {
           "id": 1304,
           "name": "Sainte Trinité du Houblon 2026",
           "style": "DDH NE TIPA",
           "abv": 9.5,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 4.22,
+            "count": 1158,
+            "url": "https://untappd.com/b/fauve-la-sainte-trinite-du-houblon/6262390"
+          }
         },
         {
           "id": 1305,
           "name": "Où Chante une Rivière",
           "style": "French Whisky BA Imperial Pastry Stout",
           "abv": 12,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 4.12,
+            "count": 477,
+            "url": "https://untappd.com/b/fauve-ou-chante-une-riviere/6596594"
+          }
         },
         {
           "id": 1306,
           "name": "Brume des Îles",
           "style": "Pastry Sour w. passion fruit, mango and coconut milk",
           "abv": 6,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 3.96,
+            "count": 48,
+            "url": "https://untappd.com/b/fauve-brume-des-iles/6843520"
+          }
         }
       ]
     },
@@ -688,42 +1108,96 @@
           "name": "Pilsner",
           "style": "German Pilsner",
           "abv": 4.5,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 3.22,
+            "count": 2150,
+            "url": "https://untappd.com/b/flying-couch-brewing-pilsner/2537723"
+          },
+          "description": {
+            "text": "Golden, crisp German-style pilsner with clean malt, a hint of bready sweetness and gentle, moderate bitterness.",
+            "source": "https://flyingcouch.dk/products/pilsner"
+          }
         },
         {
           "id": 1402,
           "name": "Dinosour",
           "style": "Fruited Sour",
           "abv": 10,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 3.68,
+            "count": 1229,
+            "url": "https://untappd.com/b/flying-couch-brewing-dinosour/4301963"
+          },
+          "description": {
+            "text": "Strong fruited sour with peach and guava for soft tropical sweetness and mandarin for bright citrus. Described as bold and full-bodied.",
+            "source": "https://flyingcouch.dk/products/dinosour"
+          }
         },
         {
           "id": 1403,
           "name": "Something Got Me Started",
           "style": "Märzen",
           "abv": 5.1,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 3.49,
+            "count": 21,
+            "url": "https://untappd.com/b/flying-couch-brewing-something-got-me-started/6897506"
+          },
+          "description": {
+            "text": "Malty Märzen lager with soft bread, biscuit and gentle caramel notes, clean bitterness and herbal, floral Hersbrucker hops. Smooth and drinkable.",
+            "source": "https://flyingcouch.dk/products/something-got-me-started"
+          }
         },
         {
           "id": 1404,
           "name": "Golden Axe",
           "style": "NE IPA",
           "abv": 5.5,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 3.69,
+            "count": 1729,
+            "url": "https://untappd.com/b/flying-couch-brewing-golden-axe/3419179"
+          },
+          "description": {
+            "text": "Juicy, lush hazy IPA hopped with Citra and Motueka, soft and tropical with a strong hop flavour.",
+            "source": "https://flyingcouch.dk/products/golden-axe"
+          }
         },
         {
           "id": 1405,
           "name": "Smack My Batch Up",
           "style": "NE IPA",
           "abv": 6,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": null,
+            "count": 8,
+            "url": "https://untappd.com/b/flying-couch-brewing-smack-my-batch-up/6920695"
+          },
+          "description": {
+            "text": "Soft, hazy NEIPA with Waimea, Riwaka, Nectaron and Nelson Sauvin: citrus, lime and passionfruit, ripe peach and nectarine, and a white-wine grape edge.",
+            "source": "https://flyingcouch.dk/products/smack-my-batch-up"
+          }
         },
         {
           "id": 1406,
           "name": "Bitter Now Than Ever",
           "style": "Best Bitter",
           "abv": 4,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": null,
+            "count": 3,
+            "url": "https://untappd.com/b/flying-couch-brewing-bitter-know-than-never/6920698"
+          },
+          "description": {
+            "text": "Traditional English best bitter with biscuit, toasted bread and caramel malt, plus earthy, gently spicy East Kent Goldings. Balanced and crushable.",
+            "source": "https://flyingcouch.dk/products/bitter-now-than-never"
+          }
         }
       ]
     },
@@ -739,42 +1213,96 @@
           "name": "Berliner Landbier",
           "style": "Helles",
           "abv": 5,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 3.45,
+            "count": 9090,
+            "url": "https://untappd.com/b/fuerst-wiacek-berlin-berliner-landbier/4411270"
+          },
+          "description": {
+            "text": "Slightly hazy deep-amber Helles with dried apricot, fresh peach, bread and wheat notes, a crisp bitterness and a dry, long finish.",
+            "source": "https://fuerstwiacek.com/buy/fresh-craft-beer/berliner-landbier-helles/"
+          }
         },
         {
           "id": 1502,
           "name": "Motion Blur",
           "style": "NE IPA",
           "abv": 6.2,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 4.1,
+            "count": 83,
+            "url": "https://untappd.com/b/fuerst-wiacek-berlin-motion-blur/6882595"
+          },
+          "description": {
+            "text": "Hazy DDH IPA dry hopped with Citra, Riwaka and Nectaron, brewed with barley, wheat and oats.",
+            "source": "https://fuerstwiacek.com/buy/fresh-craft-beer/motion-blur-ipa/"
+          }
         },
         {
           "id": 1503,
           "name": "Festbier",
           "style": "Festbier",
           "abv": 5.5,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 3.66,
+            "count": 70,
+            "url": "https://untappd.com/b/fuerst-wiacek-berlin-festbier-2026/6850488"
+          },
+          "description": {
+            "text": "Munich-style festival Helles with sweet malt, fresh bread, caramel, dried apricot and raisin notes; oily, balanced bitterness and very quaffable.",
+            "source": "https://fuerstwiacek.com/buy/fresh-craft-beer/festbier-2/"
+          }
         },
         {
           "id": 1504,
           "name": "Personality Crisis",
           "style": "Brett IPA",
           "abv": 7.8,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 3.97,
+            "count": 571,
+            "url": "https://untappd.com/b/fuerst-wiacek-berlin-personality-crisis/5708131"
+          },
+          "description": {
+            "text": "Brett IPA blended from two aged beers, dry hopped with Vic Secret and Citra and spiked with peach and passionfruit; crisp with peach sorbet, tart lemon and Earl Grey notes.",
+            "source": "https://www.beertasting.com/en/beers/personality-crisis"
+          }
         },
         {
           "id": 1505,
           "name": "Ambient Distance",
           "style": "DDH NE IPA",
           "abv": 6.8,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 4.23,
+            "count": 33,
+            "url": "https://untappd.com/b/fuerst-wiacek-berlin-ambient-distance-2026/6869052"
+          },
+          "description": {
+            "text": "Hazy DDH IPA dry hopped with Citra and experimental HBC-638, brewed with barley, wheat and oats.",
+            "source": "https://fuerstwiacek.com/buy/fresh-craft-beer/ambient-distance-ddh-ipa/"
+          }
         },
         {
           "id": 1506,
           "name": "Whistles",
           "style": "American IPA",
           "abv": 6.8,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 3.89,
+            "count": 20,
+            "url": "https://untappd.com/b/fuerst-wiacek-berlin-whistles-2026/6855290"
+          },
+          "description": {
+            "text": "Old-school American IPA dry hopped with Centennial: floral, juicy-fruit gum and a hint of pine, pleasantly bitter with an oily, resinous mouthfeel.",
+            "source": "https://fuerstwiacek.com/buy/fresh-craft-beer/whistles-american-ipa/"
+          }
         }
       ]
     },
@@ -791,7 +1319,16 @@
           "style": "Ice Cream Sour",
           "abv": 8,
           "session": "green",
-          "notes": "RaR collab"
+          "notes": "RaR collab",
+          "untappd": {
+            "rating": 4.22,
+            "count": 308,
+            "url": "https://untappd.com/b/funky-fluid-gelato-xtreme-out-of-order/6844990"
+          },
+          "description": {
+            "text": "Part of the Gelato XTREME series: sour smoothie/pastry style beers with over 40% fruit, very thick and intensely sour and sweet.",
+            "source": "https://www.bieresgourmet.be/en/204_funky-fluid"
+          }
         },
         {
           "id": 1602,
@@ -799,7 +1336,16 @@
           "style": "Imperial Milk Stout",
           "abv": 12,
           "session": "green",
-          "notes": "collab Lua"
+          "notes": "collab Lua",
+          "untappd": {
+            "rating": 4.15,
+            "count": 333,
+            "url": "https://untappd.com/b/funky-fluid-royal-cookie-monolith/6845000"
+          },
+          "description": {
+            "text": "Imperial stout brewed with Lua using Canadian maple syrup, cacao nibs from Beskid Chocolate and fluffy marshmallows; decadent and dessert-like.",
+            "source": "https://www.bieresgourmet.be/en/204_funky-fluid"
+          }
         },
         {
           "id": 1603,
@@ -807,21 +1353,44 @@
           "style": "Ice Cream Sour",
           "abv": 8,
           "session": "yellow",
-          "notes": "collab Marlobobo"
+          "notes": "collab Marlobobo",
+          "untappd": {
+            "rating": 4.25,
+            "count": 388,
+            "url": "https://untappd.com/b/funky-fluid-gelato-xtreme-baltic-pancake/6844986"
+          },
+          "description": {
+            "text": "Part of the Gelato XTREME series: sour smoothie/pastry style beers with over 40% fruit, very thick and intensely sour and sweet.",
+            "source": "https://www.bieresgourmet.be/en/204_funky-fluid"
+          }
         },
         {
           "id": 1604,
           "name": "Double Barrel One And True",
           "style": "Double BA Barleywine",
           "abv": 15,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 4.43,
+            "count": 192,
+            "url": "https://untappd.com/b/funky-fluid-double-barrel-one-and-true/6800706"
+          }
         },
         {
           "id": 1605,
           "name": "Gelato XTREME: Triple Scoop",
           "style": "Ice Cream Sour",
           "abv": 8,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 4.05,
+            "count": 437,
+            "url": "https://untappd.com/b/funky-fluid-gelato-xtreme-triple-scoop/6792033"
+          },
+          "description": {
+            "text": "Part of the Gelato XTREME series: sour smoothie/pastry style beers with over 40% fruit, very thick and intensely sour and sweet.",
+            "source": "https://www.bieresgourmet.be/en/204_funky-fluid"
+          }
         },
         {
           "id": 1606,
@@ -829,7 +1398,16 @@
           "style": "BBA Imperial Stout",
           "abv": 14.5,
           "session": "red",
-          "notes": "collab Hidden Springs"
+          "notes": "collab Hidden Springs",
+          "untappd": {
+            "rating": 4.25,
+            "count": 169,
+            "url": "https://untappd.com/b/funky-fluid-barrel-aged-twin-chicks/6631865"
+          },
+          "description": {
+            "text": "Blend of long-boiled barley wine from Woodford double-oaked bourbon barrels and imperial stout from Jack Daniel's barrels, aged 14 months with cocoa nibs and figs.",
+            "source": null
+          }
         }
       ]
     },
@@ -845,28 +1423,56 @@
           "name": "Bad Doink",
           "style": "WC DIPA",
           "abv": 8.2,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 3.71,
+            "count": 674,
+            "url": "https://untappd.com/b/gamma-brewing-company-bad-doink/6684046"
+          },
+          "description": {
+            "text": "Collab with Bad Seed for Great Doink Day 2026: a new-school West Coast DIPA with a very light malt body and mouthfeel and a solid bitterness at the end. Hopped with Cashmere, Columbus, Citra and Mosaic.",
+            "source": "https://untappd.com/b/gamma-brewing-company-bad-doink/6684046"
+          }
         },
         {
           "id": 1702,
           "name": "Oort Cloud",
           "style": "NE DIPA",
           "abv": 8,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 3.66,
+            "count": 371,
+            "url": "https://untappd.com/b/gamma-brewing-company-oort-cloud/6755074"
+          },
+          "description": {
+            "text": "Double IPA brewed with Bru-1, Mosaic and Vic Secret hops for a fruity, punchy and citrussy aroma and flavour.",
+            "source": "https://gammabrewing.com/products/oort-cloud"
+          }
         },
         {
           "id": 1703,
           "name": "Chonky",
           "style": "NE DIPA",
           "abv": 7.8,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 3.74,
+            "count": 879,
+            "url": "https://untappd.com/b/gamma-brewing-company-chonky/6085338"
+          }
         },
         {
           "id": 1704,
           "name": "Squish Time",
           "style": "Lager w. pink grapefruit and earl grey",
           "abv": 4.7,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 3.25,
+            "count": 209,
+            "url": "https://untappd.com/b/gamma-brewing-company-squish-time/6782338"
+          }
         },
         {
           "id": 1705,
@@ -881,7 +1487,16 @@
           "name": "Superundulation",
           "style": "Imperial sour w. raspberry, rhubarb and blackcurrant",
           "abv": 7,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 3.6,
+            "count": 421,
+            "url": "https://untappd.com/b/gamma-brewing-company-superundulation/6628751"
+          },
+          "description": {
+            "text": "Souped-up version of Gamma's Undulation sour: higher ABV, more fruit and added vanilla.",
+            "source": "https://untappd.com/b/gamma-brewing-company-superundulation/6628751"
+          }
         }
       ]
     },
@@ -897,42 +1512,80 @@
           "name": "Astral Destiny 2026",
           "style": "Mix ferm sour w. raspberries",
           "abv": 5.9,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 3.96,
+            "count": 83,
+            "url": "https://untappd.com/b/holy-goat-brewing-astral-destiny-2026/6851262"
+          }
         },
         {
           "id": 1802,
           "name": "Tangaroa",
           "style": "BA Flanders Red w. blueberries, blackberries and tayberries",
           "abv": 7.4,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 3.85,
+            "count": 239,
+            "url": "https://untappd.com/b/holy-goat-brewing-tangaroa/6851259"
+          }
         },
         {
           "id": 1803,
           "name": "Crimson Veil",
           "style": "BA Flanders Red w. Rooibos, rhubarb and Damson plums",
           "abv": 6.9,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 3.88,
+            "count": 992,
+            "url": "https://untappd.com/b/holy-goat-brewing-crimson-veil/6573893"
+          }
         },
         {
           "id": 1804,
           "name": "Iron Skull",
           "style": "Wee Heavy/Scotch Ale",
           "abv": 8.2,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 3.83,
+            "count": 984,
+            "url": "https://untappd.com/b/holy-goat-brewing-ironskull/6573945"
+          }
         },
         {
           "id": 1805,
           "name": "Honeyfang",
           "style": "Mix ferm sour w. scottish honeyberries",
           "abv": 8,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 3.94,
+            "count": 363,
+            "url": "https://untappd.com/b/holy-goat-brewing-honeyfang/6798477"
+          },
+          "description": {
+            "text": "Golden sour blended from two Brettanomyces-fermented batches, conditioned on Scottish honeyberries; citrus and stone-fruit aromatics, built to drink young or age.",
+            "source": "https://www.beergonzo.co.uk/buy/beer/holy-goat-brewing-honeyfang-p12984"
+          }
         },
         {
           "id": 1806,
           "name": "Iron Goddess",
           "style": "Mix ferm sour w. strawberries and Oloong tea",
           "abv": 6.4,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 3.91,
+            "count": 487,
+            "url": "https://untappd.com/b/holy-goat-brewing-iron-goddess/6746550"
+          },
+          "description": {
+            "text": "Mixed-fermentation sour refermented on first-harvest 2026 Scottish strawberries, with a cold infusion of Nanling Mountain Milk Oolong tea; a collaboration with Black Kite of Hong Kong.",
+            "source": "https://www.beershophq.uk/products/holy-goat-iron-goddess"
+          }
         }
       ]
     },
@@ -948,28 +1601,60 @@
           "name": "Pineapple Coconut Glycerin",
           "style": "Sour DIPA",
           "abv": 8,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 4.33,
+            "count": 2059,
+            "url": "https://untappd.com/b/hudson-valley-brewery-pineapple-coconut-glycerin/3280206"
+          },
+          "description": {
+            "text": "Pina colada-inspired double sour IPA with wheat, oat, milk sugar, pineapple and coconut, hopped with Citra and Nelson.",
+            "source": null
+          }
         },
         {
           "id": 1902,
           "name": "Ikigai",
           "style": "Sour IPA",
           "abv": 7,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 4.41,
+            "count": 3582,
+            "url": "https://untappd.com/b/hudson-valley-brewery-ikigai-sour-ipa/3113322"
+          },
+          "description": {
+            "text": "Sour IPA brewed with wheat, oat, basmati rice, milk sugar, Japanese plums, sea salt and lemongrass, hopped with Mosaic and Azacca.",
+            "source": "https://www.beermenus.com/beers/306318-hudson-valley-ikigai"
+          }
         },
         {
           "id": 1903,
           "name": "Peach Silhouette",
           "style": "Sour IPA",
           "abv": 5,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 4.24,
+            "count": 19708,
+            "url": "https://untappd.com/b/hudson-valley-brewery-peach-silhouette/2323947"
+          },
+          "description": {
+            "text": "Brunch-style sour IPA with wheat and peaches, hopped with Citra.",
+            "source": "https://www.beermenus.com/beers/551196-hudson-valley-n-a-peach-silhouette"
+          }
         },
         {
           "id": 1904,
           "name": "Subglitch",
           "style": "Sour IPA",
           "abv": 7,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 4.27,
+            "count": 6767,
+            "url": "https://untappd.com/b/hudson-valley-brewery-subglitch/2380990"
+          }
         },
         {
           "id": 1905,
@@ -977,14 +1662,24 @@
           "style": "Sour DIPA",
           "abv": 5,
           "session": "red",
-          "notes": "collab Brujos and Root+Branch"
+          "notes": "collab Brujos and Root+Branch",
+          "untappd": {
+            "rating": 4.22,
+            "count": 30,
+            "url": "https://untappd.com/b/hudson-valley-brewery-hellmouth/6918060"
+          }
         },
         {
           "id": 1906,
           "name": "A Great Day in Harlem",
           "style": "Sour DIPA",
           "abv": 8,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 4.31,
+            "count": 140,
+            "url": "https://untappd.com/b/hudson-valley-brewery-a-great-day-in-harlem/6825496"
+          }
         }
       ]
     },
@@ -1000,21 +1695,36 @@
           "name": "Tropical Thirst Trap",
           "style": "NE IPA",
           "abv": 6,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 3.7,
+            "count": 548,
+            "url": "https://untappd.com/b/justone-tropical-thirst-trap/6577308"
+          }
         },
         {
           "id": 2002,
           "name": "Tropical Thirst Trap",
           "style": "NE IPA",
           "abv": 6,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 3.7,
+            "count": 548,
+            "url": "https://untappd.com/b/justone-tropical-thirst-trap/6577308"
+          }
         },
         {
           "id": 2003,
           "name": "Tropical Thirst Trap",
           "style": "NE IPA",
           "abv": 6,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 3.7,
+            "count": 548,
+            "url": "https://untappd.com/b/justone-tropical-thirst-trap/6577308"
+          }
         }
       ]
     },
@@ -1037,21 +1747,44 @@
           "name": "Røgslør",
           "style": "Smoked Märzen",
           "abv": 5,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 3.3,
+            "count": 169,
+            "url": "https://untappd.com/b/kolster-rogslor/5119030"
+          },
+          "description": {
+            "text": "Organic Rauchbier in the Märzen style, brewed with pilsner, Munich and smoked malt. A dark lager with full malt sweetness and soft, rounded smoke.",
+            "source": "https://koelster.dk/products/rogslor-rauchbier"
+          }
         },
         {
           "id": 2103,
           "name": "Solstik",
           "style": "DDH NE IPA",
           "abv": 7,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 3.61,
+            "count": 215,
+            "url": "https://untappd.com/b/kolster-solstik/4044214"
+          }
         },
         {
           "id": 2104,
           "name": "Sortsyn",
           "style": "Baltic Porter",
           "abv": 7.8,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 3.61,
+            "count": 188,
+            "url": "https://untappd.com/b/kolster-sortsyn/5124852"
+          },
+          "description": {
+            "text": "Full-bodied, round Baltic porter with soft notes of dark chocolate, cocoa and a little dried fruit. Malt-led, sweet and harmonious with little bitterness.",
+            "source": "https://koelster.dk/products/sort-syn-baltic-porter"
+          }
         },
         {
           "id": 2105,
@@ -1065,7 +1798,16 @@
           "name": "Himmelfryd",
           "style": "German Pilsner",
           "abv": 5,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 3.35,
+            "count": 512,
+            "url": "https://untappd.com/b/kolster-himmelfryd/3215810"
+          },
+          "description": {
+            "text": "Kølster's first pilsner, brewed on organic pilsner malt and organic hops. Fresh and generously hopped.",
+            "source": "https://koelster.dk/products/bille-organic-vienna-lager-classic-beer-kopi"
+          }
         }
       ]
     },
@@ -1082,42 +1824,88 @@
           "style": "Saison",
           "abv": 6,
           "session": "green",
-          "notes": "collab Burning Sky et. al."
+          "notes": "collab Burning Sky et. al.",
+          "untappd": {
+            "rating": 3.98,
+            "count": 279,
+            "url": "https://untappd.com/b/brasserie-la-malpolon-farmhouse-party-1/6400029"
+          },
+          "description": {
+            "text": "Blend of four saison barrels from the same brew, each fermented with a guest brewery's yeast (Cantina Errante, La Montagnarde, Meta, Burning Sky).",
+            "source": "https://www.bieresgourmet.be/en/140_brasserie-la-malpolon?page=1"
+          }
         },
         {
           "id": 2202,
           "name": "Cerise d'Issanka",
           "style": "Wild Ale",
           "abv": 6.5,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 3.89,
+            "count": 364,
+            "url": "https://untappd.com/b/brasserie-la-malpolon-cerise-d-issanka/6400013"
+          },
+          "description": {
+            "text": "Blend of barrel-aged wild ales with locally grown hand-picked cherries, dried fig leaves and Timut pepper.",
+            "source": "https://www.bieresgourmet.be/en/140_brasserie-la-malpolon"
+          }
         },
         {
           "id": 2203,
           "name": "Saison du Chai 2025",
           "style": "Farmhouse/Saison",
           "abv": 6.3,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 4.05,
+            "count": 476,
+            "url": "https://untappd.com/b/brasserie-la-malpolon-saison-du-chai-2025/6277615"
+          },
+          "description": {
+            "text": "Blend of barrel-aged saisons and mixed-fermentation beers (the 2023 edition used six barrels aged about 10 months on average).",
+            "source": "https://www.bieresgourmet.be/en/140_brasserie-la-malpolon"
+          }
         },
         {
           "id": 2204,
           "name": "Thalie",
           "style": "Grisette",
           "abv": 4.5,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 3.85,
+            "count": 359,
+            "url": "https://untappd.com/b/brasserie-la-malpolon-thalie/6255956"
+          }
         },
         {
           "id": 2205,
           "name": "Blé Fenouil",
           "style": "Witbier",
           "abv": 4.5,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 3.53,
+            "count": 843,
+            "url": "https://untappd.com/b/brasserie-la-malpolon-ble-fenouil/2575202"
+          },
+          "description": {
+            "text": "Witbier-style wheat beer brewed with wild fennel seeds.",
+            "source": "https://beer.be/agenda/la-malpolon-tto/"
+          }
         },
         {
           "id": 2206,
           "name": "Nova Saison",
           "style": "Farmhouse/Saison",
           "abv": 5,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 3.6,
+            "count": 686,
+            "url": "https://untappd.com/b/brasserie-la-malpolon-nova-saison/2553881"
+          }
         }
       ]
     },
@@ -1133,35 +1921,60 @@
           "name": "Nelson",
           "style": "WC IPA",
           "abv": 6.5,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": null,
+            "count": 3,
+            "url": "https://untappd.com/b/mariatorgets-mikrobryggeri-nelson/6819565"
+          }
         },
         {
           "id": 2302,
           "name": "Fatlagred Vaniljstout 2026",
           "style": "BA Stout w. vanilla",
           "abv": 16,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 4.34,
+            "count": 613,
+            "url": "https://untappd.com/b/mariatorgets-mikrobryggeri-fatlagrad-vaniljstout/4882560"
+          }
         },
         {
           "id": 2303,
           "name": "Saison",
           "style": "Saison",
           "abv": 6,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 3.56,
+            "count": 400,
+            "url": "https://untappd.com/b/mariatorgets-mikrobryggeri-saison/2369253"
+          }
         },
         {
           "id": 2304,
           "name": "Kokosgegga",
           "style": "Rhum BA Stout/Barleywine Blend",
           "abv": 17,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 4.4,
+            "count": 27,
+            "url": "https://untappd.com/b/mariatorgets-mikrobryggeri-kokosgegga/5956586"
+          }
         },
         {
           "id": 2305,
           "name": "Källaröl",
           "style": "Kellerbier",
           "abv": 4.3,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 3.58,
+            "count": 148,
+            "url": "https://untappd.com/b/mariatorgets-mikrobryggeri-mariatorgets-kallarol/6272910"
+          }
         },
         {
           "id": 2306,
@@ -1184,42 +1997,80 @@
           "name": "Ceres",
           "style": "NE DIPA",
           "abv": 8,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 4.21,
+            "count": 645,
+            "url": "https://untappd.com/b/mortalis-brewing-company-ceres/6438040"
+          }
         },
         {
           "id": 2402,
           "name": "Echidna",
           "style": "Smoothie sour w. coconut, mango, kiwi, banana and pineapple",
           "abv": 7,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 4.39,
+            "count": 3996,
+            "url": "https://untappd.com/b/mortalis-brewing-company-echidna/5254999"
+          }
         },
         {
           "id": 2403,
           "name": "Gemini | Strawberry + Mango + Watermelon Candy",
           "style": "Smoothie Sour",
           "abv": 7,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 4.34,
+            "count": 1452,
+            "url": "https://untappd.com/b/mortalis-brewing-company-gemini-strawberry-mango-watermelon-candy/4547183"
+          },
+          "description": {
+            "text": "From Mortalis' Gemini line of fruited smoothie sours, a tangy base loaded with two or more fruits.",
+            "source": "https://untappd.com/b/mortalis-brewing-company-gemini-strawberry-kiwi-starburst/4139425"
+          }
         },
         {
           "id": 2404,
           "name": "Harmony Falls",
           "style": "NE DIPA",
           "abv": 8,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 4.34,
+            "count": 122,
+            "url": "https://untappd.com/b/mortalis-brewing-company-harmony-falls/6859176"
+          }
         },
         {
           "id": 2405,
           "name": "Hydra - Passion Fruit, Cherry, Peach",
           "style": "Smoothie Sour",
           "abv": 7,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 4.37,
+            "count": 2062,
+            "url": "https://untappd.com/b/mortalis-brewing-company-hydra-passion-fruit-cherry-peach/3035303"
+          },
+          "description": {
+            "text": "From Mortalis' Hydra line: a thick, juicy, tangy smoothie sour with at least three fruits, balancing sweetness and tartness.",
+            "source": "https://www.tavour.com/b/hydra-pink-guava-peach-boysenberry-b577835"
+          }
         },
         {
           "id": 2406,
           "name": "Itsumi",
           "style": "Italian Pilsner",
           "abv": 4.5,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 4.12,
+            "count": 92,
+            "url": "https://untappd.com/b/mortalis-8bit-itsumi/5997202"
+          }
         }
       ]
     },
@@ -1235,14 +2086,28 @@
           "name": "Pilsner Beer",
           "style": "German Pilsner",
           "abv": 4.2,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 3.53,
+            "count": 4691,
+            "url": "https://untappd.com/b/newbarns-brewery-pilsner-beer/3821685"
+          },
+          "description": {
+            "text": "Take on a classic German pils: Golden Promise malt, German lager yeast and German Callista hops. Crisp, clean and refreshing with bracing citrus notes.",
+            "source": "https://www.royalmilewhiskies.com/newbarns-pilsner-beer-4-2-44cl/"
+          }
         },
         {
           "id": 2502,
           "name": "Turbo Shandy - Raspberry and Lemon",
           "style": "Shandy/Radler",
           "abv": 4,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 3.58,
+            "count": 119,
+            "url": "https://untappd.com/b/newbarns-brewery-turbo-shandy-raspberry-and-lemon/6337160"
+          }
         },
         {
           "id": 2503,
@@ -1250,7 +2115,12 @@
           "style": "Amber Kellerbier",
           "abv": 5,
           "session": "yellow",
-          "notes": "collab Donzoko"
+          "notes": "collab Donzoko",
+          "untappd": {
+            "rating": 3.79,
+            "count": 405,
+            "url": "https://untappd.com/b/donzoko-brewing-company-psycho-keller/5716101"
+          }
         },
         {
           "id": 2504,
@@ -1258,21 +2128,40 @@
           "style": "Black Lager",
           "abv": 5.3,
           "session": "yellow",
-          "notes": "collab The Kernel"
+          "notes": "collab The Kernel",
+          "untappd": {
+            "rating": 4,
+            "count": 122,
+            "url": "https://untappd.com/b/newbarns-brewery-haynau-s-retreat/6860964"
+          }
         },
         {
           "id": 2505,
           "name": "Double Porter",
           "style": "Porter",
           "abv": 7,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 3.86,
+            "count": 473,
+            "url": "https://untappd.com/b/newbarns-brewery-double-porter/6537612"
+          }
         },
         {
           "id": 2506,
           "name": "Festival Bier",
           "style": "Festbier",
           "abv": 5.6,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 3.64,
+            "count": 1394,
+            "url": "https://untappd.com/b/newbarns-brewery-festival-bier/5493978"
+          },
+          "description": {
+            "text": "Golden lager celebrating heritage barley, brewed with a blend of 10 barley varieties.",
+            "source": "https://www.cavedirect.com/short-dated-newbarns-festival-bier-24x44cl-can-5-7-abv-14-05-2024-no-returnsnbfes44c.html"
+          }
         }
       ]
     },
@@ -1288,35 +2177,72 @@
           "name": "Hop Ticket 005: NeNe",
           "style": "NE IPA",
           "abv": 6.5,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 3.86,
+            "count": 168,
+            "url": "https://untappd.com/b/o-o-brewing-hopticket-005/6919862"
+          }
         },
         {
           "id": 2602,
           "name": "Ekta Källarpils",
           "style": "Kellerbier",
           "abv": 5.2,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 3.77,
+            "count": 240,
+            "url": "https://untappd.com/b/o-o-brewing-ekta-kallar-pils/6691578"
+          }
         },
         {
           "id": 2603,
           "name": "Mariaplan Pale Ale",
           "style": "American Pale Ale",
           "abv": 4.9,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 3.59,
+            "count": 3678,
+            "url": "https://untappd.com/b/o-o-brewing-mariaplan-pale-ale/5486472"
+          },
+          "description": {
+            "text": "Very fruity pale ale with nectarine, passion fruit and orange notes, a touch of sponge cake and pine, and distinct bitterness.",
+            "source": "https://www.systembolaget.se/3029215"
+          }
         },
         {
           "id": 2604,
           "name": "Näktar",
           "style": "NE DIPA w. honey",
           "abv": 9,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 3.93,
+            "count": 9739,
+            "url": "https://untappd.com/b/o-o-brewing-naktar/3168491"
+          },
+          "description": {
+            "text": "Richly hopped double IPA with orange-blossom honey; ripe mango, orange and mandarin with honey sweetness and a mild bitter finish.",
+            "source": "https://www.systembolaget.se/produkt/ol/oo-brewing-3484334/"
+          }
         },
         {
           "id": 2605,
           "name": "Narangi",
           "style": "NE IPA",
           "abv": 6.8,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 3.9,
+            "count": 45793,
+            "url": "https://untappd.com/b/o-o-brewing-narangi/1692471"
+          },
+          "description": {
+            "text": "Fruity IPA named for the Hindi word for orange; notes of passion fruit, pineapple, grapefruit peel, pine and honey with distinct bitterness and slight sweetness.",
+            "source": "https://www.systembolaget.se/produkt/ol/oo-narangi-ipa-3286835/"
+          }
         },
         {
           "id": 2606,
@@ -1339,42 +2265,76 @@
           "name": "PANGÆA 2024 Vintage",
           "style": "Wild Ale",
           "abv": 6.5,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 3.91,
+            "count": 774,
+            "url": "https://untappd.com/b/observatoriet-pangaea/5784086"
+          }
         },
         {
           "id": 2702,
           "name": "OSKOREIA",
           "style": "Wild Ale",
           "abv": 7,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 3.58,
+            "count": 345,
+            "url": "https://untappd.com/b/observatoriet-oskoreia/6481653"
+          }
         },
         {
           "id": 2703,
           "name": "WAIMEA",
           "style": "Wild Ale",
           "abv": 6.5,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 3.85,
+            "count": 167,
+            "url": "https://untappd.com/b/observatoriet-waimea/6754515"
+          }
         },
         {
           "id": 2704,
           "name": "PAVÉ",
           "style": "Wild Ale",
           "abv": 7,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 3.84,
+            "count": 756,
+            "url": "https://untappd.com/b/observatoriet-pave/5856564"
+          },
+          "description": {
+            "text": "Dark red-hued wild ale inspired by Flemish Oud Bruin traditions; one drinker likened its sourness to cold red wine in beer form.",
+            "source": "https://untappd.com/w/observatoriet/457077/beer"
+          }
         },
         {
           "id": 2705,
           "name": "OBERON 2024 Vintage",
           "style": "Wild Ale",
           "abv": 6.5,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 3.86,
+            "count": 1176,
+            "url": "https://untappd.com/b/observatoriet-oberon/5208233"
+          }
         },
         {
           "id": 2706,
           "name": "VISTA",
           "style": "Wild Ale",
           "abv": 6.5,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 3.93,
+            "count": 303,
+            "url": "https://untappd.com/b/observatoriet-vista/6211449"
+          }
         }
       ]
     },
@@ -1390,42 +2350,76 @@
           "name": "Madrileño (2026)",
           "style": "NE DIPA",
           "abv": 8.4,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 4.2,
+            "count": 225,
+            "url": "https://untappd.com/b/oso-brew-co-madrileno-2026/6860688"
+          },
+          "description": {
+            "text": "Double NEIPA with a velvety body and tropical aromas of mango, grapefruit and a touch of coconut, from Krush, Citra, Sabro, Mosaic and Simcoe hops.",
+            "source": "https://mundolatas.com/en/?p=352034"
+          }
         },
         {
           "id": 2802,
           "name": "Boca Boca",
           "style": "NE IPA",
           "abv": 7,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 4,
+            "count": 205,
+            "url": "https://untappd.com/b/oso-brew-co-boca-boca/6860684"
+          }
         },
         {
           "id": 2803,
           "name": "60KG Tropical Fusion",
           "style": "NE IPA",
           "abv": 6.5,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 3.98,
+            "count": 199,
+            "url": "https://untappd.com/b/oso-brew-co-60kg-tropical-fusion/6860681"
+          }
         },
         {
           "id": 2804,
           "name": "Serendipity",
           "style": "NE IPA",
           "abv": 6,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 3.87,
+            "count": 180,
+            "url": "https://untappd.com/b/oso-brew-co-serendipity/6860682"
+          }
         },
         {
           "id": 2805,
           "name": "Buckaroo",
           "style": "WC IPA",
           "abv": 6.5,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 3.81,
+            "count": 155,
+            "url": "https://untappd.com/b/oso-brew-co-buckaroo/6860691"
+          }
         },
         {
           "id": 2806,
           "name": "Prost",
           "style": "Märzen",
           "abv": 5.5,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 3.64,
+            "count": 356,
+            "url": "https://untappd.com/b/oso-brew-co-prost/6399924"
+          }
         }
       ]
     },
@@ -1441,42 +2435,72 @@
           "name": "Night Stáálu",
           "style": "Wild Ale",
           "abv": 8,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 4.12,
+            "count": 326,
+            "url": "https://untappd.com/b/paihalas-brewery-night-staalu/6415690"
+          }
         },
         {
           "id": 2902,
           "name": "Idle Fish",
           "style": "Wild Ale (Gruit)",
           "abv": 6.7,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 4.17,
+            "count": 363,
+            "url": "https://untappd.com/b/paihalas-brewery-idle-fish/6274013"
+          }
         },
         {
           "id": 2903,
           "name": "Cloudless Brow",
           "style": "Wild Ale",
           "abv": 6.3,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 4.27,
+            "count": 63,
+            "url": "https://untappd.com/b/paihalas-brewery-cloudless-brow/6810090"
+          }
         },
         {
           "id": 2904,
           "name": "Bear the Dreams",
           "style": "Sour (Oud Bruin)",
           "abv": 7.6,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 4.04,
+            "count": 267,
+            "url": "https://untappd.com/b/paihalas-brewery-bear-the-dreams/6522849"
+          }
         },
         {
           "id": 2905,
           "name": "Wind Claws",
           "style": "Wild Ale (Gruit)",
           "abv": 8,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 4.1,
+            "count": 223,
+            "url": "https://untappd.com/b/paihalas-brewery-wind-claws/6100090"
+          }
         },
         {
           "id": 2906,
           "name": "Dead Noise",
           "style": "Gin BA Wild Ale (Gruit)",
           "abv": 8,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 4.11,
+            "count": 278,
+            "url": "https://untappd.com/b/paihalas-brewery-dead-noise/6156681"
+          }
         }
       ]
     },
@@ -1499,35 +2523,80 @@
           "name": "STATS",
           "style": "NE IPA",
           "abv": 6.6,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 4.05,
+            "count": 75,
+            "url": "https://untappd.com/b/palindrome-brewing-co-stats/6852480"
+          },
+          "description": {
+            "text": "Hazy IPA with Citra and Mosaic: light melon, ripe sticky pineapple and fresh pear, with tropical and citrus notes.",
+            "source": "https://untappd.com/PalindromeBrew/beer"
+          }
         },
         {
           "id": 3003,
           "name": "CINEGENIC",
           "style": "NE DIPA",
           "abv": 8,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 4.13,
+            "count": 83,
+            "url": "https://untappd.com/b/palindrome-brewing-co-cinegenic/6852528"
+          },
+          "description": {
+            "text": "Palindrome's first double IPA, hopped with Nelson Sauvin, Citra, Mosaic and Strata. Juicy and layered with citrus, guava, peach and passionfruit.",
+            "source": "https://untappd.com/PalindromeBrew/beer"
+          }
         },
         {
           "id": 3004,
           "name": "TNT",
           "style": "NE TIPA",
           "abv": 10.5,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 4.13,
+            "count": 16,
+            "url": "https://untappd.com/b/palindrome-brewing-co-tnt/6910647"
+          },
+          "description": {
+            "text": "Triple hazy IPA: vibrant, juicy and complex, with tropical fruit, sticky citrus zest, sweet red berries, lollipop candy and a white grape character.",
+            "source": "https://untappd.com/PalindromeBrew/beer"
+          }
         },
         {
           "id": 3005,
           "name": "DR AWKWARD",
           "style": "NE DIPA",
           "abv": 8.1,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 4.26,
+            "count": 14,
+            "url": "https://untappd.com/b/palindrome-brewing-co-dr-awkward/6910579"
+          },
+          "description": {
+            "text": "Hazy double IPA with a tropical fruit punch aroma, peach rings, white wine spritzer and candied melon, balanced by red grapefruit.",
+            "source": "https://untappd.com/PalindromeBrew/beer"
+          }
         },
         {
           "id": 3006,
           "name": "NEVER ODD OR EVEN",
           "style": "NE IPA",
           "abv": 6.6,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 4.02,
+            "count": 32,
+            "url": "https://untappd.com/b/palindrome-brewing-co-never-odd-or-even/6859877"
+          },
+          "description": {
+            "text": "Hazy IPA that opens like dank berry soda, with candy-like tropical sweetness from Azacca against sharp citrus and white-wine notes from Nelson.",
+            "source": "https://untappd.com/PalindromeBrew/beer"
+          }
         }
       ]
     },
@@ -1543,42 +2612,80 @@
           "name": "14 years of Neotradition",
           "style": "Czech Pale Lager",
           "abv": 5.1,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 3.81,
+            "count": 221,
+            "url": "https://untappd.com/b/pivovar-zichovec-14-years-of-neotradition-12-deg/6860126"
+          }
         },
         {
           "id": 3102,
           "name": "14 Years of Mega Happiness",
           "style": "Double NE IPA",
           "abv": 9,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 4.04,
+            "count": 299,
+            "url": "https://untappd.com/b/pivovar-zichovec-14-years-of-megahappiness-20/6870067"
+          }
         },
         {
           "id": 3103,
           "name": "Dubai Style Chocolate Stout 2025",
           "style": "BA Stout",
           "abv": 14,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 4.08,
+            "count": 433,
+            "url": "https://untappd.com/b/pivovar-zichovec-dubai-style-chocolate-stout-2025/6410879"
+          }
         },
         {
           "id": 3104,
           "name": "Cold Brew Berries",
           "style": "Fruited Sour",
           "abv": 5.1,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 3.92,
+            "count": 383,
+            "url": "https://untappd.com/b/pivovar-zichovec-cold-brew-berries-12/6843005"
+          }
         },
         {
           "id": 3105,
           "name": "Kren 12",
           "style": "Gose w/horseradish and dill",
           "abv": 5.1,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 3.49,
+            "count": 855,
+            "url": "https://untappd.com/b/pivovar-zichovec-kren-12/6576572"
+          },
+          "description": {
+            "text": "Gose with fresh horseradish and a touch of dill, giving a sharp, spicy kick over tart acidity and a classic salty finish.",
+            "source": "https://www.rohlik.cz/en-CZ/1480136-zichovec-kren-12"
+          }
         },
         {
           "id": 3106,
           "name": "Krahulik 11",
           "style": "Czech Pils",
           "abv": 4.6,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 3.52,
+            "count": 5827,
+            "url": "https://untappd.com/b/pivovar-zichovec-krahulik-11/2483912"
+          },
+          "description": {
+            "text": "Unfiltered Czech light lager with Saaz Shine and Harmonie hops: elegant bitterness, herbal-floral aroma, a hint of citrus and a dry finish.",
+            "source": "https://www.rohlik.cz/1472403-zichovec-krahulik-11"
+          }
         }
       ]
     },
@@ -1594,42 +2701,92 @@
           "name": "SOMMAR",
           "style": "BA Sour w. elderflower and rhubarb",
           "abv": 6,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 3.45,
+            "count": 166,
+            "url": "https://untappd.com/b/rocket-brewing-company-rocket-sommar/6768823"
+          },
+          "description": {
+            "text": "Fruity, very tart sour with notes of apple, rhubarb and elderflower; moderate bitterness, lighter body, little sweetness.",
+            "source": "https://www.systembolaget.se/3497735"
+          }
         },
         {
           "id": 3202,
           "name": "PLOMMON 2024",
           "style": "BA Sour w. Opal plums",
           "abv": 6.2,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 3.8,
+            "count": 104,
+            "url": "https://untappd.com/b/rocket-brewing-company-plommon/6702190"
+          }
         },
         {
           "id": 3203,
           "name": "RABARBER",
           "style": "BA Sour w. rhubarb",
           "abv": 6,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 3.73,
+            "count": 46,
+            "url": "https://untappd.com/b/rocket-brewing-company-rabarber/6677111"
+          },
+          "description": {
+            "text": "Very tart rhubarb lambic-style beer with barrel, rhubarb, apple cider vinegar, hay, citrus peel and light bread notes.",
+            "source": "https://www.systembolaget.se/3561215"
+          }
         },
         {
           "id": 3204,
           "name": "ÄPPLE",
           "style": "Spontaneous fermented Wild Ale w. Cox Orange apples",
           "abv": 6.4,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 3.49,
+            "count": 186,
+            "url": "https://untappd.com/b/fruktrocket-apple/6334242"
+          },
+          "description": {
+            "text": "Tart, fruity wild ale made with Cox Orange apples, with notes of orange, apple cider vinegar, light bread, hay and almond paste.",
+            "source": "https://www.systembolaget.se/3166915"
+          }
         },
         {
           "id": 3205,
           "name": "BJÖRNBÄR",
           "style": "BBA Oud Bruin w. blackberries",
           "abv": 8.1,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 3.73,
+            "count": 146,
+            "url": "https://untappd.com/b/rocket-brewing-company-bjornbar/6702198"
+          },
+          "description": {
+            "text": "Nuanced, tart blackberry beer with notes of barrel, dried apricot, blackberry, malt vinegar, nuts, hay and blood grapefruit.",
+            "source": "https://www.systembolaget.se/3269101"
+          }
         },
         {
           "id": 3206,
           "name": "FLÄDER",
           "style": "BA Sour w. elderberries",
           "abv": 5.8,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 3.35,
+            "count": 379,
+            "url": "https://untappd.com/b/rocket-brewing-company-flader/6266976"
+          },
+          "description": {
+            "text": "Distinctly tart sour with notes of barrel, dried apricot, elderflower, straw, blood grapefruit, apple cider vinegar and herbs.",
+            "source": "https://www.systembolaget.se/3313435"
+          }
         }
       ]
     },
@@ -1645,14 +2802,28 @@
           "name": "Life and Fate XLVIII",
           "style": "NE DIPA",
           "abv": 8,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 4.39,
+            "count": 27,
+            "url": "https://untappd.com/b/root-branch-brewing-life-and-fate-xlviii/6873346"
+          }
         },
         {
           "id": 3302,
           "name": "The Castle (Coconut)",
           "style": "American Pale Ale w. coconut",
           "abv": 5,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 4.34,
+            "count": 34,
+            "url": "https://untappd.com/b/root-branch-brewing-the-castle-coconut/6874289"
+          },
+          "description": {
+            "text": "Coconut version of Root + Branch's American pale ale, with visible coconut flakes. Drinkers describe it as sweet, smooth, juicy and crushable with a strong coconut character.",
+            "source": "https://untappd.com/b/root-branch-brewing-the-castle-coconut/6874289"
+          }
         },
         {
           "id": 3303,
@@ -1660,14 +2831,28 @@
           "style": "Sour",
           "abv": 10,
           "session": "yellow",
-          "notes": "collab Evil Twin"
+          "notes": "collab Evil Twin",
+          "untappd": {
+            "rating": 4.16,
+            "count": 63,
+            "url": "https://untappd.com/b/root-branch-brewing-christmas-in-july-at-a-fire-island-beach-house/6853049"
+          }
         },
         {
           "id": 3304,
           "name": "Space in Space",
           "style": "NE DIPA",
           "abv": 8,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 4.32,
+            "count": 445,
+            "url": "https://untappd.com/b/root-branch-brewing-space-in-space/6293778"
+          },
+          "description": {
+            "text": "Hazy double IPA brewed with a mix of oats and wheat. Drinkers call it juicy.",
+            "source": "https://untappd.com/b/root-branch-brewing-space-in-space/6293778"
+          }
         },
         {
           "id": 3305,
@@ -1675,14 +2860,28 @@
           "style": "NE DIPA",
           "abv": 8.5,
           "session": "red",
-          "notes": "collab The Veil"
+          "notes": "collab The Veil",
+          "untappd": {
+            "rating": 4.34,
+            "count": 147,
+            "url": "https://untappd.com/b/root-branch-brewing-firewall/6844015"
+          }
         },
         {
           "id": 3306,
           "name": "Strike Gently (Batch 6)",
           "style": "WC IPA",
           "abv": 7,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 4.3,
+            "count": 48,
+            "url": "https://untappd.com/b/root-branch-brewing-strike-gently-august-2026-batch-6/6840600"
+          },
+          "description": {
+            "text": "West Coast style IPA hopped with Columbus, Citra, Comet, Mosaic and Simcoe.",
+            "source": "https://www.beermenus.com/beers/462293-root-branch-strike-gently"
+          }
         }
       ]
     },
@@ -1699,7 +2898,12 @@
           "style": "Pilsner",
           "abv": 4.9,
           "session": "green",
-          "notes": "collab Humleland"
+          "notes": "collab Humleland",
+          "untappd": {
+            "rating": 3.44,
+            "count": 73,
+            "url": "https://untappd.com/b/schwesterbrau-sosterpils/6443741"
+          }
         },
         {
           "id": 3402,
@@ -1707,7 +2911,12 @@
           "style": "WC IPA",
           "abv": 6,
           "session": "yellow",
-          "notes": "collab Humleland og Pissego"
+          "notes": "collab Humleland og Pissego",
+          "untappd": {
+            "rating": 3.68,
+            "count": 64,
+            "url": "https://untappd.com/b/pissego-stovlevand/6780234"
+          }
         },
         {
           "id": 3403,
@@ -1730,7 +2939,12 @@
           "name": "Slowdown",
           "style": "German Pilsner",
           "abv": 4.8,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 3.43,
+            "count": 107,
+            "url": "https://untappd.com/b/slowburn-brewing-co-op-slow-down/6580879"
+          }
         },
         {
           "id": 3502,
@@ -1745,28 +2959,52 @@
           "name": "Seedling",
           "style": "Farmhouse Ale",
           "abv": 4.7,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 3.67,
+            "count": 1009,
+            "url": "https://untappd.com/b/slowburn-brewing-co-op-seedling/3811919"
+          }
         },
         {
           "id": 3504,
           "name": "Octopils",
           "style": "Italian Pilsner",
           "abv": 5.1,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 3.43,
+            "count": 2501,
+            "url": "https://untappd.com/b/slowburn-brewing-co-op-octopils/3133966"
+          },
+          "description": {
+            "text": "Italian-style pilsner dry-hopped with Hallertau Tradition and Saphir. Clean and dry with delicate toasted bread and mild citrus notes.",
+            "source": "https://www.beertasting.com/en/beers/slowburn-octopils"
+          }
         },
         {
           "id": 3505,
           "name": "Natteravn",
           "style": "Dry Stout",
           "abv": 3.5,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 3.36,
+            "count": 370,
+            "url": "https://untappd.com/b/slowburn-brewing-co-op-natteravn/3399452"
+          }
         },
         {
           "id": 3506,
           "name": "Vox Populi",
           "style": "NE IPA",
           "abv": 6.5,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 3.67,
+            "count": 3952,
+            "url": "https://untappd.com/b/slowburn-brewing-co-op-vox-populi/3133964"
+          }
         }
       ]
     },
@@ -1789,7 +3027,12 @@
           "name": "Svenskerkalkulen",
           "style": "Imperial Stout m. lakrids",
           "abv": 11.4,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 3.59,
+            "count": 11,
+            "url": "https://untappd.com/b/small-grove-brewing-vensker-kalkulen/6811770"
+          }
         },
         {
           "id": 3603,
@@ -1833,42 +3076,88 @@
           "name": "Raiju",
           "style": "WC IPA",
           "abv": 6.4,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 3.76,
+            "count": 20,
+            "url": "https://untappd.com/b/tartarus-beers-raiju/6854298"
+          },
+          "description": {
+            "text": "Gluten-free West Coast IPA with a little Cara malt for an orange hue. Dry hopped with Galaxy, Simcoe and Centennial for citrus zest, ripe tropical fruit and a piney, resinous finish.",
+            "source": "https://www.tartarusbeers.co.uk/"
+          }
         },
         {
           "id": 3702,
           "name": "Seraphim",
           "style": "Barleywine w. tonka and coconut",
           "abv": 13,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 4.44,
+            "count": 36,
+            "url": "https://untappd.com/b/tartarus-beers-seraphim-2026/6858064"
+          },
+          "description": {
+            "text": "Barley wine infused on toasted coconut flakes and tonka beans, brewed for the brewery's 6th birthday.",
+            "source": "https://www.tartarusbeers.co.uk/"
+          }
         },
         {
           "id": 3703,
           "name": "Sphinx",
           "style": "NE IPA",
           "abv": 6.1,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 3.92,
+            "count": 105,
+            "url": "https://untappd.com/b/tartarus-beers-sphinx/6844106"
+          },
+          "description": {
+            "text": "Gluten-free hazy IPA brewed with wheat and oats for a soft body. Dry hopped with Galaxy, Idaho 7 and Citra Hyperboost for passionfruit, peach, citrus, lime and some pine.",
+            "source": "https://www.tartarusbeers.co.uk/"
+          }
         },
         {
           "id": 3704,
           "name": "Merlin",
           "style": "NE DIPA",
           "abv": 8,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 3.98,
+            "count": 542,
+            "url": "https://untappd.com/b/tartarus-beers-merlin/6727070"
+          },
+          "description": {
+            "text": "Double IPA with plenty of wheat and oats for a soft body, heavily dry hopped with Simcoe, Simcoe Cryo and Enigma. Grapefruit, tropical fruit, red berries and pine, with a dank edge.",
+            "source": "https://www.tartarusbeers.co.uk/"
+          }
         },
         {
           "id": 3705,
           "name": "Bugbear",
           "style": "Black IPA",
           "abv": 6,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 3.82,
+            "count": 307,
+            "url": "https://untappd.com/b/tartarus-beers-bugbear/6772383"
+          }
         },
         {
           "id": 3706,
           "name": "Maple Syrup Barrel Aged Bokkenrijder",
           "style": "BA Imperial Stout w. cocoa nips and vanilla",
           "abv": 12.2,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 4.37,
+            "count": 55,
+            "url": "https://untappd.com/b/tartarus-beers-maple-syrup-barrel-aged-bokkenrijder/6817407"
+          }
         }
       ]
     },
@@ -1884,14 +3173,24 @@
           "name": "Reflecting Light",
           "style": "NE IPA",
           "abv": 7,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 4.52,
+            "count": 97,
+            "url": "https://untappd.com/b/test-reflecting-light-2nd-edition-2026/6853603"
+          }
         },
         {
           "id": 3802,
           "name": "Ladder To The Moon",
           "style": "NE DIPA",
           "abv": 8.5,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 4.51,
+            "count": 104,
+            "url": "https://untappd.com/b/test-ladder-to-the-moon/6910703"
+          }
         },
         {
           "id": 3803,
@@ -1936,35 +3235,67 @@
           "name": "Table Beer",
           "style": "Table Beer",
           "abv": 3,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 3.59,
+            "count": 23048,
+            "url": "https://untappd.com/b/the-kernel-brewery-table-beer/243048"
+          },
+          "description": {
+            "text": "Low-strength pale ale on Maris Otter and rolled oats with batch-varying hops; soft, rounded body, gentle carbonation and restrained bitterness.",
+            "source": "https://store.thekernelbrewery.com/products/table-beer-500ml"
+          }
         },
         {
           "id": 3902,
           "name": "Pale Ale (Krush)",
           "style": "American Pale Ale",
           "abv": 5.2,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 3.81,
+            "count": 612,
+            "url": "https://untappd.com/b/the-kernel-brewery-pale-ale-krush/6262289"
+          }
         },
         {
           "id": 3903,
           "name": "Export London Stout 1897",
           "style": "Dry Stout",
           "abv": 7.4,
-          "session": "yellow"
+          "session": "yellow",
+          "description": {
+            "text": "Stout based on an 1890s recipe: creamy head, dark chocolate and espresso bitterness with vanilla and dried fruit, rich smooth texture.",
+            "source": "https://mons-cheese.co.uk/products/kernel-export-stout"
+          }
         },
         {
           "id": 3904,
           "name": "Pils",
           "style": "Pilsner",
           "abv": 4.8,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 3.47,
+            "count": 21,
+            "url": "https://untappd.com/b/the-kernel-brewery-pils/4992153"
+          }
         },
         {
           "id": 3905,
           "name": "Oud Bruin",
           "style": "Oud Bruin",
           "abv": 5,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 3.82,
+            "count": 685,
+            "url": "https://untappd.com/b/the-kernel-brewery-oud-bruin/6718108"
+          },
+          "description": {
+            "text": "Flemish-style brown ale, rich and sour: brown bread, red fruit, a hint of strawberry, then balsamic and tannic notes with a sharp, spritzy acidity.",
+            "source": "https://store.thekernelbrewery.com/products/oud-bruin-a-flemish-style-brown-ale-5-9-330ml"
+          }
         },
         {
           "id": 3906,
@@ -1972,7 +3303,12 @@
           "style": "Japanese Lager",
           "abv": 4.5,
           "session": "red",
-          "notes": "collab Duration"
+          "notes": "collab Duration",
+          "untappd": {
+            "rating": 3.75,
+            "count": 252,
+            "url": "https://untappd.com/b/the-kernel-brewery-rice-lager/6811613"
+          }
         }
       ]
     },
@@ -1988,42 +3324,72 @@
           "name": "Det Li' Meget",
           "style": "WC IPA",
           "abv": 5,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 3.56,
+            "count": 164,
+            "url": "https://untappd.com/b/tiny-hill-brewing-det-li-meget/6709008"
+          }
         },
         {
           "id": 4002,
           "name": "Elderflower Session Mead",
           "style": "Session Mead",
           "abv": 5,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 3.48,
+            "count": 364,
+            "url": "https://untappd.com/b/copenhagen-mead-company-elderflower-session-mead/4851495"
+          }
         },
         {
           "id": 4003,
           "name": "The Hammer",
           "style": "Smoked Porter w. liqorice",
           "abv": 7,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 3.51,
+            "count": 141,
+            "url": "https://untappd.com/b/tiny-hill-brewing-the-hammer/6581142"
+          }
         },
         {
           "id": 4004,
           "name": "Ginger & Yuzu Session Mead",
           "style": "Session Mead",
           "abv": 5,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 3.75,
+            "count": 421,
+            "url": "https://untappd.com/b/copenhagen-mead-company-ginger-and-yuzu/5639036"
+          }
         },
         {
           "id": 4005,
           "name": "Citra Dry-Hopped Session Mead",
           "style": "Session Mead",
           "abv": 5,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 3.56,
+            "count": 74,
+            "url": "https://untappd.com/b/copenhagen-mead-company-citra-session-mead/6373705"
+          }
         },
         {
           "id": 4006,
           "name": "Hibiscus Session Mead",
           "style": "Session Mead",
           "abv": 5,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 3.69,
+            "count": 558,
+            "url": "https://untappd.com/b/copenhagen-mead-company-hibiscus-session-mead/5175911"
+          }
         }
       ]
     },
@@ -2039,21 +3405,40 @@
           "name": "Kladenská Poldi 8°",
           "style": "Czech Pale Lager",
           "abv": 3.2,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 3.47,
+            "count": 362,
+            "url": "https://untappd.com/b/pivovar-kladno-krocehlavy-kladenska-poldi-8-deg/4818046"
+          },
+          "description": {
+            "text": "Light 8° Czech pale lager brewed in honour of Kladno's smelters and Bohumil Hrabal. Munich malt and carapils give body and Gaia hops add a spicy, earthy note; light, refreshing and very drinkable.",
+            "source": "https://untappd.com/b/pivovar-kladno-krocehlavy-kladenska-poldi-8-deg/4818046"
+          }
         },
         {
           "id": 4102,
           "name": "Kladenské světlé 10°",
           "style": "Czech Pale Lager",
           "abv": 4.2,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 3.54,
+            "count": 1482,
+            "url": "https://untappd.com/b/pivovar-kladno-krocehlavy-kladenske-svetle-10-deg/4225831"
+          }
         },
         {
           "id": 4103,
           "name": "Bitter Bush 14°",
           "style": "West Coast IPA",
           "abv": 5.4,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 3.76,
+            "count": 32,
+            "url": "https://untappd.com/b/pivo-vaclav-bitter-bush/6885334"
+          }
         },
         {
           "id": 4104,
@@ -2067,7 +3452,16 @@
           "name": "Sexy Hafanana 17°",
           "style": "DDH DIPA",
           "abv": 6.9,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 3.71,
+            "count": 465,
+            "url": "https://untappd.com/b/pivo-vaclav-sexy-hafanana/3769461"
+          },
+          "description": {
+            "text": "Exotic DDH double IPA hopped with Amarillo, Citra and Mosaic, with intense mango, pineapple and citrus aroma, a full juicy body and mild bitterness.",
+            "source": "https://pivovaclav.cz/"
+          }
         },
         {
           "id": 4106,
@@ -2090,42 +3484,84 @@
           "name": "Year 1 - Foundations",
           "style": "Sour",
           "abv": 5,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 3.82,
+            "count": 1355,
+            "url": "https://untappd.com/b/vault-city-brewing-year-1-foundations/6456573"
+          }
         },
         {
           "id": 4202,
           "name": "Bake-Off: NY Cheesecake",
           "style": "Pastry Sour",
           "abv": 5.3,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 4.19,
+            "count": 959,
+            "url": "https://untappd.com/b/vault-city-brewing-bake-off-ny-cheesecake/6834661"
+          }
         },
         {
           "id": 4203,
           "name": "Bake-Off: Cranachan",
           "style": "Pastry Sour",
           "abv": 5,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 4.26,
+            "count": 880,
+            "url": "https://untappd.com/b/vault-city-brewing-bake-off-cranachan/6834656"
+          },
+          "description": {
+            "text": "Barrel-aged smoothie sour made with Azvex, inspired by the Scottish dessert: juicy fruit, creamy lactose and heather honey, with vanilla, oak and whisky from Speyside barrels.",
+            "source": "https://www.thewhiskyexchange.com/p/88353/vault-city-x-azvex-cranachan-barrel-aged-smoothie-sour-bake-off-series"
+          }
         },
         {
           "id": 4204,
           "name": "Berried Treasure",
           "style": "Fruited Sour w. mixed berries",
           "abv": 6.6,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 3.81,
+            "count": 242,
+            "url": "https://untappd.com/b/vault-city-brewing-berried-treasure/6850986"
+          },
+          "description": {
+            "text": "Fruited sour with blueberries, blackberries and raspberries plus edible glitter; fruit-forward, refreshing and tart.",
+            "source": "https://www.thewhiskyexchange.com/p/88469/vault-city-berried-treasure-glitering-berry-sour"
+          }
         },
         {
           "id": 4205,
           "name": "Apple Maple Pecan",
           "style": "Pastry Sour",
           "abv": 8,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 4.19,
+            "count": 3094,
+            "url": "https://untappd.com/b/vault-city-brewing-apple-maple-pecan/4024769"
+          },
+          "description": {
+            "text": "Imperial pastry sour balancing crisp apple, sweet maple syrup and a dusting of pecan; sweet, nutty and delicately tart.",
+            "source": "https://vaultcity.co.uk/products/apple-maple-pecan"
+          }
         },
         {
           "id": 4206,
           "name": "Dripping in Mango",
           "style": "Milkshake ale w. mango",
           "abv": 5.5,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 4.22,
+            "count": 202,
+            "url": "https://untappd.com/b/vault-city-brewing-dripping-in-mango/6895085"
+          }
         }
       ]
     },
@@ -2141,21 +3577,40 @@
           "name": "Habengut",
           "style": "Imperial Stout w. coconut, hazelnut, vanilla beans and cocoa nips",
           "abv": 12,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 4.25,
+            "count": 400,
+            "url": "https://untappd.com/b/y-not-brewing-habengut/6619876"
+          }
         },
         {
           "id": 4302,
           "name": "Distress Signal",
           "style": "DDH NE IPA",
           "abv": 7,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 3.99,
+            "count": 14,
+            "url": "https://untappd.com/b/y-not-brewing-distress-signal/6999225"
+          }
         },
         {
           "id": 4303,
           "name": "No Fucks Given 2024",
           "style": "Whiskey BA Imperial Stout",
           "abv": 17.5,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 4.38,
+            "count": 370,
+            "url": "https://untappd.com/b/y-not-brewing-no-fucks-given-2024/6114229"
+          },
+          "description": {
+            "text": "Imperial stout triple-mashed for a thick, oily body, aged three years in a 9-year-old Fary Lochan whisky barrel for dense, powerful barrel character.",
+            "source": "https://untappd.com/b/y-not-brewing-no-fucks-given-2024/6114229"
+          }
         },
         {
           "id": 4304,
@@ -2169,14 +3624,24 @@
           "name": "Clean As A Whistle",
           "style": "DDH WC DIPA",
           "abv": 8,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": null,
+            "count": 8,
+            "url": "https://untappd.com/b/y-not-brewing-clean-as-a-whistle/6999228"
+          }
         },
         {
           "id": 4306,
           "name": "Bourbon Barrel Depths Of Black",
           "style": "BBA Imperial Stout",
           "abv": 15,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 4.41,
+            "count": 96,
+            "url": "https://untappd.com/b/y-not-brewing-bourbon-barrel-depth-of-black/6569913"
+          }
         }
       ]
     },
@@ -2192,42 +3657,72 @@
           "name": "Øjekast",
           "style": "Fruited Sour",
           "abv": 6,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 3.64,
+            "count": 33,
+            "url": "https://untappd.com/b/olsnedkeren-ojekast/6851850"
+          }
         },
         {
           "id": 4402,
           "name": "Sort Sol",
           "style": "Black IPA",
           "abv": 7,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 3.54,
+            "count": 68,
+            "url": "https://untappd.com/b/olsnedkeren-sort-sol/1905883"
+          }
         },
         {
           "id": 4403,
           "name": "Karl Smart",
           "style": "NE IPA",
           "abv": 6.7,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 3.75,
+            "count": 3037,
+            "url": "https://untappd.com/b/olsnedkeren-karl-smart-ipa/1916841"
+          }
         },
         {
           "id": 4404,
           "name": "Hurtig Karl",
           "style": "WC IPA",
           "abv": 6.2,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 3.72,
+            "count": 20,
+            "url": "https://untappd.com/b/olsnedkeren-hurtig-karl/6911176"
+          }
         },
         {
           "id": 4405,
           "name": "To Til Tango",
           "style": "NE DIPA",
           "abv": 8,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": null,
+            "count": 3,
+            "url": "https://untappd.com/b/olsnedkeren-to-til-tango/6986007"
+          }
         },
         {
           "id": 4406,
           "name": "Kosmisk Kaos",
           "style": "Pilsner",
           "abv": 4.8,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 3.27,
+            "count": 427,
+            "url": "https://untappd.com/b/olsnedkeren-kosmisk-kaos/5693144"
+          }
         }
       ]
     },
@@ -2243,42 +3738,72 @@
           "name": "Plant Based",
           "style": "DDH NE IPA",
           "abv": 6.1,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 3.68,
+            "count": 103,
+            "url": "https://untappd.com/b/aben-plant-based/6854130"
+          }
         },
         {
           "id": 4502,
           "name": "If ÅBEN And Lervig Made A Stout",
           "style": "Imperial Stout",
           "abv": 12,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 3.94,
+            "count": 577,
+            "url": "https://untappd.com/b/aben-if-aben-and-lervig-made-a-stout/6433262"
+          }
         },
         {
           "id": 4503,
           "name": "Flowstate",
           "style": "Session IPA",
           "abv": 4.5,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 3.64,
+            "count": 217,
+            "url": "https://untappd.com/b/aben-flow-state/6607575"
+          }
         },
         {
           "id": 4504,
           "name": "If ÅBEN And Lervig Made A Stout",
           "style": "Imperial Stout",
           "abv": 12,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 3.94,
+            "count": 577,
+            "url": "https://untappd.com/b/aben-if-aben-and-lervig-made-a-stout/6433262"
+          }
         },
         {
           "id": 4505,
           "name": "Sugar Plum Fairy",
           "style": "Brown Ale",
           "abv": 5.8,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 3.31,
+            "count": 1165,
+            "url": "https://untappd.com/b/aben-sugar-plum-fairy/5062640"
+          }
         },
         {
           "id": 4506,
           "name": "Mumbo Jumbo #1",
           "style": "Fruited Gose w. passionfruit, guava and raspberry",
           "abv": 6,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 3.82,
+            "count": 3619,
+            "url": "https://untappd.com/b/aben-mumbo-jumbo-1-passion-fruit-guava-raspberry/5230635"
+          }
         }
       ]
     },
@@ -2399,29 +3924,49 @@
           "id": 5001,
           "name": "British Helles",
           "style": "Helles Lager",
-          "abv": null,
-          "session": "all"
+          "abv": 0.5,
+          "session": "all",
+          "untappd": {
+            "rating": 2.96,
+            "count": 31,
+            "url": "https://untappd.com/b/hello-lager-hello-lager-british-helles/6716173"
+          }
         },
         {
           "id": 5002,
           "name": "Top w/ Lemoon",
           "style": "Helles Lager",
-          "abv": null,
-          "session": "all"
+          "abv": 0.5,
+          "session": "all",
+          "untappd": {
+            "rating": 3.2,
+            "count": 25,
+            "url": "https://untappd.com/b/hello-lager-hello-lager-top-w-lemon/6716216"
+          }
         },
         {
           "id": 5003,
           "name": "Grapefruit",
           "style": "Helles Lager",
-          "abv": null,
-          "session": "all"
+          "abv": 0.5,
+          "session": "all",
+          "untappd": {
+            "rating": 3.12,
+            "count": 24,
+            "url": "https://untappd.com/b/hello-lager-hello-lager-grapefruit/6716214"
+          }
         },
         {
           "id": 5004,
           "name": "Peach",
           "style": "Helles Lager",
-          "abv": null,
-          "session": "all"
+          "abv": 0.5,
+          "session": "all",
+          "untappd": {
+            "rating": 3.28,
+            "count": 25,
+            "url": "https://untappd.com/b/hello-lager-hello-lager-peach/6716220"
+          }
         }
       ]
     }
