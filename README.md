@@ -17,7 +17,7 @@
 <img src="https://img.shields.io/badge/React-Vite-646CFF?style=flat-square&logo=vite&logoColor=white&labelColor=1a1a1a" />
 <img src="https://img.shields.io/badge/data-localStorage_%2B_optional_cloud-8e2de2?style=flat-square&labelColor=1a1a1a" />
 
-**🔗 Live:** [beerfest-tracker.vercel.app](https://beerfest-tracker.vercel.app) · mirror on [GitHub Pages](https://tofijak.github.io/beerfest-tracker/)
+**🔗 Live:** [beerfest-tracker.vercel.app](https://beerfest-tracker.vercel.app)
 
 </div>
 
@@ -57,8 +57,6 @@ Opens at [http://127.0.0.1:43173](http://127.0.0.1:43173).
 npm run build
 npm run preview
 ```
-
-GitHub Pages builds should pass `--base=/beerfest-tracker/` (or set `VITE_BASE=/beerfest-tracker/`). Asset URLs use `import.meta.env.BASE_URL`.
 
 ## Add the next festival
 
@@ -100,9 +98,8 @@ To turn on sync:
 3. Add authorized domains:
    - `localhost`
    - `beerfest-tracker.vercel.app`
-   - `tofijak.github.io`
 4. Create a **Firestore** database (production mode) and publish `firestore.rules` from this repo (users can only read/write `users/{theirUid}/**`).
-5. Register a web app and copy the config into Vercel (and optionally GitHub Pages secrets):
+5. Register a web app and copy the config into Vercel env vars:
 
 ```
 VITE_FIREBASE_API_KEY
@@ -113,16 +110,13 @@ VITE_FIREBASE_MESSAGING_SENDER_ID
 VITE_FIREBASE_APP_ID
 ```
 
+The Firebase web `apiKey` is public client config — it is meant to ship in the frontend. Access is enforced by Firestore rules (each user can only read/write `users/{theirUid}/**`) and by HTTP-referrer restrictions on the key in Google Cloud / Firebase.
+
 Locally, copy `.env.example` to `.env.local`. On first sign-in, device ratings merge into the account (union of check-offs / stars / milestones; highest rating wins).
 
 ## Deploy
 
-Firebase Hosting config is included (`.firebaserc` project id is a placeholder). A GitHub Pages workflow can build with `vite --base=/beerfest-tracker/`.
-
-```bash
-npm run build
-npx firebase deploy
-```
+Production is **Vercel** only: [beerfest-tracker.vercel.app](https://beerfest-tracker.vercel.app). The project is git-connected and auto-deploys `main`.
 
 <div align="center">
 
