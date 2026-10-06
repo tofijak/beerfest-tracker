@@ -43,6 +43,7 @@ import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import SearchIcon from "@mui/icons-material/Search";
 import MapIcon from "@mui/icons-material/Map";
 import RouteIcon from "@mui/icons-material/Route";
+import { PixelBackdrop, PixelSprite } from "./components/PixelArt";
 import { Splash } from "./components/Splash";
 import { VenueMap } from "./components/Map";
 import { RoutePlanner } from "./components/RoutePlanner";
@@ -54,6 +55,7 @@ import {
   SESSION_META,
   beerMatchesSession,
   formatBeerMeta,
+  beerGrade,
   gradeColor,
   untappdSearchUrl,
 } from "./utils";
@@ -64,8 +66,31 @@ const TOTAL_BEERS = breweries.reduce((sum, brewery) => sum + brewery.beers.lengt
 
 const theme = createTheme({
   palette: {
-    primary: { main: "#1b5e20" },
-    secondary: { main: "#f9a825" },
+    mode: "dark",
+    primary: { main: "#00e5ff" },
+    secondary: { main: "#ff2bd6" },
+    success: { main: "#39ff88" },
+    background: { default: "#07070f", paper: "rgba(18, 18, 38, 0.72)" },
+    text: { secondary: "#9aa4c7" },
+  },
+  shape: { borderRadius: 14 },
+  typography: {
+    fontFamily: '"Space Grotesk", "Inter", sans-serif',
+    h6: { fontWeight: 700, letterSpacing: "-0.01em" },
+  },
+  components: {
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          backgroundImage: "none",
+          backdropFilter: "blur(14px)",
+          border: "1px solid rgba(0, 229, 255, 0.18)",
+          boxShadow: "0 0 24px rgba(0, 229, 255, 0.06), inset 0 1px 0 rgba(255,255,255,0.05)",
+        },
+      },
+    },
+    MuiChip: { styleOverrides: { root: { fontWeight: 600 } } },
+    MuiTab: { styleOverrides: { root: { textTransform: "none", fontWeight: 600 } } },
   },
 });
 
@@ -103,12 +128,13 @@ function BeerItem({
 }) {
   const meta = formatBeerMeta(beer);
   const untappd = UNTAPPD[beer.id];
+  const grade = beerGrade(beer.id);
 
   return (
     <ListItem
       sx={{
-        borderLeft: isDrunk ? "4px solid #4caf50" : "none",
-        bgcolor: isDrunk ? "rgba(76, 175, 80, 0.05)" : "transparent",
+        borderLeft: isDrunk ? "3px solid #39ff88" : "3px solid transparent",
+        bgcolor: isDrunk ? "rgba(57, 255, 136, 0.06)" : "transparent",
         alignItems: "flex-start",
       }}
     >
@@ -132,14 +158,14 @@ function BeerItem({
               {beer.name}
             </Typography>
             <SessionChip session={beer.session} />
-            {untappd?.grade && (
+            {grade && (
               <Chip
-                label={`${untappd.grade}${untappd.gradeUncertain ? "*" : ""}`}
+                label={grade}
                 size="small"
-                sx={{ height: 22, fontWeight: 700, bgcolor: gradeColor(untappd.grade), color: "#fff" }}
+                sx={{ height: 22, fontWeight: 700, bgcolor: gradeColor(grade), color: "#07070f" }}
               />
             )}
-            {untappd?.rating && (
+            {untappd?.rating != null && (
               <Chip
                 icon={<StarIcon />}
                 label={`${untappd.rating.toFixed(2)} (${untappd.count})`}
@@ -330,10 +356,9 @@ function AchievementDialog({ achievement, onClose }) {
           textAlign: "center",
           borderRadius: { xs: 0, sm: 4 },
           p: { xs: 3, sm: 2 },
-          bgcolor: "#c8e6c9",
-          backgroundImage: "linear-gradient(135deg, #c8e6c9, #f9a825)",
-          backgroundColor: "#c8e6c9",
-          backgroundBlendMode: "multiply",
+          backgroundImage: "linear-gradient(135deg, #0b1a2e, #2a0f3a)",
+          border: "1px solid rgba(255, 43, 214, 0.5)",
+          boxShadow: "0 0 40px rgba(255, 43, 214, 0.3)",
         },
       }}
     >
@@ -584,18 +609,36 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static">
+      <PixelBackdrop />
+      <Box sx={{ flexGrow: 1, position: "relative", zIndex: 1 }}>
+        <AppBar
+          position="static"
+          elevation={0}
+          sx={{
+            bgcolor: "rgba(7, 7, 15, 0.7)",
+            backdropFilter: "blur(14px)",
+            borderBottom: "1px solid rgba(0, 229, 255, 0.3)",
+            boxShadow: "0 4px 30px rgba(0, 229, 255, 0.12)",
+          }}
+        >
           <Toolbar>
-            <SportsBarIcon sx={{ mr: 2 }} />
+            <PixelSprite sprite="mug" size={44} depth={5} sx={{ mr: 2 }} />
             <Typography
               variant="h6"
               component="div"
               onClick={handleTitleTap}
               onTouchEnd={handleTitleTap}
-              sx={{ flexGrow: 1, userSelect: "none" }}
+              sx={{
+                flexGrow: 1,
+                userSelect: "none",
+                fontWeight: 700,
+                letterSpacing: "0.04em",
+                background: "linear-gradient(90deg, #00e5ff, #ff2bd6)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
             >
-              Green Session Beer Tracker
+              RAISE THE BAR
             </Typography>
             <Typography variant="body2">
               {ratedCount} rated · {drunkBeers.length}/{TOTAL_BEERS} tried

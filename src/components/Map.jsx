@@ -1,8 +1,7 @@
 import { useMemo, useState } from "react";
 import { Box, Card, CardContent, Chip, Typography } from "@mui/material";
 import { breweries } from "../data/beers";
-import { UNTAPPD } from "../data/untappd";
-import { STAND_COLORS, gradeRank } from "../utils";
+import { STAND_COLORS, beerGrade, gradeRank } from "../utils";
 
 /** Schematic zone layout of the three stand areas (not a surveyed floor plan). */
 const ZONES = [
@@ -18,7 +17,7 @@ function zoneStats(stand, drunkBeers) {
     breweries: list,
     total: beers.length,
     tried: beers.filter((beer) => drunkBeers.includes(beer.id)).length,
-    top: beers.filter((beer) => UNTAPPD[beer.id]?.grade?.startsWith("A")).length,
+    top: beers.filter((beer) => beerGrade(beer.id)?.startsWith("A")).length,
   };
 }
 
@@ -86,7 +85,7 @@ export function VenueMap({ drunkBeers }) {
           <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
             {active.breweries.map((brewery) => {
               const best = brewery.beers
-                .map((beer) => UNTAPPD[beer.id]?.grade)
+                .map((beer) => beerGrade(beer.id))
                 .filter(Boolean)
                 .sort((a, b) => gradeRank(a) - gradeRank(b))[0];
               return (

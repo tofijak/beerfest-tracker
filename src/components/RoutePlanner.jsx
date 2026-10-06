@@ -13,7 +13,7 @@ import {
 } from "@mui/material";
 import { breweries } from "../data/beers";
 import { UNTAPPD } from "../data/untappd";
-import { GRADES, STAND_COLORS, gradeRank } from "../utils";
+import { GRADES, STAND_COLORS, beerGrade, gradeRank } from "../utils";
 
 /**
  * Targets = favorites plus untried beers graded at or above `minGrade`.
@@ -29,13 +29,13 @@ function buildRoute({ drunkBeers, favoriteBeers, minGrade, startStand }) {
         .filter((beer) => !drunkBeers.includes(beer.id))
         .filter(
           (beer) =>
-            favoriteBeers.includes(beer.id) || gradeRank(UNTAPPD[beer.id]?.grade) <= cutoff,
+            favoriteBeers.includes(beer.id) || gradeRank(beerGrade(beer.id)) <= cutoff,
         )
-        .sort((a, b) => gradeRank(UNTAPPD[a.id]?.grade) - gradeRank(UNTAPPD[b.id]?.grade)),
+        .sort((a, b) => gradeRank(beerGrade(a.id)) - gradeRank(beerGrade(b.id))),
     }))
     .filter(({ targets }) => targets.length > 0);
 
-  const best = (stop) => gradeRank(UNTAPPD[stop.targets[0].id]?.grade);
+  const best = (stop) => gradeRank(beerGrade(stop.targets[0].id));
   const standCount = (stand) =>
     stops.filter((stop) => stop.brewery.stand === stand).reduce((n, s) => n + s.targets.length, 0);
   const order = [1, 2, 3]
@@ -135,7 +135,7 @@ export function RoutePlanner({
                             <ListItemText
                               primary={beer.name}
                               secondary={[
-                                info?.grade,
+                                beerGrade(beer.id),
                                 info?.rating ? `Untappd ${info.rating.toFixed(2)}` : null,
                                 beer.session,
                               ]

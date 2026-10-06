@@ -1,3 +1,5 @@
+import { UNTAPPD } from "./data/untappd";
+
 export function untappdSearchUrl(beerName, breweryName) {
   return `https://untappd.com/search?q=${encodeURIComponent(`${beerName} ${breweryName}`)}&type=beer`;
 }
@@ -28,7 +30,15 @@ export const SESSION_META = {
 
 export const GRADES = ["A+", "A", "A-", "B+", "B", "B-", "C+", "C"];
 
-/** Lower is better; ungraded beers sort last. */
+/** Minimum Untappd rating for each grade, best first. */
+const GRADE_CUTOFFS = [4.35, 4.2, 4.1, 4.0, 3.85, 3.7, 3.55, 0];
+
+export function gradeFromRating(rating) {
+  if (typeof rating !== "number") return null;
+  return GRADES[GRADE_CUTOFFS.findIndex((cutoff) => rating >= cutoff)];
+}
+
+/** Lower is better; unrated beers sort last. */
 export function gradeRank(grade) {
   const index = GRADES.indexOf(grade);
   return index === -1 ? GRADES.length : index;
@@ -36,9 +46,14 @@ export function gradeRank(grade) {
 
 export function gradeColor(grade) {
   if (!grade) return "#546e7a";
-  if (grade.startsWith("A")) return "#2e7d32";
-  if (grade.startsWith("B")) return "#f9a825";
-  return "#8d6e63";
+  if (grade.startsWith("A")) return "#39ff88";
+  if (grade.startsWith("B")) return "#ffd23f";
+  return "#ff7a59";
 }
 
-export const STAND_COLORS = { 1: "#2e7d32", 2: "#1565c0", 3: "#c62828" };
+/** Grade for a beer id, derived from its Untappd rating. */
+export function beerGrade(beerId) {
+  return gradeFromRating(UNTAPPD[beerId]?.rating);
+}
+
+export const STAND_COLORS = { 1: "#39ff88", 2: "#00e5ff", 3: "#ff2bd6" };
