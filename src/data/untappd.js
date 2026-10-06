@@ -35,6 +35,11 @@ export const UNTAPPD = {
     "count": 25,
     "url": "https://untappd.com/b/alefarm-brewing-season-to-give/6895046"
   },
+  "204": {
+    "rating": null,
+    "count": null,
+    "url": "https://untappd.com/b/alefarm-brewing-no-place-like-gnome/6895048"
+  },
   "205": {
     "rating": 3.63,
     "count": 928,
@@ -365,6 +370,16 @@ export const UNTAPPD = {
     "count": 1729,
     "url": "https://untappd.com/b/flying-couch-brewing-golden-axe/3419179"
   },
+  "1405": {
+    "rating": null,
+    "count": 8,
+    "url": "https://untappd.com/b/flying-couch-brewing-smack-my-batch-up/6920695"
+  },
+  "1406": {
+    "rating": null,
+    "count": 3,
+    "url": "https://untappd.com/b/flying-couch-brewing-bitter-know-than-never/6920698"
+  },
   "1501": {
     "rating": 3.45,
     "count": 9090,
@@ -630,6 +645,11 @@ export const UNTAPPD = {
     "count": 2062,
     "url": "https://untappd.com/b/mortalis-brewing-company-hydra-passion-fruit-cherry-peach/3035303"
   },
+  "2406": {
+    "rating": 4.12,
+    "count": 92,
+    "url": "https://untappd.com/b/mortalis-8bit-itsumi/5997202"
+  },
   "2501": {
     "rating": 3.53,
     "count": 4691,
@@ -644,6 +664,11 @@ export const UNTAPPD = {
     "rating": 3.79,
     "count": 405,
     "url": "https://untappd.com/b/donzoko-brewing-company-psycho-keller/5716101"
+  },
+  "2504": {
+    "rating": 4,
+    "count": 122,
+    "url": "https://untappd.com/b/newbarns-brewery-haynau-s-retreat/6860964"
   },
   "2505": {
     "rating": 3.86,
@@ -699,6 +724,11 @@ export const UNTAPPD = {
     "rating": 3.84,
     "count": 756,
     "url": "https://untappd.com/b/observatoriet-pave/5856564"
+  },
+  "2705": {
+    "rating": 3.86,
+    "count": 1176,
+    "url": "https://untappd.com/b/observatoriet-oberon/5208233"
   },
   "2706": {
     "rating": 3.93,
@@ -840,6 +870,11 @@ export const UNTAPPD = {
     "count": 46,
     "url": "https://untappd.com/b/rocket-brewing-company-rabarber/6677111"
   },
+  "3204": {
+    "rating": 3.49,
+    "count": 186,
+    "url": "https://untappd.com/b/fruktrocket-apple/6334242"
+  },
   "3205": {
     "rating": 3.73,
     "count": 146,
@@ -884,6 +919,11 @@ export const UNTAPPD = {
     "rating": 3.44,
     "count": 73,
     "url": "https://untappd.com/b/schwesterbrau-sosterpils/6443741"
+  },
+  "3402": {
+    "rating": 3.68,
+    "count": 64,
+    "url": "https://untappd.com/b/pissego-stovlevand/6780234"
   },
   "3501": {
     "rating": 3.43,
@@ -1030,6 +1070,16 @@ export const UNTAPPD = {
     "count": 1482,
     "url": "https://untappd.com/b/pivovar-kladno-krocehlavy-kladenske-svetle-10-deg/4225831"
   },
+  "4103": {
+    "rating": 3.76,
+    "count": 32,
+    "url": "https://untappd.com/b/pivo-vaclav-bitter-bush/6885334"
+  },
+  "4105": {
+    "rating": 3.71,
+    "count": 465,
+    "url": "https://untappd.com/b/pivo-vaclav-sexy-hafanana/3769461"
+  },
   "4201": {
     "rating": 3.82,
     "count": 1355,
@@ -1075,6 +1125,11 @@ export const UNTAPPD = {
     "count": 370,
     "url": "https://untappd.com/b/y-not-brewing-no-fucks-given-2024/6114229"
   },
+  "4305": {
+    "rating": null,
+    "count": 8,
+    "url": "https://untappd.com/b/y-not-brewing-clean-as-a-whistle/6999228"
+  },
   "4306": {
     "rating": 4.41,
     "count": 96,
@@ -1099,6 +1154,11 @@ export const UNTAPPD = {
     "rating": 3.72,
     "count": 20,
     "url": "https://untappd.com/b/olsnedkeren-hurtig-karl/6911176"
+  },
+  "4405": {
+    "rating": null,
+    "count": 3,
+    "url": "https://untappd.com/b/olsnedkeren-to-til-tango/6986007"
   },
   "4406": {
     "rating": 3.27,
