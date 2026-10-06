@@ -6,6 +6,7 @@ import StarBorderIcon from "@mui/icons-material/StarBorder";
 import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
 import PlaylistAddCheckIcon from "@mui/icons-material/PlaylistAddCheck";
 import { UNTAPPD } from "../data/untappd";
+import { DESCRIPTIONS } from "../data/descriptions";
 import { SESSION_META, STAND_COLORS, ratingColor, styleCategory, untappdSearchUrl } from "../utils";
 import { PIXEL_FONT } from "../theme";
 import { pixelCheckboxProps } from "./PixelUI";
@@ -24,6 +25,7 @@ export function BeerDialog({ entry, drunkBeers, favoriteBeers, plannedBeers, onT
   const open = Boolean(entry);
   const untappd = beer ? UNTAPPD[beer.id] : null;
   const session = beer ? (SESSION_META[beer.session] ?? SESSION_META.all) : null;
+  const description = beer ? DESCRIPTIONS[beer.id] : null;
   const isFavorite = beer && favoriteBeers.includes(beer.id);
   const isPlanned = beer && plannedBeers.includes(beer.id);
 
@@ -49,6 +51,16 @@ export function BeerDialog({ entry, drunkBeers, favoriteBeers, plannedBeers, onT
             <Stat label={untappd?.count != null ? `Untappd · ${untappd.count} ratings` : "Untappd"} value={untappd?.rating != null ? untappd.rating.toFixed(2) : "n/a"} color={untappd?.rating != null ? ratingColor(untappd.rating) : undefined} />
             <Stat label="ABV" value={typeof beer.abv === "number" ? `${beer.abv}%` : "n/a"} />
           </Box>
+          {description && (
+            <Typography variant="body2" sx={{ mb: 1, p: 1.5, bgcolor: "rgba(0,229,255,0.08)", borderLeft: "4px solid #00e5ff" }}>
+              {description.text}
+              {description.source && (
+                <Box component="a" href={description.source} target="_blank" rel="noopener noreferrer" sx={{ display: "block", mt: 0.5, fontSize: "0.7rem", color: "#9aa4c7" }}>
+                  source
+                </Box>
+              )}
+            </Typography>
+          )}
           <Typography variant="body2" sx={{ mb: 0.5 }}>
             <strong>Style:</strong> {beer.style || "TBA"}
           </Typography>

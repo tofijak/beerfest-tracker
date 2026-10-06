@@ -6,6 +6,7 @@ import StarBorderIcon from "@mui/icons-material/StarBorder";
 import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
 import PlaylistAddCheckIcon from "@mui/icons-material/PlaylistAddCheck";
 import { UNTAPPD } from "../data/untappd";
+import { DESCRIPTIONS } from "../data/descriptions";
 import {
   SESSION_META,
   STAND_COLORS,
@@ -99,6 +100,15 @@ function BeerItem({
             </Typography>
           )}
         </Box>
+        {DESCRIPTIONS[beer.id] && (
+          <Typography
+            variant="caption"
+            color="text.secondary"
+            sx={{ display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden", mt: 0.25 }}
+          >
+            {DESCRIPTIONS[beer.id].text}
+          </Typography>
+        )}
         {beer.notes && (
           <Typography variant="caption" color="text.secondary" sx={{ display: "block", mt: 0.25 }}>
             {beer.notes}
