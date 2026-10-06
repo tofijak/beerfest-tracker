@@ -324,9 +324,13 @@ export default function App() {
               onTouchEnd={handleTitleTap}
               sx={{ flexGrow: 1, display: "flex", alignItems: "center", gap: { xs: 1, sm: 1.5 }, userSelect: "none" }}
             >
-              <PixelSprite sprite="mug" size={52} depth={5} />
+              <Box className="pop-in" style={{ "--d": "100ms" }}>
+                <PixelSprite sprite="mug" size={52} depth={5} />
+              </Box>
               <Typography
                 component="span"
+                className="pop-in"
+                style={{ "--d": "250ms" }}
                 sx={{
                   fontFamily: PIXEL_FONT,
                   fontWeight: 700,
@@ -337,7 +341,9 @@ export default function App() {
               >
                 ×
               </Typography>
-              <PixelSprite sprite="logo" size={76} depth={7} />
+              <Box className="pop-in" style={{ "--d": "400ms" }}>
+                <PixelSprite sprite="logo" size={76} depth={7} />
+              </Box>
             </Box>
             <AuthControls auth={auth} />
             <Typography variant="body2" sx={{ fontFamily: PIXEL_FONT, fontSize: "0.7rem", ml: 1 }}>
@@ -431,6 +437,7 @@ export default function App() {
               iconPosition="start"
             />
           </Tabs>
+          <Box key={tab} className="fade-swap">
           {showList && (
             <>
               <FilterPanel
@@ -469,9 +476,10 @@ export default function App() {
                   </CardContent>
                 </Card>
               ) : (
-                result.groups.map(({ brewery, beers }) => (
+                result.groups.map(({ brewery, beers }, index) => (
                   <MemoBreweryCard
                     key={brewery.id}
+                    index={index}
                     festival={festival}
                     brewery={brewery}
                     beers={beers}
@@ -512,6 +520,7 @@ export default function App() {
               onSelectFestival={selectFestival}
             />
           )}
+          </Box>
         </Container>
       </Box>
       <BeerDialog

@@ -188,6 +188,7 @@ function BeerItem({
 export const MemoBeerItem = memo(BeerItem);
 
 function BreweryCard({
+  index = 0,
   festival,
   brewery,
   beers,
@@ -205,7 +206,7 @@ function BreweryCard({
   const color = standColor(brewery.stand);
 
   return (
-    <Card sx={{ mb: 3, borderColor: color }}>
+    <Card className="rise" style={{ "--i": Math.min(index, 8) }} sx={{ mb: 3, borderColor: color }}>
       <CardContent sx={{ px: { xs: 1.25, sm: 2 } }}>
         <Box sx={{ display: "flex", gap: 1.5, alignItems: "center", flexWrap: "wrap", mb: 2 }}>
           <Box

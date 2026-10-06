@@ -1,14 +1,32 @@
+import { useState } from "react";
 import { Box, Button, Typography } from "@mui/material";
 import { PIXEL_FONT } from "../theme";
 import { PixelBackdrop, PixelSprite } from "./PixelArt";
 
 export function Splash({ open, festival, onDismiss }) {
+  const [leaving, setLeaving] = useState(false);
   if (!open || !festival) return null;
+
+  const leave = () => {
+    if (leaving) return;
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduced) {
+      onDismiss();
+      return;
+    }
+    setLeaving(true);
+    setTimeout(() => {
+      setLeaving(false);
+      onDismiss();
+    }, 480);
+  };
 
   return (
     <Box
-      onClick={onDismiss}
+      onClick={leave}
       sx={{
+        animation: leaving ? "splashOut 480ms ease-in forwards" : "none",
+        pointerEvents: leaving ? "none" : "auto",
         position: "fixed",
         inset: 0,
         zIndex: 1400,
@@ -52,7 +70,7 @@ export function Splash({ open, festival, onDismiss }) {
         {festival.splashBody ||
           [festival.venue, festival.dateLabel || festival.date].filter(Boolean).join(" · ")}
       </Typography>
-      <Button variant="contained" color="secondary" onClick={onDismiss} sx={{ position: "relative", borderRadius: 999, px: 3 }}>
+      <Button variant="contained" color="secondary" sx={{ position: "relative", borderRadius: 999, px: 3 }}>
         {festival.splashCta || "Let's go"}
       </Button>
     </Box>
