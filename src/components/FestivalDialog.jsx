@@ -7,8 +7,8 @@ import {
   ListItemText,
   Typography,
 } from "@mui/material";
-import { FESTIVALS, festivalStats } from "../festivals";
-import { hasFestivalActivity, ratedCountFrom } from "../lib/storage";
+import { FESTIVALS, festivalStats, knownBeerIds } from "../festivals";
+import { hasFestivalActivity, ratedCountFrom, ratingsOnMenu } from "../lib/storage";
 
 export function FestivalDialog({ open, onClose, activeSlug, allProgress, onSelect }) {
   return (
@@ -23,7 +23,7 @@ export function FestivalDialog({ open, onClose, activeSlug, allProgress, onSelec
             const stats = festivalStats(festival);
             const progress = allProgress[festival.slug];
             const visited = hasFestivalActivity(progress);
-            const rated = ratedCountFrom(progress?.beerRatings);
+            const rated = ratedCountFrom(ratingsOnMenu(progress?.beerRatings, knownBeerIds(festival)));
             return (
               <ListItemButton
                 key={festival.slug}

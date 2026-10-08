@@ -143,3 +143,18 @@ export function ratedCountFrom(ratings) {
   return Object.values(ratings ?? {}).filter((value) => typeof value === "number" && value > 0)
     .length;
 }
+
+/** Keep stored IDs that are still on the festival menu. Does not mutate stored data. */
+export function idsOnMenu(ids, knownIds) {
+  if (!knownIds) return ids ?? [];
+  return (ids ?? []).filter((id) => knownIds.has(String(id)));
+}
+
+export function ratingsOnMenu(ratings, knownIds) {
+  if (!knownIds) return ratings ?? {};
+  const next = {};
+  for (const [id, value] of Object.entries(ratings ?? {})) {
+    if (knownIds.has(String(id))) next[id] = value;
+  }
+  return next;
+}

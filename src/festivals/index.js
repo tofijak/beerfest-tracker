@@ -30,6 +30,15 @@ export function findBeer(festival, beerId) {
   return null;
 }
 
+/** String IDs of beers on the current festival menu. Orphaned stored IDs are not included. */
+export function knownBeerIds(festival) {
+  const ids = new Set();
+  for (const brewery of festival?.breweries ?? []) {
+    for (const beer of brewery.beers ?? []) ids.add(String(beer.id));
+  }
+  return ids;
+}
+
 export function sessionMetaMap(festival) {
   return Object.fromEntries((festival?.sessions ?? []).map((session) => [session.id, session]));
 }

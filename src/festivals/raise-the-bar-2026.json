@@ -649,42 +649,96 @@
           "name": "Monumental",
           "style": "NE IPA",
           "abv": 6.4,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 3.71,
+            "count": 96,
+            "url": "https://untappd.com/b/dry-and-bitter-brewing-company-monumental/6789896"
+          },
+          "description": {
+            "text": "Expressive NEIPA with Riwaka in the whirlpool and Nelson Sauvin, HQG-1 and HQG-3 in the dry-hop, giving tropical fruit aroma on a pillowy body.",
+            "source": "https://dryandbitter.com/products/monumental-new-england-ipa"
+          }
         },
         {
           "id": 805,
           "name": "Rhyme or Reason",
           "style": "Pale Ale",
           "abv": 4.8,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 3.58,
+            "count": 79,
+            "url": "https://untappd.com/b/dry-and-bitter-brewing-company-rhyme-or-reason/6728172"
+          },
+          "description": {
+            "text": "Bright and golden pale ale with peachy aroma, a touch of rye and a subtle spicy finish, dry-hopped with Crosby HQG-1 and HQG-3.",
+            "source": "https://dryandbitter.com/products/rhyme-or-reason-pale-ale"
+          }
         },
         {
           "id": 806,
           "name": "Balcony Beer",
           "style": "WC Pils",
           "abv": 5.4,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 3.55,
+            "count": 330,
+            "url": "https://untappd.com/b/dry-and-bitter-brewing-company-balcony-beer/6667204"
+          },
+          "description": {
+            "text": "Crisp West Coast pilsner with Freestyle hops: white grape, gooseberry and stone fruit. Collaboration with Pleasanti Street.",
+            "source": "https://dryandbitter.com/products/balcony-beer-west-coast-pilsner"
+          }
         },
         {
           "id": 807,
           "name": "Purple Rain",
           "style": "Fruited Sour",
           "abv": 5.5,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": null,
+            "count": 0,
+            "url": "https://untappd.com/b/dry-and-bitter-brewing-company-purple-rain/6894997"
+          },
+          "description": {
+            "text": "Blackcurrant, raspberry, blackberry and cherry wrapped in juicy acidity balanced by fruity sweetness.",
+            "source": "https://dryandbitter.com/products/purple-rain-fruit-sour"
+          }
         },
         {
           "id": 808,
           "name": "Praline Dream",
           "style": "Pastry Stout",
           "abv": 6,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 3.45,
+            "count": 171,
+            "url": "https://untappd.com/b/dry-and-bitter-brewing-company-praline-dream/6639013"
+          },
+          "description": {
+            "text": "Sumptuously smooth and nutty pastry stout inspired by praline.",
+            "source": "https://untappd.com/b/dry-and-bitter-brewing-company-praline-dream/6639013"
+          }
         },
         {
           "id": 809,
           "name": "Kaotik Kinetik",
           "style": "WC IPA",
           "abv": 6.5,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 3.49,
+            "count": 100,
+            "url": "https://untappd.com/b/dry-and-bitter-brewing-company-kaotik-kinetik/6716902"
+          },
+          "description": {
+            "text": "Old-school West Coast IPA with pine and tangerine on a clean resinous body, hopped with Simcoe, Cascade, Mosaic Cryo and Mosaic DynaBoost.",
+            "source": "https://dryandbitter.com/products/kaotik-kinetik-new-england-ipa"
+          }
         }
       ]
     },
@@ -887,7 +941,16 @@
           "style": "Pastry Sour",
           "abv": 7,
           "session": "green",
-          "notes": "collab Mortalis"
+          "notes": "collab Mortalis",
+          "untappd": {
+            "rating": 4.54,
+            "count": 6565,
+            "url": "https://untappd.com/b/evil-twin-brewing-nyc-even-more-hydra-etnyc-edition/3946760"
+          },
+          "description": {
+            "text": "Fruited sour brewed with Mortalis, blending blackberry, raspberry, blueberry and cacao nibs.",
+            "source": "https://untappd.com/b/evil-twin-brewing-nyc-even-more-hydra-etnyc-edition/3946760"
+          }
         },
         {
           "id": 1103,
@@ -911,7 +974,16 @@
           "style": "Sour",
           "abv": 7,
           "session": "yellow",
-          "notes": "collab Trillium"
+          "notes": "collab Trillium",
+          "untappd": {
+            "rating": 4.43,
+            "count": 1383,
+            "url": "https://untappd.com/b/evil-twin-brewing-nyc-even-more-daily-servings-mixed-berry/5705316"
+          },
+          "description": {
+            "text": "Fruited sour brewed with Trillium on a blend of mixed berries and marshmallow.",
+            "source": "https://untappd.com/b/evil-twin-brewing-nyc-even-more-daily-servings-mixed-berry/5705316"
+          }
         },
         {
           "id": 1105,
@@ -935,7 +1007,16 @@
           "style": "Sour",
           "abv": 7,
           "session": "red",
-          "notes": "collab Mortalis"
+          "notes": "collab Mortalis",
+          "untappd": {
+            "rating": 4.38,
+            "count": 4024,
+            "url": "https://untappd.com/b/evil-twin-brewing-nyc-even-more-even-more-hydra/4246798"
+          },
+          "description": {
+            "text": "Smoothie sour blending raspberry, peach, plum, coconut, white chocolate and hazelnut.",
+            "source": "https://untappd.com/b/evil-twin-brewing-nyc-even-more-even-more-hydra/4246798"
+          }
         }
       ]
     },
@@ -1803,7 +1884,12 @@
           "name": "Tågedrøm",
           "style": "Helles",
           "abv": 5,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 3.34,
+            "count": 19,
+            "url": "https://untappd.com/b/kolster-tagedrom/6846034"
+          }
         }
       ]
     },
@@ -2512,7 +2598,16 @@
           "name": "I DID DID I",
           "style": "NE DIPA",
           "abv": 8.2,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": null,
+            "count": 0,
+            "url": "https://untappd.com/b/palindrome-brewing-co-i-did-did-i/6910605"
+          },
+          "description": {
+            "text": "Juicy fruit-forward DIPA with Citra Cryo, Elani and Mosaic: grapefruit, lime, yuzu, orange creamsicle and dark berry dankness.",
+            "source": "https://untappd.com/b/palindrome-brewing-co-i-did-did-i/6910605"
+          }
         },
         {
           "id": 3002,
@@ -3492,7 +3587,16 @@
           "name": "GLOOP Sour - Strawberries & Cookies & Cream",
           "style": "Pastry Sour",
           "abv": 5,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": 4.23,
+            "count": 889,
+            "url": "https://untappd.com/b/vault-city-brewing-gloop-sour-strawberries-and-cookies-and-cream/6697856"
+          },
+          "description": {
+            "text": "Strawberries, cookies, cream and GLOOP. Store cold and drink fresh.",
+            "source": "https://untappd.com/b/vault-city-brewing-gloop-sour-strawberries-and-cookies-and-cream/6697856"
+          }
         },
         {
           "id": 4203,
@@ -3708,7 +3812,16 @@
           "name": "Højt At Flyve",
           "style": "DH Pils",
           "abv": 5,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 3.44,
+            "count": 33,
+            "url": "https://untappd.com/b/olsnedkeren-hojt-at-flyve/6895004"
+          },
+          "description": {
+            "text": "Dry-hopped pilsner with Nelson Sauvin and Saaz: white grape, citrus and a clean, lightly bitter finish.",
+            "source": "https://olsnedkeren.dk/products/hojt-at-flyve"
+          }
         }
       ]
     },
