@@ -8,8 +8,8 @@ import { StandBadge, StyleBadge, pixelCheckboxProps } from "./PixelUI";
 function Stat({ label, value, color }) {
   return (
     <Box sx={{ flex: 1, minWidth: 90, p: 1.5, border: "3px solid #07070f", bgcolor: color ?? "#241a4d", color: color ? "#07070f" : "#eef1ff", boxShadow: "3px 3px 0 #2a1458" }}>
-      <Typography sx={{ fontFamily: BODY_FONT, fontWeight: 400, fontSize: "1.8rem", lineHeight: 1.1 }}>{value}</Typography>
-      <Typography sx={{ fontSize: "0.65rem", textTransform: "uppercase", opacity: 0.8 }}>{label}</Typography>
+      <Typography sx={{ fontFamily: BODY_FONT, fontWeight: 700, fontSize: "1.8rem", lineHeight: 1.15, fontVariantNumeric: "tabular-nums" }}>{value}</Typography>
+      <Typography sx={{ fontSize: "0.75rem", fontWeight: 600, textTransform: "uppercase", opacity: 0.8, fontVariantNumeric: "tabular-nums" }}>{label}</Typography>
     </Box>
   );
 }
@@ -36,7 +36,7 @@ export function BeerDialog({ festival, entry, drunkBeers, favoriteBeers, planned
           <Typography variant="overline" sx={{ color: standColor(brewery.stand) }}>
             {brewery.name} · {brewery.location} · stand {brewery.stand}
           </Typography>
-          <Typography variant="h5" sx={{ pr: 5, mb: 1.5, overflowWrap: "anywhere", fontFamily: BODY_FONT, fontSize: { xs: "1.7rem", sm: "2.1rem" }, lineHeight: 1.05 }}>
+          <Typography variant="h5" sx={{ pr: 5, mb: 1.5, overflowWrap: "anywhere", fontFamily: BODY_FONT, fontSize: { xs: "1.55rem", sm: "1.9rem" }, lineHeight: 1.25 }}>
             {beer.name}
           </Typography>
           <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap", mb: 2 }}>

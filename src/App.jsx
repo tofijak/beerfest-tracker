@@ -346,7 +346,7 @@ export default function App() {
               </Box>
             </Box>
             <AuthControls auth={auth} />
-            <Typography variant="body2" sx={{ fontFamily: PIXEL_FONT, fontSize: "0.7rem", ml: 1 }}>
+            <Typography variant="body2" sx={{ fontFamily: PIXEL_FONT, fontWeight: 600, fontSize: "0.85rem", ml: 1, fontVariantNumeric: "tabular-nums" }}>
               {ratedCount} rated · {progress.drunkBeers.length}/{stats.beerCount} tried
             </Typography>
           </Toolbar>

@@ -1,7 +1,8 @@
 import { createTheme } from "@mui/material";
 
-export const BODY_FONT = '"VT323", "Pixelify Sans", ui-monospace, monospace';
-export const PIXEL_FONT = '"Pixelify Sans", "Silkscreen", ui-monospace, monospace';
+/** Square techno face: same neon-HUD vibe, with open numerals you can actually read. */
+export const BODY_FONT = '"Chakra Petch", ui-sans-serif, system-ui, sans-serif';
+export const PIXEL_FONT = BODY_FONT;
 const INK = "#07070f";
 const EDGE = "#00e5ff";
 const SHADOW = "#2a1458";
@@ -28,14 +29,17 @@ export const theme = createTheme({
   shape: { borderRadius: 0 },
   typography: {
     fontFamily: BODY_FONT,
-    body1: { fontSize: "1.3rem", lineHeight: 1.15 },
-    body2: { fontSize: "1.15rem", lineHeight: 1.15 },
-    caption: { fontSize: "1rem", lineHeight: 1.1 },
-    h4: { fontFamily: PIXEL_FONT, fontWeight: 700 },
-    h5: { fontFamily: PIXEL_FONT, fontWeight: 700 },
-    h6: { fontFamily: PIXEL_FONT, fontWeight: 700, letterSpacing: "0.02em" },
-    overline: { fontFamily: PIXEL_FONT },
-    button: { fontFamily: PIXEL_FONT },
+    fontWeightRegular: 500,
+    fontWeightMedium: 600,
+    fontWeightBold: 700,
+    body1: { fontSize: "1.2rem", lineHeight: 1.4, fontWeight: 500, fontVariantNumeric: "tabular-nums" },
+    body2: { fontSize: "1.05rem", lineHeight: 1.45, fontWeight: 500, fontVariantNumeric: "tabular-nums" },
+    caption: { fontSize: "0.95rem", lineHeight: 1.45, fontWeight: 500, fontVariantNumeric: "tabular-nums" },
+    h4: { fontFamily: PIXEL_FONT, fontWeight: 700, lineHeight: 1.25 },
+    h5: { fontFamily: PIXEL_FONT, fontWeight: 700, lineHeight: 1.25 },
+    h6: { fontFamily: PIXEL_FONT, fontWeight: 700, letterSpacing: "0.01em", lineHeight: 1.3 },
+    overline: { fontFamily: PIXEL_FONT, letterSpacing: "0.06em" },
+    button: { fontFamily: PIXEL_FONT, fontWeight: 700 },
   },
   components: {
     MuiCard: {
@@ -63,7 +67,9 @@ export const theme = createTheme({
         root: {
           borderRadius: 0,
           fontFamily: PIXEL_FONT,
-          fontSize: "0.68rem",
+          fontWeight: 600,
+          fontSize: "0.8rem",
+          fontVariantNumeric: "tabular-nums",
           textTransform: "uppercase",
           border: "2px solid currentColor",
         },
@@ -86,7 +92,8 @@ export const theme = createTheme({
           border: `3px solid ${EDGE}`,
           boxShadow: `4px 4px 0 ${SHADOW}`,
           color: EDGE,
-          fontSize: "0.75rem",
+          fontSize: "0.85rem",
+          fontVariantNumeric: "tabular-nums",
           "&.Mui-selected": { color: INK, backgroundColor: EDGE },
         },
       },
@@ -112,7 +119,19 @@ export const theme = createTheme({
           boxShadow: `3px 3px 0 ${SHADOW}`,
           "&:before": { display: "none" },
         },
-        valueLabel: { borderRadius: 0, fontFamily: PIXEL_FONT, backgroundColor: "#ff2bd6" },
+        markLabel: {
+          fontFamily: PIXEL_FONT,
+          fontWeight: 600,
+          fontSize: "0.85rem",
+          fontVariantNumeric: "tabular-nums",
+        },
+        valueLabel: {
+          borderRadius: 0,
+          fontFamily: PIXEL_FONT,
+          fontWeight: 700,
+          fontVariantNumeric: "tabular-nums",
+          backgroundColor: "#ff2bd6",
+        },
       },
     },
     MuiDialog: { styleOverrides: { paper: { borderRadius: 0 } } },

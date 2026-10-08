@@ -158,7 +158,9 @@ export function VenueMap({ festival, drunkBeers }) {
                     sx={{
                       px: 1,
                       fontFamily: PIXEL_FONT,
-                      fontSize: "0.7rem",
+                      fontWeight: 700,
+                      fontSize: "0.95rem",
+                      fontVariantNumeric: "tabular-nums",
                       bgcolor: ratingColor(best),
                       color: "#07070f",
                     }}
