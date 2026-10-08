@@ -44,7 +44,12 @@
           "name": "Oude Lambik S25/26 Blend no. 12",
           "style": "Lambic",
           "abv": null,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": null,
+            "count": 0,
+            "url": "https://untappd.com/b/brouwerij-3-fonteinen-oude-lambik-seizoen-25-26-blend-no-12/7085034"
+          }
         },
         {
           "id": 102,
@@ -1566,7 +1571,16 @@
           "style": "NE TIPA",
           "abv": 9.5,
           "session": "red",
-          "notes": "BLAS collab"
+          "notes": "BLAS collab",
+          "untappd": {
+            "rating": 3.91,
+            "count": 119,
+            "url": "https://untappd.com/b/blas-c-7-hazy-ipa/6819947"
+          },
+          "description": {
+            "text": "Collab with Gamma Brewing Co. Brewed for Bad Seed Beer Festival 2026.",
+            "source": "https://untappd.com/b/blas-c-7-hazy-ipa/6819947"
+          }
         },
         {
           "id": 1706,
@@ -1826,7 +1840,12 @@
           "name": "Morgendug",
           "style": "Saison",
           "abv": 5.6,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": null,
+            "count": 0,
+            "url": "https://untappd.com/b/kolster-morgendug/7083563"
+          }
         },
         {
           "id": 2102,
@@ -1877,7 +1896,12 @@
           "name": "Havgus",
           "style": "DH Gose",
           "abv": 4.5,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": null,
+            "count": 1,
+            "url": "https://untappd.com/b/kolster-havgus/7083604"
+          }
         },
         {
           "id": 2107,
@@ -2063,7 +2087,16 @@
           "name": "Nippitatum",
           "style": "BA Barleywine",
           "abv": 15,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": null,
+            "count": 0,
+            "url": "https://untappd.com/b/mariatorgets-mikrobryggeri-nippitatum/7083890"
+          },
+          "description": {
+            "text": "Blend of cognac, whisky and rum barrel-aged barleywines.",
+            "source": "https://untappd.com/b/mariatorgets-mikrobryggeri-nippitatum/7083890"
+          }
         }
       ]
     },
@@ -3043,7 +3076,12 @@
           "style": "NE IPA",
           "abv": 5.5,
           "session": "green",
-          "notes": "collab Jopen and White Labs"
+          "notes": "collab Jopen and White Labs",
+          "untappd": {
+            "rating": null,
+            "count": 0,
+            "url": "https://untappd.com/b/slowburn-brewing-co-op-zwaan-and-tulp/7084330"
+          }
         },
         {
           "id": 3503,
@@ -3111,7 +3149,16 @@
           "name": "Kveikebaier - Citra",
           "style": "Kveik Pilsner",
           "abv": null,
-          "session": "green"
+          "session": "green",
+          "untappd": {
+            "rating": null,
+            "count": 0,
+            "url": "https://untappd.com/b/small-grove-brewing-kveikebaier-citra/7084334"
+          },
+          "description": {
+            "text": "Kveik style pilsner.",
+            "source": "https://untappd.com/b/small-grove-brewing-kveikebaier-citra/7084334"
+          }
         },
         {
           "id": 3602,
@@ -3130,28 +3177,52 @@
           "name": "Dobbeltsnyd",
           "style": "NE DIPA",
           "abv": 7.8,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": null,
+            "count": 0,
+            "url": "https://untappd.com/b/small-grove-brewing-dobbeltsnyd/7084352"
+          }
         },
         {
           "id": 3604,
           "name": "Mirror Bells",
           "style": "Gose w. wild mirabell plum",
           "abv": null,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": null,
+            "count": 0,
+            "url": "https://untappd.com/b/small-grove-brewing-mirror-bells/7084426"
+          }
         },
         {
           "id": 3605,
           "name": "Kaffesnyd",
           "style": "NE DIPA w. coffee from Sydhavnskaffe",
           "abv": 7.8,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": null,
+            "count": 0,
+            "url": "https://untappd.com/b/small-grove-brewing-kaffesnyd/7084477"
+          },
+          "description": {
+            "text": "Hopped with Citra.",
+            "source": "https://untappd.com/b/small-grove-brewing-kaffesnyd/7084477"
+          }
         },
         {
           "id": 3606,
           "name": "Mirror Bells",
           "style": "Gose w. wild mirabell plum",
           "abv": null,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": null,
+            "count": 0,
+            "url": "https://untappd.com/b/small-grove-brewing-mirror-bells/7084426"
+          }
         }
       ]
     },
@@ -3288,14 +3359,24 @@
           "name": "Lunar Synthesis",
           "style": "NE DIPA",
           "abv": 8.5,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 4.49,
+            "count": 128,
+            "url": "https://untappd.com/b/test-lunar-synthesis/6910886"
+          }
         },
         {
           "id": 3804,
           "name": "Intercosmosis",
           "style": "NE IPA",
           "abv": 7,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": 4.35,
+            "count": 131,
+            "url": "https://untappd.com/b/test-intercosmosis/6853578"
+          }
         },
         {
           "id": 3805,
@@ -3303,14 +3384,32 @@
           "style": "NE TIPA",
           "abv": 10,
           "session": "red",
-          "notes": "collab Evil Twin"
+          "notes": "collab Evil Twin",
+          "untappd": {
+            "rating": 4.47,
+            "count": 74,
+            "url": "https://untappd.com/b/test-tickets-to-the-sunset/6921498"
+          },
+          "description": {
+            "text": "Triple IPA hopped with Citra, Freestyle Tropical Fusion and Fresh Nelson Cold-Pressed.",
+            "source": "https://untappd.com/b/test-tickets-to-the-sunset/6921498"
+          }
         },
         {
           "id": 3806,
           "name": "Divine Chord",
           "style": "NE DIPA",
           "abv": 8,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 4.44,
+            "count": 43,
+            "url": "https://untappd.com/b/test-divine-chord-2nd-edition-2026/6910730"
+          },
+          "description": {
+            "text": "DIPA brewed with Citra, Simcoe and Strata.",
+            "source": "https://untappd.com/b/test-divine-chord-2nd-edition-2026/6910730"
+          }
         }
       ]
     },
@@ -3536,7 +3635,16 @@
           "name": "Volej si švestky! 11°",
           "style": "Sour w. plums",
           "abv": 4.8,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": null,
+            "count": 1,
+            "url": "https://untappd.com/b/pivovar-kladno-krocehlavy-volej-si-svestky/6940410"
+          },
+          "description": {
+            "text": "Plum sour.",
+            "source": "https://untappd.com/b/pivovar-kladno-krocehlavy-volej-si-svestky/6940410"
+          }
         },
         {
           "id": 4105,
@@ -3559,7 +3667,12 @@
           "name": "Výroční ležák 12°",
           "style": "Lager",
           "abv": null,
-          "session": "red"
+          "session": "red",
+          "untappd": {
+            "rating": 3.63,
+            "count": 17,
+            "url": "https://untappd.com/b/pivovar-kladno-krocehlavy-kladensky-vyrocni-lezak/6813716"
+          }
         }
       ]
     },
@@ -3712,7 +3825,16 @@
           "name": "Dippedut",
           "style": "Imperial Stout w. pecans, pistachio praliné, vanilla beans and coca nips",
           "abv": 11.3,
-          "session": "yellow"
+          "session": "yellow",
+          "untappd": {
+            "rating": null,
+            "count": 0,
+            "url": "https://untappd.com/b/y-not-brewing-dippedut/7084586"
+          },
+          "description": {
+            "text": "With roasted pecans, pistachio praline, vanilla beans and cocoa nibs.",
+            "source": "https://untappd.com/b/y-not-brewing-dippedut/7084586"
+          }
         },
         {
           "id": 4305,
