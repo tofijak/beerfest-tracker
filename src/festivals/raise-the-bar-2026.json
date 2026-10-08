@@ -645,24 +645,45 @@
       "noLow": false,
       "beers": [
         {
-          "id": 801,
-          "name": "TBA",
-          "style": null,
-          "abv": null,
+          "id": 804,
+          "name": "Monumental",
+          "style": "NE IPA",
+          "abv": 6.4,
           "session": "green"
         },
         {
-          "id": 802,
-          "name": "TBA",
-          "style": null,
-          "abv": null,
+          "id": 805,
+          "name": "Rhyme or Reason",
+          "style": "Pale Ale",
+          "abv": 4.8,
+          "session": "green"
+        },
+        {
+          "id": 806,
+          "name": "Balcony Beer",
+          "style": "WC Pils",
+          "abv": 5.4,
           "session": "yellow"
         },
         {
-          "id": 803,
-          "name": "TBA",
-          "style": null,
-          "abv": null,
+          "id": 807,
+          "name": "Purple Rain",
+          "style": "Fruited Sour",
+          "abv": 5.5,
+          "session": "yellow"
+        },
+        {
+          "id": 808,
+          "name": "Praline Dream",
+          "style": "Pastry Stout",
+          "abv": 6,
+          "session": "red"
+        },
+        {
+          "id": 809,
+          "name": "Kaotik Kinetik",
+          "style": "WC IPA",
+          "abv": 6.5,
           "session": "red"
         }
       ]
@@ -861,11 +882,12 @@
           }
         },
         {
-          "id": 1102,
-          "name": "Raise the Bar",
-          "style": "DDH NE TIPA",
-          "abv": 10,
-          "session": "green"
+          "id": 1107,
+          "name": "Even More Hydra - ETNYC Edition",
+          "style": "Pastry Sour",
+          "abv": 7,
+          "session": "green",
+          "notes": "collab Mortalis"
         },
         {
           "id": 1103,
@@ -884,21 +906,12 @@
           }
         },
         {
-          "id": 1104,
-          "name": "Even More Dumb J.R.E.A.M",
-          "style": "Smoothie Sour",
-          "abv": 7.16,
+          "id": 1108,
+          "name": "Even More Daily Servings Mixed Berry",
+          "style": "Sour",
+          "abv": 7,
           "session": "yellow",
-          "notes": "collab Burley Oak",
-          "untappd": {
-            "rating": 4.37,
-            "count": 819,
-            "url": "https://untappd.com/b/evil-twin-brewing-nyc-even-more-dumb-j-r-e-a-m-16-year-anniversary-beer/6679647"
-          },
-          "description": {
-            "text": "Tangy fruited sour packed with blackberry, strawberry and apricot plus peanut butter, a PB&J in a glass. Jammy, juicy and creamy with a nutty finish.",
-            "source": "https://beerdb.tavour.com/b/even-more-dumb-jream-15-year-anniversary-beer-b580251"
-          }
+          "notes": "collab Trillium"
         },
         {
           "id": 1105,
@@ -917,20 +930,12 @@
           }
         },
         {
-          "id": 1106,
-          "name": "Luxurious Luxury Volume Sixteen",
-          "style": "Fruited sour",
-          "abv": 9.16,
+          "id": 1109,
+          "name": "Even More Even More Hydra",
+          "style": "Sour",
+          "abv": 7,
           "session": "red",
-          "untappd": {
-            "rating": 4.26,
-            "count": 784,
-            "url": "https://untappd.com/b/evil-twin-brewing-nyc-luxurious-luxury-volume-sixteen-16-year-anniversary-beer/6679648"
-          },
-          "description": {
-            "text": "Evil Twin x The Veil anniversary sour on a tangy, lightly salted base with pineapple, banana and marshmallow, topped with edible gold. Thick, tropical and creamy.",
-            "source": "https://beerdb.tavour.com/b/luxurious-luxury-volume-sixteen-16-year-anniversary-beer-b582995"
-          }
+          "notes": "collab Mortalis"
         }
       ]
     },
@@ -1794,20 +1799,11 @@
           "session": "red"
         },
         {
-          "id": 2106,
-          "name": "Himmelfryd",
-          "style": "German Pilsner",
+          "id": 2107,
+          "name": "Tågedrøm",
+          "style": "Helles",
           "abv": 5,
-          "session": "red",
-          "untappd": {
-            "rating": 3.35,
-            "count": 512,
-            "url": "https://untappd.com/b/kolster-himmelfryd/3215810"
-          },
-          "description": {
-            "text": "Kølster's first pilsner, brewed on organic pilsner malt and organic hops. Fresh and generously hopped.",
-            "source": "https://koelster.dk/products/bille-organic-vienna-lager-classic-beer-kopi"
-          }
+          "session": "red"
         }
       ]
     },
@@ -2512,10 +2508,10 @@
       "noLow": false,
       "beers": [
         {
-          "id": 3001,
-          "name": "TOP POT",
+          "id": 3007,
+          "name": "I DID DID I",
           "style": "NE DIPA",
-          "abv": 8,
+          "abv": 8.2,
           "session": "green"
         },
         {
@@ -3492,16 +3488,11 @@
           }
         },
         {
-          "id": 4202,
-          "name": "Bake-Off: NY Cheesecake",
+          "id": 4207,
+          "name": "GLOOP Sour - Strawberries & Cookies & Cream",
           "style": "Pastry Sour",
-          "abv": 5.3,
-          "session": "green",
-          "untappd": {
-            "rating": 4.19,
-            "count": 959,
-            "url": "https://untappd.com/b/vault-city-brewing-bake-off-ny-cheesecake/6834661"
-          }
+          "abv": 5,
+          "session": "green"
         },
         {
           "id": 4203,
@@ -3713,16 +3704,11 @@
           }
         },
         {
-          "id": 4406,
-          "name": "Kosmisk Kaos",
-          "style": "Pilsner",
-          "abv": 4.8,
-          "session": "red",
-          "untappd": {
-            "rating": 3.27,
-            "count": 427,
-            "url": "https://untappd.com/b/olsnedkeren-kosmisk-kaos/5693144"
-          }
+          "id": 4407,
+          "name": "Højt At Flyve",
+          "style": "DH Pils",
+          "abv": 5,
+          "session": "red"
         }
       ]
     },
@@ -3934,7 +3920,7 @@
         },
         {
           "id": 5002,
-          "name": "Top w/ Lemoon",
+          "name": "Top w/ Lemon",
           "style": "Helles Lager",
           "abv": 0.5,
           "session": "all",
