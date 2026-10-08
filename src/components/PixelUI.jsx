@@ -51,11 +51,12 @@ export function PixelBar({ value, total, color = "#39ff88", segments = 10 }) {
 /** Square plate with the Untappd rating (the number itself) and rating count underneath. */
 export function ScorePlate({ rating, count, color }) {
   return (
-    <Box sx={{ textAlign: "center", minWidth: { xs: 48, sm: 58 } }}>
+    <Box sx={{ textAlign: "center",           minWidth: { xs: 64, sm: 72 } }}>
       <Box
         sx={{
-          width: { xs: 48, sm: 56 },
-          height: { xs: 38, sm: 44 },
+          minWidth: { xs: 64, sm: 72 },
+          height: { xs: 42, sm: 48 },
+          px: 0.75,
           mx: "auto",
           display: "grid",
           placeItems: "center",
@@ -65,12 +66,14 @@ export function ScorePlate({ rating, count, color }) {
           boxShadow: "3px 3px 0 #2a1458",
           fontFamily: BODY_FONT,
           fontWeight: 700,
-          fontSize: { xs: "0.9rem", sm: "1.05rem" },
+          fontSize: { xs: "1.15rem", sm: "1.3rem" },
+          fontVariantNumeric: "tabular-nums",
+          letterSpacing: "0.02em",
         }}
       >
         {rating != null ? rating.toFixed(2) : "–"}
       </Box>
-      <Box sx={{ fontSize: "0.62rem", mt: 0.5, color: "text.secondary" }}>
+      <Box sx={{ fontSize: "0.75rem", mt: 0.5, color: "text.secondary", fontVariantNumeric: "tabular-nums" }}>
         {count != null ? `${count} ratings` : "no rating"}
       </Box>
     </Box>
@@ -90,9 +93,11 @@ export function StyleBadge({ category, size = "small" }) {
         alignItems: "center",
         gap: 0.5,
         px: 0.75,
-        height: size === "small" ? 18 : 24,
+        height: size === "small" ? 22 : 28,
         fontFamily: PIXEL_FONT,
-        fontSize: size === "small" ? "0.62rem" : "0.8rem",
+        fontWeight: 700,
+        fontSize: size === "small" ? "0.75rem" : "0.9rem",
+        fontVariantNumeric: "tabular-nums",
         textTransform: "uppercase",
         bgcolor: meta.color,
         color: "#07070f",
@@ -117,9 +122,11 @@ export function StandBadge({ stand, size = "small" }) {
         display: "inline-flex",
         alignItems: "center",
         px: 0.75,
-        height: size === "small" ? 18 : 24,
+        height: size === "small" ? 22 : 28,
         fontFamily: PIXEL_FONT,
-        fontSize: size === "small" ? "0.62rem" : "0.8rem",
+        fontWeight: 700,
+        fontSize: size === "small" ? "0.75rem" : "0.9rem",
+        fontVariantNumeric: "tabular-nums",
         textTransform: "uppercase",
         bgcolor: color,
         color: "#07070f",
