@@ -45,30 +45,7 @@ export function Splash({ open, festivals, resumeSlug, allProgress, onSelect }) {
       }}
     >
       <PixelBackdrop />
-      <Box
-        sx={{
-          position: "relative",
-          display: "flex",
-          alignItems: "center",
-          gap: { xs: 1.5, sm: 3 },
-          mb: 2,
-        }}
-      >
-        <PixelSprite sprite="mug" size={88} depth={8} />
-        <Typography
-          component="span"
-          sx={{
-            fontFamily: PIXEL_FONT,
-            fontWeight: 700,
-            fontSize: { xs: "1.6rem", sm: "2.4rem" },
-            color: "#ff2bd6",
-            textShadow: "2px 2px 0 #a0128a, 4px 4px 0 #6a0b5c, 6px 6px 0 #2a1458",
-          }}
-        >
-          ×
-        </Typography>
-        <PixelSprite sprite="logo" size={120} depth={10} />
-      </Box>
+      <PixelSprite sprite="mug" size={120} depth={10} sx={{ mb: 2, position: "relative" }} />
       <Typography
         id="landing-title"
         variant="overline"
