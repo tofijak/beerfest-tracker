@@ -13,8 +13,8 @@ import {
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import StarIcon from "@mui/icons-material/Star";
-import { FESTIVALS, festivalStats, findBeer } from "../festivals";
-import { hasFestivalActivity, ratedCountFrom } from "../lib/storage";
+import { FESTIVALS, festivalStats, findBeer, knownBeerIds } from "../festivals";
+import { hasFestivalActivity, idsOnMenu, ratedCountFrom, ratingsOnMenu } from "../lib/storage";
 import { formatBeerMeta, untappdSearchUrl } from "../utils";
 
 function collectRatedBeers(allProgress) {
@@ -118,9 +118,10 @@ export function HistoryView({ allProgress, activeSlug, onSelectFestival }) {
         const stats = festivalStats(festival);
         const progress = allProgress[festival.slug] ?? {};
         const visitedFest = hasFestivalActivity(progress);
-        const rated = ratedCountFrom(progress.beerRatings);
-        const tried = progress.drunkBeers?.length ?? 0;
-        const stars = progress.favoriteBeers?.length ?? 0;
+        const menuIds = knownBeerIds(festival);
+        const rated = ratedCountFrom(ratingsOnMenu(progress.beerRatings, menuIds));
+        const tried = idsOnMenu(progress.drunkBeers, menuIds).length;
+        const stars = idsOnMenu(progress.favoriteBeers, menuIds).length;
 
         return (
           <Card key={festival.slug} sx={{ mb: 2 }}>

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Box, Chip, Typography } from "@mui/material";
-import { festivalStats } from "../festivals";
-import { hasFestivalActivity, ratedCountFrom } from "../lib/storage";
+import { festivalStats, knownBeerIds } from "../festivals";
+import { hasFestivalActivity, idsOnMenu, ratedCountFrom, ratingsOnMenu } from "../lib/storage";
 import { PIXEL_FONT } from "../theme";
 import { PixelBackdrop, PixelSprite } from "./PixelArt";
 
@@ -82,8 +82,9 @@ export function Splash({ open, festivals, resumeSlug, allProgress, onSelect }) {
             const stats = festivalStats(festival);
             const progress = allProgress?.[festival.slug];
             const started = hasFestivalActivity(progress);
-            const rated = ratedCountFrom(progress?.beerRatings);
-            const tried = progress?.drunkBeers?.length ?? 0;
+            const menuIds = knownBeerIds(festival);
+            const rated = ratedCountFrom(ratingsOnMenu(progress?.beerRatings, menuIds));
+            const tried = idsOnMenu(progress?.drunkBeers, menuIds).length;
             const isCurrent = festival.slug === resumeSlug;
             return (
               <Box

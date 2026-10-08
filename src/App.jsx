@@ -38,7 +38,7 @@ import { Leaderboards } from "./components/Leaderboards";
 import { Splash } from "./components/Splash";
 import { ACHIEVEMENTS } from "./data/achievements";
 import { DEFAULT_FILTERS, applyFilters } from "./filters";
-import { FESTIVALS, festivalStats, findBeer, getFestival } from "./festivals";
+import { FESTIVALS, festivalStats, findBeer, getFestival, knownBeerIds } from "./festivals";
 import { useAuth } from "./hooks/useAuth";
 import { useFestivalProgress } from "./hooks/useFestivalProgress";
 import { useDebouncedValue, useLocalStorage } from "./hooks/useLocalStorage";
@@ -50,7 +50,9 @@ import {
   loadFestivalProgress,
   displayNameKey,
   festivalChosenKey,
+  idsOnMenu,
   ratedCountFrom,
+  ratingsOnMenu,
   readChosenFestival,
   shareScoreboardKey,
   splashStorageKey,
@@ -170,7 +172,19 @@ export default function App() {
     }
   }, [activeAchievement, queue]);
 
-  const ratedCount = useMemo(() => ratedCountFrom(progress.beerRatings), [progress.beerRatings]);
+  const menuIds = useMemo(() => knownBeerIds(festival), [festival]);
+  const menuDrunkBeers = useMemo(
+    () => idsOnMenu(progress.drunkBeers, menuIds),
+    [progress.drunkBeers, menuIds],
+  );
+  const menuFavoriteBeers = useMemo(
+    () => idsOnMenu(progress.favoriteBeers, menuIds),
+    [progress.favoriteBeers, menuIds],
+  );
+  const ratedCount = useMemo(
+    () => ratedCountFrom(ratingsOnMenu(progress.beerRatings, menuIds)),
+    [progress.beerRatings, menuIds],
+  );
 
   useEffect(() => {
     ACHIEVEMENTS.forEach(({ count }) => {
@@ -359,7 +373,7 @@ export default function App() {
             </Box>
             <AuthControls auth={auth} signInOpen={signInOpen} onSignInClose={() => setSignInOpen(false)} />
             <Typography variant="body2" sx={{ fontFamily: PIXEL_FONT, fontWeight: 600, fontSize: "0.85rem", ml: 1, fontVariantNumeric: "tabular-nums" }}>
-              {ratedCount} rated · {progress.drunkBeers.length}/{stats.beerCount} tried
+              {ratedCount} rated · {menuDrunkBeers.length}/{stats.beerCount} tried
             </Typography>
           </Toolbar>
         </AppBar>
@@ -414,7 +428,7 @@ export default function App() {
             <Tab
               value="favorites"
               icon={
-                <Badge badgeContent={progress.favoriteBeers.length} color="secondary">
+                <Badge badgeContent={menuFavoriteBeers.length} color="secondary">
                   <StarIcon />
                 </Badge>
               }
@@ -460,7 +474,7 @@ export default function App() {
               />
               {resultCount === 0 ? (
                 <Typography variant="body1" color="text.secondary" align="center" sx={{ mt: 4 }}>
-                  {tab === "favorites" && progress.favoriteBeers.length === 0
+                  {tab === "favorites" && menuFavoriteBeers.length === 0
                     ? "No favorite beers yet. Star some beers to see them here!"
                     : "No beers match these filters."}
                 </Typography>
