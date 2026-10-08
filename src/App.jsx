@@ -46,14 +46,11 @@ import {
   festivalStorageKey,
   hasFestivalActivity,
   loadFestivalProgress,
-  migrateLegacyStorage,
   ratedCountFrom,
   splashStorageKey,
 } from "./lib/storage";
 import { mergeAllFestivalsForUser } from "./lib/sync";
 import { PIXEL_FONT, theme } from "./theme";
-
-migrateLegacyStorage();
 
 export default function App() {
   const auth = useAuth();
@@ -334,16 +331,15 @@ export default function App() {
                 sx={{
                   fontFamily: PIXEL_FONT,
                   fontWeight: 700,
-                  fontSize: { xs: "1.2rem", sm: "1.6rem" },
-                  color: "#ff2bd6",
-                  textShadow: "1px 1px 0 #a0128a, 2px 2px 0 #6a0b5c, 3px 3px 0 #2a1458",
+                  fontSize: { xs: "1.05rem", sm: "1.45rem" },
+                  letterSpacing: "0.04em",
+                  color: "#f4f1ff",
+                  textShadow: "2px 2px 0 #2a1458",
+                  whiteSpace: "nowrap",
                 }}
               >
-                ×
+                Beerfest
               </Typography>
-              <Box className="pop-in" style={{ "--d": "400ms" }}>
-                <PixelSprite sprite="logo" size={76} depth={7} />
-              </Box>
             </Box>
             <AuthControls auth={auth} />
             <Typography variant="body2" sx={{ fontFamily: PIXEL_FONT, fontSize: "0.7rem", ml: 1 }}>

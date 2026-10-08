@@ -42,7 +42,7 @@ A React + Vite app for checking off beers, starring favorites, and rating pours 
 - Check-off, favorites, rating slider, search, and hide/unrated filters
 - Per-festival achievements
 - Passport / history: festivals you’ve been to, plus an all-time hall of foam
-- Progress stored under `beerFest.festivals.<slug>.*` (legacy `greenSession.*` keys are migrated on first load)
+- Progress stored under `beerFest.festivals.<slug>.*`
 
 ## Run locally
 

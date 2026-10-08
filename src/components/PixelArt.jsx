@@ -4,26 +4,9 @@ const PALETTES = {
   mug: { o: "#0b0b1a", g: "#ffd23f", f: "#fff7d6", h: "#ffffff", m: "#8fd8ff", d: "#2a2a4a" },
   hop: { o: "#0b0b1a", g: "#39ff88", d: "#0f9d4f", l: "#b6ffd2" },
   can: { o: "#0b0b1a", a: "#00e5ff", b: "#ff2bd6", w: "#ffffff", s: "#9aa4c7" },
-  logo: { w: "#e9e4ff", h: "#ffffff", d: "#8f86c9" },
 };
 
 const SPRITES = {
-  logo: [
-    "....hhhhhh....hhhhhh....",
-    "...hwwwwwd....hwwwwwh...",
-    "..hwwwwwwd....hwwwwwwh..",
-    ".hwwwwwwwd....hwwwwwwwh.",
-    "hwwwwddddd....hddddwwwwh",
-    "hwwwd.....hhhh.....hwwwd",
-    "hwwwd.....hwwd.....hwwwd",
-    "hwwwd.....hwwd.....hwwwd",
-    "hwwwd.....hddd.....hwwwd",
-    "hwwwwhhhhh....hhhhhwwwwd",
-    ".hwwwwwwwd....hwwwwwwwd.",
-    "..hwwwwwwd....hwwwwwwd..",
-    "...hwwwwwd....hwwwwwd...",
-    "....hddddd....hddddd....",
-  ],
   mug: [
     "..hhhhhhhh......",
     ".hffhhfhfhh.....",

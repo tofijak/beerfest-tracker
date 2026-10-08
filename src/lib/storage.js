@@ -1,6 +1,4 @@
 const APP_PREFIX = "beerFest.";
-// Historical localStorage prefix from the first single-festival build.
-const LEGACY_PREFIX = atob("Z3JlZW5TZXNzaW9uLnNlcnBpZXIu");
 
 export const DEFAULT_FESTIVAL_SLUG = "raise-the-bar-2026";
 
@@ -56,28 +54,6 @@ export function writeJson(key, value) {
   } catch (error) {
     console.error(`Error saving ${key} to localStorage:`, error);
   }
-}
-
-export function migrateLegacyStorage(targetSlug = DEFAULT_FESTIVAL_SLUG) {
-  if (typeof window === "undefined") return false;
-
-  const hasLegacy = FESTIVAL_PROGRESS_KEYS.some(
-    (key) => window.localStorage.getItem(`${LEGACY_PREFIX}${key}`) != null,
-  );
-  if (!hasLegacy) return false;
-
-  const alreadyMigrated = FESTIVAL_PROGRESS_KEYS.some(
-    (key) => window.localStorage.getItem(festivalStorageKey(targetSlug, key)) != null,
-  );
-  if (alreadyMigrated) return false;
-
-  for (const key of FESTIVAL_PROGRESS_KEYS) {
-    const value = window.localStorage.getItem(`${LEGACY_PREFIX}${key}`);
-    if (value != null) {
-      window.localStorage.setItem(festivalStorageKey(targetSlug, key), value);
-    }
-  }
-  return true;
 }
 
 export function loadFestivalProgress(slug) {
