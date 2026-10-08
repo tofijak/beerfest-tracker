@@ -474,7 +474,7 @@ export default function App() {
               />
               {resultCount === 0 ? (
                 <Typography variant="body1" color="text.secondary" align="center" sx={{ mt: 4 }}>
-                  {tab === "favorites" && menuFavoriteBeers.length === 0}
+                  {tab === "favorites" && menuFavoriteBeers.length === 0
                     ? "No favorite beers yet. Star some beers to see them here!"
                     : "No beers match these filters."}
                 </Typography>
