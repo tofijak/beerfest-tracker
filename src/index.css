@@ -1,9 +1,8 @@
 body {
   margin: 0;
-  font-family: "VT323", ui-monospace, monospace;
+  font-family: "Chakra Petch", ui-sans-serif, system-ui, sans-serif;
   font-size: 18px;
-  font-smooth: never;
-  -webkit-font-smoothing: none;
+  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: #07070f;
   min-height: 100vh;

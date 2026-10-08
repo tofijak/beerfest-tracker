@@ -50,7 +50,9 @@ import {
   loadFestivalProgress,
   migrateLegacyStorage,
   displayNameKey,
+  festivalChosenKey,
   ratedCountFrom,
+  readChosenFestival,
   shareScoreboardKey,
   splashStorageKey,
 } from "./lib/storage";
@@ -100,7 +102,7 @@ export default function App() {
   );
   const [splashOpen, setSplashOpen] = useState(() => {
     try {
-      return sessionStorage.getItem(splashStorageKey(festival.slug)) !== "1";
+      return sessionStorage.getItem(splashStorageKey()) !== "1";
     } catch {
       return true;
     }
@@ -114,8 +116,8 @@ export default function App() {
   }, [activeSlug, festival.slug, setActiveSlug]);
 
   useEffect(() => {
-    document.title = `${festival.name} · Beerfest Tracker`;
-  }, [festival.name]);
+    document.title = splashOpen ? "Beerfest Tracker" : `${festival.name} · Beerfest Tracker`;
+  }, [festival.name, splashOpen]);
 
   useEffect(() => {
     setAllProgress((current) => ({ ...current, [festival.slug]: progress }));
@@ -243,15 +245,6 @@ export default function App() {
     }
   }, [resetAchievements]);
 
-  const dismissSplash = useCallback(() => {
-    setSplashOpen(false);
-    try {
-      sessionStorage.setItem(splashStorageKey(festival.slug), "1");
-    } catch {
-      /* ignore */
-    }
-  }, [festival.slug]);
-
   const selectFestival = useCallback(
     (slug) => {
       const next = getFestival(slug);
@@ -260,12 +253,25 @@ export default function App() {
       setQuery("");
       setTab("beers");
       try {
-        setSplashOpen(sessionStorage.getItem(splashStorageKey(next.slug)) !== "1");
+        localStorage.setItem(festivalChosenKey(), next.slug);
       } catch {
-        setSplashOpen(true);
+        /* ignore */
       }
     },
     [setActiveSlug],
+  );
+
+  const enterFestival = useCallback(
+    (slug) => {
+      selectFestival(slug);
+      setSplashOpen(false);
+      try {
+        sessionStorage.setItem(splashStorageKey(), "1");
+      } catch {
+        /* ignore */
+      }
+    },
+    [selectFestival],
   );
 
   const debouncedQuery = useDebouncedValue(query, 100);
@@ -356,7 +362,7 @@ export default function App() {
               </Box>
             </Box>
             <AuthControls auth={auth} signInOpen={signInOpen} onSignInClose={() => setSignInOpen(false)} />
-            <Typography variant="body2" sx={{ fontFamily: PIXEL_FONT, fontSize: "0.7rem", ml: 1 }}>
+            <Typography variant="body2" sx={{ fontFamily: PIXEL_FONT, fontWeight: 600, fontSize: "0.85rem", ml: 1, fontVariantNumeric: "tabular-nums" }}>
               {ratedCount} rated · {progress.drunkBeers.length}/{stats.beerCount} tried
             </Typography>
           </Toolbar>
@@ -369,7 +375,7 @@ export default function App() {
               alignItems: "center",
               cursor: "pointer",
               userSelect: "none",
-              mb: 0.5,
+              mb: 2,
             }}
           >
             <Typography variant="body2" color="text.secondary">
@@ -379,13 +385,6 @@ export default function App() {
             </Typography>
             <ExpandMoreIcon fontSize="small" color="action" />
           </Box>
-          {festival.tagline ? (
-            <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-              {festival.tagline}
-            </Typography>
-          ) : (
-            <Box sx={{ mb: 2 }} />
-          )}
           {tab !== "history" && (
             <TextField
               fullWidth
@@ -569,7 +568,16 @@ export default function App() {
         onTogglePlan={togglePlan}
         onClose={() => setOpenedBeerId(null)}
       />
-      <Splash open={splashOpen} festival={festival} onDismiss={dismissSplash} />
+      <Splash
+        open={splashOpen}
+        festivals={FESTIVALS}
+        resumeSlug={
+          readChosenFestival() ??
+          (hasFestivalActivity(allProgress[festival.slug]) ? festival.slug : null)
+        }
+        allProgress={allProgress}
+        onSelect={enterFestival}
+      />
       <AchievementDialog
         achievement={activeAchievement}
         onClose={() => setActiveAchievement(null)}
