@@ -17,14 +17,19 @@ import {
 import LoginIcon from "@mui/icons-material/Login";
 import LogoutIcon from "@mui/icons-material/Logout";
 
-export function AuthControls({ auth }) {
-  const [open, setOpen] = useState(false);
+export function AuthControls({ auth, signInOpen = false, onSignInClose }) {
+  const [localOpen, setLocalOpen] = useState(false);
   const [email, setEmail] = useState("");
   const [confirmEmail, setConfirmEmail] = useState("");
 
   if (!auth.configured) return null;
 
   const signedIn = Boolean(auth.user);
+  const open = (signInOpen || localOpen) && !signedIn;
+  const close = () => {
+    setLocalOpen(false);
+    if (signInOpen) onSignInClose?.();
+  };
 
   return (
     <>
@@ -40,18 +45,18 @@ export function AuthControls({ auth }) {
         </Tooltip>
       ) : (
         <Tooltip title="Sign in with a magic link">
-          <IconButton color="inherit" onClick={() => setOpen(true)} aria-label="Sign in">
+          <IconButton color="inherit" onClick={() => setLocalOpen(true)} aria-label="Sign in">
             {auth.pendingLink ? <CircularProgress size={20} color="inherit" /> : <LoginIcon />}
           </IconButton>
         </Tooltip>
       )}
 
-      <Dialog open={open && !signedIn} onClose={() => setOpen(false)} fullWidth maxWidth="xs">
+      <Dialog open={open} onClose={close} fullWidth maxWidth="xs">
         <DialogTitle>Sign in with a magic link</DialogTitle>
         <DialogContent>
           <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-            We email you a one-time link. Ratings on this device merge into your account on first
-            sign-in, then sync across phones.
+            We email you a one-time link. Ratings on this device merge into your account, sync across
+            phones, and count on the festival leaderboard.
           </Typography>
           <TextField
             autoFocus
@@ -74,7 +79,7 @@ export function AuthControls({ auth }) {
           ) : null}
         </DialogContent>
         <DialogActions sx={{ px: 3, pb: 2 }}>
-          <Button onClick={() => setOpen(false)}>Close</Button>
+          <Button onClick={close}>Close</Button>
           <Button
             variant="contained"
             disabled={auth.busy || !email.includes("@")}

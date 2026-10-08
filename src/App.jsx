@@ -21,6 +21,7 @@ import StarIcon from "@mui/icons-material/Star";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import SearchIcon from "@mui/icons-material/Search";
 import HistoryIcon from "@mui/icons-material/History";
+import LeaderboardIcon from "@mui/icons-material/Leaderboard";
 import MapIcon from "@mui/icons-material/Map";
 import RouteIcon from "@mui/icons-material/Route";
 import { AchievementDialog, AchievementWall } from "./components/Achievements";
@@ -33,6 +34,7 @@ import { PixelBackdrop, PixelSprite } from "./components/PixelArt";
 import { RoutePlanner } from "./components/RoutePlanner";
 import { FestivalDialog } from "./components/FestivalDialog";
 import { HistoryView } from "./components/HistoryView";
+import { Leaderboards } from "./components/Leaderboards";
 import { Splash } from "./components/Splash";
 import { ACHIEVEMENTS } from "./data/achievements";
 import { DEFAULT_FILTERS, applyFilters } from "./filters";
@@ -47,9 +49,11 @@ import {
   hasFestivalActivity,
   loadFestivalProgress,
   migrateLegacyStorage,
-  ratedCountFrom,
+  displayNameKey,
   festivalChosenKey,
+  ratedCountFrom,
   readChosenFestival,
+  shareScoreboardKey,
   splashStorageKey,
 } from "./lib/storage";
 import { mergeAllFestivalsForUser } from "./lib/sync";
@@ -62,9 +66,15 @@ export default function App() {
   const [activeSlug, setActiveSlug] = useLocalStorage(activeFestivalKey(), DEFAULT_FESTIVAL_SLUG);
   const festival = getFestival(activeSlug) ?? FESTIVALS[0];
   const stats = festivalStats(festival);
-  const { progress, patch, replaceProgress, resetMilestones } = useFestivalProgress(
+  const [displayName, setDisplayName] = useLocalStorage(displayNameKey(), "");
+  const [shareScoreboard, setShareScoreboard] = useLocalStorage(shareScoreboardKey(), true);
+  const [signInOpen, setSignInOpen] = useState(false);
+  if (auth.user && signInOpen) setSignInOpen(false);
+  const requestSignIn = () => setSignInOpen(true);
+  const { progress, patch, replaceProgress, resetMilestones, cloudReady } = useFestivalProgress(
     festival.slug,
     auth.user,
+    { displayName, shareScoreboard },
   );
 
   const [filters, setFilters] = useLocalStorage(
@@ -351,7 +361,7 @@ export default function App() {
                 <PixelSprite sprite="logo" size={76} depth={7} />
               </Box>
             </Box>
-            <AuthControls auth={auth} />
+            <AuthControls auth={auth} signInOpen={signInOpen} onSignInClose={() => setSignInOpen(false)} />
             <Typography variant="body2" sx={{ fontFamily: PIXEL_FONT, fontWeight: 600, fontSize: "0.85rem", ml: 1, fontVariantNumeric: "tabular-nums" }}>
               {ratedCount} rated · {progress.drunkBeers.length}/{stats.beerCount} tried
             </Typography>
@@ -379,7 +389,11 @@ export default function App() {
             <TextField
               fullWidth
               variant="outlined"
-              placeholder="Search beers, breweries, styles..."
+              placeholder={
+                tab === "leaderboards"
+                  ? "Search people, beers, breweries..."
+                  : "Search beers, breweries, styles..."
+              }
               value={query}
               onChange={(event) => setQuery(event.target.value)}
               sx={{ mb: 2 }}
@@ -425,6 +439,7 @@ export default function App() {
                 iconPosition="start"
               />
             )}
+            <Tab value="leaderboards" icon={<LeaderboardIcon />} label="Boards" iconPosition="start" />
             <Tab
               value="history"
               icon={
@@ -514,6 +529,22 @@ export default function App() {
             />
           )}
           {hasAchievements && tab === "achievements" && <AchievementWall achievements={unlocked} />}
+          {tab === "leaderboards" && (
+            <Leaderboards
+              festival={festival}
+              progress={progress}
+              query={debouncedQuery}
+              self={auth.user ? { id: auth.user.uid, email: auth.user.email } : null}
+              authReady={auth.ready}
+              cloudReady={cloudReady}
+              displayName={displayName}
+              onDisplayNameChange={setDisplayName}
+              sharing={shareScoreboard}
+              onSharingChange={setShareScoreboard}
+              onOpenBeer={openBeer}
+              onSignIn={requestSignIn}
+            />
+          )}
           {tab === "history" && (
             <HistoryView
               allProgress={allProgress}

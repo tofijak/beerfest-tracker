@@ -33,14 +33,13 @@ export function useAuth() {
           if (!storedEmail) {
             setPendingLink(true);
             setNeedsEmail(true);
-            setReady(true);
-            return;
+          } else {
+            setPendingLink(true);
+            await signInWithEmailLink(firebase.auth, storedEmail, window.location.href);
+            window.localStorage.removeItem(emailForSignInKey());
+            window.history.replaceState(null, "", continueUrl());
+            setPendingLink(false);
           }
-          setPendingLink(true);
-          await signInWithEmailLink(firebase.auth, storedEmail, window.location.href);
-          window.localStorage.removeItem(emailForSignInKey());
-          window.history.replaceState(null, "", continueUrl());
-          setPendingLink(false);
         }
 
         unsub = onAuthStateChanged(firebase.auth, (nextUser) => {
