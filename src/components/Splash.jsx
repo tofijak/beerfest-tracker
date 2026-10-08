@@ -83,7 +83,7 @@ export function Splash({ open, festivals, resumeSlug, allProgress, onSelect }) {
         Check it. Star it. Rate it.
       </Typography>
       <Typography variant="body1" sx={{ position: "relative", maxWidth: 460, mb: 3, color: "#9aa4c7" }}>
-        Pick the festival you&apos;re at. Ratings stay with that festival.
+        Which festival are you at?
       </Typography>
       <Box
         sx={{
