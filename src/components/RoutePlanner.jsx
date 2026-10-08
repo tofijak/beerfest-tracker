@@ -118,7 +118,9 @@ function AutoRoute({
                       border: "3px solid #07070f",
                       boxShadow: "4px 4px 0 #2a1458",
                       fontFamily: BODY_FONT,
-                      fontSize: "1.8rem",
+                      fontWeight: 700,
+                      fontSize: "1.45rem",
+                      fontVariantNumeric: "tabular-nums",
                     }}
                   >
                     {index + 1}
@@ -174,7 +176,9 @@ function AutoRoute({
                                   sx={{
                                     px: 1,
                                     fontFamily: PIXEL_FONT,
-                                    fontSize: "0.75rem",
+                                    fontWeight: 700,
+                                    fontSize: "0.95rem",
+                                    fontVariantNumeric: "tabular-nums",
                                     bgcolor: ratingColor(rating),
                                     color: "#07070f",
                                   }}
@@ -298,14 +302,16 @@ function MyRoute({ festival, plannedBeers, onPlannedChange, favoriteBeers, drunk
               <Box
                 sx={{
                   flexShrink: 0,
-                  width: 30,
-                  height: 30,
+                  width: 36,
+                  height: 36,
                   display: "grid",
                   placeItems: "center",
                   bgcolor: color,
                   color: "#07070f",
                   fontFamily: BODY_FONT,
-                  fontSize: "1.4rem",
+                  fontWeight: 700,
+                  fontSize: "1.05rem",
+                  fontVariantNumeric: "tabular-nums",
                 }}
               >
                 {index + 1}
@@ -336,7 +342,9 @@ function MyRoute({ festival, plannedBeers, onPlannedChange, favoriteBeers, drunk
                   sx={{
                     px: 0.75,
                     fontFamily: PIXEL_FONT,
-                    fontSize: "0.7rem",
+                    fontWeight: 700,
+                    fontSize: "0.95rem",
+                    fontVariantNumeric: "tabular-nums",
                     bgcolor: ratingColor(rating),
                     color: "#07070f",
                   }}

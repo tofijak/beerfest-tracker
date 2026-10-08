@@ -81,7 +81,9 @@ function BeerItem({
             sx={{
               px: 0.75,
               fontFamily: PIXEL_FONT,
-              fontSize: "0.62rem",
+              fontWeight: 700,
+              fontSize: "0.75rem",
+              fontVariantNumeric: "tabular-nums",
               textTransform: "uppercase",
               bgcolor: session.color,
               color: beer.session === "yellow" ? "#3e2723" : "#fff",
@@ -128,7 +130,7 @@ function BeerItem({
         )}
         {isDrunk && (
           <Box sx={{ mt: 1.5, pr: 2 }}>
-            <Typography sx={{ fontFamily: PIXEL_FONT, fontSize: "0.75rem", color: "#ffd23f" }}>
+            <Typography sx={{ fontFamily: PIXEL_FONT, fontWeight: 700, fontSize: "0.85rem", color: "#ffd23f", fontVariantNumeric: "tabular-nums" }}>
               Your rating {rating > 0 ? rating.toFixed(2) : "0.00"}
             </Typography>
             <Slider
@@ -146,7 +148,6 @@ function BeerItem({
               sx={{
                 maxWidth: { xs: "100%", sm: 320 },
                 "& .MuiSlider-mark": { display: "none" },
-                "& .MuiSlider-markLabel": { fontSize: "0.7rem" },
               }}
             />
           </Box>
@@ -221,7 +222,9 @@ function BreweryCard({
               border: "3px solid #07070f",
               boxShadow: "4px 4px 0 #2a1458",
               fontFamily: BODY_FONT,
-              fontSize: "2rem",
+              fontWeight: 700,
+              fontSize: "1.65rem",
+              fontVariantNumeric: "tabular-nums",
             }}
           >
             {brewery.stand || "?"}
@@ -239,7 +242,7 @@ function BreweryCard({
           </Box>
           <Box sx={{ textAlign: { xs: "left", sm: "right" }, width: { xs: "100%", sm: "auto" } }}>
             <PixelBar value={tried} total={beers.length} color={color} />
-            <Typography sx={{ fontFamily: PIXEL_FONT, fontSize: "0.65rem", mt: 0.5 }}>
+            <Typography sx={{ fontFamily: PIXEL_FONT, fontWeight: 600, fontSize: "0.8rem", mt: 0.5, fontVariantNumeric: "tabular-nums" }}>
               {tried}/{beers.length} tried
             </Typography>
           </Box>

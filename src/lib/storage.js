@@ -34,8 +34,20 @@ export function emailForSignInKey() {
   return `${APP_PREFIX}emailForSignIn`;
 }
 
-export function splashStorageKey(slug) {
-  return `${APP_PREFIX}splashSeen.${slug}`;
+export function splashStorageKey() {
+  return `${APP_PREFIX}landingSeen`;
+}
+
+export function festivalChosenKey() {
+  return `${APP_PREFIX}festivalChosen`;
+}
+
+export function readChosenFestival() {
+  try {
+    return window.localStorage.getItem(festivalChosenKey());
+  } catch {
+    return null;
+  }
 }
 
 export function readJson(key, fallback) {
