@@ -4,5 +4,36 @@ service cloud.firestore {
     match /users/{userId}/{document=**} {
       allow read, write: if request.auth != null && request.auth.uid == userId;
     }
+
+    // Shared festival board. Signed-in users can read every roster entry.
+    // A person can write only their own doc, and only this fixed shape:
+    // display name (no email), check-ins, stars, and quarter-step ratings.
+    match /festivals/{slug}/roster/{uid} {
+      allow read: if request.auth != null;
+      allow create, update: if request.auth != null
+        && request.auth.uid == uid
+        && validRoster(request.resource.data);
+      allow delete: if request.auth != null && request.auth.uid == uid;
+    }
   }
+}
+
+function validRoster(data) {
+  return data.keys().hasOnly(['name', 'drunk', 'favorites', 'ratings', 'hidden', 'updatedAt'])
+    && data.name is string
+    && data.name.size() >= 1
+    && data.name.size() <= 24
+    && data.name.matches('.*\\S.*')
+    && data.name.matches('[^@\\n\\r]{1,24}')
+    && data.hidden is bool
+    && data.drunk is string
+    && data.drunk.size() <= 6000
+    && (data.drunk == '' || data.drunk.matches('[A-Za-z0-9_-]{1,24}(,[A-Za-z0-9_-]{1,24})*'))
+    && data.favorites is string
+    && data.favorites.size() <= 6000
+    && (data.favorites == '' || data.favorites.matches('[A-Za-z0-9_-]{1,24}(,[A-Za-z0-9_-]{1,24})*'))
+    && data.ratings is string
+    && data.ratings.size() <= 12000
+    && (data.ratings == '' || data.ratings.matches('[A-Za-z0-9_-]{1,24}:(0[.](25|5|75)|[1-4]([.](25|5|75))?|5)(,[A-Za-z0-9_-]{1,24}:(0[.](25|5|75)|[1-4]([.](25|5|75))?|5))*'))
+    && data.updatedAt is timestamp;
 }
