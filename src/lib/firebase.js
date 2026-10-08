@@ -13,8 +13,8 @@ export async function getFirebase() {
   if (cached) return cached;
 
   const { initializeApp } = await import("firebase/app");
-  const { getAuth } = await import("firebase/auth");
-  const { getFirestore } = await import("firebase/firestore");
+  const { connectAuthEmulator, getAuth } = await import("firebase/auth");
+  const { connectFirestoreEmulator, getFirestore } = await import("firebase/firestore");
 
   const app = initializeApp({
     apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -25,11 +25,14 @@ export async function getFirebase() {
     appId: import.meta.env.VITE_FIREBASE_APP_ID || undefined,
   });
 
-  cached = {
-    app,
-    auth: getAuth(app),
-    db: getFirestore(app),
-  };
+  const auth = getAuth(app);
+  const db = getFirestore(app);
+  if (import.meta.env.VITE_FIREBASE_EMULATOR === "1") {
+    connectAuthEmulator(auth, "http://127.0.0.1:9099", { disableWarnings: true });
+    connectFirestoreEmulator(db, "127.0.0.1", 8080);
+  }
+
+  cached = { app, auth, db };
   return cached;
 }
 

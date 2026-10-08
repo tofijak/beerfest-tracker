@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
+import { deleteRoster, publishRoster } from "../lib/rosterSync";
 import {
   loadFestivalProgress,
   mergeFestivalProgress,
@@ -6,13 +7,15 @@ import {
 } from "../lib/storage";
 import { fetchRemoteFestival, writeRemoteFestival } from "../lib/sync";
 
-export function useFestivalProgress(slug, user) {
+export function useFestivalProgress(slug, user, options = {}) {
+  const { displayName = "", shareScoreboard = true } = options;
+  const userId = user?.uid ?? null;
+  const email = user?.email ?? "";
   const [state, setState] = useState(() => ({
     slug,
     progress: loadFestivalProgress(slug),
   }));
-  const [cloudReady, setCloudReady] = useState(!user);
-  const userId = user?.uid ?? null;
+  const [cloudReady, setCloudReady] = useState(!userId);
 
   if (state.slug !== slug) {
     setState({ slug, progress: loadFestivalProgress(slug) });
@@ -60,6 +63,22 @@ export function useFestivalProgress(slug, user) {
     }, 600);
     return () => clearTimeout(timeout);
   }, [userId, cloudReady, state.slug, state.progress]);
+
+  useEffect(() => {
+    if (!userId || !cloudReady) return undefined;
+    if (!shareScoreboard) {
+      deleteRoster(userId, state.slug).catch((error) => {
+        console.error("Could not leave the leaderboard:", error);
+      });
+      return undefined;
+    }
+    const timeout = setTimeout(() => {
+      publishRoster(userId, state.slug, state.progress, displayName, email).catch((error) => {
+        console.error("Could not publish leaderboard:", error);
+      });
+    }, 600);
+    return () => clearTimeout(timeout);
+  }, [userId, cloudReady, shareScoreboard, displayName, email, state.slug, state.progress]);
 
   const patch = useCallback((updater) => {
     setState((current) => ({

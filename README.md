@@ -41,6 +41,7 @@ A React + Vite app for checking off beers, starring favorites, and rating pours 
 - Dark neon UI with voxel-style 3D pixel art (mug, hop, can)
 - Check-off, favorites, rating slider, search, and hide/unrated filters
 - Per-festival achievements
+- **Boards**: live leaderboards for everyone signed in at the festival — most and fewest check-ins, highest and lowest average ratings, plus ratings and stars. Same boards for beers, breweries, and styles
 - Passport / history: festivals you’ve been to, plus an all-time hall of foam
 - Progress stored under `beerFest.festivals.<slug>.*`
 
@@ -98,7 +99,7 @@ To turn on sync:
 3. Add authorized domains:
    - `localhost`
    - `beerfest-tracker.vercel.app`
-4. Create a **Firestore** database (production mode) and publish `firestore.rules` from this repo (users can only read/write `users/{theirUid}/**`).
+4. Create a **Firestore** database (production mode) and publish `firestore.rules` from this repo. Each person can read and write only `users/{theirUid}/**`. Festival leaderboards live at `festivals/{slug}/roster/{uid}`: any signed-in user can read them, and a person can write only their own roster doc (display name, check-ins, ratings, and stars — not their email).
 5. Register a web app and copy the config into Vercel env vars:
 
 ```
@@ -110,7 +111,7 @@ VITE_FIREBASE_MESSAGING_SENDER_ID
 VITE_FIREBASE_APP_ID
 ```
 
-The Firebase web `apiKey` is public client config — it is meant to ship in the frontend. Access is enforced by Firestore rules (each user can only read/write `users/{theirUid}/**`) and by HTTP-referrer restrictions on the key in Google Cloud / Firebase.
+The Firebase web `apiKey` is public client config — it is meant to ship in the frontend. Access is enforced by Firestore rules (private ratings under `users/{theirUid}/**`; the shared board is readable by signed-in users and writable only by the person who checked in) and by HTTP-referrer restrictions on the key in Google Cloud / Firebase.
 
 Locally, copy `.env.example` to `.env.local`. On first sign-in, device ratings merge into the account (union of check-offs / stars / milestones; highest rating wins).
 

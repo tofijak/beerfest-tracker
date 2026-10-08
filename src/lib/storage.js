@@ -50,6 +50,14 @@ export function readChosenFestival() {
   }
 }
 
+export function displayNameKey() {
+  return `${APP_PREFIX}displayName`;
+}
+
+export function shareScoreboardKey() {
+  return `${APP_PREFIX}shareScoreboard`;
+}
+
 export function readJson(key, fallback) {
   try {
     const raw = window.localStorage.getItem(key);
