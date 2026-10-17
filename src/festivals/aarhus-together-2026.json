@@ -1,0 +1,6466 @@
+{
+  "slug": "aarhus-together-2026",
+  "name": "Aarhus Together",
+  "edition": "2026",
+  "date": "2026-10-23",
+  "dateLabel": "fredag 23. – lørdag 24. oktober 2026",
+  "venue": "Comwell Centralværkstedet, Aarhus",
+  "hours": "Fri 17–21 · Sat 11–15 & 17–21",
+  "tagline": "4 timers fri bar — tre sessioner, 450+ øl",
+  "splashBody": "Comwell Centralværkstedet, Aarhus · 23.–24. oktober 2026. Rate øl undervejs og lås holdet op.",
+  "splashCta": "Vi er klar",
+  "sessions": [
+    {
+      "id": "friday",
+      "label": "Fredag",
+      "color": "#1565c0"
+    },
+    {
+      "id": "saturday-early",
+      "label": "Lørdag tidlig",
+      "color": "#ef6c00"
+    },
+    {
+      "id": "saturday-late",
+      "label": "Lørdag sen",
+      "color": "#6a1b9a"
+    }
+  ],
+  "breweries": [
+    {
+      "id": 1,
+      "name": "Goose Island Beer Co.",
+      "location": "US",
+      "stand": 1,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 163,
+          "name": "2024 Bourbon County Original Stout",
+          "style": "Stout - Bourbon Barrel Aged",
+          "abv": 14.7,
+          "session": "friday",
+          "untappd": {
+            "rating": 4.38,
+            "count": 18676,
+            "url": "https://untappd.com/b/goose-island-beer-co-bourbon-county-brand-original-stout-2024/5944213"
+          }
+        },
+        {
+          "id": 164,
+          "name": "Grand Cru",
+          "style": "Belgian Ale - Oak Aged Strong",
+          "abv": 11,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.77,
+            "count": 612,
+            "url": "https://untappd.com/b/goose-island-beer-co-grand-cru/6100634"
+          }
+        },
+        {
+          "id": 165,
+          "name": "2023 Bourbon County Bananas Foster Stout",
+          "style": "Stout - Bourbon Barrel Aged",
+          "abv": 13.9,
+          "session": "saturday-early",
+          "notes": "w/ Banana, Almond & Cassia bark",
+          "untappd": {
+            "rating": 4.24,
+            "count": 24325,
+            "url": "https://untappd.com/b/goose-island-beer-co-bourbon-county-brand-bananas-foster-stout-2023/5462530"
+          }
+        },
+        {
+          "id": 166,
+          "name": "2017 Bourbon County Barleywine",
+          "style": "Barley Wine - Barrel Aged",
+          "abv": 14.4,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 4.36,
+            "count": 21739,
+            "url": "https://untappd.com/b/goose-island-beer-co-bourbon-county-brand-barleywine-2017-14-4/2377683"
+          }
+        },
+        {
+          "id": 167,
+          "name": "2025 Bourbon County Proprietor's Stout",
+          "style": "Stout - Bourbon Barrel Aged",
+          "abv": 13.9,
+          "session": "saturday-late",
+          "notes": "w/ Pistachio, Walnut, Honey & Cinnamon",
+          "untappd": {
+            "rating": 4.46,
+            "count": 4506,
+            "url": "https://untappd.com/b/goose-island-beer-co-bourbon-county-brand-proprietor-s-stout-2025/6455427"
+          }
+        },
+        {
+          "id": 168,
+          "name": "2026 Shamrock Stout",
+          "style": "Stout - Bourbon Barrel Aged",
+          "abv": 14.1,
+          "session": "saturday-late",
+          "notes": "w/ Mint, Cocoa nibs & Vanilla",
+          "untappd": {
+            "rating": 4.13,
+            "count": 2269,
+            "url": "https://untappd.com/b/goose-island-beer-co-shamrock-stout/1997671"
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Gamma Brewing Company",
+      "location": "DK",
+      "stand": 2,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 157,
+          "name": "Tenant",
+          "style": "Ale Other - English Bitter",
+          "abv": 4.3,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.28,
+            "count": 587,
+            "url": "https://untappd.com/b/gamma-brewing-company-tenant/6122680"
+          }
+        },
+        {
+          "id": 158,
+          "name": "Chonky",
+          "style": "IPA - Double",
+          "abv": 7.8,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.74,
+            "count": 911,
+            "url": "https://untappd.com/b/gamma-brewing-company-chonky/6085338"
+          }
+        },
+        {
+          "id": 159,
+          "name": "Frankly Speaking",
+          "style": "Lager Other - Rauchbier",
+          "abv": 5.4,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.1,
+            "count": 459,
+            "url": "https://untappd.com/b/gamma-brewing-company-frankly-speaking/6423012"
+          }
+        },
+        {
+          "id": 160,
+          "name": "Step Doink",
+          "style": "Lager Other - Rice",
+          "abv": 4.8,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.4,
+            "count": 434,
+            "url": "https://untappd.com/b/gamma-brewing-company-step-doink/6684050"
+          }
+        },
+        {
+          "id": 161,
+          "name": "Oort Cloud",
+          "style": "IPA - Double",
+          "abv": 8,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.68,
+            "count": 394,
+            "url": "https://untappd.com/b/gamma-brewing-company-oort-cloud/6755074"
+          }
+        },
+        {
+          "id": 162,
+          "name": "Coding Error",
+          "style": "Stout - Imperial Pastry",
+          "abv": 11.5,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.81,
+            "count": 488,
+            "url": "https://untappd.com/b/gamma-brewing-company-coding-error/6497880"
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "SchwesterBrau",
+      "location": "DK",
+      "stand": 3,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 326,
+          "name": "SøsterPils",
+          "style": "Pilsner",
+          "abv": 4.9,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.47,
+            "count": 94,
+            "url": "https://untappd.com/b/schwesterbrau-sosterpils/6443741"
+          }
+        },
+        {
+          "id": 327,
+          "name": "TBA",
+          "style": "Saison - Barrel Aged",
+          "abv": 7,
+          "session": "friday",
+          "notes": "w/ Cherries"
+        },
+        {
+          "id": 328,
+          "name": "SøsterPils",
+          "style": "Pilsner",
+          "abv": 4.9,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.47,
+            "count": 94,
+            "url": "https://untappd.com/b/schwesterbrau-sosterpils/6443741"
+          }
+        },
+        {
+          "id": 329,
+          "name": "Støvlevand",
+          "style": "IPA - West Coast",
+          "abv": 6,
+          "session": "saturday-early",
+          "notes": "Collab w/ Pissego & Humleland",
+          "untappd": {
+            "rating": 3.67,
+            "count": 81,
+            "url": "https://untappd.com/b/pissego-stovlevand/6780234"
+          }
+        },
+        {
+          "id": 330,
+          "name": "TBA",
+          "style": "Saison - Barrel Aged",
+          "abv": 7,
+          "session": "saturday-late",
+          "notes": "w/ Cherries"
+        },
+        {
+          "id": 331,
+          "name": "Støvlevand",
+          "style": "IPA - West Coast",
+          "abv": 6,
+          "session": "saturday-late",
+          "notes": "Collab w/ Pissego & Humleland",
+          "untappd": {
+            "rating": 3.67,
+            "count": 81,
+            "url": "https://untappd.com/b/pissego-stovlevand/6780234"
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Seven Island Brewery",
+      "location": "GR",
+      "stand": 4,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 338,
+          "name": "Bak'eneko",
+          "style": "Lager Other",
+          "abv": 4.5,
+          "session": "friday",
+          "notes": "w/ Yuzu",
+          "untappd": {
+            "rating": 3.54,
+            "count": 1231,
+            "url": "https://untappd.com/b/seven-island-brewery-bak-eneko/5421016"
+          }
+        },
+        {
+          "id": 339,
+          "name": "Hop Slayer Passionfruit",
+          "style": "IPA - Hazy",
+          "abv": 6.5,
+          "session": "friday",
+          "notes": "w/ Passionfruit",
+          "untappd": {
+            "rating": 3.79,
+            "count": 564,
+            "url": "https://untappd.com/b/seven-island-brewery-hop-slayer-passionfruit/6819842"
+          }
+        },
+        {
+          "id": 340,
+          "name": "Island Lager",
+          "style": "Lager Other - Pale",
+          "abv": 4.5,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.42,
+            "count": 723,
+            "url": "https://untappd.com/b/seven-island-brewery-island-lager/5964126"
+          }
+        },
+        {
+          "id": 341,
+          "name": "Hop Slayer Peach",
+          "style": "IPA - Hazy",
+          "abv": 6.5,
+          "session": "saturday-early",
+          "notes": "w/ Peach",
+          "untappd": {
+            "rating": 3.79,
+            "count": 295,
+            "url": "https://untappd.com/b/seven-island-brewery-hop-slayer-peach/6819845"
+          }
+        },
+        {
+          "id": 342,
+          "name": "Guardian of the Golden Nugget",
+          "style": "IPA - Hazy Double",
+          "abv": 8,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 4.0,
+            "count": 2686,
+            "url": "https://untappd.com/b/seven-island-brewery-guardian-of-the-golden-nugget/6603924"
+          }
+        },
+        {
+          "id": 343,
+          "name": "ΧΞΣ ROTTING CHRIST",
+          "style": "Stout - Imperial",
+          "abv": 11,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 4.09,
+            "count": 1545,
+            "url": "https://untappd.com/b/seven-island-brewery-x3s/6603928"
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Smiðjan Brugghús",
+      "location": "IS",
+      "stand": 5,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 350,
+          "name": "Total Eclipse of the Hops",
+          "style": "IPA - Double",
+          "abv": 8,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.85,
+            "count": 150,
+            "url": "https://untappd.com/b/smidjan-brugghus-total-eclipse-of-the-hops/6826344"
+          }
+        },
+        {
+          "id": 351,
+          "name": "Brain dead",
+          "style": "Porter - Baltic Porter",
+          "abv": 8,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.79,
+            "count": 99,
+            "url": "https://untappd.com/b/smidjan-brugghus-brain-dead/6619839"
+          }
+        },
+        {
+          "id": 352,
+          "name": "Chan",
+          "style": "Lager Other - Rice",
+          "abv": 5,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.4,
+            "count": 30,
+            "url": "https://untappd.com/b/smidjan-brugghus-chan/6783197"
+          }
+        },
+        {
+          "id": 353,
+          "name": "Wet All Day",
+          "style": "IPA - Session",
+          "abv": 4.7,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.65,
+            "count": 1365,
+            "url": "https://untappd.com/b/smidjan-brugghus-wet-all-day/2815066"
+          }
+        },
+        {
+          "id": 354,
+          "name": "Hooked On IPA",
+          "style": "IPA - American",
+          "abv": 6,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.66,
+            "count": 1414,
+            "url": "https://untappd.com/b/smidjan-brugghus-hooked-on-ipa/5349772"
+          }
+        },
+        {
+          "id": 355,
+          "name": "Yellow Alert",
+          "style": "Belgian Ale - Blonde",
+          "abv": 6.3,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.68,
+            "count": 1139,
+            "url": "https://untappd.com/b/smidjan-brugghus-yellow-alert/3471258"
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Benchwarmers Brewing Co.",
+      "location": "SE",
+      "stand": 6,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 25,
+          "name": "Hop Lab #002",
+          "style": "IPA - Hazy Double",
+          "abv": 8,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.77,
+            "count": 370,
+            "url": "https://untappd.com/b/benchwarmers-brewing-co-hop-lab-002/6783618"
+          }
+        },
+        {
+          "id": 26,
+          "name": "Helles Yeah, Brother",
+          "style": "Lager Other - Helles",
+          "abv": 5.6,
+          "session": "friday"
+        },
+        {
+          "id": 27,
+          "name": "Brohemian Rhapzody",
+          "style": "IPA - Hazy Double",
+          "abv": 7.5,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.91,
+            "count": 184,
+            "url": "https://untappd.com/b/benchwarmers-brewing-co-brohemian-rhapzody/6825249"
+          }
+        },
+        {
+          "id": 28,
+          "name": "Super Gay Horse",
+          "style": "IPA - Hazy Double",
+          "abv": 7.5,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.62,
+            "count": 4890,
+            "url": "https://untappd.com/b/benchwarmers-brewing-co-super-gay-horse/3799786"
+          }
+        },
+        {
+          "id": 29,
+          "name": "The Eagle Inn",
+          "style": "IPA - West Coast",
+          "abv": 6.5,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.66,
+            "count": 69,
+            "url": "https://untappd.com/b/benchwarmers-brewing-co-the-eagle-inn/6859015"
+          }
+        },
+        {
+          "id": 30,
+          "name": "Hop Lab #003",
+          "style": "IPA - Hazy Double",
+          "abv": 8,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.35,
+            "count": 12,
+            "url": "https://untappd.com/b/benchwarmers-brewing-co-hop-lab-003/6859020"
+          }
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Salikatt",
+      "location": "NO",
+      "stand": 7,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 320,
+          "name": "Southern Star",
+          "style": "IPA - Hazy Double",
+          "abv": 8,
+          "session": "friday",
+          "untappd": {
+            "rating": 4.01,
+            "count": 161,
+            "url": "https://untappd.com/b/salikatt-southern-star/6968011"
+          }
+        },
+        {
+          "id": 321,
+          "name": "Phoenix 2021",
+          "style": "Barley Wine - Barrel Aged",
+          "abv": 13.3,
+          "session": "friday",
+          "untappd": {
+            "rating": 4.41,
+            "count": 1231,
+            "url": "https://untappd.com/b/salikatt-bryggeri-phoenix-2021/5071067"
+          }
+        },
+        {
+          "id": 322,
+          "name": "No-Fuss",
+          "style": "IPA - West Coast Session",
+          "abv": 4.7,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.87,
+            "count": 42,
+            "url": "https://untappd.com/b/salikatt-no-fuss/6968019"
+          }
+        },
+        {
+          "id": 323,
+          "name": "Resonance",
+          "style": "Barley Wine - Bourbon Barrel Aged",
+          "abv": 12.5,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 4.5,
+            "count": 1175,
+            "url": "https://untappd.com/b/salikatt-resonance/6589686"
+          }
+        },
+        {
+          "id": 324,
+          "name": "Classic Cut",
+          "style": "IPA - West Coast",
+          "abv": 6.5,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.85,
+            "count": 122,
+            "url": "https://untappd.com/b/salikatt-classic-cut/6968022"
+          }
+        },
+        {
+          "id": 325,
+          "name": "Skamnaise Cryo",
+          "style": "Pale Ale - Hazy",
+          "abv": 5.4,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.78,
+            "count": 209,
+            "url": "https://untappd.com/b/salikatt-skamnaise-cryo/6831120"
+          }
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Vault City Brewing",
+      "location": "UK",
+      "stand": 8,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 398,
+          "name": "Imperial Pastel De Nata",
+          "style": "Sour - Pastry",
+          "abv": 8,
+          "session": "friday",
+          "untappd": {
+            "rating": 4.08,
+            "count": 1871,
+            "url": "https://untappd.com/b/vault-city-brewing-imperial-peach-and-apricot-pastel-de-nata/6738312"
+          }
+        },
+        {
+          "id": 399,
+          "name": "Common Ground: Affogato",
+          "style": "Stout - Imperial",
+          "abv": 11.6,
+          "session": "friday",
+          "notes": "Imperial stout & Barley wine blend",
+          "untappd": {
+            "rating": 4.26,
+            "count": 465,
+            "url": "https://untappd.com/b/vault-city-brewing-common-ground-affogato/6895042"
+          }
+        },
+        {
+          "id": 400,
+          "name": "Overnight Oats",
+          "style": "Sour - Pastry",
+          "abv": 7.6,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.91,
+            "count": 2961,
+            "url": "https://untappd.com/b/vault-city-brewing-overnight-oats-raspberry-blueberry-pomegranate-chocolate-chips-maple-syrup-and-coffee/6535189"
+          }
+        },
+        {
+          "id": 401,
+          "name": "Giant Rhubarb & Custard",
+          "style": "Sour - Pastry",
+          "abv": 8.4,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 4.22,
+            "count": 1654,
+            "url": "https://untappd.com/b/vault-city-brewing-giant-rhubarb-and-custard/6620399"
+          }
+        },
+        {
+          "id": 402,
+          "name": "PBJ Ice Cream Sandwich",
+          "style": "Sour - Pastry",
+          "abv": 8,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.99,
+            "count": 1570,
+            "url": "https://untappd.com/b/vault-city-brewing-pbj-ice-cream-sandwich-triple-scoop/6762316"
+          }
+        },
+        {
+          "id": 403,
+          "name": "Face Froster",
+          "style": "Sour - Fruited",
+          "abv": 8,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.43,
+            "count": 1439,
+            "url": "https://untappd.com/b/vault-city-brewing-face-froster/6690548"
+          }
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Hop Hooligans",
+      "location": "RO",
+      "stand": 9,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 175,
+          "name": "Mad Sourpuss: Fuzzy Frenzy",
+          "style": "Sour - Smoothie",
+          "abv": 6,
+          "session": "friday",
+          "notes": "Smoked",
+          "untappd": {
+            "rating": 3.97,
+            "count": 107,
+            "url": "https://untappd.com/b/hop-hooligans-mad-sourpuss-fuzzy-frenzy/6828268"
+          }
+        },
+        {
+          "id": 176,
+          "name": "Duke D'Orange",
+          "style": "IPA - DDH Hazy",
+          "abv": 6,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.94,
+            "count": 61,
+            "url": "https://untappd.com/b/hop-hooligans-duke-d-orange/6920602"
+          }
+        },
+        {
+          "id": 177,
+          "name": "Mad Sourpuss: Tropic Tyranny",
+          "style": "Sour - Smoothie",
+          "abv": 6,
+          "session": "saturday-early",
+          "notes": "Smoked",
+          "untappd": {
+            "rating": 4.01,
+            "count": 80,
+            "url": "https://untappd.com/b/hop-hooligans-mad-sourpuss-tropic-tyranny/6828272"
+          }
+        },
+        {
+          "id": 178,
+          "name": "Daddy Issues",
+          "style": "Belgian Ale - Blonde",
+          "abv": 6,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 4.0,
+            "count": 12,
+            "url": "https://untappd.com/b/hop-hooligans-daddy-issues/6920608"
+          }
+        },
+        {
+          "id": 179,
+          "name": "Bears. Beets. Battlestar Galactica",
+          "style": "Sour - Gose",
+          "abv": 5,
+          "session": "saturday-late",
+          "notes": "w/ Red beet & Horseradish",
+          "untappd": {
+            "rating": 3.62,
+            "count": 80,
+            "url": "https://untappd.com/b/hop-hooligans-bears-beets-battlestar-galactica/6828279"
+          }
+        },
+        {
+          "id": 180,
+          "name": "Sparklepuss: Strawberry Shortcake",
+          "style": "Sour - Barrel Aged Smoothie",
+          "abv": 6,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 4.18,
+            "count": 890,
+            "url": "https://untappd.com/b/hop-hooligans-sparklepuss-strawberry-shortcake-rum-ba/6524878"
+          }
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "ÅBEN",
+      "location": "DK",
+      "stand": 10,
+      "noLow": true,
+      "beers": [
+        {
+          "id": 440,
+          "name": "Plant Based",
+          "style": "IPA - DDH Hazy",
+          "abv": 6.1,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.68,
+            "count": 124,
+            "url": "https://untappd.com/b/aben-plant-based/6854130"
+          }
+        },
+        {
+          "id": 441,
+          "name": "Something Scary",
+          "style": "Sour - Fruited",
+          "abv": 7.2,
+          "session": "friday"
+        },
+        {
+          "id": 442,
+          "name": "X",
+          "style": "Non-Alcoholic - IPA",
+          "abv": 0.5,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.24,
+            "count": 147,
+            "url": "https://untappd.com/b/aben-x/6489681"
+          }
+        },
+        {
+          "id": 443,
+          "name": "A Pine Tree Is Not Just For Christmas",
+          "style": "IPA - DDH West Coast",
+          "abv": 6.7,
+          "session": "saturday-early"
+        },
+        {
+          "id": 444,
+          "name": "One More",
+          "style": "IPA - Micro",
+          "abv": 2.8,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.37,
+            "count": 584,
+            "url": "https://untappd.com/b/aben-one-more/5310309"
+          }
+        },
+        {
+          "id": 445,
+          "name": "Mumbo Jumbo #1",
+          "style": "Sour - Pastry Gose",
+          "abv": 6,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.81,
+            "count": 3636,
+            "url": "https://untappd.com/b/aben-mumbo-jumbo-1-passion-fruit-guava-raspberry/5230635"
+          }
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Insight Cellars",
+      "location": "DK",
+      "stand": 11,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 199,
+          "name": "Nordens Kriek 2023",
+          "style": "Wild Ale - Kriek",
+          "abv": 7.6,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.88,
+            "count": 721,
+            "url": "https://untappd.com/b/insight-cellars-nordens-kriek-2023/5990420"
+          }
+        },
+        {
+          "id": 200,
+          "name": "Grenache 2021",
+          "style": "Wild Ale",
+          "abv": 9.5,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.84,
+            "count": 151,
+            "url": "https://untappd.com/b/insight-cellars-grenache-2021/6229707"
+          }
+        },
+        {
+          "id": 201,
+          "name": "Stevnsbær 2021",
+          "style": "Wild Ale - Fruited",
+          "abv": 7.5,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.92,
+            "count": 158,
+            "url": "https://untappd.com/b/insight-cellars-stevnsbaer-2021/6203481"
+          }
+        },
+        {
+          "id": 202,
+          "name": "Blood Nectarine 2024",
+          "style": "Wild Ale",
+          "abv": 6,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.76,
+            "count": 308,
+            "url": "https://untappd.com/b/insight-cellars-blood-nectarine-2024/6195418"
+          }
+        },
+        {
+          "id": 203,
+          "name": "Meadow Rose",
+          "style": "Wild Ale",
+          "abv": 6.5,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.76,
+            "count": 356,
+            "url": "https://untappd.com/b/insight-cellars-meadow-rose/6196244"
+          }
+        },
+        {
+          "id": 204,
+          "name": "Muskat Ottonel 2024",
+          "style": "Wild Ale",
+          "abv": 7,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.68,
+            "count": 89,
+            "url": "https://untappd.com/b/insight-cellars-muskat-ottonel/6212605"
+          }
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Barreled Souls Brewing Company",
+      "location": "US",
+      "stand": 12,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 121,
+          "name": "Double Barrel Aged Modest Souls",
+          "style": "Stout - Barrel Aged",
+          "abv": 15.8,
+          "session": "friday",
+          "notes": "Served by Frederiks",
+          "untappd": {
+            "rating": 4.42,
+            "count": 276,
+            "url": "https://untappd.com/b/barreled-souls-brewing-company-double-barrel-aged-modest-souls/6625728"
+          }
+        },
+        {
+          "id": 123,
+          "name": "Extended Aged Nebula (2026)",
+          "style": "Barley Wine - English",
+          "abv": 14.1,
+          "session": "saturday-early",
+          "notes": "Served by Frederiks",
+          "untappd": {
+            "rating": 4.44,
+            "count": 230,
+            "url": "https://untappd.com/b/barreled-souls-brewing-company-extended-aged-nebula-2026/6658940"
+          }
+        },
+        {
+          "id": 125,
+          "name": "Extended Aged Reap What You Sow (2026)",
+          "style": "Barley Wine - Rye Wine",
+          "abv": 15.9,
+          "session": "saturday-late",
+          "notes": "Served by Frederiks",
+          "untappd": {
+            "rating": 4.47,
+            "count": 242,
+            "url": "https://untappd.com/b/barreled-souls-brewing-company-extended-aged-reap-what-you-sow-2026/6658932"
+          }
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Hop Hooligans",
+      "location": "RO",
+      "stand": 12,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 127,
+          "name": "My Good Time Boy",
+          "style": "Sour - Smoothie",
+          "abv": 6,
+          "session": "friday",
+          "notes": "Collab w/ Frederiks; Served by Frederiks",
+          "untappd": {
+            "rating": 4.26,
+            "count": 204,
+            "url": "https://untappd.com/b/hop-hooligans-my-good-time-boy/6828241"
+          }
+        },
+        {
+          "id": 129,
+          "name": "My Good Time Boy",
+          "style": "Sour - Smoothie",
+          "abv": 6,
+          "session": "saturday-early",
+          "notes": "Collab w/ Frederiks; Served by Frederiks",
+          "untappd": {
+            "rating": 4.26,
+            "count": 204,
+            "url": "https://untappd.com/b/hop-hooligans-my-good-time-boy/6828241"
+          }
+        },
+        {
+          "id": 131,
+          "name": "My Good Time Boy",
+          "style": "Sour - Smoothie",
+          "abv": 6,
+          "session": "saturday-late",
+          "notes": "Collab w/ Frederiks; Served by Frederiks",
+          "untappd": {
+            "rating": 4.26,
+            "count": 204,
+            "url": "https://untappd.com/b/hop-hooligans-my-good-time-boy/6828241"
+          }
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Lyric Brewing Company",
+      "location": "US",
+      "stand": 12,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 128,
+          "name": "Familiar Heroes",
+          "style": "IPA - Hazy Double",
+          "abv": 8,
+          "session": "friday",
+          "notes": "Served by Frederiks",
+          "untappd": {
+            "rating": 4.45,
+            "count": 472,
+            "url": "https://untappd.com/b/lyric-brewing-company-familiar-heroes/4661485"
+          }
+        },
+        {
+          "id": 132,
+          "name": "Fear Addicted",
+          "style": "IPA - Hazy Double",
+          "abv": 8,
+          "session": "saturday-late",
+          "notes": "Served by Frederiks",
+          "untappd": {
+            "rating": 4.49,
+            "count": 40,
+            "url": "https://untappd.com/b/lyric-brewing-company-fear-addicted-2026/7187613"
+          }
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Perennial Artisan Ales",
+      "location": "US",
+      "stand": 12,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 122,
+          "name": "Devil's Heart of Gold (2025)",
+          "style": "Barley Wine - Wheat Wine",
+          "abv": 14.4,
+          "session": "friday",
+          "notes": "Served by Frederiks",
+          "untappd": {
+            "rating": 4.33,
+            "count": 533,
+            "url": "https://untappd.com/b/perennial-artisan-ales-devil-s-heart-of-gold-2025/6509276"
+          }
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Shelton Brewing",
+      "location": "US",
+      "stand": 12,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 130,
+          "name": "Roadie",
+          "style": "IPA - Hazy Double",
+          "abv": 9,
+          "session": "saturday-early",
+          "notes": "Collab w/ Pleasanti; Served by Frederiks",
+          "untappd": {
+            "rating": 4.63,
+            "count": 50,
+            "url": "https://untappd.com/b/shelton-brewing-roadie/7020133"
+          }
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "name": "The Bruery",
+      "location": "US",
+      "stand": 12,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 124,
+          "name": "One & Dunn Imperial Grand Reserve",
+          "style": "Stout - Barrel Aged",
+          "abv": 19.3,
+          "session": "saturday-early",
+          "notes": "Served by Frederiks",
+          "untappd": {
+            "rating": 4.6,
+            "count": 850,
+            "url": "https://untappd.com/b/the-bruery-one-and-dunn-imperial-grand-reserve/5935990"
+          }
+        },
+        {
+          "id": 126,
+          "name": "Stacks Reserve: Maple",
+          "style": "Stout - Barrel Aged",
+          "abv": 20.9,
+          "session": "saturday-late",
+          "notes": "Served by Frederiks",
+          "untappd": {
+            "rating": 4.43,
+            "count": 610,
+            "url": "https://untappd.com/b/the-bruery-stacks-reserve-maple/5953594"
+          }
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Amager Bryghus",
+      "location": "DK",
+      "stand": 13,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 7,
+          "name": "Flatout Fuckery",
+          "style": "IPA",
+          "abv": 18,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.35,
+            "count": 1177,
+            "url": "https://untappd.com/b/amager-bryghus-flatout-fuckery/6691109"
+          }
+        },
+        {
+          "id": 8,
+          "name": "Hopla!",
+          "style": "Pilsner - Alsace",
+          "abv": 4.6,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.31,
+            "count": 345,
+            "url": "https://untappd.com/b/amager-bryghus-hopla/6691106"
+          }
+        },
+        {
+          "id": 9,
+          "name": "Black Nordic Skies",
+          "style": "Stout - Imperial",
+          "abv": 10,
+          "session": "saturday-early",
+          "notes": "w/ Coffee, Double mash",
+          "untappd": {
+            "rating": 3.92,
+            "count": 13735,
+            "url": "https://untappd.com/b/amager-bryghus-black-nordic-skies/2696229"
+          }
+        },
+        {
+          "id": 10,
+          "name": "Kid Curry",
+          "style": "Belgian Ale - Bourbon Barrel Aged Quadrupel",
+          "abv": 11.2,
+          "session": "saturday-early",
+          "notes": "Double mash",
+          "untappd": {
+            "rating": 4.16,
+            "count": 925,
+            "url": "https://untappd.com/b/amager-bryghus-kid-curry/6163181"
+          }
+        },
+        {
+          "id": 11,
+          "name": "Double Black Mash 2025 Wheated Bourbon",
+          "style": "Stout - Barrel Aged Imperial",
+          "abv": 13.7,
+          "session": "saturday-late",
+          "notes": "Double mash",
+          "untappd": {
+            "rating": 4.38,
+            "count": 734,
+            "url": "https://untappd.com/b/amager-bryghus-double-black-mash-2025-wheated-bourbon-version/6221983"
+          }
+        },
+        {
+          "id": 12,
+          "name": "Wookiee",
+          "style": "IPA - West Coast",
+          "abv": 7.2,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.63,
+            "count": 17065,
+            "url": "https://untappd.com/b/amager-bryghus-wookiee-ipa/398344"
+          }
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "name": "CoolHead Brew",
+      "location": "FI",
+      "stand": 14,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 61,
+          "name": "CBGF: DIPA '26",
+          "style": "IPA - Hazy Double",
+          "abv": 8,
+          "session": "friday",
+          "notes": "Collab w/ Orchestrated Minds",
+          "untappd": {
+            "rating": 3.85,
+            "count": 629,
+            "url": "https://untappd.com/b/coolhead-brew-cbgf-dipa-26/6771423"
+          }
+        },
+        {
+          "id": 62,
+          "name": "Dr Cleber Orange Cola Sour",
+          "style": "Sour",
+          "abv": 4,
+          "session": "friday",
+          "notes": "Cola sour",
+          "untappd": {
+            "rating": 3.4,
+            "count": 15,
+            "url": "https://untappd.com/b/coolhead-brew-dr-clebber-s-orange-cola/6962016"
+          },
+          "description": {
+            "text": "Our mad professor locked himself in the laboratory once again. This time he turned orange cola into a sour beer.",
+            "source": "https://untappd.com/b/coolhead-brew-dr-clebber-s-orange-cola/6962016"
+          }
+        },
+        {
+          "id": 63,
+          "name": "CBGF: IPA '26",
+          "style": "IPA - Hazy",
+          "abv": 6,
+          "session": "saturday-early",
+          "notes": "Collab w/ Azvex",
+          "untappd": {
+            "rating": 3.78,
+            "count": 750,
+            "url": "https://untappd.com/b/coolhead-brew-cbgf-ipa-26/6771422"
+          }
+        },
+        {
+          "id": 64,
+          "name": "CBGF: Sour '26",
+          "style": "Sour - Fruited",
+          "abv": 5,
+          "session": "saturday-early",
+          "notes": "Collab w/ Vault City",
+          "untappd": {
+            "rating": 3.61,
+            "count": 405,
+            "url": "https://untappd.com/b/coolhead-brew-cbgf-sour-26/6771421"
+          }
+        },
+        {
+          "id": 65,
+          "name": "Salmiac Licorice Sea Buckthorn Mango Sour",
+          "style": "Sour - Fruited",
+          "abv": 4,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.83,
+            "count": 16,
+            "url": "https://untappd.com/b/coolhead-brew-salmiac-sea-buckthorn-mango-sour/6961219"
+          },
+          "description": {
+            "text": "Nordic sour brewed with intensely tart sea buckthorn, fruity sweet mango, salmiac and licorice.",
+            "source": "https://untappd.com/b/coolhead-brew-salmiac-sea-buckthorn-mango-sour/6961219"
+          }
+        },
+        {
+          "id": 66,
+          "name": "Addicted To... Everything",
+          "style": "IPA - Hazy Double",
+          "abv": 8,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.89,
+            "count": 814,
+            "url": "https://untappd.com/b/coolhead-brew-addicted-to-everything/6317544"
+          }
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Observatoriet",
+      "location": "DK",
+      "stand": 15,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 247,
+          "name": "Pavé",
+          "style": "Sour - Flanders Oud Bruin",
+          "abv": 7,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.83,
+            "count": 779,
+            "url": "https://untappd.com/b/observatoriet-pave/5856564"
+          }
+        },
+        {
+          "id": 248,
+          "name": "Annona",
+          "style": "Wild Ale - Wheat Wine",
+          "abv": 7.7,
+          "session": "friday"
+        },
+        {
+          "id": 249,
+          "name": "Europa",
+          "style": "Wild Ale - Blend",
+          "abv": 5.3,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.89,
+            "count": 631,
+            "url": "https://untappd.com/b/observatoriet-europa/5923957"
+          }
+        },
+        {
+          "id": 250,
+          "name": "Pangæa",
+          "style": "Wild Ale - Oak Aged",
+          "abv": 6.5,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.91,
+            "count": 786,
+            "url": "https://untappd.com/b/observatoriet-pangaea/5784086"
+          }
+        },
+        {
+          "id": 251,
+          "name": "Pavé",
+          "style": "Sour - Flanders Oud Bruin",
+          "abv": 7,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.83,
+            "count": 779,
+            "url": "https://untappd.com/b/observatoriet-pave/5856564"
+          }
+        },
+        {
+          "id": 252,
+          "name": "Vista",
+          "style": "Wild Ale - Oak Aged",
+          "abv": 6.5,
+          "session": "saturday-late",
+          "notes": "Single hop",
+          "untappd": {
+            "rating": 3.93,
+            "count": 320,
+            "url": "https://untappd.com/b/observatoriet-vista/6211449"
+          }
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Beak",
+      "location": "UK",
+      "stand": 16,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 19,
+          "name": "Sauvin",
+          "style": "IPA - Double",
+          "abv": 8,
+          "session": "friday",
+          "untappd": {
+            "rating": 4.14,
+            "count": 758,
+            "url": "https://untappd.com/b/beak-sauvin/6782607"
+          }
+        },
+        {
+          "id": 20,
+          "name": "Boop",
+          "style": "Pale Ale - DDH",
+          "abv": 5,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.96,
+            "count": 514,
+            "url": "https://untappd.com/b/beak-boop/6843042"
+          }
+        },
+        {
+          "id": 21,
+          "name": "Vapour",
+          "style": "IPA - Double",
+          "abv": 8,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 4.12,
+            "count": 662,
+            "url": "https://untappd.com/b/beak-vapour/6816422"
+          }
+        },
+        {
+          "id": 22,
+          "name": "Squeeze",
+          "style": "Pale Ale - Session",
+          "abv": 4,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.85,
+            "count": 983,
+            "url": "https://untappd.com/b/beak-squeeze/6756042"
+          }
+        },
+        {
+          "id": 23,
+          "name": "Timber",
+          "style": "IPA - Double",
+          "abv": 8,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 4.15,
+            "count": 372,
+            "url": "https://untappd.com/b/beak-timber/6842772"
+          }
+        },
+        {
+          "id": 24,
+          "name": "Hum",
+          "style": "Pale Ale - Hazy",
+          "abv": 4.8,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.86,
+            "count": 9979,
+            "url": "https://untappd.com/b/beak-hum/5422213"
+          }
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "name": "Tuletorn Brewing",
+      "location": "EE",
+      "stand": 17,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 392,
+          "name": "Matcha Reiv",
+          "style": "Sour - Smoothie",
+          "abv": 5.5,
+          "session": "friday",
+          "notes": "w/ Matcha ice cream",
+          "untappd": {
+            "rating": 3.69,
+            "count": 302,
+            "url": "https://untappd.com/b/tuletorn-brewing-matcha-reiv/6819320"
+          }
+        },
+        {
+          "id": 393,
+          "name": "Smoothie Parkour",
+          "style": "Sour - Smoothie",
+          "abv": 5.2,
+          "session": "friday",
+          "notes": "w/ Guava & Watermelon",
+          "untappd": {
+            "rating": 4.01,
+            "count": 200,
+            "url": "https://untappd.com/b/tuletorn-brewing-smoothie-parkour/6804234"
+          }
+        },
+        {
+          "id": 394,
+          "name": "Gazpachito",
+          "style": "Sour - Gose",
+          "abv": 4.7,
+          "session": "saturday-early",
+          "notes": "w/ Tomato & Basil",
+          "untappd": {
+            "rating": 3.98,
+            "count": 32,
+            "url": "https://untappd.com/b/tuletorn-brewing-gazpachito/6920701"
+          }
+        },
+        {
+          "id": 395,
+          "name": "Pavlova Pesakond",
+          "style": "Sour - Smoothie",
+          "abv": 6.5,
+          "session": "saturday-early",
+          "notes": "Collab w/ One drop, w/ Strawberry, Kiwi, Passionfruit, Vanilla & Coconut cream",
+          "untappd": {
+            "rating": 4.01,
+            "count": 1051,
+            "url": "https://untappd.com/b/tuletorn-brewing-pavlova-pesakond/6702129"
+          }
+        },
+        {
+          "id": 396,
+          "name": "Fika Fanclub",
+          "style": "Stout - Imperial Pastry",
+          "abv": 10.8,
+          "session": "saturday-late",
+          "notes": "Collab w/ Pühaste, w/ Coffee, Cinnamon & Icing sugar",
+          "untappd": {
+            "rating": 4.07,
+            "count": 181,
+            "url": "https://untappd.com/b/tuletorn-brewing-fika-fanclub/6850317"
+          }
+        },
+        {
+          "id": 397,
+          "name": "TBA",
+          "style": "Sour - Smoothie",
+          "abv": 6,
+          "session": "saturday-late",
+          "notes": "Collab w/ Sibeeria, w/ Sour cherry, Blackcurrant & Apple"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "name": "Creature Comforts Brewing Co.",
+      "location": "US",
+      "stand": 18,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 67,
+          "name": "Tsundoku",
+          "style": "Lager Other - Japanese Rice",
+          "abv": 4.2,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.69,
+            "count": 395,
+            "url": "https://untappd.com/b/creature-comforts-brewing-co-tsundoku/5494349"
+          }
+        },
+        {
+          "id": 68,
+          "name": "Nelson Romance",
+          "style": "Saison - Dry Hopped",
+          "abv": 6.6,
+          "session": "friday",
+          "notes": "Foeder aged",
+          "untappd": {
+            "rating": 3.68,
+            "count": 407,
+            "url": "https://untappd.com/b/creature-comforts-brewing-co-nelson-romance/5883415"
+          }
+        },
+        {
+          "id": 69,
+          "name": "12th Anniversary Stout",
+          "style": "Stout - Barrel Aged Imperial",
+          "abv": 13.7,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 4.26,
+            "count": 12,
+            "url": "https://untappd.com/b/creature-comforts-brewing-co-12th-anniversary-stout/6759832"
+          }
+        },
+        {
+          "id": 70,
+          "name": "Bibo",
+          "style": "Pilsner",
+          "abv": 4.9,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.58,
+            "count": 17692,
+            "url": "https://untappd.com/b/creature-comforts-brewing-co-bibo/636821"
+          }
+        },
+        {
+          "id": 71,
+          "name": "Always A Pleasure",
+          "style": "Pilsner - Dry Hopped",
+          "abv": 6,
+          "session": "saturday-late",
+          "notes": "Foeder aged",
+          "untappd": {
+            "rating": 3.8,
+            "count": 969,
+            "url": "https://untappd.com/b/creature-comforts-brewing-co-always-a-pleasure/3632669"
+          }
+        },
+        {
+          "id": 72,
+          "name": "The Tree That Owns Itself (2025)",
+          "style": "Barley Wine - Barrel Aged",
+          "abv": 13,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 4.05,
+            "count": 233,
+            "url": "https://untappd.com/b/creature-comforts-brewing-co-the-tree-that-owns-itself/6504229"
+          }
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "name": "Zeitgeist Brewing",
+      "location": "DK",
+      "stand": 19,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 422,
+          "name": "Wunderbräu",
+          "style": "Lager Other - Festbier",
+          "abv": 5.8,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.4,
+            "count": 40,
+            "url": "https://untappd.com/b/zeitgeist-brewing-wunderbrau/6413924"
+          }
+        },
+        {
+          "id": 423,
+          "name": "Weltschmerz",
+          "style": "Ale Other - Strong",
+          "abv": 12.5,
+          "session": "friday",
+          "untappd": {
+            "rating": null,
+            "count": 5,
+            "url": "https://untappd.com/b/zeitgeist-brewing-weltschmerz/6961018"
+          }
+        },
+        {
+          "id": 424,
+          "name": "Richte Glajle Juul",
+          "style": "Lager Other - Munich Dunkel",
+          "abv": 5.8,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.38,
+            "count": 44,
+            "url": "https://untappd.com/b/zeitgeist-brewing-richte-glajle-juul/6480444"
+          }
+        },
+        {
+          "id": 425,
+          "name": "Jorden Rundt",
+          "style": "IPA - Hazy Double",
+          "abv": 8,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.96,
+            "count": 34,
+            "url": "https://untappd.com/b/zeitgeist-brewing-jorden-rundt/6918542"
+          }
+        },
+        {
+          "id": 426,
+          "name": "Rheingold",
+          "style": "Pilsner - German",
+          "abv": 4.6,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.54,
+            "count": 152,
+            "url": "https://untappd.com/b/zeitgeist-brewing-rheingold/6330665"
+          }
+        },
+        {
+          "id": 427,
+          "name": "Dirty Harry (Aarhus Edition)",
+          "style": "Stout - Imperial",
+          "abv": 12.5,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": null,
+            "count": 0,
+            "url": "https://untappd.com/b/zeitgeist-brewing-dirty-harry-aarhus-edition/6961019"
+          }
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "name": "Spybrew",
+      "location": "DK",
+      "stand": 20,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 362,
+          "name": "Codename GAMBORG",
+          "style": "Belgian Ale - Tripel",
+          "abv": 9,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.9,
+            "count": 28,
+            "url": "https://untappd.com/b/spybrew-codename-gamborg/6820807"
+          }
+        },
+        {
+          "id": 363,
+          "name": "Hindbær / Solbær Sour",
+          "style": "Sour - Kettle",
+          "abv": 3.8,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.44,
+            "count": 56,
+            "url": "https://untappd.com/b/spybrew-hindbaer-solbaer-sour/6713326"
+          }
+        },
+        {
+          "id": 364,
+          "name": "Haddaoui Habanero Stout",
+          "style": "Stout - Chili",
+          "abv": 9,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.36,
+            "count": 350,
+            "url": "https://untappd.com/b/spybrew-haddaoui-habanero-stout/4393028"
+          }
+        },
+        {
+          "id": 365,
+          "name": "Herbs Alpert",
+          "style": "Sour - Gose",
+          "abv": 4.2,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.29,
+            "count": 34,
+            "url": "https://untappd.com/b/spybrew-herbs-alpert/6799056"
+          }
+        },
+        {
+          "id": 366,
+          "name": "2650 Pilsner",
+          "style": "Pilsner - German",
+          "abv": 4.5,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.33,
+            "count": 455,
+            "url": "https://untappd.com/b/spybrew-2650-pilsner/4996217"
+          }
+        },
+        {
+          "id": 367,
+          "name": "Per Brosmand",
+          "style": "Ale Other - Altbier",
+          "abv": 5,
+          "session": "saturday-late",
+          "notes": "Collab w/ Lille Holmgård Bryghus",
+          "untappd": {
+            "rating": 3.38,
+            "count": 180,
+            "url": "https://untappd.com/b/lille-holmgard-bryghus-per-brosmand/6674242"
+          }
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "name": "Galway Bay Brewery",
+      "location": "IE",
+      "stand": 21,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 145,
+          "name": "Cargo Cult",
+          "style": "Stout - Barrel Aged Imperial",
+          "abv": 12.2,
+          "session": "friday",
+          "notes": "w/ Coconut & Vanilla",
+          "untappd": {
+            "rating": 4.06,
+            "count": 174,
+            "url": "https://untappd.com/b/galway-bay-brewery-cargo-cult-mbcc-26-blend/6689913"
+          }
+        },
+        {
+          "id": 146,
+          "name": "Infinite Solstice",
+          "style": "IPA - DDH New Zealand",
+          "abv": 6.2,
+          "session": "friday",
+          "untappd": {
+            "rating": null,
+            "count": 0,
+            "url": "https://untappd.com/b/galway-bay-brewery-infinite-solstice/6998741"
+          }
+        },
+        {
+          "id": 147,
+          "name": "Counting off the days Coffee Edition",
+          "style": "Stout - Imperial",
+          "abv": 13.6,
+          "session": "saturday-early",
+          "notes": "w/ Coffee",
+          "untappd": {
+            "rating": 4.11,
+            "count": 187,
+            "url": "https://untappd.com/b/galway-bay-brewery-counting-off-the-days-coffee-and-cacao-edition/6689915"
+          }
+        },
+        {
+          "id": 148,
+          "name": "Sigaro",
+          "style": "Stout - Export",
+          "abv": 5.2,
+          "session": "saturday-early",
+          "notes": "w/ Tobacco & Cacao",
+          "untappd": {
+            "rating": 3.51,
+            "count": 689,
+            "url": "https://untappd.com/b/galway-bay-brewery-sigaro/6247911"
+          }
+        },
+        {
+          "id": 149,
+          "name": "Dekadent Reality",
+          "style": "Porter - Imperial Baltic Porter",
+          "abv": 12,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 4.22,
+            "count": 498,
+            "url": "https://untappd.com/b/galway-bay-brewery-dekadent-reality/6435253"
+          }
+        },
+        {
+          "id": 150,
+          "name": "Irish Wild Ale",
+          "style": "Wild Ale",
+          "abv": 7.5,
+          "session": "saturday-late"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "name": "Lille Holmgård Bryghus",
+      "location": "DK",
+      "stand": 22,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 211,
+          "name": "Per Brosmand",
+          "style": "Ale Other - Altbier",
+          "abv": 5,
+          "session": "friday",
+          "notes": "Collab w/ Spybrew",
+          "untappd": {
+            "rating": 3.38,
+            "count": 180,
+            "url": "https://untappd.com/b/lille-holmgard-bryghus-per-brosmand/6674242"
+          }
+        },
+        {
+          "id": 212,
+          "name": "Tournesoll Tripel",
+          "style": "Belgian Ale - Tripel",
+          "abv": 9,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.41,
+            "count": 512,
+            "url": "https://untappd.com/b/lille-holmgard-bryghus-tournesoll-tripel/5323894"
+          }
+        },
+        {
+          "id": 213,
+          "name": "Kølsch Med Ø",
+          "style": "Ale Other - Kölsch",
+          "abv": 5,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.33,
+            "count": 370,
+            "url": "https://untappd.com/b/lille-holmgard-bryghus-kolsch-med-o/5323855"
+          }
+        },
+        {
+          "id": 214,
+          "name": "Kaptajn Hadock",
+          "style": "Belgian Ale - Quadrupel",
+          "abv": 10.6,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.53,
+            "count": 329,
+            "url": "https://untappd.com/b/lille-holmgard-bryghus-kaptajn-hadock/5364957"
+          }
+        },
+        {
+          "id": 215,
+          "name": "Formandens Tørre øjn'",
+          "style": "Saison - Bière de Garde",
+          "abv": 6.2,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.4,
+            "count": 479,
+            "url": "https://untappd.com/b/lille-holmgard-bryghus-formandens-torre-ojn/5323818"
+          }
+        },
+        {
+          "id": 216,
+          "name": "Skovhuggerens Skumringsøl",
+          "style": "Stout - Imperial",
+          "abv": 12,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.75,
+            "count": 338,
+            "url": "https://untappd.com/b/lille-holmgard-bryghus-skovhuggerens-skumringsol/5365152"
+          }
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "name": "SOMA Beer",
+      "location": "ES",
+      "stand": 23,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 356,
+          "name": "Commuter",
+          "style": "IPA - Hazy",
+          "abv": 6.5,
+          "session": "friday",
+          "untappd": {
+            "rating": 4.08,
+            "count": 329,
+            "url": "https://untappd.com/b/soma-beer-commuter/6859200"
+          }
+        },
+        {
+          "id": 357,
+          "name": "Bonfire",
+          "style": "IPA - Double",
+          "abv": 8,
+          "session": "friday",
+          "untappd": {
+            "rating": 4.11,
+            "count": 695,
+            "url": "https://untappd.com/b/soma-beer-bonfire/6850801"
+          }
+        },
+        {
+          "id": 358,
+          "name": "Trace",
+          "style": "IPA - American",
+          "abv": 6.5,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.9,
+            "count": 94,
+            "url": "https://untappd.com/b/soma-beer-trace/6895237"
+          }
+        },
+        {
+          "id": 359,
+          "name": "Infrared",
+          "style": "IPA - Double",
+          "abv": 8,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 4.11,
+            "count": 301,
+            "url": "https://untappd.com/b/soma-beer-infrared/6895239"
+          }
+        },
+        {
+          "id": 360,
+          "name": "Threshold",
+          "style": "IPA - Hazy",
+          "abv": 6,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 4.13,
+            "count": 198,
+            "url": "https://untappd.com/b/soma-beer-threshold/6915952"
+          }
+        },
+        {
+          "id": 361,
+          "name": "Libation",
+          "style": "IPA - Quadruple",
+          "abv": 12,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 4.31,
+            "count": 124,
+            "url": "https://untappd.com/b/soma-beer-libation/6915951"
+          }
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "name": "Stepping Stone Brewing Company",
+      "location": "DK",
+      "stand": 24,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 308,
+          "name": "Hjem Ud Hjem",
+          "style": "Wild Ale - Barrel Aged Mixed Fermentation",
+          "abv": 7.8,
+          "session": "friday",
+          "notes": "w/ Saffron & Ginseng"
+        },
+        {
+          "id": 309,
+          "name": "Together",
+          "style": "IPA - Hazy",
+          "abv": 6.7,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.52,
+            "count": 1607,
+            "url": "https://untappd.com/b/stepping-stone-brewing-company-together/6639905"
+          }
+        },
+        {
+          "id": 310,
+          "name": "Hjem Ud Hjem",
+          "style": "Wild Ale - Barrel Aged Mixed Fermentation",
+          "abv": 7.8,
+          "session": "saturday-early",
+          "notes": "w/ Saffron & Ginseng"
+        },
+        {
+          "id": 311,
+          "name": "Smager lidt af blomster",
+          "style": "Ale Other - Blonde",
+          "abv": 5,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 2.94,
+            "count": 69,
+            "url": "https://untappd.com/b/stepping-stone-brewing-company-smager-lidt-af-blomster/6838237"
+          }
+        },
+        {
+          "id": 312,
+          "name": "Hjem Ud Hjem",
+          "style": "Wild Ale - Barrel Aged Mixed Fermentation",
+          "abv": 7.8,
+          "session": "saturday-late",
+          "notes": "w/ Saffron & Ginseng"
+        },
+        {
+          "id": 313,
+          "name": "Outburst",
+          "style": "IPA - Double",
+          "abv": 8.2,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.84,
+            "count": 177,
+            "url": "https://untappd.com/b/stepping-stone-brewing-company-outburst/6838202"
+          }
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "name": "Sudden Death Brewing",
+      "location": "DE",
+      "stand": 25,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 368,
+          "name": "My Precious Southern Cross",
+          "style": "IPA - Hazy",
+          "abv": 6.5,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.98,
+            "count": 1175,
+            "url": "https://untappd.com/b/sudden-death-brewing-co-my-precious-southern-cross/6791061"
+          }
+        },
+        {
+          "id": 369,
+          "name": "Doggos Forbidden Delight",
+          "style": "Sour - Smoothie",
+          "abv": 6,
+          "session": "friday",
+          "untappd": {
+            "rating": 4.33,
+            "count": 120,
+            "url": "https://untappd.com/b/sudden-death-brewing-co-doggo-s-forbidden-delight/7138617"
+          }
+        },
+        {
+          "id": 370,
+          "name": "Let's Fest",
+          "style": "Lager Other - Festbier",
+          "abv": 6,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.59,
+            "count": 435,
+            "url": "https://untappd.com/b/sudden-death-brewing-co-let-s-fest/6845909"
+          }
+        },
+        {
+          "id": 371,
+          "name": "Hop Selection - Trifecta",
+          "style": "IPA - Hazy",
+          "abv": 6.5,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 4.06,
+            "count": 1652,
+            "url": "https://untappd.com/b/sudden-death-brewing-co-hop-selection-trifecta/6752634"
+          }
+        },
+        {
+          "id": 372,
+          "name": "Nova Burst",
+          "style": "Pilsner - New Zealand",
+          "abv": 5.9,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.71,
+            "count": 111,
+            "url": "https://untappd.com/b/sudden-death-brewing-co-nova-burst/7138953"
+          }
+        },
+        {
+          "id": 373,
+          "name": "Rituus",
+          "style": "Stout - Imperial",
+          "abv": 11.5,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 4.13,
+            "count": 16,
+            "url": "https://untappd.com/b/sudden-death-brewing-co-rituus/7140929"
+          }
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "name": "Ten Wasp Brewing Company",
+      "location": "US",
+      "stand": 26,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 374,
+          "name": "No Use For A Stout",
+          "style": "Stout - Export",
+          "abv": 6.4,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.95,
+            "count": 19,
+            "url": "https://untappd.com/b/ten-wasp-brewing-company-no-use-for-a-stout/6724418"
+          }
+        },
+        {
+          "id": 375,
+          "name": "Guava the Nut",
+          "style": "Sour - Fruited",
+          "abv": 5.4,
+          "session": "friday",
+          "untappd": {
+            "rating": 4.38,
+            "count": 49,
+            "url": "https://untappd.com/b/ten-wasp-brewing-company-guava-the-nut/6084899"
+          }
+        },
+        {
+          "id": 376,
+          "name": "Rhubie May",
+          "style": "Ale Other - Wheat",
+          "abv": 4.5,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.97,
+            "count": 46,
+            "url": "https://untappd.com/b/ten-wasp-brewing-company-rhubie-may/5881829"
+          }
+        },
+        {
+          "id": 377,
+          "name": "The Rural Juror",
+          "style": "IPA - Hazy",
+          "abv": 7.2,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 4.39,
+            "count": 48,
+            "url": "https://untappd.com/b/ten-wasp-brewing-company-the-rural-juror/6794630"
+          }
+        },
+        {
+          "id": 378,
+          "name": "Lav Potion #9",
+          "style": "Hard Seltzer",
+          "abv": 5,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.92,
+            "count": 16,
+            "url": "https://untappd.com/b/ten-wasp-brewing-company-lav-potion-9/6649053"
+          }
+        },
+        {
+          "id": 379,
+          "name": "Peelin' Cute",
+          "style": "Stout - Pastry",
+          "abv": 12,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 4.23,
+            "count": 48,
+            "url": "https://untappd.com/b/ten-wasp-brewing-company-peelin-cute/6609538"
+          }
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "name": "Aarhus Bryghus",
+      "location": "DK",
+      "stand": 27,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 446,
+          "name": "Det Gyldne Anker",
+          "style": "Ale Other - DDH Strong",
+          "abv": 8,
+          "session": "friday"
+        },
+        {
+          "id": 447,
+          "name": "Imperial Stout",
+          "style": "Stout - Imperial Russian",
+          "abv": 8,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.47,
+            "count": 1591,
+            "url": "https://untappd.com/b/aarhus-bryghus-imperial-stout/211122"
+          }
+        },
+        {
+          "id": 448,
+          "name": "Blondie",
+          "style": "Pale Ale - English",
+          "abv": 4.5,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 2.93,
+            "count": 665,
+            "url": "https://untappd.com/b/aarhus-bryghus-blondie/374499"
+          }
+        },
+        {
+          "id": 449,
+          "name": "Thyras Barley Wine 2026",
+          "style": "Barley Wine - English",
+          "abv": 9.2,
+          "session": "saturday-early"
+        },
+        {
+          "id": 450,
+          "name": "Fæl Frugt Cider",
+          "style": "Cider - Farmhouse",
+          "abv": 6,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.0,
+            "count": 26,
+            "url": "https://untappd.com/b/aarhus-bryghus-fael-frugt-cider-2025/6595097"
+          }
+        },
+        {
+          "id": 451,
+          "name": "Jule Tønden",
+          "style": "Ale Other - Winter",
+          "abv": 8,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.11,
+            "count": 1421,
+            "url": "https://untappd.com/b/aarhus-bryghus-juletonden/264766"
+          }
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "name": "Panimoyhtiö Tuju",
+      "location": "FI",
+      "stand": 28,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 253,
+          "name": "Kalmanakka",
+          "style": "Barley Wine - American",
+          "abv": 9.5,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.68,
+            "count": 890,
+            "url": "https://untappd.com/b/panimoyhtio-tuju-kalmanakka/6188845"
+          }
+        },
+        {
+          "id": 254,
+          "name": "Black Barrel Series: Ritual 2026",
+          "style": "Stout - Bourbon Barrel Aged Imperial",
+          "abv": 14,
+          "session": "friday",
+          "untappd": {
+            "rating": 4.07,
+            "count": 307,
+            "url": "https://untappd.com/b/panimoyhtio-tuju-ritual-2026/6735984"
+          }
+        },
+        {
+          "id": 255,
+          "name": "Wild Barrel Series: The Throne 2025",
+          "style": "Wild Ale - Blend",
+          "abv": 6,
+          "session": "saturday-early",
+          "notes": "w/ Bilberry & Raspberry",
+          "untappd": {
+            "rating": 3.93,
+            "count": 154,
+            "url": "https://untappd.com/b/panimoyhtio-tuju-the-throne-2025/6459539"
+          },
+          "description": {
+            "text": "The Throne 6.0% | 2025 | Blended wild ale",
+            "source": "https://untappd.com/b/panimoyhtio-tuju-the-throne-2025/6459539"
+          }
+        },
+        {
+          "id": 256,
+          "name": "Pumpattava Barbaari",
+          "style": "Lager Other - Helles",
+          "abv": 5,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.34,
+            "count": 3298,
+            "url": "https://untappd.com/b/panimoyhtio-tuju-pumpattava-barbaari/5167598"
+          }
+        },
+        {
+          "id": 257,
+          "name": "Wild Barrel Series: Buer",
+          "style": "Wild Ale - Blend",
+          "abv": 6,
+          "session": "saturday-late",
+          "notes": "w/ Lingonberry & Vanilla",
+          "untappd": {
+            "rating": null,
+            "count": 4,
+            "url": "https://untappd.com/b/panimoyhtio-tuju-buer/6835476"
+          },
+          "description": {
+            "text": "Buer walks a path few could ever describe, carrying ancient wisdom, natural power and secrets of healing in its wake. More than a mere demonic manifestation, its true nature is revealed only in the glass.",
+            "source": "https://untappd.com/b/panimoyhtio-tuju-buer/6835476"
+          }
+        },
+        {
+          "id": 258,
+          "name": "Black Barrel Series: Immolation",
+          "style": "Barley Wine - Bourbon Barrel Aged Roast Wine",
+          "abv": 13.5,
+          "session": "saturday-late",
+          "notes": "w/ Nuts",
+          "untappd": {
+            "rating": 3.95,
+            "count": 257,
+            "url": "https://untappd.com/b/panimoyhtio-tuju-immolation/6735983"
+          }
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "name": "Vetra",
+      "location": "IT",
+      "stand": 29,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 404,
+          "name": "10up",
+          "style": "Pilsner - Italian",
+          "abv": 5.1,
+          "session": "friday",
+          "notes": "Fresh hop",
+          "untappd": {
+            "rating": null,
+            "count": 5,
+            "url": "https://untappd.com/b/vetra-10up/7214024"
+          },
+          "description": {
+            "text": "Dieci anni spregiudicati, croccanti e istintivi racchiusi in una brillante fresh hop dallo spirito libero.",
+            "source": "https://untappd.com/b/vetra-10up/7214024"
+          }
+        },
+        {
+          "id": 405,
+          "name": "Berry Drop",
+          "style": "Sour - Fruited",
+          "abv": 4.5,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.8,
+            "count": 121,
+            "url": "https://untappd.com/b/vetra-berry-drop/6713532"
+          }
+        },
+        {
+          "id": 406,
+          "name": "Vetra Pils",
+          "style": "Pilsner",
+          "abv": 4.9,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.54,
+            "count": 1782,
+            "url": "https://untappd.com/b/vetra-vetra-pils/1553961"
+          }
+        },
+        {
+          "id": 407,
+          "name": "Caminha Madness",
+          "style": "IPA - Hazy",
+          "abv": 6,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.74,
+            "count": 126,
+            "url": "https://untappd.com/b/vetra-caminha-madness/6782868"
+          }
+        },
+        {
+          "id": 408,
+          "name": "Vetra Black Coffee",
+          "style": "Lager Other - Dark",
+          "abv": 6.8,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.75,
+            "count": 126,
+            "url": "https://untappd.com/b/vetra-vetra-black-coffee/5339183"
+          }
+        },
+        {
+          "id": 409,
+          "name": "Silky Way",
+          "style": "Sour - Fruited",
+          "abv": 4.5,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.66,
+            "count": 286,
+            "url": "https://untappd.com/b/vetra-silky-way/5904724"
+          }
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "name": "Donzoko",
+      "location": "UK",
+      "stand": 30,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 73,
+          "name": "Hoppy Koji Beer",
+          "style": "IPA - Koji",
+          "abv": 7,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.86,
+            "count": 55,
+            "url": "https://untappd.com/b/donzoko-brewing-company-hoppy-koji-beer/6907563"
+          }
+        },
+        {
+          "id": 74,
+          "name": "Fest Weisse",
+          "style": "Ale Other - Wheat",
+          "abv": 5.2,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.79,
+            "count": 76,
+            "url": "https://untappd.com/b/donzoko-brewing-company-fest-weisse/6910093"
+          }
+        },
+        {
+          "id": 75,
+          "name": "Donmai",
+          "style": "Lager Other - Koji Rice",
+          "abv": 5.5,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.68,
+            "count": 316,
+            "url": "https://untappd.com/b/donzoko-brewing-company-donmai/6034228"
+          }
+        },
+        {
+          "id": 76,
+          "name": "Pinot Noir Fizz",
+          "style": "Ale Other - Grape Ale",
+          "abv": 4.5,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.64,
+            "count": 192,
+            "url": "https://untappd.com/b/donzoko-brewing-company-pinot-noir-fizz/6731462"
+          }
+        },
+        {
+          "id": 77,
+          "name": "Bourbon Barrel Aged Baltic Porter",
+          "style": "Porter - Baltic Porter",
+          "abv": 15,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 4.28,
+            "count": 108,
+            "url": "https://untappd.com/b/donzoko-brewing-company-bourbon-barrel-aged-baltic-porter/6835632"
+          }
+        },
+        {
+          "id": 78,
+          "name": "Big Foam Grand Cru",
+          "style": "Lager Other",
+          "abv": 6,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.86,
+            "count": 548,
+            "url": "https://untappd.com/b/donzoko-brewing-company-big-foam-grand-cru/6353821"
+          }
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "name": "Track Brewing Company",
+      "location": "UK",
+      "stand": 31,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 386,
+          "name": "Flux: Phase 8",
+          "style": "IPA - Hazy",
+          "abv": 6.5,
+          "session": "friday",
+          "notes": "Collab w/ Verdant",
+          "untappd": {
+            "rating": 4.05,
+            "count": 617,
+            "url": "https://untappd.com/b/track-brewing-company-flux-phase-8/6901888"
+          }
+        },
+        {
+          "id": 387,
+          "name": "Romanticised",
+          "style": "IPA - Double",
+          "abv": 8.4,
+          "session": "friday",
+          "notes": "w/ Citra Cryo, Rakau, Motueka, Nelson Sauvin & Limequat",
+          "untappd": {
+            "rating": 4.26,
+            "count": 104,
+            "url": "https://untappd.com/b/track-brewing-company-romanticised/7067751"
+          }
+        },
+        {
+          "id": 388,
+          "name": "Dreaming Of... DDH Nectaron",
+          "style": "IPA - DDH",
+          "abv": 7,
+          "session": "saturday-early",
+          "notes": "w/ Nectaron",
+          "untappd": {
+            "rating": 4.12,
+            "count": 1228,
+            "url": "https://untappd.com/b/track-brewing-company-dreaming-of-ddh-nectaron/5642008"
+          }
+        },
+        {
+          "id": 389,
+          "name": "Southland",
+          "style": "IPA - DDH",
+          "abv": 7,
+          "session": "saturday-early",
+          "notes": "w/ Motueka (Garston Hops)",
+          "untappd": {
+            "rating": 4.14,
+            "count": 370,
+            "url": "https://untappd.com/b/track-brewing-company-southland/6901682"
+          }
+        },
+        {
+          "id": 390,
+          "name": "Flux: Phase 9",
+          "style": "IPA - Double",
+          "abv": 8,
+          "session": "saturday-late",
+          "notes": "Collab w/ Verdant",
+          "untappd": {
+            "rating": 4.14,
+            "count": 443,
+            "url": "https://untappd.com/b/track-brewing-company-flux-phase-9/6901942"
+          }
+        },
+        {
+          "id": 391,
+          "name": "TBA",
+          "style": "",
+          "abv": null,
+          "session": "saturday-late"
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "name": "Mad Scientist",
+      "location": "HU",
+      "stand": 32,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 223,
+          "name": "Freddy - A Nightmare On Elm Street - Dream Warriors",
+          "style": "IPA - West Coast",
+          "abv": 5.5,
+          "session": "friday",
+          "notes": "w/ Casino Mocca coffee",
+          "untappd": {
+            "rating": 3.35,
+            "count": 86,
+            "url": "https://untappd.com/b/mad-scientist-freddy-a-nightmare-on-elm-street-dream-warriors/6909868"
+          }
+        },
+        {
+          "id": 224,
+          "name": "Your Sunset Lover",
+          "style": "Mead - Braggot",
+          "abv": 6,
+          "session": "friday",
+          "notes": "w/ Mango, Purple basil & Lime, By Mead Scientist",
+          "untappd": {
+            "rating": 3.83,
+            "count": 56,
+            "url": "https://untappd.com/b/mead-scientist-your-sunset-lover/6834492"
+          }
+        },
+        {
+          "id": 225,
+          "name": "Coliva Collective",
+          "style": "Stout - Imperial Wheat",
+          "abv": 10.5,
+          "session": "saturday-early",
+          "notes": "Collab w/ Blackout, w/ Walnut, Sesame & Vanilla",
+          "untappd": {
+            "rating": 4.25,
+            "count": 106,
+            "url": "https://untappd.com/b/mad-scientist-coliva-collective/6826249"
+          }
+        },
+        {
+          "id": 226,
+          "name": "Disc O",
+          "style": "Mead - Braggot",
+          "abv": 7,
+          "session": "saturday-early",
+          "notes": "w/ Watermelon, Raspberry, Cherry & Sour candy, By Mead Scientist",
+          "untappd": {
+            "rating": 3.51,
+            "count": 18,
+            "url": "https://untappd.com/b/mead-scientist-disc-o/6833883"
+          }
+        },
+        {
+          "id": 227,
+          "name": "Rouge Riot",
+          "style": "Sour - Smoothie",
+          "abv": 6.2,
+          "session": "saturday-late",
+          "notes": "Collab w/ Fauve, w/ Raspberry, Guava, Redcurrant & Paprika",
+          "untappd": {
+            "rating": 3.34,
+            "count": 904,
+            "url": "https://untappd.com/b/mad-scientist-rouge-riot/6331920"
+          }
+        },
+        {
+          "id": 228,
+          "name": "Uborkasaláta & Funk 2026",
+          "style": "Wild Ale - Farmhouse",
+          "abv": 5.9,
+          "session": "saturday-late",
+          "notes": "w/ Hungarian cucumber salad, By MadX",
+          "untappd": {
+            "rating": 3.85,
+            "count": 10,
+            "url": "https://untappd.com/b/madx-uborkasalata-and-funk-2026/6859719"
+          }
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "name": "Warpigs Brewpub",
+      "location": "DK",
+      "stand": 33,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 410,
+          "name": "Fix Your Face",
+          "style": "IPA - TDH Hazy",
+          "abv": 7,
+          "session": "friday",
+          "notes": "Collab w/ Messorem, w/ Nectaron & Peacharine",
+          "untappd": {
+            "rating": 4.12,
+            "count": 266,
+            "url": "https://untappd.com/b/warpigs-brewpub-fix-your-face/6809090"
+          }
+        },
+        {
+          "id": 411,
+          "name": "Lazurite Redux",
+          "style": "IPA - DDH American",
+          "abv": 7.4,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.93,
+            "count": 21,
+            "url": "https://untappd.com/b/warpigs-brewpub-lazurite-redux/6829412"
+          }
+        },
+        {
+          "id": 412,
+          "name": "Sledgehammer Vibes",
+          "style": "IPA - Hazy Triple",
+          "abv": 10,
+          "session": "saturday-early",
+          "notes": "w/ Nelson Sauvin, Galaxy & Citra",
+          "untappd": {
+            "rating": 4.13,
+            "count": 45,
+            "url": "https://untappd.com/b/warpigs-brewpub-sledgehammer-vibes/6829485"
+          }
+        },
+        {
+          "id": 413,
+          "name": "Breakfast Radio",
+          "style": "Stout - Oatmeal",
+          "abv": 7.15,
+          "session": "saturday-early",
+          "notes": "w/ Coffee & Cacao",
+          "untappd": {
+            "rating": 3.96,
+            "count": 133,
+            "url": "https://untappd.com/b/warpigs-brewpub-breakfast-radio/6809136"
+          }
+        },
+        {
+          "id": 414,
+          "name": "Critical Extraction",
+          "style": "IPA - Hazy Quadruple",
+          "abv": 11,
+          "session": "saturday-late",
+          "notes": "w/ Citra",
+          "untappd": {
+            "rating": 4.16,
+            "count": 43,
+            "url": "https://untappd.com/b/warpigs-brewpub-critical-extraction/6829522"
+          }
+        },
+        {
+          "id": 415,
+          "name": "Hammerflip",
+          "style": "Stout - Imperial Pastry",
+          "abv": 10,
+          "session": "saturday-late",
+          "notes": "w/ Cocoa nibs & Hazelnut",
+          "untappd": {
+            "rating": 4.11,
+            "count": 727,
+            "url": "https://untappd.com/b/warpigs-brewpub-hammerflip/6253037"
+          }
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "name": "Friends Company",
+      "location": "SE",
+      "stand": 34,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 133,
+          "name": "Celestial Horizon DDH",
+          "style": "IPA - Hazy",
+          "abv": 7,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.87,
+            "count": 900,
+            "url": "https://untappd.com/b/friends-company-celestial-horizon-ddh/6500013"
+          }
+        },
+        {
+          "id": 134,
+          "name": "Blueberry Lemon Cupcake",
+          "style": "Sour - Smoothie Gose",
+          "abv": 6,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.59,
+            "count": 1393,
+            "url": "https://untappd.com/b/friends-company-blueberry-lemon-cupcake/6640457"
+          }
+        },
+        {
+          "id": 135,
+          "name": "Dragonspawn",
+          "style": "Sour - Gose",
+          "abv": 6,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.42,
+            "count": 967,
+            "url": "https://untappd.com/b/friends-company-dragonspawn-smoothie/6558421"
+          }
+        },
+        {
+          "id": 136,
+          "name": "Liquid Beats",
+          "style": "Sour - Gose",
+          "abv": 6,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.64,
+            "count": 102,
+            "url": "https://untappd.com/b/friends-company-liquid-beats/6919602"
+          }
+        },
+        {
+          "id": 137,
+          "name": "Red Berry Marshmallow Cupcake",
+          "style": "Sour - Smoothie Gose",
+          "abv": 6,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.94,
+            "count": 539,
+            "url": "https://untappd.com/b/friends-company-red-berry-marshmallow-cupcake-smoothie-sour-gose/6837828"
+          }
+        },
+        {
+          "id": 138,
+          "name": "Lime Paradox",
+          "style": "Sour - Gose",
+          "abv": 6,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.63,
+            "count": 747,
+            "url": "https://untappd.com/b/friends-company-lime-paradox/6640459"
+          }
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "name": "Esbjerg Bryghus",
+      "location": "DK",
+      "stand": 35,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 91,
+          "name": "SUSET",
+          "style": "IPA - Hazy",
+          "abv": 6,
+          "session": "friday",
+          "untappd": {
+            "rating": null,
+            "count": 0,
+            "url": "https://untappd.com/b/esbjerg-bryghus-suset/6836429"
+          },
+          "description": {
+            "text": "Året Festival Øl til SUSET.",
+            "source": "https://untappd.com/b/esbjerg-bryghus-suset/6836429"
+          }
+        },
+        {
+          "id": 92,
+          "name": "Disco Sour",
+          "style": "Sour - Fruited",
+          "abv": 6.5,
+          "session": "friday"
+        },
+        {
+          "id": 93,
+          "name": "SUSET",
+          "style": "IPA - Hazy",
+          "abv": 6,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": null,
+            "count": 0,
+            "url": "https://untappd.com/b/esbjerg-bryghus-suset/6836429"
+          },
+          "description": {
+            "text": "Året Festival Øl til SUSET.",
+            "source": "https://untappd.com/b/esbjerg-bryghus-suset/6836429"
+          }
+        },
+        {
+          "id": 94,
+          "name": "Tell Me about Paris",
+          "style": "Stout - Imperial",
+          "abv": 12,
+          "session": "saturday-early"
+        },
+        {
+          "id": 95,
+          "name": "Hidden Track #3",
+          "style": "Wild Ale",
+          "abv": 7.5,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": null,
+            "count": 5,
+            "url": "https://untappd.com/b/esbjerg-bryghus-hidden-track-3/7197157"
+          },
+          "description": {
+            "text": "Vores 3. udgave af vores Wild Ale(serie) Hidden Track.",
+            "source": "https://untappd.com/b/esbjerg-bryghus-hidden-track-3/7197157"
+          }
+        },
+        {
+          "id": 96,
+          "name": "Blikkenslager",
+          "style": "Lager Other - DDH",
+          "abv": 5,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.3,
+            "count": 36,
+            "url": "https://untappd.com/b/esbjerg-bryghus-blikkenslager/4093541"
+          }
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "name": "Seoul Brewery",
+      "location": "KR",
+      "stand": 36,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 332,
+          "name": "SEOUL RICE LAGER",
+          "style": "Lager Other - Korean Rice",
+          "abv": 4.7,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.47,
+            "count": 820,
+            "url": "https://untappd.com/b/seoul-brewery-seoul-rice-lager/6317405"
+          }
+        },
+        {
+          "id": 333,
+          "name": "PEACE PIECE FRUIT TEA IPA",
+          "style": "IPA - Fruited",
+          "abv": 5.5,
+          "session": "friday",
+          "notes": "w/ Fruit tea",
+          "untappd": {
+            "rating": 3.54,
+            "count": 295,
+            "url": "https://untappd.com/b/seoul-brewery-peace-piece-fruit-tea-ipa/6700667"
+          }
+        },
+        {
+          "id": 334,
+          "name": "MOJITO CLUB FRUIT LAGER",
+          "style": "Lager Other - Fruited",
+          "abv": 4,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.3,
+            "count": 282,
+            "url": "https://untappd.com/b/seoul-brewery-mojito-club-fruit-lager/6715914"
+          }
+        },
+        {
+          "id": 335,
+          "name": "DISCO BONG BONG RYE FRUIT SOUR",
+          "style": "Sour - Fruited",
+          "abv": 3.8,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.63,
+            "count": 647,
+            "url": "https://untappd.com/b/seoul-brewery-disco-bong-bong-rye-fruit-sour/6599426"
+          }
+        },
+        {
+          "id": 336,
+          "name": "VERTICAL CITY HAZY IPA",
+          "style": "IPA - Hazy",
+          "abv": 6.5,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.7,
+            "count": 482,
+            "url": "https://untappd.com/b/seoul-brewery-vertical-city-hazy-ipa/6763998"
+          }
+        },
+        {
+          "id": 337,
+          "name": "SWEET ISLAND IMPERIAL STOUT",
+          "style": "Stout - Imperial",
+          "abv": 11.5,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.91,
+            "count": 352,
+            "url": "https://untappd.com/b/seoul-brewery-sweet-island-imperial-stout/6731133"
+          }
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "name": "Pulpit Rock Brewing Co.",
+      "location": "US",
+      "stand": 38,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 296,
+          "name": "Daytime Fireworks",
+          "style": "Pilsner - West Coast",
+          "abv": 5.2,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.92,
+            "count": 135,
+            "url": "https://untappd.com/b/pulpit-rock-brewing-company-daytime-fireworks/6836018"
+          }
+        },
+        {
+          "id": 297,
+          "name": "Saftig",
+          "style": "IPA - Hazy",
+          "abv": 6.1,
+          "session": "friday",
+          "untappd": {
+            "rating": 4.08,
+            "count": 10548,
+            "url": "https://untappd.com/b/pulpit-rock-brewing-company-saftig/1339261"
+          }
+        },
+        {
+          "id": 298,
+          "name": "Phelp's Park Porter",
+          "style": "Porter - Baltic Porter",
+          "abv": 7.2,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.93,
+            "count": 786,
+            "url": "https://untappd.com/b/pulpit-rock-brewing-company-phelp-s-park-porter/5093397"
+          }
+        },
+        {
+          "id": 299,
+          "name": "Hyggelig",
+          "style": "Lager Other - Danish",
+          "abv": 5.3,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.88,
+            "count": 179,
+            "url": "https://untappd.com/b/pulpit-rock-brewing-company-hyggelig/6584291"
+          }
+        },
+        {
+          "id": 300,
+          "name": "Double No Quams About it",
+          "style": "IPA - Double",
+          "abv": 8.2,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 4.19,
+            "count": 108,
+            "url": "https://untappd.com/b/pulpit-rock-brewing-company-double-no-quams-about-it-2026/6828412"
+          }
+        },
+        {
+          "id": 301,
+          "name": "Felt a Vibe",
+          "style": "Sour - Smoothie",
+          "abv": 5,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 4.15,
+            "count": 37,
+            "url": "https://untappd.com/b/pulpit-rock-brewing-company-tingles-vol-4-felt-a-vibe/6853250"
+          }
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "name": "Alefarm Brewing",
+      "location": "DK",
+      "stand": 39,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 1,
+          "name": "Found",
+          "style": "IPA - West Coast Double",
+          "abv": 8,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.63,
+            "count": 948,
+            "url": "https://untappd.com/b/alefarm-brewing-found/6680856"
+          }
+        },
+        {
+          "id": 2,
+          "name": "Exit-Buddy",
+          "style": "IPA - American",
+          "abv": 6.7,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.72,
+            "count": 151,
+            "url": "https://untappd.com/b/alefarm-brewing-exit-buddy/6826231"
+          }
+        },
+        {
+          "id": 3,
+          "name": "Ex-Parrot",
+          "style": "IPA - Double",
+          "abv": 7.8,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 4.02,
+            "count": 424,
+            "url": "https://untappd.com/b/alefarm-brewing-ex-parrot/6745063"
+          }
+        },
+        {
+          "id": 4,
+          "name": "No Place Like Gnome",
+          "style": "Ale Other - Brown",
+          "abv": 5,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.05,
+            "count": 16,
+            "url": "https://untappd.com/b/alefarm-brewing-no-place-like-gnome/6895048"
+          }
+        },
+        {
+          "id": 5,
+          "name": "Found",
+          "style": "IPA - West Coast Double",
+          "abv": 8,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.63,
+            "count": 948,
+            "url": "https://untappd.com/b/alefarm-brewing-found/6680856"
+          }
+        },
+        {
+          "id": 6,
+          "name": "A Soft Place To Fall",
+          "style": "IPA - Session",
+          "abv": 4.5,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.64,
+            "count": 1248,
+            "url": "https://untappd.com/b/alefarm-brewing-a-soft-place-to-fall/6134762"
+          }
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "name": "Sibeeria Brewery",
+      "location": "CZ",
+      "stand": 40,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 344,
+          "name": "Smoke Lady",
+          "style": "Lager Other - Rauchbier",
+          "abv": 5.5,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.71,
+            "count": 809,
+            "url": "https://untappd.com/b/sibeeria-brewery-smoke-lady/6620632"
+          }
+        },
+        {
+          "id": 345,
+          "name": "One Makes You Larger",
+          "style": "Sour - Pastry",
+          "abv": 6,
+          "session": "friday",
+          "notes": "w/ Lemon",
+          "untappd": {
+            "rating": 3.65,
+            "count": 628,
+            "url": "https://untappd.com/b/sibeeria-brewery-one-makes-you-larger/6610088"
+          }
+        },
+        {
+          "id": 346,
+          "name": "Shadowfarer",
+          "style": "Lager Other - Czech Dark",
+          "abv": 5,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.67,
+            "count": 1213,
+            "url": "https://untappd.com/b/sibeeria-brewery-shadowfarer/6422621"
+          }
+        },
+        {
+          "id": 347,
+          "name": "Margherita Juice",
+          "style": "Sour - Gose",
+          "abv": 4.5,
+          "session": "saturday-early",
+          "notes": "w/ Tomato & Basil",
+          "untappd": {
+            "rating": 3.78,
+            "count": 149,
+            "url": "https://untappd.com/b/sibeeria-brewery-margherita-juice/6911467"
+          }
+        },
+        {
+          "id": 348,
+          "name": "Coffee IPA",
+          "style": "IPA - Coffee",
+          "abv": 6.1,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.78,
+            "count": 734,
+            "url": "https://untappd.com/b/sibeeria-brewery-coffee-ipa-candycane-coffee/6610183"
+          }
+        },
+        {
+          "id": 349,
+          "name": "Friendly Faces",
+          "style": "Sour - Imperial Gose",
+          "abv": 7.1,
+          "session": "saturday-late",
+          "notes": "w/ Apricot & Yuzu",
+          "untappd": {
+            "rating": 3.86,
+            "count": 383,
+            "url": "https://untappd.com/b/sibeeria-brewery-friendly-faces/6799267"
+          }
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "name": "Elmeleven",
+      "location": "SE",
+      "stand": 41,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 85,
+          "name": "Snowball Planet",
+          "style": "Sour - Smoothie",
+          "abv": 5,
+          "session": "friday",
+          "notes": "w/ Gingerbread & Biscuit dough"
+        },
+        {
+          "id": 86,
+          "name": "Identified Flying Object",
+          "style": "Sour - Smoothie",
+          "abv": 5,
+          "session": "friday",
+          "notes": "w/ Mixed berries & Toffee ripple",
+          "untappd": {
+            "rating": 4.32,
+            "count": 195,
+            "url": "https://untappd.com/b/elmeleven-identified-flying-object-pulp/6912998"
+          }
+        },
+        {
+          "id": 87,
+          "name": "Star Maker",
+          "style": "Stout - Imperial Pastry",
+          "abv": 10,
+          "session": "saturday-early",
+          "notes": "w/ Dark chocolate marble cake",
+          "untappd": {
+            "rating": 4.08,
+            "count": 636,
+            "url": "https://untappd.com/b/elmeleven-star-maker-melt/6720260"
+          }
+        },
+        {
+          "id": 88,
+          "name": "Subzero",
+          "style": "Sour - Smoothie",
+          "abv": 5,
+          "session": "saturday-early",
+          "notes": "w/ Winter berries & Orange"
+        },
+        {
+          "id": 89,
+          "name": "Upside Down On Purpose",
+          "style": "Sour - Smoothie",
+          "abv": 5,
+          "session": "saturday-late",
+          "notes": "Collab w/ One Drop, w/ Northern berries & Southern fruits",
+          "untappd": {
+            "rating": 4.29,
+            "count": 144,
+            "url": "https://untappd.com/b/elmeleven-upside-down-on-purpose-pulp-w-one-drop/6911352"
+          }
+        },
+        {
+          "id": 90,
+          "name": "Airwave",
+          "style": "Sour - Smoothie",
+          "abv": 5,
+          "session": "saturday-late",
+          "notes": "w/ Mango, Peach, Apricot & Lemon",
+          "untappd": {
+            "rating": 4.33,
+            "count": 1113,
+            "url": "https://untappd.com/b/elmeleven-airwave-pulp/6800364"
+          }
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "name": "BLAS",
+      "location": "DK",
+      "stand": 42,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 31,
+          "name": "Henriks Drillenisse 2026",
+          "style": "IPA - Hazy Double",
+          "abv": 8,
+          "session": "friday",
+          "untappd": {
+            "rating": null,
+            "count": 0,
+            "url": "https://untappd.com/b/blas-henriks-drillenisse-2026/7176366"
+          },
+          "description": {
+            "text": "Henriks Drillenisse er tilbage for fjerde år - en ægte jule tradition mellem BLAS og Beershoppen. I år har vi skabt en lækker økologiske Hazy Double IPA med to af de mest kendte humle fra USA - Citra og Mosaic.",
+            "source": "https://untappd.com/b/blas-henriks-drillenisse-2026/7176366"
+          }
+        },
+        {
+          "id": 32,
+          "name": "D:15 Barley Wine",
+          "style": "Barley Wine",
+          "abv": 10,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.92,
+            "count": 33,
+            "url": "https://untappd.com/b/blas-d-15-barley-wine/6825943"
+          }
+        },
+        {
+          "id": 33,
+          "name": "Howdy",
+          "style": "Pilsner - West Coast",
+          "abv": 5.3,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.82,
+            "count": 42,
+            "url": "https://untappd.com/b/blas-howdy/6999099"
+          }
+        },
+        {
+          "id": 34,
+          "name": "Core Range: American Brown Ale",
+          "style": "Ale Other - American Brown",
+          "abv": 6.5,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.63,
+            "count": 202,
+            "url": "https://untappd.com/b/blas-core-range-american-brown-ale/6514043"
+          }
+        },
+        {
+          "id": 35,
+          "name": "Core range: Czech Lager",
+          "style": "Lager Other - Czech",
+          "abv": 4.8,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.54,
+            "count": 640,
+            "url": "https://untappd.com/b/blas-core-range-czech-style-lager/6220757"
+          }
+        },
+        {
+          "id": 36,
+          "name": "Den Gamle Munk",
+          "style": "Belgian Ale - Dubbel",
+          "abv": 9.5,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": null,
+            "count": 0,
+            "url": "https://untappd.com/b/blas-den-gamle-munk/7176373"
+          },
+          "description": {
+            "text": "Den Gamle Munk er en julebryg skabt af BLAS og Kolding Gårdbryggeri for vores lokale øl pusher, Henrik Feldthaus, fra Beershoppen. Brygget med de bedste økologiske malt fra Gyrup og med stor respekt for belgiske bryggetradition.",
+            "source": "https://untappd.com/b/blas-den-gamle-munk/7176373"
+          }
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "name": "Revenant Brewing Project",
+      "location": "FI",
+      "stand": 43,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 302,
+          "name": "ECHO",
+          "style": "IPA - Double",
+          "abv": 8,
+          "session": "friday",
+          "untappd": {
+            "rating": null,
+            "count": 0,
+            "url": "https://untappd.com/b/revenant-brewing-project-echo/7544207"
+          },
+          "description": {
+            "text": "Sometimes we are heard even though we hear nothing at all. Echo is a hazy DIPA at 8% abv.",
+            "source": "https://untappd.com/b/revenant-brewing-project-echo/7544207"
+          }
+        },
+        {
+          "id": 303,
+          "name": "Duality",
+          "style": "Stout - Imperial",
+          "abv": 12,
+          "session": "friday",
+          "untappd": {
+            "rating": 4.11,
+            "count": 2147,
+            "url": "https://untappd.com/b/revenant-brewing-project-duality/6583527"
+          }
+        },
+        {
+          "id": 304,
+          "name": "Ember",
+          "style": "IPA - Hazy",
+          "abv": 6.5,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 4.23,
+            "count": 58,
+            "url": "https://untappd.com/b/revenant-brewing-project-ember/6911083"
+          }
+        },
+        {
+          "id": 305,
+          "name": "Duality",
+          "style": "Stout - Imperial",
+          "abv": 12,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 4.11,
+            "count": 2147,
+            "url": "https://untappd.com/b/revenant-brewing-project-duality/6583527"
+          }
+        },
+        {
+          "id": 306,
+          "name": "Evernight",
+          "style": "IPA - Double",
+          "abv": 8,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 4.3,
+            "count": 58,
+            "url": "https://untappd.com/b/revenant-brewing-project-evernight/6911096"
+          }
+        },
+        {
+          "id": 307,
+          "name": "Duality",
+          "style": "Stout - Imperial",
+          "abv": 12,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 4.11,
+            "count": 2147,
+            "url": "https://untappd.com/b/revenant-brewing-project-duality/6583527"
+          }
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "name": "Gravity Well Brewing Co",
+      "location": "UK",
+      "stand": 44,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 169,
+          "name": "Termination Shock",
+          "style": "Pale Ale - Hazy",
+          "abv": 5,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.87,
+            "count": 3109,
+            "url": "https://untappd.com/b/gravity-well-brewing-co-termination-shock/3698911"
+          }
+        },
+        {
+          "id": 170,
+          "name": "The Great Silence",
+          "style": "IPA - Hazy",
+          "abv": 6.2,
+          "session": "friday",
+          "untappd": {
+            "rating": 4.03,
+            "count": 36,
+            "url": "https://untappd.com/b/gravity-well-brewing-co-the-great-silence/6963034"
+          }
+        },
+        {
+          "id": 171,
+          "name": "Biosignatures",
+          "style": "Pale Ale - Hazy",
+          "abv": 4.5,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.8,
+            "count": 65,
+            "url": "https://untappd.com/b/gravity-well-brewing-co-biosignatures/6920473"
+          }
+        },
+        {
+          "id": 172,
+          "name": "Spinoza's Dog",
+          "style": "IPA - Hazy",
+          "abv": 6.5,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 4.07,
+            "count": 89,
+            "url": "https://untappd.com/b/gravity-well-brewing-co-spinoza-s-dog/6859201"
+          }
+        },
+        {
+          "id": 173,
+          "name": "Laszlo Junior",
+          "style": "Pale Ale - Hazy",
+          "abv": 5.2,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.96,
+            "count": 402,
+            "url": "https://untappd.com/b/gravity-well-brewing-co-laszlo-junior/6288682"
+          }
+        },
+        {
+          "id": 174,
+          "name": "Localised Aurora",
+          "style": "IPA - Hazy",
+          "abv": 6.5,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.95,
+            "count": 125,
+            "url": "https://untappd.com/b/gravity-well-brewing-co-localised-aurora/6823608"
+          }
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "name": "Flying Couch Brewing",
+      "location": "DK",
+      "stand": 45,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 109,
+          "name": "Minotår",
+          "style": "Ale Other - Kölsch",
+          "abv": 4.6,
+          "session": "friday",
+          "untappd": {
+            "rating": null,
+            "count": 0,
+            "url": "https://untappd.com/b/flying-couch-brewing-minotar/6921724"
+          },
+          "description": {
+            "text": "A banger of a Kölsch made with our friends from White Labs with WLP0029 and with Riwaka hops",
+            "source": "https://untappd.com/b/flying-couch-brewing-minotar/6921724"
+          }
+        },
+        {
+          "id": 110,
+          "name": "Skillema Dunke Dunke Juice",
+          "style": "IPA - Hazy",
+          "abv": 5.6,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.66,
+            "count": 262,
+            "url": "https://untappd.com/b/flying-couch-brewing-skillema-dunke-dunke-juice/6432081"
+          }
+        },
+        {
+          "id": 111,
+          "name": "Hvad Lager Du?",
+          "style": "Lager Other",
+          "abv": 5,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": null,
+            "count": 0,
+            "url": "https://untappd.com/b/flying-couch-brewing-hvad-lager-du/6921740"
+          },
+          "description": {
+            "text": "Time for some funkiness! We made a lager with Sorachi Ace, and then added cucumber juice, pickle juice, gherkin, and dill fronds.",
+            "source": "https://untappd.com/b/flying-couch-brewing-hvad-lager-du/6921740"
+          }
+        },
+        {
+          "id": 112,
+          "name": "Høvle Dance",
+          "style": "IPA - Hazy Session",
+          "abv": 4.2,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": null,
+            "count": 5,
+            "url": "https://untappd.com/b/flying-couch-brewing-hovle-dance/6921744"
+          },
+          "description": {
+            "text": "With Riwaka, Wakatu, Sabro, Nelson Sauvin, and Southern Cross.",
+            "source": "https://untappd.com/b/flying-couch-brewing-hovle-dance/6921744"
+          }
+        },
+        {
+          "id": 113,
+          "name": "Mon Cherry",
+          "style": "Sour - Fruited",
+          "abv": 7,
+          "session": "saturday-late"
+        },
+        {
+          "id": 114,
+          "name": "Helstegt",
+          "style": "IPA - Hazy Double",
+          "abv": 8,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": null,
+            "count": 0,
+            "url": "https://untappd.com/b/flying-couch-brewing-helstegt/6921750"
+          },
+          "description": {
+            "text": "With Motueka, Waimea, Kohia Nelson, Nectaron, and Kohia Nelson SubZero Hop Kief",
+            "source": "https://untappd.com/b/flying-couch-brewing-helstegt/6921750"
+          }
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "name": "Blech.Brut / Atelier Vrai",
+      "location": "DE",
+      "stand": 46,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 37,
+          "name": "Atelier Vrai Chuzpe",
+          "style": "IPA - West Coast",
+          "abv": 6.7,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.78,
+            "count": 266,
+            "url": "https://untappd.com/b/atelier-vrai-chuzpe-zettelwirtschaft-series-3-5/6818150"
+          }
+        },
+        {
+          "id": 38,
+          "name": "Blech.Brut Sunny Side",
+          "style": "IPA - Hazy Triple",
+          "abv": 9.4,
+          "session": "friday",
+          "untappd": {
+            "rating": 4.4,
+            "count": 28,
+            "url": "https://untappd.com/b/blech-brut-sunny-side/7134216"
+          },
+          "description": {
+            "text": "dry hopped with Columbus, Nelson Sauvin & Tropical Fusion",
+            "source": "https://untappd.com/b/blech-brut-sunny-side/7134216"
+          }
+        },
+        {
+          "id": 39,
+          "name": "Atelier Vrai never odd or even",
+          "style": "Sour - Smoothie",
+          "abv": 5,
+          "session": "saturday-early"
+        },
+        {
+          "id": 40,
+          "name": "Blech.Brut Frog Life",
+          "style": "IPA - New Zealand",
+          "abv": 6.2,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 4.16,
+            "count": 24,
+            "url": "https://untappd.com/b/blech-brut-frog-life/7030274"
+          },
+          "description": {
+            "text": "dry hopped with Nelson Sauvin & Riwaka",
+            "source": "https://untappd.com/b/blech-brut-frog-life/7030274"
+          }
+        },
+        {
+          "id": 41,
+          "name": "Atelier Vrai Selflove Was My First Romance",
+          "style": "IPA - Hazy Double",
+          "abv": 8.2,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 4.07,
+            "count": 631,
+            "url": "https://untappd.com/b/atelier-vrai-selflove-was-my-first-romance-zettelwirtschaft-series-2-5/6818149"
+          }
+        },
+        {
+          "id": 42,
+          "name": "Blech.Brut Twistbloom",
+          "style": "Pilsner - West Coast",
+          "abv": 4.9,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.83,
+            "count": 385,
+            "url": "https://untappd.com/b/blech-brut-8-bit-twistbloom/6718840"
+          }
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "name": "Anspach & Hobday",
+      "location": "UK",
+      "stand": 47,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 13,
+          "name": "London Black",
+          "style": "Porter - Nitro",
+          "abv": 4.4,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.72,
+            "count": 29404,
+            "url": "https://untappd.com/b/anspach-and-hobday-london-black/4268903"
+          }
+        },
+        {
+          "id": 14,
+          "name": "Ansbacher Festbier",
+          "style": "Lager Other - Festbier",
+          "abv": 5.8,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.64,
+            "count": 800,
+            "url": "https://untappd.com/b/anspach-and-hobday-ansbacher-festbier/5964105"
+          }
+        },
+        {
+          "id": 15,
+          "name": "London Black",
+          "style": "Porter - Nitro",
+          "abv": 4.4,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.72,
+            "count": 29404,
+            "url": "https://untappd.com/b/anspach-and-hobday-london-black/4268903"
+          }
+        },
+        {
+          "id": 16,
+          "name": "Rauchbier",
+          "style": "Lager Other - Rauchbier",
+          "abv": 5,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.83,
+            "count": 22,
+            "url": "https://untappd.com/b/anspach-and-hobday-rauchbier-2026/6996924"
+          }
+        },
+        {
+          "id": 17,
+          "name": "London Black",
+          "style": "Porter - Nitro",
+          "abv": 4.4,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.72,
+            "count": 29404,
+            "url": "https://untappd.com/b/anspach-and-hobday-london-black/4268903"
+          }
+        },
+        {
+          "id": 18,
+          "name": "Hop Pickers' Pale",
+          "style": "Pale Ale",
+          "abv": 4.2,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.6,
+            "count": 1339,
+            "url": "https://untappd.com/b/anspach-and-hobday-hop-pickers-pale/6315712"
+          }
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "name": "Gamborg Brewing Co.",
+      "location": "DK",
+      "stand": 48,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 151,
+          "name": "Talk Birdie To Me",
+          "style": "IPA - Hazy Session",
+          "abv": 5,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.75,
+            "count": 92,
+            "url": "https://untappd.com/b/gamborg-brewing-co-talk-birdie-to-me/6854124"
+          }
+        },
+        {
+          "id": 152,
+          "name": "Port of Tallinn",
+          "style": "Porter - Baltic Porter",
+          "abv": 8.5,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.82,
+            "count": 133,
+            "url": "https://untappd.com/b/gamborg-bryghus-port-of-tallinn/6559744"
+          }
+        },
+        {
+          "id": 153,
+          "name": "Most Flowers Smell Wonderful",
+          "style": "IPA - West Coast",
+          "abv": 7.2,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.68,
+            "count": 82,
+            "url": "https://untappd.com/b/gamborg-brewing-co-most-flowers-smell-wonderful/6854123"
+          }
+        },
+        {
+          "id": 154,
+          "name": "Octo x Pastry Puzzle",
+          "style": "Sour - Pastry",
+          "abv": 6.8,
+          "session": "saturday-early"
+        },
+        {
+          "id": 155,
+          "name": "Lost Trail",
+          "style": "IPA - Hazy Double",
+          "abv": 8.1,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.98,
+            "count": 408,
+            "url": "https://untappd.com/b/gamborg-brewing-co-lost-trail/6711010"
+          }
+        },
+        {
+          "id": 156,
+          "name": "Tiki Trouble",
+          "style": "Sour - Pastry",
+          "abv": 7.4,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.7,
+            "count": 97,
+            "url": "https://untappd.com/b/gamborg-brewing-co-tiki-trouble/6854122"
+          }
+        }
+      ]
+    },
+    {
+      "id": 53,
+      "name": "Fanø Bryghus",
+      "location": "DK",
+      "stand": 49,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 103,
+          "name": "Genius of the Crowd",
+          "style": "Stout - Barrel Aged Imperial",
+          "abv": 12.8,
+          "session": "friday",
+          "notes": "Blend",
+          "untappd": {
+            "rating": 3.83,
+            "count": 588,
+            "url": "https://untappd.com/b/fano-bryghus-genius-of-the-crowd/6044594"
+          }
+        },
+        {
+          "id": 104,
+          "name": "Imellem Esbjerg Og Fanø #3",
+          "style": "Pilsner - India Pale Lager",
+          "abv": 5.5,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.54,
+            "count": 504,
+            "url": "https://untappd.com/b/fano-bryghus-imellem-esbjerg-og-fano-3/4684446"
+          }
+        },
+        {
+          "id": 105,
+          "name": "Jens",
+          "style": "Barley Wine - English",
+          "abv": 12.5,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.73,
+            "count": 104,
+            "url": "https://untappd.com/b/fano-bryghus-jens/6796995"
+          }
+        },
+        {
+          "id": 106,
+          "name": "Bogan Brew",
+          "style": "IPA - Hazy",
+          "abv": 4.8,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.43,
+            "count": 209,
+            "url": "https://untappd.com/b/fano-bryghus-bogan-brew/6348080"
+          }
+        },
+        {
+          "id": 107,
+          "name": "Straight Outta Fanø",
+          "style": "IPA - West Coast",
+          "abv": 7.5,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.63,
+            "count": 240,
+            "url": "https://untappd.com/b/fano-bryghus-straight-outta-fano/6736993"
+          }
+        },
+        {
+          "id": 108,
+          "name": "Turn On the Dark",
+          "style": "Barley Wine - Barrel Aged Blend",
+          "abv": 12.4,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.97,
+            "count": 424,
+            "url": "https://untappd.com/b/fano-bryghus-turn-on-the-dark/5192530"
+          }
+        }
+      ]
+    },
+    {
+      "id": 54,
+      "name": "Popihn",
+      "location": "FR",
+      "stand": 50,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 290,
+          "name": "GRAND CRU RESERVE x BOERENERF 2026",
+          "style": "Wild Ale",
+          "abv": 7,
+          "session": "friday",
+          "untappd": {
+            "rating": 4.2,
+            "count": 79,
+            "url": "https://untappd.com/b/popihn-sauvages-grand-cru-reserve-2026/6856221"
+          }
+        },
+        {
+          "id": 291,
+          "name": "DIPA DDH - TROPICAL FUSION / STRATA / RIWAKA x NANO CINCO",
+          "style": "IPA - Hazy Double",
+          "abv": 8,
+          "session": "friday",
+          "untappd": {
+            "rating": 4.22,
+            "count": 87,
+            "url": "https://untappd.com/b/popihn-dipa-ddh-tropical-fusion-strata-cryo-riwaka-subzero-hop-kief/6905688"
+          }
+        },
+        {
+          "id": 292,
+          "name": "FLORIDA WEISSE - MANGUE / GOYAVE / PASSION",
+          "style": "Sour - Fruited Berliner Weisse",
+          "abv": 5.5,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": null,
+            "count": 0,
+            "url": "https://untappd.com/b/popihn-florida-weisse-mangue-goyave-passion/6910030"
+          }
+        },
+        {
+          "id": 293,
+          "name": "TIPA DDH - NELSON SAUVIN EARLY / CITRA / RIWAKA x BAS CANADA",
+          "style": "IPA - Hazy Triple",
+          "abv": 9.6,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": null,
+            "count": 5,
+            "url": "https://untappd.com/b/popihn-tipa-ddh-nelson-sauvin-citra-riwaka/6910043"
+          }
+        },
+        {
+          "id": 294,
+          "name": "PETITE SAISON DE FOUDRE 2026",
+          "style": "Saison",
+          "abv": 5.5,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": null,
+            "count": 0,
+            "url": "https://untappd.com/b/popihn-petite-saison-de-foudre-ed-2026/6910038"
+          }
+        },
+        {
+          "id": 295,
+          "name": "IMPERIAL STOUT - BOURBON BA 30 MONTHS - VANILLA / COFFEE",
+          "style": "Stout - Imperial",
+          "abv": 12,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 4.17,
+            "count": 32,
+            "url": "https://untappd.com/b/popihn-imperial-stout-bourbon-barrel-30-month-aged-vanilla-coffee/6878496"
+          }
+        }
+      ]
+    },
+    {
+      "id": 55,
+      "name": "Pedra",
+      "location": "ES",
+      "stand": 51,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 271,
+          "name": "Brett De Jour",
+          "style": "Wild Ale",
+          "abv": 6.6,
+          "session": "friday",
+          "notes": "Bottle pour",
+          "untappd": {
+            "rating": null,
+            "count": 5,
+            "url": "https://untappd.com/b/pedra-brett-de-jour/6915158"
+          },
+          "description": {
+            "text": "A blend of two beers, a wild ale and a saison with Brettononyces",
+            "source": "https://untappd.com/b/pedra-brett-de-jour/6915158"
+          }
+        },
+        {
+          "id": 272,
+          "name": "250",
+          "style": "Saison",
+          "abv": 6.5,
+          "session": "friday",
+          "notes": "Bottle pour",
+          "untappd": {
+            "rating": 4.04,
+            "count": 47,
+            "url": "https://untappd.com/b/pedra-250/6454404"
+          }
+        },
+        {
+          "id": 273,
+          "name": "Pajarito J.",
+          "style": "Saison",
+          "abv": 6.6,
+          "session": "friday",
+          "notes": "Bottle pour",
+          "untappd": {
+            "rating": 4.08,
+            "count": 127,
+            "url": "https://untappd.com/b/pedra-pajarito-j/6775871"
+          }
+        },
+        {
+          "id": 274,
+          "name": "Assemblage",
+          "style": "Wild Ale",
+          "abv": 7,
+          "session": "friday",
+          "notes": "Magnum, Bottle pour",
+          "untappd": {
+            "rating": 4.02,
+            "count": 86,
+            "url": "https://untappd.com/b/pedra-assemblage/6637676"
+          }
+        },
+        {
+          "id": 275,
+          "name": "Susu Pétalos",
+          "style": "Wild Ale",
+          "abv": 6.6,
+          "session": "saturday-early",
+          "notes": "Bottle pour",
+          "untappd": {
+            "rating": null,
+            "count": 4,
+            "url": "https://untappd.com/b/pedra-susu-petalos/6915146"
+          },
+          "description": {
+            "text": "Wild ale macerated with light touch of Wild plums",
+            "source": "https://untappd.com/b/pedra-susu-petalos/6915146"
+          }
+        },
+        {
+          "id": 276,
+          "name": "Pre Code",
+          "style": "Wild Ale",
+          "abv": 7,
+          "session": "saturday-early",
+          "notes": "Bottle pour",
+          "untappd": {
+            "rating": null,
+            "count": 4,
+            "url": "https://untappd.com/b/pedra-pre-code/6915149"
+          },
+          "description": {
+            "text": "Blend of 2 wild ale beers, one of which has been fermented and aged in a barrel",
+            "source": "https://untappd.com/b/pedra-pre-code/6915149"
+          }
+        },
+        {
+          "id": 277,
+          "name": "A la mierda Cindy!",
+          "style": "Wild Ale",
+          "abv": 6.6,
+          "session": "saturday-early",
+          "notes": "Bottle pour",
+          "untappd": {
+            "rating": null,
+            "count": 4,
+            "url": "https://untappd.com/b/pedra-a-la-mierda-cindy/6915141"
+          },
+          "description": {
+            "text": "A blend of 3 wild beers,with a light touch of cranberry and blueberry, one of which has been fermented and aged in a barrel",
+            "source": "https://untappd.com/b/pedra-a-la-mierda-cindy/6915141"
+          }
+        },
+        {
+          "id": 278,
+          "name": "Nébula",
+          "style": "Wild Ale",
+          "abv": 6.6,
+          "session": "saturday-early",
+          "notes": "Magnum, Bottle pour",
+          "untappd": {
+            "rating": 4.17,
+            "count": 16,
+            "url": "https://untappd.com/b/pedra-nebula/6637942"
+          }
+        },
+        {
+          "id": 279,
+          "name": "Pajarito J.",
+          "style": "Saison",
+          "abv": 6.6,
+          "session": "saturday-late",
+          "notes": "Bottle pour",
+          "untappd": {
+            "rating": 4.08,
+            "count": 127,
+            "url": "https://untappd.com/b/pedra-pajarito-j/6775871"
+          }
+        },
+        {
+          "id": 280,
+          "name": "Otto",
+          "style": "Wild Ale",
+          "abv": 7,
+          "session": "saturday-late",
+          "notes": "Bottle pour",
+          "untappd": {
+            "rating": null,
+            "count": 4,
+            "url": "https://untappd.com/b/pedra-otto/6915161"
+          },
+          "description": {
+            "text": "Blend of 2 wild ales, one of which has been fermented and aged in a barrel.",
+            "source": "https://untappd.com/b/pedra-otto/6915161"
+          }
+        },
+        {
+          "id": 281,
+          "name": "Rage Against the Tangerine",
+          "style": "Saison",
+          "abv": 6.6,
+          "session": "saturday-late",
+          "notes": "Bottle pour",
+          "untappd": {
+            "rating": 4.26,
+            "count": 41,
+            "url": "https://untappd.com/b/pedra-rage-against-the-tangerine/6637748"
+          }
+        },
+        {
+          "id": 282,
+          "name": "A la mierda Cindy!",
+          "style": "Wild Ale",
+          "abv": 6.6,
+          "session": "saturday-late",
+          "notes": "Bottle pour",
+          "untappd": {
+            "rating": null,
+            "count": 4,
+            "url": "https://untappd.com/b/pedra-a-la-mierda-cindy/6915141"
+          },
+          "description": {
+            "text": "A blend of 3 wild beers,with a light touch of cranberry and blueberry, one of which has been fermented and aged in a barrel",
+            "source": "https://untappd.com/b/pedra-a-la-mierda-cindy/6915141"
+          }
+        },
+        {
+          "id": 283,
+          "name": "Nocta",
+          "style": "Wild Ale",
+          "abv": 6.6,
+          "session": "saturday-late",
+          "notes": "Bottle pour",
+          "untappd": {
+            "rating": 4.33,
+            "count": 22,
+            "url": "https://untappd.com/b/pedra-nocta/6637757"
+          }
+        }
+      ]
+    },
+    {
+      "id": 56,
+      "name": "Bådin Bryggeri",
+      "location": "NO",
+      "stand": 52,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 43,
+          "name": "Polar Pintxos",
+          "style": "Pilsner - West Coast",
+          "abv": 5.2,
+          "session": "friday",
+          "notes": "Collab w/ Gross",
+          "untappd": {
+            "rating": 3.59,
+            "count": 442,
+            "url": "https://untappd.com/b/badin-bryggeri-polar-pintxos/6667134"
+          }
+        },
+        {
+          "id": 44,
+          "name": "Watermen",
+          "style": "IPA - Hazy Double",
+          "abv": 8,
+          "session": "friday",
+          "notes": "Collab w/ Commonwealth",
+          "untappd": {
+            "rating": 3.96,
+            "count": 125,
+            "url": "https://untappd.com/b/badin-bryggeri-watermen/6918996"
+          }
+        },
+        {
+          "id": 45,
+          "name": "Silent Night Shift",
+          "style": "Lager Other - Schwarzbier",
+          "abv": 4.7,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.58,
+            "count": 131,
+            "url": "https://untappd.com/b/badin-bryggeri-silent-night-shift/6826206"
+          }
+        },
+        {
+          "id": 46,
+          "name": "Swim",
+          "style": "IPA - West Coast",
+          "abv": 7,
+          "session": "saturday-early",
+          "notes": "Collab w/ Outer Range",
+          "untappd": {
+            "rating": 3.74,
+            "count": 1836,
+            "url": "https://untappd.com/b/badin-bryggeri-swim/6373463"
+          }
+        },
+        {
+          "id": 47,
+          "name": "Mono Track 3 - Single Hop Manilita",
+          "style": "IPA - Hazy",
+          "abv": 6.5,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.81,
+            "count": 642,
+            "url": "https://untappd.com/b/badin-bryggeri-mono-track-3-single-hop-manilita/6707852"
+          }
+        },
+        {
+          "id": 48,
+          "name": "Future Proof",
+          "style": "IPA - West Coast",
+          "abv": 6,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.7,
+            "count": 564,
+            "url": "https://untappd.com/b/badin-bryggeri-future-proof/6576667"
+          }
+        }
+      ]
+    },
+    {
+      "id": 57,
+      "name": "Mash Gang",
+      "location": "UK",
+      "stand": 53,
+      "noLow": true,
+      "beers": [
+        {
+          "id": 229,
+          "name": "Chug",
+          "style": "Non-Alcoholic - Hazy IPA",
+          "abv": 0.5,
+          "session": "friday",
+          "untappd": {
+            "rating": null,
+            "count": 0,
+            "url": "https://untappd.com/b/mash-gang-chug-0-5/7200852"
+          }
+        },
+        {
+          "id": 230,
+          "name": "Lesser Evil",
+          "style": "Non-Alcoholic - Chocolate Stout",
+          "abv": 0.5,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.64,
+            "count": 1372,
+            "url": "https://untappd.com/b/mash-gang-lesser-evil/6094552"
+          }
+        },
+        {
+          "id": 231,
+          "name": "Journey Juice",
+          "style": "Non-Alcoholic - Fruited IPA",
+          "abv": 0.5,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.47,
+            "count": 1072,
+            "url": "https://untappd.com/b/mash-gang-journey-juice/6274599"
+          }
+        },
+        {
+          "id": 232,
+          "name": "Glug",
+          "style": "Non-Alcoholic - Lager",
+          "abv": 0.5,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.18,
+            "count": 357,
+            "url": "https://untappd.com/b/mash-gang-glug-lager/6371366"
+          }
+        },
+        {
+          "id": 233,
+          "name": "Chug",
+          "style": "Non-Alcoholic - Hazy IPA",
+          "abv": 0.5,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": null,
+            "count": 0,
+            "url": "https://untappd.com/b/mash-gang-chug-0-5/7200852"
+          }
+        },
+        {
+          "id": 234,
+          "name": "Lesser Evil",
+          "style": "Non-Alcoholic - Chocolate Stout",
+          "abv": 0.5,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.64,
+            "count": 1372,
+            "url": "https://untappd.com/b/mash-gang-lesser-evil/6094552"
+          }
+        }
+      ]
+    },
+    {
+      "id": 58,
+      "name": "Weingut Achim Dürr",
+      "location": "DE",
+      "stand": 54,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 458,
+          "name": "Alea",
+          "style": "Wine",
+          "abv": null,
+          "session": "friday"
+        },
+        {
+          "id": 459,
+          "name": "Alea",
+          "style": "Wine",
+          "abv": null,
+          "session": "saturday-early"
+        },
+        {
+          "id": 460,
+          "name": "Alea",
+          "style": "Wine",
+          "abv": null,
+          "session": "saturday-late"
+        },
+        {
+          "id": 461,
+          "name": "Grauburgunder",
+          "style": "Wine - White",
+          "abv": null,
+          "session": "friday",
+          "untappd": {
+            "rating": null,
+            "count": 0,
+            "url": "https://untappd.com/b/weingut-achim-durr-grauburgunder-vom-muschelkalk/7024368"
+          }
+        },
+        {
+          "id": 462,
+          "name": "Grauburgunder",
+          "style": "Wine - White",
+          "abv": null,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": null,
+            "count": 0,
+            "url": "https://untappd.com/b/weingut-achim-durr-grauburgunder-vom-muschelkalk/7024368"
+          }
+        },
+        {
+          "id": 463,
+          "name": "Grauburgunder",
+          "style": "Wine - White",
+          "abv": null,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": null,
+            "count": 0,
+            "url": "https://untappd.com/b/weingut-achim-durr-grauburgunder-vom-muschelkalk/7024368"
+          }
+        },
+        {
+          "id": 464,
+          "name": "Chardonnay",
+          "style": "Wine - White",
+          "abv": null,
+          "session": "friday",
+          "untappd": {
+            "rating": null,
+            "count": 0,
+            "url": "https://untappd.com/b/weingut-achim-durr-chardonnay-vom-keuper/7056359"
+          }
+        },
+        {
+          "id": 465,
+          "name": "Chardonnay",
+          "style": "Wine - White",
+          "abv": null,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": null,
+            "count": 0,
+            "url": "https://untappd.com/b/weingut-achim-durr-chardonnay-vom-keuper/7056359"
+          }
+        },
+        {
+          "id": 466,
+          "name": "Chardonnay",
+          "style": "Wine - White",
+          "abv": null,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": null,
+            "count": 0,
+            "url": "https://untappd.com/b/weingut-achim-durr-chardonnay-vom-keuper/7056359"
+          }
+        },
+        {
+          "id": 467,
+          "name": "Sauvignon Blanc",
+          "style": "Wine - White",
+          "abv": null,
+          "session": "friday",
+          "untappd": {
+            "rating": null,
+            "count": 0,
+            "url": "https://untappd.com/b/weingut-achim-durr-sauvignon-blanc-vom-keuper/7160763"
+          }
+        },
+        {
+          "id": 468,
+          "name": "Sauvignon Blanc",
+          "style": "Wine - White",
+          "abv": null,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": null,
+            "count": 0,
+            "url": "https://untappd.com/b/weingut-achim-durr-sauvignon-blanc-vom-keuper/7160763"
+          }
+        },
+        {
+          "id": 469,
+          "name": "Sauvignon Blanc",
+          "style": "Wine - White",
+          "abv": null,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": null,
+            "count": 0,
+            "url": "https://untappd.com/b/weingut-achim-durr-sauvignon-blanc-vom-keuper/7160763"
+          }
+        },
+        {
+          "id": 470,
+          "name": "Blaufränkisch",
+          "style": "Wine - Red",
+          "abv": null,
+          "session": "friday"
+        },
+        {
+          "id": 471,
+          "name": "Blaufränkisch",
+          "style": "Wine - Red",
+          "abv": null,
+          "session": "saturday-early"
+        },
+        {
+          "id": 472,
+          "name": "Blaufränkisch",
+          "style": "Wine - Red",
+          "abv": null,
+          "session": "saturday-late"
+        },
+        {
+          "id": 473,
+          "name": "Pinot Noir Buntsandstein",
+          "style": "Wine - Red",
+          "abv": null,
+          "session": "friday",
+          "untappd": {
+            "rating": null,
+            "count": 0,
+            "url": "https://untappd.com/b/weingut-achim-durr-pinot-noir-vom-buntsandstein/7108608"
+          }
+        },
+        {
+          "id": 474,
+          "name": "Pinot Noir Buntsandstein",
+          "style": "Wine - Red",
+          "abv": null,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": null,
+            "count": 0,
+            "url": "https://untappd.com/b/weingut-achim-durr-pinot-noir-vom-buntsandstein/7108608"
+          }
+        },
+        {
+          "id": 475,
+          "name": "Pinot Noir Buntsandstein",
+          "style": "Wine - Red",
+          "abv": null,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": null,
+            "count": 0,
+            "url": "https://untappd.com/b/weingut-achim-durr-pinot-noir-vom-buntsandstein/7108608"
+          }
+        }
+      ]
+    },
+    {
+      "id": 59,
+      "name": "Dry & Bitter Brewing Company",
+      "location": "DK",
+      "stand": 55,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 79,
+          "name": "Bowltic Porter",
+          "style": "Porter - Baltic Porter",
+          "abv": 9,
+          "session": "friday",
+          "notes": "Collab w/ Fanø Bryghus",
+          "untappd": {
+            "rating": 3.69,
+            "count": 372,
+            "url": "https://untappd.com/b/dry-and-bitter-brewing-company-bowltic-porter/6509166"
+          }
+        },
+        {
+          "id": 80,
+          "name": "Christian Bale Ale",
+          "style": "IPA - Session",
+          "abv": 4.6,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.61,
+            "count": 17610,
+            "url": "https://untappd.com/b/dry-and-bitter-brewing-company-christian-bale-ale/1095513"
+          }
+        },
+        {
+          "id": 81,
+          "name": "Garden Party",
+          "style": "IPA - Hazy",
+          "abv": 5.3,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.56,
+            "count": 91,
+            "url": "https://untappd.com/b/dry-and-bitter-brewing-company-garden-party/6798226"
+          }
+        },
+        {
+          "id": 82,
+          "name": "Double Dippy Doo",
+          "style": "IPA - Double",
+          "abv": 7.5,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 4.0,
+            "count": 31357,
+            "url": "https://untappd.com/b/dry-and-bitter-brewing-company-double-dippy-doo/2941003"
+          }
+        },
+        {
+          "id": 83,
+          "name": "Rhyme Or Reason",
+          "style": "Pale Ale - Hazy",
+          "abv": 4.8,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.59,
+            "count": 85,
+            "url": "https://untappd.com/b/dry-and-bitter-brewing-company-rhyme-or-reason/6728172"
+          }
+        },
+        {
+          "id": 84,
+          "name": "Jamnation Raspberry",
+          "style": "Sour - Fruited",
+          "abv": 5.5,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.51,
+            "count": 208,
+            "url": "https://untappd.com/b/dry-and-bitter-brewing-company-jamnation-raspberry/6631100"
+          }
+        }
+      ]
+    },
+    {
+      "id": 60,
+      "name": "Sáez & Son",
+      "location": "ES",
+      "stand": 56,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 314,
+          "name": "TERP FRESH PRESS",
+          "style": "Sour - Smoothie",
+          "abv": 6,
+          "session": "friday",
+          "notes": "w/ Terpenes",
+          "untappd": {
+            "rating": null,
+            "count": 2,
+            "url": "https://untappd.com/b/saez-and-son-terp-fresh-press/7180590"
+          },
+          "description": {
+            "text": "Fresh Press inaugura, junto a Golden Hour, nuestra nueva TERP Series: Smoothie Sours cargadas de fruta y reforzadas con terpenos.",
+            "source": "https://untappd.com/b/saez-and-son-terp-fresh-press/7180590"
+          }
+        },
+        {
+          "id": 315,
+          "name": "MISTBOUND",
+          "style": "Ale Other",
+          "abv": 8.5,
+          "session": "friday",
+          "untappd": {
+            "rating": 4.08,
+            "count": 21,
+            "url": "https://untappd.com/b/saez-and-son-mistbound/7180150"
+          }
+        },
+        {
+          "id": 316,
+          "name": "Fjord Juice",
+          "style": "Sour - Smoothie",
+          "abv": 6,
+          "session": "saturday-early"
+        },
+        {
+          "id": 317,
+          "name": "Twisted Mary",
+          "style": "Sour - Gose",
+          "abv": 6,
+          "session": "saturday-early",
+          "notes": "w/ Tomato",
+          "untappd": {
+            "rating": 3.65,
+            "count": 781,
+            "url": "https://untappd.com/b/loko-twisted-mary/6305247"
+          }
+        },
+        {
+          "id": 318,
+          "name": "TERP GOLDEN HOUR",
+          "style": "Sour - Smoothie",
+          "abv": 6,
+          "session": "saturday-late",
+          "notes": "w/ Terpenes",
+          "untappd": {
+            "rating": null,
+            "count": 2,
+            "url": "https://untappd.com/b/saez-and-son-terp-golden-hour/7180377"
+          },
+          "description": {
+            "text": "Golden Hour es una de las dos primeras cervezas de nuestra nueva TERP Series.",
+            "source": "https://untappd.com/b/saez-and-son-terp-golden-hour/7180377"
+          }
+        },
+        {
+          "id": 319,
+          "name": "KRÄM LUNATICA",
+          "style": "Stout - Cream",
+          "abv": 10,
+          "session": "saturday-late"
+        }
+      ]
+    },
+    {
+      "id": 61,
+      "name": "Flying Guru Brewery",
+      "location": "SE",
+      "stand": 57,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 115,
+          "name": "Sól",
+          "style": "Wild Ale",
+          "abv": 6.5,
+          "session": "friday"
+        },
+        {
+          "id": 116,
+          "name": "Urd",
+          "style": "Wild Ale",
+          "abv": 7.6,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.62,
+            "count": 79,
+            "url": "https://untappd.com/b/flying-guru-brewery-urd/6799034"
+          }
+        },
+        {
+          "id": 117,
+          "name": "Sól",
+          "style": "Wild Ale",
+          "abv": 6.5,
+          "session": "saturday-early"
+        },
+        {
+          "id": 118,
+          "name": "Verdande",
+          "style": "Wild Ale",
+          "abv": 6,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.66,
+            "count": 67,
+            "url": "https://untappd.com/b/flying-guru-brewery-verdande/6799036"
+          }
+        },
+        {
+          "id": 119,
+          "name": "Sól",
+          "style": "Wild Ale",
+          "abv": 6.5,
+          "session": "saturday-late"
+        },
+        {
+          "id": 120,
+          "name": "Skuld",
+          "style": "Wild Ale",
+          "abv": 7.2,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.61,
+            "count": 38,
+            "url": "https://untappd.com/b/flying-guru-brewery-skuld/6799037"
+          }
+        }
+      ]
+    },
+    {
+      "id": 62,
+      "name": "Cloudwater Brew Co.",
+      "location": "UK",
+      "stand": 58,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 55,
+          "name": "Wearing Out Sandals",
+          "style": "IPA - DDH",
+          "abv": 6.5,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.96,
+            "count": 91,
+            "url": "https://untappd.com/b/cloudwater-brew-co-wearing-out-sandals/6918922"
+          }
+        },
+        {
+          "id": 56,
+          "name": "Hooked On Nectaron",
+          "style": "IPA - DDH",
+          "abv": 7,
+          "session": "friday",
+          "untappd": {
+            "rating": 4.09,
+            "count": 787,
+            "url": "https://untappd.com/b/cloudwater-brew-co-hooked-on-nectaron/6800166"
+          }
+        },
+        {
+          "id": 57,
+          "name": "No One Left To Follow",
+          "style": "Sour - Barrel Aged",
+          "abv": 5.7,
+          "session": "saturday-early",
+          "notes": "w/ Cherry",
+          "untappd": {
+            "rating": 3.8,
+            "count": 103,
+            "url": "https://untappd.com/b/cloudwater-brew-co-no-one-left-to-follow/6819287"
+          }
+        },
+        {
+          "id": 58,
+          "name": "Sibylla",
+          "style": "IPA - Hazy",
+          "abv": 6,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.78,
+            "count": 264,
+            "url": "https://untappd.com/b/cloudwater-brew-co-sibylla/6828213"
+          }
+        },
+        {
+          "id": 59,
+          "name": "4 Inch Door Hinge",
+          "style": "IPA - DDH Hazy",
+          "abv": 7,
+          "session": "saturday-late",
+          "notes": "w/ Orange zest",
+          "untappd": {
+            "rating": 3.96,
+            "count": 175,
+            "url": "https://untappd.com/b/cloudwater-brew-co-4-inch-door-hinge/6853329"
+          }
+        },
+        {
+          "id": 60,
+          "name": "Persistence Is Utile VIII x LOT61",
+          "style": "Stout - Imperial",
+          "abv": 11,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 4.02,
+            "count": 770,
+            "url": "https://untappd.com/b/cloudwater-brew-co-persistence-is-utile-viii/6672905"
+          }
+        }
+      ]
+    },
+    {
+      "id": 63,
+      "name": "Pissego",
+      "location": "DK",
+      "stand": 59,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 284,
+          "name": "Slyngelsaft",
+          "style": "IPA - Hazy",
+          "abv": 5.3,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.53,
+            "count": 434,
+            "url": "https://untappd.com/b/pissego-slyngelsaft/5411195"
+          }
+        },
+        {
+          "id": 285,
+          "name": "Savlebajer",
+          "style": "Sour - Fruited",
+          "abv": 5.6,
+          "session": "friday",
+          "notes": "w/ Yuzu",
+          "untappd": {
+            "rating": 3.43,
+            "count": 184,
+            "url": "https://untappd.com/b/pissego-savlebajer/5997804"
+          }
+        },
+        {
+          "id": 286,
+          "name": "Sydlandssaft",
+          "style": "Ale Other - Blonde",
+          "abv": 5,
+          "session": "saturday-early",
+          "notes": "w/ Peach",
+          "untappd": {
+            "rating": 3.56,
+            "count": 34,
+            "url": "https://untappd.com/b/pissego-sydlandssaft/6744171"
+          }
+        },
+        {
+          "id": 287,
+          "name": "Læskelømmel",
+          "style": "Sour - Fruited",
+          "abv": 4.9,
+          "session": "saturday-early",
+          "notes": "w/ Blackberry, Blackcurrant & Vanilla",
+          "untappd": {
+            "rating": 3.49,
+            "count": 45,
+            "url": "https://untappd.com/b/pissego-laeskelommel/6596715"
+          }
+        },
+        {
+          "id": 288,
+          "name": "Tøffeljuice",
+          "style": "Sour - Fruited",
+          "abv": 5.2,
+          "session": "saturday-late",
+          "notes": "w/ Apricot & Peach",
+          "untappd": {
+            "rating": 3.07,
+            "count": 37,
+            "url": "https://untappd.com/b/pissego-toffeljuice/6596711"
+          }
+        },
+        {
+          "id": 289,
+          "name": "Brun Passion",
+          "style": "Ale Other - India Brown",
+          "abv": 6.5,
+          "session": "saturday-late",
+          "notes": "w/ Passion fruit",
+          "untappd": {
+            "rating": 3.2,
+            "count": 182,
+            "url": "https://untappd.com/b/pissego-brun-passion/5553682"
+          }
+        }
+      ]
+    },
+    {
+      "id": 64,
+      "name": "Brasserie Cantillon",
+      "location": "BE",
+      "stand": 60,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 259,
+          "name": "Kriek 100% Lambic Bio (2026)",
+          "style": "Wild Ale - Lambic",
+          "abv": 6,
+          "session": "friday",
+          "notes": "Served by Peders",
+          "untappd": {
+            "rating": 4.2,
+            "count": 481,
+            "url": "https://untappd.com/b/brasserie-cantillon-kriek-100-lambic-bio-2026/6628812"
+          }
+        },
+        {
+          "id": 261,
+          "name": "Sang Bleu (2026)",
+          "style": "Wild Ale - Lambic",
+          "abv": 6,
+          "session": "saturday-early",
+          "notes": "Served by Peders",
+          "untappd": {
+            "rating": 4.2,
+            "count": 1282,
+            "url": "https://untappd.com/b/brasserie-cantillon-sang-bleu-2026/6673816"
+          }
+        }
+      ]
+    },
+    {
+      "id": 65,
+      "name": "Brauhaus Riegele",
+      "location": "DE",
+      "stand": 60,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 269,
+          "name": "Augsburger Herren Pils",
+          "style": "Pilsner - German",
+          "abv": 4.7,
+          "session": "saturday-late",
+          "notes": "Served by Peders",
+          "untappd": {
+            "rating": 3.32,
+            "count": 21967,
+            "url": "https://untappd.com/b/brauhaus-riegele-augsburger-herren-pils/170130"
+          }
+        }
+      ]
+    },
+    {
+      "id": 66,
+      "name": "Brouwerij Boon",
+      "location": "BE",
+      "stand": 60,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 263,
+          "name": "Oude Schaarbeekse Kriek Millésime (2025)",
+          "style": "Wild Ale - Lambic",
+          "abv": 6,
+          "session": "saturday-late",
+          "notes": "Served by Peders",
+          "untappd": {
+            "rating": 3.84,
+            "count": 240,
+            "url": "https://untappd.com/b/brouwerij-boon-oude-schaarbeekse-kriek-millesime-2025/6703835"
+          }
+        }
+      ]
+    },
+    {
+      "id": 67,
+      "name": "Donzoko",
+      "location": "UK",
+      "stand": 60,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 267,
+          "name": "Donnie's Nitro Dark Beer",
+          "style": "Lager Other - Nitro Dark",
+          "abv": 4.3,
+          "session": "saturday-early",
+          "notes": "Served by Peders",
+          "untappd": {
+            "rating": 3.8,
+            "count": 1400,
+            "url": "https://untappd.com/b/donzoko-brewing-company-donnie-s-nitro-dark-beer/6054578"
+          }
+        }
+      ]
+    },
+    {
+      "id": 68,
+      "name": "Lyric Brewing Company",
+      "location": "US",
+      "stand": 60,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 268,
+          "name": "Death Greets Me Warm",
+          "style": "IPA - Hazy Double",
+          "abv": 8,
+          "session": "saturday-early",
+          "notes": "Served by Peders",
+          "untappd": {
+            "rating": 4.43,
+            "count": 81,
+            "url": "https://untappd.com/b/lyric-brewing-company-death-greets-me-warm/7187555"
+          }
+        }
+      ]
+    },
+    {
+      "id": 69,
+      "name": "Perennial Artisan Ales",
+      "location": "US",
+      "stand": 60,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 262,
+          "name": "Anniversary Blend (2026)",
+          "style": "Stout - Barrel Aged",
+          "abv": 13.9,
+          "session": "saturday-early",
+          "notes": "Served by Peders",
+          "untappd": {
+            "rating": 4.35,
+            "count": 560,
+            "url": "https://untappd.com/b/perennial-artisan-ales-anniversary-blend-2026/6622963"
+          }
+        },
+        {
+          "id": 264,
+          "name": "Barrel-aged Abraxas (2026)",
+          "style": "Stout - Barrel Aged",
+          "abv": 13.2,
+          "session": "saturday-late",
+          "notes": "Served by Peders",
+          "untappd": {
+            "rating": 4.48,
+            "count": 303,
+            "url": "https://untappd.com/b/perennial-artisan-ales-barrel-aged-abraxas-2026/6819965"
+          }
+        }
+      ]
+    },
+    {
+      "id": 70,
+      "name": "Shelton Brewing",
+      "location": "US",
+      "stand": 60,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 266,
+          "name": "Polly wanna 4-pack",
+          "style": "IPA - Hazy Triple",
+          "abv": 10,
+          "session": "friday",
+          "notes": "Served by Peders",
+          "untappd": {
+            "rating": 4.73,
+            "count": 85,
+            "url": "https://untappd.com/b/shelton-brewing-polly-wanna-4-pack/6998838"
+          }
+        },
+        {
+          "id": 270,
+          "name": "Alpha Agent",
+          "style": "IPA - Hazy Double",
+          "abv": 9,
+          "session": "saturday-late",
+          "notes": "Served by Peders"
+        }
+      ]
+    },
+    {
+      "id": 71,
+      "name": "Transient Artisan Ales",
+      "location": "US",
+      "stand": 60,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 260,
+          "name": "Junie - Life For A Puppy Shouldn't Be So RUFF (2024)",
+          "style": "Stout - Barrel Aged Imperial",
+          "abv": 14,
+          "session": "friday",
+          "notes": "Served by Peders",
+          "untappd": {
+            "rating": 4.25,
+            "count": 92,
+            "url": "https://untappd.com/b/transient-artisan-ales-junie-life-for-a-puppy-shouldn-t-be-so-ruff-2024/5999584"
+          }
+        }
+      ]
+    },
+    {
+      "id": 72,
+      "name": "Vinohradský pivovar",
+      "location": "CZ",
+      "stand": 60,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 265,
+          "name": "Vinohradská 11",
+          "style": "Pilsner - Czech",
+          "abv": 4.5,
+          "session": "friday",
+          "notes": "Served by Peders",
+          "untappd": {
+            "rating": 3.55,
+            "count": 17241,
+            "url": "https://untappd.com/b/vinohradsky-pivovar-vinohradska-11/916918"
+          }
+        }
+      ]
+    },
+    {
+      "id": 73,
+      "name": "Factory Brewing",
+      "location": "FI",
+      "stand": 61,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 97,
+          "name": "Festival Cake #1 (Coconut & Caramel)",
+          "style": "Stout - Imperial Pastry",
+          "abv": 11,
+          "session": "friday",
+          "untappd": {
+            "rating": 4.36,
+            "count": 108,
+            "url": "https://untappd.com/b/factory-brewing-festival-cake-1-coconut-and-caramel/6781159"
+          }
+        },
+        {
+          "id": 98,
+          "name": "Solitary Motion",
+          "style": "IPA - Hazy Triple",
+          "abv": 10,
+          "session": "friday",
+          "untappd": {
+            "rating": 4.24,
+            "count": 65,
+            "url": "https://untappd.com/b/factory-brewing-solitary-motion/6919518"
+          }
+        },
+        {
+          "id": 99,
+          "name": "Barista Series #5 (Coffee & Coconut)",
+          "style": "Stout - Imperial Pastry",
+          "abv": 10,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 4.13,
+            "count": 122,
+            "url": "https://untappd.com/b/factory-brewing-barista-series-5-coffee-and-coconut/6826129"
+          }
+        },
+        {
+          "id": 100,
+          "name": "Lady Cupcake #11 (Roasted Peanuts, Caramel & Vanilla)",
+          "style": "Stout - Imperial Pastry",
+          "abv": 10,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 4.17,
+            "count": 152,
+            "url": "https://untappd.com/b/factory-brewing-lady-cupcake-11-roasted-peanuts-caramel-and-vanilla/6826127"
+          }
+        },
+        {
+          "id": 101,
+          "name": "The Carrier",
+          "style": "IPA - Hazy Double",
+          "abv": 8,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 4.23,
+            "count": 95,
+            "url": "https://untappd.com/b/factory-brewing-the-carrier/6919516"
+          }
+        },
+        {
+          "id": 102,
+          "name": "Fixed Expressions",
+          "style": "IPA - Hazy Double",
+          "abv": 8,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 4.26,
+            "count": 96,
+            "url": "https://untappd.com/b/factory-brewing-fixed-expressions/6919515"
+          }
+        }
+      ]
+    },
+    {
+      "id": 74,
+      "name": "Humleland",
+      "location": "DK",
+      "stand": 62,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 187,
+          "name": "Lassi Løjer",
+          "style": "Sour - Fruited",
+          "abv": 6.8,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.58,
+            "count": 19,
+            "url": "https://untappd.com/b/humleland-lassi-lojer/6821305"
+          }
+        },
+        {
+          "id": 188,
+          "name": "Granvoksen",
+          "style": "Saison",
+          "abv": 9.3,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.6,
+            "count": 170,
+            "url": "https://untappd.com/b/humleland-granvoksen/5715686"
+          }
+        },
+        {
+          "id": 189,
+          "name": "ROSE Chardonnay",
+          "style": "Ale Other - Grape Ale",
+          "abv": 6.3,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.48,
+            "count": 38,
+            "url": "https://untappd.com/b/humleland-rose-chardonnay/5313640"
+          }
+        },
+        {
+          "id": 190,
+          "name": "KakaoBønnen",
+          "style": "Stout - Chocolate",
+          "abv": 7.8,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.74,
+            "count": 393,
+            "url": "https://untappd.com/b/humleland-kakaobonnen/975460"
+          }
+        },
+        {
+          "id": 191,
+          "name": "Blomst & Ballade",
+          "style": "Saison",
+          "abv": 7.5,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.38,
+            "count": 34,
+            "url": "https://untappd.com/b/humleland-blomst-and-ballade/6821296"
+          }
+        },
+        {
+          "id": 192,
+          "name": "GodnatBamsen",
+          "style": "Belgian Ale - Bourbon Barrel Aged Strong",
+          "abv": 10.2,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": null,
+            "count": 6,
+            "url": "https://untappd.com/b/humleland-godnatbamsen/6964913"
+          },
+          "description": {
+            "text": "Belgian Dark Strong Ale med Ahornsirup og lagret på Bourbonfad",
+            "source": "https://untappd.com/b/humleland-godnatbamsen/6964913"
+          }
+        }
+      ]
+    },
+    {
+      "id": 75,
+      "name": "Moersleutel Craft Brewery",
+      "location": "NL",
+      "stand": 63,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 241,
+          "name": "Pastry Factory: Muscovado Date Walnut Muffin",
+          "style": "Stout - Imperial Pastry",
+          "abv": 10,
+          "session": "friday",
+          "untappd": {
+            "rating": 4.14,
+            "count": 332,
+            "url": "https://untappd.com/b/moersleutel-craft-brewery-pastry-factory-muscovado-date-walnut-muffin/6853061"
+          }
+        },
+        {
+          "id": 242,
+          "name": "Fruit Bomb",
+          "style": "IPA - Double",
+          "abv": 8,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.75,
+            "count": 56334,
+            "url": "https://untappd.com/b/moersleutel-craft-brewery-fruit-bomb/5022442"
+          }
+        },
+        {
+          "id": 243,
+          "name": "10 Years: Recovery",
+          "style": "Stout - Barrel Aged Imperial",
+          "abv": 14,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 4.32,
+            "count": 2852,
+            "url": "https://untappd.com/b/moersleutel-craft-brewery-10-years-recovery/6728577"
+          }
+        },
+        {
+          "id": 244,
+          "name": "Blueprints: Star Dust",
+          "style": "IPA - American",
+          "abv": 6.5,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.79,
+            "count": 544,
+            "url": "https://untappd.com/b/moersleutel-craft-brewery-blueprints-star-dust/6853067"
+          }
+        },
+        {
+          "id": 245,
+          "name": "Blueprints: Space Suit",
+          "style": "IPA - American",
+          "abv": 7,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.72,
+            "count": 523,
+            "url": "https://untappd.com/b/moersleutel-craft-brewery-blueprints-space-suit/6853066"
+          }
+        },
+        {
+          "id": 246,
+          "name": "Missing Gear",
+          "style": "Stout - Barrel Aged Imperial",
+          "abv": 14,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 4.22,
+            "count": 1135,
+            "url": "https://untappd.com/b/moersleutel-craft-brewery-missing-gear/6756839"
+          }
+        }
+      ]
+    },
+    {
+      "id": 76,
+      "name": "HaandBryggeriet",
+      "location": "NO",
+      "stand": 64,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 193,
+          "name": "Amargeddon",
+          "style": "Stout - Imperial",
+          "abv": 12,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.96,
+            "count": 714,
+            "url": "https://untappd.com/b/haandbryggeriet-amargeddon/6581587"
+          }
+        },
+        {
+          "id": 194,
+          "name": "Poor Exchange Rate",
+          "style": "Pilsner - German",
+          "abv": 5.5,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.49,
+            "count": 2599,
+            "url": "https://untappd.com/b/haandbryggeriet-poor-exchange-rate/5697074"
+          }
+        },
+        {
+          "id": 195,
+          "name": "Bånn Gass!",
+          "style": "IPA - West Coast Double",
+          "abv": 8,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.65,
+            "count": 7121,
+            "url": "https://untappd.com/b/haandbryggeriet-bann-gass/3940487"
+          }
+        },
+        {
+          "id": 196,
+          "name": "XU Saison",
+          "style": "Saison",
+          "abv": 5.5,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.44,
+            "count": 292,
+            "url": "https://untappd.com/b/haandbryggeriet-xu-saison/6734871"
+          }
+        },
+        {
+          "id": 197,
+          "name": "Linni's Lager",
+          "style": "Lager Other - Vienna",
+          "abv": 5,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.42,
+            "count": 263,
+            "url": "https://untappd.com/b/haandbryggeriet-linni-s-lager/5470570"
+          }
+        },
+        {
+          "id": 198,
+          "name": "Fyr & Flamme",
+          "style": "IPA - West Coast",
+          "abv": 6.5,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.67,
+            "count": 37380,
+            "url": "https://untappd.com/b/haandbryggeriet-fyr-and-flamme/124451"
+          }
+        }
+      ]
+    },
+    {
+      "id": 77,
+      "name": "ØLivet",
+      "location": "DK",
+      "stand": 65,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 428,
+          "name": "RØG elletræ",
+          "style": "Lager Other - Rauchbier",
+          "abv": 5,
+          "session": "friday"
+        },
+        {
+          "id": 429,
+          "name": "RØG eg",
+          "style": "Lager Other - Rauchbier",
+          "abv": 5,
+          "session": "friday"
+        },
+        {
+          "id": 430,
+          "name": "Sommer hyldeblomst",
+          "style": "Sour",
+          "abv": 5,
+          "session": "saturday-early"
+        },
+        {
+          "id": 431,
+          "name": "Juleøl",
+          "style": "Sour",
+          "abv": 5,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": null,
+            "count": 2,
+            "url": "https://untappd.com/b/olivet-julol/7211334"
+          }
+        },
+        {
+          "id": 432,
+          "name": "Buster",
+          "style": "Barley Wine",
+          "abv": 10,
+          "session": "saturday-late"
+        },
+        {
+          "id": 433,
+          "name": "Geranium IPA",
+          "style": "IPA",
+          "abv": 6.7,
+          "session": "saturday-late"
+        }
+      ]
+    },
+    {
+      "id": 78,
+      "name": "Lough Gill Brewery",
+      "location": "IE",
+      "stand": 66,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 217,
+          "name": "Pain & Perfection",
+          "style": "Sour - Pastry",
+          "abv": 5.9,
+          "session": "friday",
+          "notes": "w/ Mango, Guava & Passion fruit",
+          "untappd": {
+            "rating": 3.88,
+            "count": 1111,
+            "url": "https://untappd.com/b/lough-gill-brewery-pain-and-perfection/4950295"
+          }
+        },
+        {
+          "id": 218,
+          "name": "Spear",
+          "style": "Stout - Barrel Aged Imperial Oatmeal",
+          "abv": 13,
+          "session": "friday",
+          "untappd": {
+            "rating": 4.07,
+            "count": 723,
+            "url": "https://untappd.com/b/lough-gill-brewery-spear-2025/6418782"
+          }
+        },
+        {
+          "id": 219,
+          "name": "Warrior",
+          "style": "Stout - Barrel Aged Imperial",
+          "abv": 15,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 4.06,
+            "count": 972,
+            "url": "https://untappd.com/b/lough-gill-brewery-warrior/6397184"
+          }
+        },
+        {
+          "id": 220,
+          "name": "Peachy Sundae",
+          "style": "Sour - Pastry",
+          "abv": 7,
+          "session": "saturday-early",
+          "notes": "w/ Peach & Apricot",
+          "untappd": {
+            "rating": 3.71,
+            "count": 190,
+            "url": "https://untappd.com/b/lough-gill-brewery-peachy-sundae/6725398"
+          }
+        },
+        {
+          "id": 221,
+          "name": "Tara",
+          "style": "Stout - Barrel Aged Imperial",
+          "abv": 12.4,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 4.1,
+            "count": 1078,
+            "url": "https://untappd.com/b/lough-gill-brewery-tara-2025/6395269"
+          }
+        },
+        {
+          "id": 222,
+          "name": "Umbra",
+          "style": "IPA - DDH Double",
+          "abv": 8,
+          "session": "saturday-late",
+          "notes": "w/ Citra, Lupomax, Eclipse & Riwaka Hop Kief",
+          "untappd": {
+            "rating": null,
+            "count": 0,
+            "url": "https://untappd.com/b/lough-gill-brewery-umbra/6961118"
+          },
+          "description": {
+            "text": "A bold, fruit-forward Double IPA bursting with passion fruit, sweet mandarin and juicy citrus. Citra and Eclipse bring layers of orange and citrus peel, while Riwaka hop kief adds a punch of tropical fruit.",
+            "source": "https://untappd.com/b/lough-gill-brewery-umbra/6961118"
+          }
+        }
+      ]
+    },
+    {
+      "id": 79,
+      "name": "To Øl",
+      "location": "DK",
+      "stand": 67,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 380,
+          "name": "Lost All Xmas Reason",
+          "style": "IPA - Hazy Double",
+          "abv": 8,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.84,
+            "count": 15,
+            "url": "https://untappd.com/b/to-ol-lost-all-xmas-reason/7215450"
+          }
+        },
+        {
+          "id": 381,
+          "name": "Yule Malt BA2026",
+          "style": "Stout - Imperial Milk",
+          "abv": 12.4,
+          "session": "friday",
+          "untappd": {
+            "rating": null,
+            "count": 0,
+            "url": "https://untappd.com/b/to-ol-yule-malt-2026/7337443"
+          },
+          "description": {
+            "text": "Bourbon, Rye and Cognac Barrel Aged Imperial Milk Stout with salted Caramel - 2026 Edition.",
+            "source": "https://untappd.com/b/to-ol-yule-malt-2026/7337443"
+          }
+        },
+        {
+          "id": 382,
+          "name": "Easy Pilsner",
+          "style": "Pilsner - German",
+          "abv": 4.6,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.21,
+            "count": 2582,
+            "url": "https://untappd.com/b/to-ol-easy-pilsner/6535225"
+          }
+        },
+        {
+          "id": 383,
+          "name": "5ÅRT",
+          "style": "Lager Other - Dark",
+          "abv": 4.5,
+          "session": "saturday-early",
+          "notes": "Collab w/ Copenhagen Craft Beer Club",
+          "untappd": {
+            "rating": 3.84,
+            "count": 20,
+            "url": "https://untappd.com/b/to-ol-cph-5art-collab-with-copenhagen-craft-beer-club/6919696"
+          }
+        },
+        {
+          "id": 384,
+          "name": "Dark & Easy",
+          "style": "Porter",
+          "abv": 4.7,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.42,
+            "count": 652,
+            "url": "https://untappd.com/b/to-ol-dark-and-easy/6198755"
+          }
+        },
+        {
+          "id": 385,
+          "name": "#DIPA",
+          "style": "IPA - Hazy Double",
+          "abv": 8.7,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.83,
+            "count": 73604,
+            "url": "https://untappd.com/b/to-ol-dipa/4028211"
+          }
+        }
+      ]
+    },
+    {
+      "id": 80,
+      "name": "Wild East Brewing Co.",
+      "location": "US",
+      "stand": 68,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 416,
+          "name": "Foo Dog",
+          "style": "Lager Other - Japanese Rice",
+          "abv": 4.7,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.62,
+            "count": 227,
+            "url": "https://untappd.com/b/wild-east-brewing-co-foo-dog/6589277"
+          }
+        },
+        {
+          "id": 417,
+          "name": "Puck Drop",
+          "style": "IPA - West Coast",
+          "abv": 5.4,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.68,
+            "count": 759,
+            "url": "https://untappd.com/b/wild-east-brewing-co-puck-drop/5541975"
+          }
+        },
+        {
+          "id": 418,
+          "name": "L'ultima Moda",
+          "style": "Pilsner - Italian",
+          "abv": 5,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.85,
+            "count": 2187,
+            "url": "https://untappd.com/b/wild-east-brewing-co-l-ultima-moda/4266863"
+          }
+        },
+        {
+          "id": 419,
+          "name": "Renfield's Feast",
+          "style": "IPA - West Coast",
+          "abv": 7,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.77,
+            "count": 473,
+            "url": "https://untappd.com/b/wild-east-brewing-co-renfield-s-feast/6553025"
+          }
+        },
+        {
+          "id": 420,
+          "name": "Rage Bait",
+          "style": "IPA - Hazy",
+          "abv": 6.5,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.78,
+            "count": 722,
+            "url": "https://untappd.com/b/wild-east-brewing-co-rage-bait/6553016"
+          }
+        },
+        {
+          "id": 421,
+          "name": "Wild East Lager",
+          "style": "Lager Other - American",
+          "abv": 4.5,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.71,
+            "count": 626,
+            "url": "https://untappd.com/b/wild-east-brewing-co-wild-east-lager/5855101"
+          }
+        }
+      ]
+    },
+    {
+      "id": 81,
+      "name": "Mlinarica",
+      "location": "HR",
+      "stand": 69,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 235,
+          "name": "Bitter Kiss",
+          "style": "IPA - American",
+          "abv": 6.7,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.8,
+            "count": 1408,
+            "url": "https://untappd.com/b/mlinarica-bitter-kiss-ipa/2258541"
+          }
+        },
+        {
+          "id": 236,
+          "name": "Burzum",
+          "style": "Stout - Imperial Pastry",
+          "abv": 12.17,
+          "session": "friday",
+          "untappd": {
+            "rating": 4.3,
+            "count": 138,
+            "url": "https://untappd.com/b/mlinarica-burzum/6665319"
+          }
+        },
+        {
+          "id": 237,
+          "name": "Mali Purger",
+          "style": "Pilsner - Czech",
+          "abv": 5.3,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.69,
+            "count": 218,
+            "url": "https://untappd.com/b/mlinarica-mali-purger/6577169"
+          }
+        },
+        {
+          "id": 238,
+          "name": "Duality 11: Pušipel",
+          "style": "Wild Ale",
+          "abv": 7,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.95,
+            "count": 41,
+            "url": "https://untappd.com/b/mlinarica-duality-11-pusipel/6665330"
+          }
+        },
+        {
+          "id": 239,
+          "name": "Black Widow",
+          "style": "Lager Other - Schwarzbier",
+          "abv": 5.4,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.57,
+            "count": 618,
+            "url": "https://untappd.com/b/mlinarica-black-widow-tamni-lager/1637864"
+          }
+        },
+        {
+          "id": 240,
+          "name": "BrettCave 03: Wild Plum And Cranberry",
+          "style": "Wild Ale",
+          "abv": 8,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.87,
+            "count": 123,
+            "url": "https://untappd.com/b/mlinarica-brettcave-03-wild-plum-and-cranberry/5650397"
+          }
+        }
+      ]
+    },
+    {
+      "id": 82,
+      "name": "JustOne",
+      "location": "DK",
+      "stand": 70,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 205,
+          "name": "Tropical Thirst Trap",
+          "style": "IPA - Hazy",
+          "abv": 6,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.7,
+            "count": 602,
+            "url": "https://untappd.com/b/justone-tropical-thirst-trap/6577308"
+          }
+        },
+        {
+          "id": 206,
+          "name": "Punished By Pine Needles",
+          "style": "IPA - West Coast",
+          "abv": 6,
+          "session": "friday"
+        },
+        {
+          "id": 207,
+          "name": "Tropical Thirst Trap",
+          "style": "IPA - Hazy",
+          "abv": 6,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.7,
+            "count": 602,
+            "url": "https://untappd.com/b/justone-tropical-thirst-trap/6577308"
+          }
+        },
+        {
+          "id": 208,
+          "name": "Punished By Pine Needles",
+          "style": "IPA - West Coast",
+          "abv": 6,
+          "session": "saturday-early"
+        },
+        {
+          "id": 209,
+          "name": "Tropical Thirst Trap",
+          "style": "IPA - Hazy",
+          "abv": 6,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.7,
+            "count": 602,
+            "url": "https://untappd.com/b/justone-tropical-thirst-trap/6577308"
+          }
+        },
+        {
+          "id": 210,
+          "name": "Punished By Pine Needles",
+          "style": "IPA - West Coast",
+          "abv": 6,
+          "session": "saturday-late"
+        }
+      ]
+    },
+    {
+      "id": 83,
+      "name": "Full Circle Brew Co",
+      "location": "UK",
+      "stand": 71,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 139,
+          "name": "Born to Count",
+          "style": "IPA - Hazy",
+          "abv": 7,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.9,
+            "count": 55,
+            "url": "https://untappd.com/b/full-circle-brew-co-born-to-count-neipa-7/6905570"
+          }
+        },
+        {
+          "id": 140,
+          "name": "Tallest Cow Ever",
+          "style": "IPA - Session",
+          "abv": 4,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.58,
+            "count": 163,
+            "url": "https://untappd.com/b/full-circle-brew-co-tallest-cow-ever/6792185"
+          }
+        },
+        {
+          "id": 141,
+          "name": "Pet Pterodactyl",
+          "style": "Pale Ale - Fruited",
+          "abv": 4.5,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.76,
+            "count": 56,
+            "url": "https://untappd.com/b/full-circle-brew-co-pet-pterodactyl/6868873"
+          }
+        },
+        {
+          "id": 142,
+          "name": "Ko Shamo",
+          "style": "IPA - New Zealand",
+          "abv": 6,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.89,
+            "count": 101,
+            "url": "https://untappd.com/b/full-circle-brew-co-ko-shamo/6829321"
+          }
+        },
+        {
+          "id": 143,
+          "name": "Meridian",
+          "style": "Pilsner - German",
+          "abv": 4.4,
+          "session": "saturday-late",
+          "notes": "Single hop",
+          "untappd": {
+            "rating": 3.56,
+            "count": 480,
+            "url": "https://untappd.com/b/full-circle-brew-co-meridian-callista/5071853"
+          }
+        },
+        {
+          "id": 144,
+          "name": "Born to Count",
+          "style": "IPA - Hazy",
+          "abv": 7,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.9,
+            "count": 55,
+            "url": "https://untappd.com/b/full-circle-brew-co-born-to-count-neipa-7/6905570"
+          }
+        }
+      ]
+    },
+    {
+      "id": 84,
+      "name": "Censurada Cerveja Artesanal",
+      "location": "PT",
+      "stand": 72,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 49,
+          "name": "Mojito Cocktail Sour",
+          "style": "Sour - Pastry",
+          "abv": 3.2,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.76,
+            "count": 43,
+            "url": "https://untappd.com/b/censurada-cerveja-artesanal-mojito-cocktail-sour/6731729"
+          }
+        },
+        {
+          "id": 50,
+          "name": "Orangette Pastry Sour",
+          "style": "Sour - Pastry",
+          "abv": 3.2,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.78,
+            "count": 34,
+            "url": "https://untappd.com/b/censurada-cerveja-artesanal-orangette-pastry-sour/6568183"
+          }
+        },
+        {
+          "id": 51,
+          "name": "Bloody Gose",
+          "style": "Sour - Fruited Gose",
+          "abv": 4.7,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.79,
+            "count": 41,
+            "url": "https://untappd.com/b/censurada-cerveja-artesanal-bloody-gose/5871994"
+          }
+        },
+        {
+          "id": 52,
+          "name": "Raspberry Fig Pastry Sour",
+          "style": "Sour - Pastry",
+          "abv": 3.2,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": null,
+            "count": 0,
+            "url": "https://untappd.com/b/censurada-cerveja-artesanal-raspberry-fig-sour/7609563"
+          }
+        },
+        {
+          "id": 53,
+          "name": "Sour Portuguese Grape Ale",
+          "style": "Sour - Fruited",
+          "abv": 3.2,
+          "session": "saturday-late"
+        },
+        {
+          "id": 54,
+          "name": "Prickly Pear Pastry Sour",
+          "style": "Sour - Pastry",
+          "abv": 3.2,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.69,
+            "count": 78,
+            "url": "https://untappd.com/b/censurada-cerveja-artesanal-prickly-pear-sour/6034572"
+          }
+        }
+      ]
+    },
+    {
+      "id": 85,
+      "name": "Ølsnedkeren",
+      "location": "DK",
+      "stand": 73,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 434,
+          "name": "Øjekast",
+          "style": "Sour - Fruited",
+          "abv": 6,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.73,
+            "count": 44,
+            "url": "https://untappd.com/b/olsnedkeren-ojekast/6851850"
+          }
+        },
+        {
+          "id": 435,
+          "name": "To Til Tango",
+          "style": "IPA - Double",
+          "abv": 8,
+          "session": "friday",
+          "untappd": {
+            "rating": 3.68,
+            "count": 34,
+            "url": "https://untappd.com/b/olsnedkeren-to-til-tango/6986007"
+          }
+        },
+        {
+          "id": 436,
+          "name": "Karl Smart",
+          "style": "IPA - Hazy",
+          "abv": 6.7,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.75,
+            "count": 3057,
+            "url": "https://untappd.com/b/olsnedkeren-karl-smart/1916841"
+          }
+        },
+        {
+          "id": 437,
+          "name": "Hurtig Karl",
+          "style": "IPA - West Coast",
+          "abv": 6.2,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.7,
+            "count": 68,
+            "url": "https://untappd.com/b/olsnedkeren-hurtig-karl/6911176"
+          }
+        },
+        {
+          "id": 438,
+          "name": "Flydende Funk",
+          "style": "IPA - Milkshake",
+          "abv": 6.5,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.57,
+            "count": 213,
+            "url": "https://untappd.com/b/olsnedkeren-flydende-funk/6755678"
+          }
+        },
+        {
+          "id": 439,
+          "name": "En Streg I Sandet",
+          "style": "Lager Other - Dark",
+          "abv": 5,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 3.47,
+            "count": 139,
+            "url": "https://untappd.com/b/olsnedkeren-en-streg-i-sandet/6623839"
+          }
+        }
+      ]
+    },
+    {
+      "id": 86,
+      "name": "Hoppy People",
+      "location": "CH",
+      "stand": 74,
+      "noLow": false,
+      "beers": [
+        {
+          "id": 181,
+          "name": "Roots",
+          "style": "IPA - DDH Double",
+          "abv": 8,
+          "session": "friday",
+          "untappd": {
+            "rating": 4.65,
+            "count": 21,
+            "url": "https://untappd.com/b/hoppy-people-roots/6920683"
+          }
+        },
+        {
+          "id": 182,
+          "name": "Dominator",
+          "style": "Barley Wine - Barrel Aged",
+          "abv": 16,
+          "session": "friday",
+          "untappd": {
+            "rating": null,
+            "count": 5,
+            "url": "https://untappd.com/b/hoppy-people-dominator/6920685"
+          },
+          "description": {
+            "text": "This Barley Wine was aged for 54 months in Bourbon Barrels.",
+            "source": "https://untappd.com/b/hoppy-people-dominator/6920685"
+          }
+        },
+        {
+          "id": 183,
+          "name": "Blind",
+          "style": "IPA - DDH Double",
+          "abv": 8,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 4.63,
+            "count": 19,
+            "url": "https://untappd.com/b/hoppy-people-blind/6920687"
+          }
+        },
+        {
+          "id": 184,
+          "name": "Permanent Hangover",
+          "style": "Stout - Barrel Aged Imperial",
+          "abv": 15.8,
+          "session": "saturday-early",
+          "notes": "w/ Coconut",
+          "untappd": {
+            "rating": 4.42,
+            "count": 1165,
+            "url": "https://untappd.com/b/hoppy-people-permanent-hangover/6568220"
+          }
+        },
+        {
+          "id": 185,
+          "name": "Bark At the Moon",
+          "style": "IPA - DDH Double",
+          "abv": 8,
+          "session": "saturday-late",
+          "untappd": {
+            "rating": 4.65,
+            "count": 22,
+            "url": "https://untappd.com/b/hoppy-people-bark-at-the-moon/6920681"
+          }
+        },
+        {
+          "id": 186,
+          "name": "Chouchouloulou On Coconut",
+          "style": "Barley Wine - Barrel Aged",
+          "abv": 16,
+          "session": "saturday-late",
+          "notes": "w/ Coconut",
+          "untappd": {
+            "rating": 4.78,
+            "count": 17,
+            "url": "https://untappd.com/b/hoppy-people-chouchouloulou-on-coconut/6920690"
+          }
+        }
+      ]
+    }
+  ]
+}
