@@ -81,7 +81,7 @@ export function VenueMap({ festival, drunkBeers }) {
   return (
     <Box>
       <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
-        Schematic of the three stand areas at Ridehuset — tower height is beer count. Tap a tower.
+        Schematic of the stand areas at {festival.venue} — tower height is beer count. Tap a tower.
       </Typography>
       <Box sx={{ height: { xs: 200, sm: 280 }, display: "grid", placeItems: "center", perspective: 900, mb: 2 }}>
         <Box
