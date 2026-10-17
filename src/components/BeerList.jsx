@@ -1,8 +1,12 @@
 import { memo } from "react";
 import { Box, Card, CardContent, Checkbox, Chip, Slider, Typography } from "@mui/material";
 import {
+  breweryMarker,
+  breweryPlaceLine,
+  breweryStandPhrase,
   sessionMeta,
   standColor,
+  standMeta,
   formatBeerMeta,
   styleCategory,
   ratingColor,
@@ -72,7 +76,7 @@ function BeerItem({
         </Typography>
         {showBrewery && (
           <Typography variant="caption" color="text.secondary" sx={{ display: "block" }}>
-            {brewery.name}{brewery.stand ? ` · stand ${brewery.stand}` : ""}
+            {[brewery.name, breweryStandPhrase(festival, brewery)].filter(Boolean).join(" · ")}
           </Typography>
         )}
         <Box sx={{ display: "flex", gap: 0.75, alignItems: "center", flexWrap: "wrap", mt: 0.5 }}>
@@ -91,7 +95,7 @@ function BeerItem({
           >
             {session.label}
           </Box>
-          <StandBadge stand={brewery.stand} />
+          <StandBadge stand={brewery.stand} label={standMeta(festival, brewery.stand).name} />
           <StyleBadge category={styleCategory(beer)} />
           {meta && (
             <Typography variant="caption" color="text.secondary">
@@ -227,7 +231,7 @@ function BreweryCard({
               fontVariantNumeric: "tabular-nums",
             }}
           >
-            {brewery.stand || "?"}
+            {breweryMarker(brewery)}
           </Box>
           <Box sx={{ flex: 1, minWidth: 0 }}>
             <Box sx={{ display: "flex", alignItems: "center", gap: 1, flexWrap: "wrap" }}>
@@ -237,7 +241,7 @@ function BreweryCard({
               {brewery.noLow ? <Chip label="No/Low" size="small" /> : null}
             </Box>
             <Typography variant="caption" color="text.secondary">
-              {[brewery.location, brewery.stand ? `stand ${brewery.stand}` : null].filter(Boolean).join(" · ")}
+              {breweryPlaceLine(festival, brewery)}
             </Typography>
           </Box>
           <Box sx={{ textAlign: { xs: "left", sm: "right" }, width: { xs: "100%", sm: "auto" } }}>

@@ -1,11 +1,13 @@
 import { useMemo, useState } from "react";
 import { Box, Card, CardContent, Typography } from "@mui/material";
-import { standColor, ratingColor, ratingOf } from "../utils";
+import { festivalStandDefs, standColor, standMeta, ratingColor, ratingOf } from "../utils";
 import { PIXEL_FONT } from "../theme";
 import { PixelBar } from "./PixelUI";
 
 function zoneStats(breweries, stand, drunkBeers) {
-  const list = breweries.filter((brewery) => brewery.stand === stand);
+  const list = breweries
+    .filter((brewery) => brewery.stand === stand)
+    .sort((a, b) => (a.table ?? 0) - (b.table ?? 0) || a.name.localeCompare(b.name));
   const beers = list.flatMap((brewery) => brewery.beers);
   return {
     breweries: list,
@@ -16,14 +18,14 @@ function zoneStats(breweries, stand, drunkBeers) {
 }
 
 /** One isometric voxel tower: stacked CSS 3D slabs, taller = more beers. */
-function Tower({ stand, total, active, onSelect }) {
+function Tower({ stand, label, total, active, onSelect }) {
   const color = standColor(stand);
   const layers = 6 + Math.round(total / 6);
   return (
     <Box
       component="button"
       onClick={onSelect}
-      aria-label={`Stand ${stand}`}
+      aria-label={label}
       sx={{
         all: "unset",
         cursor: "pointer",
@@ -53,11 +55,11 @@ function Tower({ stand, total, active, onSelect }) {
               placeItems: "center",
               fontFamily: PIXEL_FONT,
               fontWeight: 700,
-              fontSize: "2.6rem",
+              fontSize: String(label).length > 1 ? { xs: "1.15rem", sm: "1.45rem" } : "2.6rem",
               color: "#07070f",
             }}
           >
-            {top ? stand : null}
+            {top ? label : null}
           </Box>
         );
       })}
@@ -66,17 +68,16 @@ function Tower({ stand, total, active, onSelect }) {
 }
 
 export function VenueMap({ festival, drunkBeers }) {
-  const STANDS = useMemo(
-    () => [...new Set(festival.breweries.map((brewery) => brewery.stand).filter(Boolean))].sort((a, b) => a - b),
-    [festival],
-  );
+  const STANDS = useMemo(() => festivalStandDefs(festival).map((item) => item.id), [festival]);
   const [selected, setSelected] = useState(STANDS[0] ?? 1);
+  const current = STANDS.includes(selected) ? selected : (STANDS[0] ?? 1);
   const stats = useMemo(
     () => Object.fromEntries(STANDS.map((stand) => [stand, zoneStats(festival.breweries, stand, drunkBeers)])),
     [STANDS, festival, drunkBeers],
   );
-  const active = stats[selected];
-  const color = standColor(selected);
+  const active = stats[current];
+  const color = standColor(current);
+  const selectedMeta = standMeta(festival, current);
 
   return (
     <Box>
@@ -96,8 +97,9 @@ export function VenueMap({ festival, drunkBeers }) {
             <Tower
               key={stand}
               stand={stand}
+              label={standMeta(festival, stand).short ?? standMeta(festival, stand).name}
               total={stats[stand].total}
-              active={stand === selected}
+              active={stand === current}
               onSelect={() => setSelected(stand)}
             />
           ))}
@@ -105,7 +107,8 @@ export function VenueMap({ festival, drunkBeers }) {
       </Box>
       <Box sx={{ display: "grid", gridTemplateColumns: `repeat(${Math.max(STANDS.length, 1)}, 1fr)`, gap: { xs: 1, sm: 1.5 }, mb: 3 }}>
         {STANDS.map((stand) => {
-          const { tried, total, top } = stats[stand];
+          const { tried, total, top, breweries } = stats[stand];
+          const meta = standMeta(festival, stand);
           return (
             <Card
               key={stand}
@@ -113,13 +116,18 @@ export function VenueMap({ festival, drunkBeers }) {
               sx={{
                 cursor: "pointer",
                 borderColor: standColor(stand),
-                opacity: stand === selected ? 1 : 0.6,
+                opacity: stand === current ? 1 : 0.6,
               }}
             >
               <CardContent sx={{ p: 1.5, "&:last-child": { pb: 1.5 } }}>
                 <Typography variant="h6" sx={{ color: standColor(stand), fontSize: { xs: "0.85rem", sm: "1.25rem" } }}>
-                  Stand {stand}
+                  {meta.name}
                 </Typography>
+                {meta.tables ? (
+                  <Typography variant="caption" color="text.secondary" sx={{ display: "block" }}>
+                    Tables {meta.tables} · {breweries.length} breweries
+                  </Typography>
+                ) : null}
                 <PixelBar value={tried} total={total} color={standColor(stand)} />
                 <Typography variant="caption" color="text.secondary" sx={{ display: "block", mt: 0.5 }}>
                   {tried}/{total} tried · {top} 4.2+
@@ -132,7 +140,8 @@ export function VenueMap({ festival, drunkBeers }) {
       <Card sx={{ borderColor: color }}>
         <CardContent>
           <Typography variant="h6" gutterBottom sx={{ color }}>
-            Stand {selected} · {active.breweries.length} breweries
+            {selectedMeta.name}
+            {selectedMeta.tables ? ` · tables ${selectedMeta.tables}` : ""} · {active.breweries.length} breweries
           </Typography>
           {active.breweries.map((brewery) => {
             const best = brewery.beers
@@ -151,6 +160,7 @@ export function VenueMap({ festival, drunkBeers }) {
                 }}
               >
                 <Typography variant="body2">
+                  {brewery.table ? `Table ${brewery.table} · ` : ""}
                   {brewery.name} · {brewery.location}
                 </Typography>
                 {best && (

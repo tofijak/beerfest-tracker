@@ -1,5 +1,5 @@
 import { Box, Button, Checkbox, Chip, Dialog, DialogContent, FormControlLabel, Slider, Typography } from "@mui/material";
-import { sessionMeta, standColor, ratingColor, styleCategory } from "../utils";
+import { breweryPlaceLine, sessionMeta, standColor, standMeta, ratingColor, styleCategory } from "../utils";
 import { BODY_FONT, PIXEL_FONT } from "../theme";
 import { PixelIcon, PixelIconButton } from "./PixelIcons";
 import { CrtTransition } from "./CrtTransition";
@@ -34,14 +34,14 @@ export function BeerDialog({ festival, entry, drunkBeers, favoriteBeers, planned
             <PixelIconButton icon="close" label="Close" onClick={onClose} size={34} iconSize={16} />
           </Box>
           <Typography variant="overline" sx={{ color: standColor(brewery.stand) }}>
-            {brewery.name} · {brewery.location} · stand {brewery.stand}
+            {brewery.name} · {breweryPlaceLine(festival, brewery)}
           </Typography>
           <Typography variant="h5" sx={{ pr: 5, mb: 1.5, overflowWrap: "anywhere", fontFamily: BODY_FONT, fontSize: { xs: "1.55rem", sm: "1.9rem" }, lineHeight: 1.25 }}>
             {beer.name}
           </Typography>
           <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap", mb: 2 }}>
             <Chip size="small" label={session.label} sx={{ bgcolor: session.color, color: beer.session === "yellow" ? "#3e2723" : "#fff" }} />
-            <StandBadge stand={brewery.stand} size="large" />
+            <StandBadge stand={brewery.stand} label={standMeta(festival, brewery.stand).name} size="large" />
             <StyleBadge category={styleCategory(beer)} size="large" />
           </Box>
           <Box sx={{ display: "flex", gap: 1.5, flexWrap: "wrap", mb: 2 }}>

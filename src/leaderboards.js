@@ -474,7 +474,13 @@ export function buildLeaderboard({ festival, people, entity, board, minRatings =
         kind: "brewery",
         agg: grouped.breweryAggs.get(group.key) ?? emptyAgg(),
         search: haystack([group.brewery?.name, group.brewery?.location, ...beerNames]),
-        detail: [group.brewery?.location, plural(group.beerIds.length, "beer", "beers")].filter(Boolean).join(" · "),
+        detail: [
+          group.brewery?.location,
+          group.brewery?.table ? `table ${group.brewery.table}` : null,
+          plural(group.beerIds.length, "beer", "beers"),
+        ]
+          .filter(Boolean)
+          .join(" · "),
         stand: group.brewery?.stand ?? null,
         style: null,
         beerId: null,

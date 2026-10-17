@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { Box, Button, Card, CardContent, Checkbox, Chip, Typography } from "@mui/material";
-import { sessionMeta, standColor, ratingColor, ratingOf } from "../utils";
+import { breweryStandPhrase, compareBreweryVisit, sessionMeta, standColor, standMeta, ratingColor, ratingOf } from "../utils";
 
 
 function sessionOrder(festival) {
@@ -32,7 +32,7 @@ function buildRoute({ festival, drunkBeers, favoriteBeers, minRating, startSessi
           .sort((a, b) => (ratingOf(b) ?? 0) - (ratingOf(a) ?? 0)),
       }))
       .filter(({ targets }) => targets.length > 0)
-      .sort((a, b) => a.brewery.stand - b.brewery.stand || a.brewery.name.localeCompare(b.brewery.name)),
+      .sort((a, b) => compareBreweryVisit(a.brewery, b.brewery)),
   })).filter((leg) => leg.stops.length > 0);
 
   const size = (leg) => leg.stops.reduce((n, stop) => n + stop.targets.length, 0);
@@ -146,7 +146,7 @@ function AutoRoute({
                         <Typography sx={{ fontFamily: PIXEL_FONT, fontSize: "0.8rem" }}>
                           {brewery.name}{" "}
                           <Box component="span" sx={{ color: standColor(brewery.stand) }}>
-                            · stand {brewery.stand}
+                            · {breweryStandPhrase(festival, brewery)}
                           </Box>
                         </Typography>
                         {targets.map((beer) => {
@@ -229,22 +229,26 @@ function MyRoute({ festival, plannedBeers, onPlannedChange, favoriteBeers, drunk
         .sort(
           (a, b) =>
             order.indexOf(a.beer.session) - order.indexOf(b.beer.session) ||
-            a.brewery.stand - b.brewery.stand ||
-            a.brewery.name.localeCompare(b.brewery.name),
+            compareBreweryVisit(a.brewery, b.brewery),
         )
         .map(({ beer }) => beer.id),
     );
   const sortByStand = () =>
     onPlannedChange(
       [...items]
-        .sort((a, b) => a.brewery.stand - b.brewery.stand || a.brewery.name.localeCompare(b.brewery.name))
+        .sort((a, b) => compareBreweryVisit(a.brewery, b.brewery))
         .map(({ beer }) => beer.id),
     );
   const addFavorites = () =>
     onPlannedChange([...plannedBeers, ...favoriteBeers.filter((id) => !plannedBeers.includes(id))]);
   const copy = async () => {
     const text = items
-      .map(({ beer, brewery }, i) => `${i + 1}. [Stand ${brewery.stand}] ${brewery.name} – ${beer.name}`)
+      .map(({ beer, brewery }, i) => {
+        const place = brewery.table
+          ? `${standMeta(festival, brewery.stand).name} · table ${brewery.table}`
+          : standMeta(festival, brewery.stand).name;
+        return `${i + 1}. [${place}] ${brewery.name} – ${beer.name}`;
+      })
       .join("\n");
     try {
       await navigator.clipboard.writeText(text);
@@ -334,7 +338,7 @@ function MyRoute({ festival, plannedBeers, onPlannedChange, favoriteBeers, drunk
                   {beer.name}
                 </Typography>
                 <Typography variant="caption" color="text.secondary">
-                  {brewery.name} · stand {brewery.stand} · {sessionMeta(festival, beer.session).label}
+                  {brewery.name} · {breweryStandPhrase(festival, brewery)} · {sessionMeta(festival, beer.session).label}
                 </Typography>
               </Box>
               {rating != null && (
