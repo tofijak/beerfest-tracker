@@ -112,8 +112,8 @@ export function StyleBadge({ category, size = "small" }) {
 }
 
 /** Colored pixel badge for the stand a beer is poured at. */
-export function StandBadge({ stand, size = "small" }) {
-  if (!stand) return null;
+export function StandBadge({ stand, label, size = "small" }) {
+  if (!stand && !label) return null;
   const color = standColor(stand);
   return (
     <Box
@@ -135,7 +135,7 @@ export function StandBadge({ stand, size = "small" }) {
         whiteSpace: "nowrap",
       }}
     >
-      Stand {stand}
+      {label ?? `Stand ${stand}`}
     </Box>
   );
 }

@@ -15,7 +15,7 @@ import { mergeSelf, personFromProgress, publicName, rosterErrorMessage, withoutP
 import { festivalStorageKey } from "../lib/storage";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import { PixelBar, StandBadge, StyleBadge } from "./PixelUI";
-import { ratingColor } from "../utils";
+import { ratingColor, standMeta } from "../utils";
 import { BODY_FONT, PIXEL_FONT } from "../theme";
 
 const PAGE = 20;
@@ -304,6 +304,7 @@ export function Leaderboards({
                     <BoardRow
                       key={row.key}
                       row={row}
+                      festival={festival}
                       index={index}
                       expanded={shown.expanded === row.key}
                       showMembers={shown.showMembers}
@@ -343,7 +344,7 @@ function rosterLine(result) {
   return `${people} on the board · ${result.activeCount} have checked a beer in.`;
 }
 
-function BoardRow({ row, index, expanded, showMembers, onToggle, onShowMembers, onOpenBeer }) {
+function BoardRow({ row, festival, index, expanded, showMembers, onToggle, onShowMembers, onOpenBeer }) {
   const color = scoreColor(row);
   const canOpenBeer = row.kind === "beer" && row.beerId != null;
   const canExpand = row.members.length > 0;
@@ -398,7 +399,9 @@ function BoardRow({ row, index, expanded, showMembers, onToggle, onShowMembers, 
         <Box sx={{ flex: 1, minWidth: 0 }}>
           <Box sx={{ display: "flex", alignItems: "center", gap: 0.75, flexWrap: "wrap" }}>
             {row.kind === "style" && row.style ? <StyleBadge category={row.style} /> : null}
-            {row.kind === "brewery" ? <StandBadge stand={row.stand} /> : null}
+            {row.kind === "brewery" && row.stand ? (
+              <StandBadge stand={row.stand} label={standMeta(festival, row.stand).name} />
+            ) : null}
             <Typography component="span" fontWeight={700} sx={{ wordBreak: "break-word" }}>
               {row.name}
             </Typography>

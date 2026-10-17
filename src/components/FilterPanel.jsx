@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import { Badge, Box, Button, Chip, Collapse, Slider, Typography } from "@mui/material";
 import TuneIcon from "@mui/icons-material/Tune";
 import { ABV_MAX, DEFAULT_FILTERS, RATING_MAX, RATING_MIN, activeFilterCount } from "../filters";
-import { standColor, STYLE_CATEGORIES, STYLE_META, styleCategory } from "../utils";
+import { festivalStandDefs, standChipLabel, standColor, STYLE_CATEGORIES, STYLE_META, styleCategory } from "../utils";
 
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import { festivalStorageKey } from "../lib/storage";
@@ -61,10 +61,7 @@ export function FilterPanel({ festival, filters, onChange, resultCount }) {
         }, {}),
     [festival],
   );
-  const stands = useMemo(
-    () => [...new Set(festival.breweries.map((brewery) => brewery.stand).filter(Boolean))].sort((a, b) => a - b),
-    [festival],
-  );
+  const stands = useMemo(() => festivalStandDefs(festival).map((item) => item.id), [festival]);
   const sessions = useMemo(
     () => festival.sessions.map((session) => [session.id === "all" ? "nolo" : session.id, session.label]),
     [festival],
@@ -104,23 +101,22 @@ export function FilterPanel({ festival, filters, onChange, resultCount }) {
 
           {stands.length > 0 && (
             <>
-          <Label>STAND</Label>
-          <Box sx={{ display: "flex", gap: 1 }}>
-            {stands.map((stand) => (
-              <Chip
-                key={stand}
-                label={`Stand ${stand}`}
-                onClick={() => set({ stands: toggle(filters.stands, stand) })}
-                variant={filters.stands.includes(stand) ? "filled" : "outlined"}
-                sx={
-                  filters.stands.includes(stand)
-                    ? { bgcolor: `${standColor(stand)} !important`, color: "#07070f !important" }
-                    : { color: standColor(stand) }
-                }
-              />
-            ))}
-          </Box>
-
+              <Label>STAND</Label>
+              <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap" }}>
+                {stands.map((stand) => (
+                  <Chip
+                    key={stand}
+                    label={standChipLabel(festival, stand)}
+                    onClick={() => set({ stands: toggle(filters.stands, stand) })}
+                    variant={filters.stands.includes(stand) ? "filled" : "outlined"}
+                    sx={
+                      filters.stands.includes(stand)
+                        ? { bgcolor: `${standColor(stand)} !important`, color: "#07070f !important" }
+                        : { color: standColor(stand) }
+                    }
+                  />
+                ))}
+              </Box>
             </>
           )}
 

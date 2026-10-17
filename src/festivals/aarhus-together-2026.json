@@ -26,12 +26,27 @@
       "color": "#6a1b9a"
     }
   ],
+  "stands": [
+    {
+      "id": 1,
+      "name": "Centralværkstedet",
+      "short": "CV",
+      "tables": "1–50"
+    },
+    {
+      "id": 2,
+      "name": "Smedjen",
+      "short": "SM",
+      "tables": "51–74"
+    }
+  ],
   "breweries": [
     {
       "id": 1,
       "name": "Goose Island Beer Co.",
       "location": "US",
       "stand": 1,
+      "table": 1,
       "noLow": false,
       "beers": [
         {
@@ -115,7 +130,8 @@
       "id": 2,
       "name": "Gamma Brewing Company",
       "location": "DK",
-      "stand": 2,
+      "stand": 1,
+      "table": 2,
       "noLow": false,
       "beers": [
         {
@@ -196,7 +212,8 @@
       "id": 3,
       "name": "SchwesterBrau",
       "location": "DK",
-      "stand": 3,
+      "stand": 1,
+      "table": 3,
       "noLow": false,
       "beers": [
         {
@@ -271,7 +288,8 @@
       "id": 4,
       "name": "Seven Island Brewery",
       "location": "GR",
-      "stand": 4,
+      "stand": 1,
+      "table": 4,
       "noLow": false,
       "beers": [
         {
@@ -332,7 +350,7 @@
           "abv": 8,
           "session": "saturday-late",
           "untappd": {
-            "rating": 4.0,
+            "rating": 4,
             "count": 2686,
             "url": "https://untappd.com/b/seven-island-brewery-guardian-of-the-golden-nugget/6603924"
           }
@@ -355,7 +373,8 @@
       "id": 5,
       "name": "Smiðjan Brugghús",
       "location": "IS",
-      "stand": 5,
+      "stand": 1,
+      "table": 5,
       "noLow": false,
       "beers": [
         {
@@ -436,7 +455,8 @@
       "id": 6,
       "name": "Benchwarmers Brewing Co.",
       "location": "SE",
-      "stand": 6,
+      "stand": 1,
+      "table": 6,
       "noLow": false,
       "beers": [
         {
@@ -512,7 +532,8 @@
       "id": 7,
       "name": "Salikatt",
       "location": "NO",
-      "stand": 7,
+      "stand": 1,
+      "table": 7,
       "noLow": false,
       "beers": [
         {
@@ -593,7 +614,8 @@
       "id": 8,
       "name": "Vault City Brewing",
       "location": "UK",
-      "stand": 8,
+      "stand": 1,
+      "table": 8,
       "noLow": false,
       "beers": [
         {
@@ -675,7 +697,8 @@
       "id": 9,
       "name": "Hop Hooligans",
       "location": "RO",
-      "stand": 9,
+      "stand": 1,
+      "table": 9,
       "noLow": false,
       "beers": [
         {
@@ -723,7 +746,7 @@
           "abv": 6,
           "session": "saturday-early",
           "untappd": {
-            "rating": 4.0,
+            "rating": 4,
             "count": 12,
             "url": "https://untappd.com/b/hop-hooligans-daddy-issues/6920608"
           }
@@ -759,7 +782,8 @@
       "id": 10,
       "name": "ÅBEN",
       "location": "DK",
-      "stand": 10,
+      "stand": 1,
+      "table": 10,
       "noLow": true,
       "beers": [
         {
@@ -830,7 +854,8 @@
       "id": 11,
       "name": "Insight Cellars",
       "location": "DK",
-      "stand": 11,
+      "stand": 1,
+      "table": 11,
       "noLow": false,
       "beers": [
         {
@@ -911,7 +936,8 @@
       "id": 12,
       "name": "Barreled Souls Brewing Company",
       "location": "US",
-      "stand": 12,
+      "stand": 1,
+      "table": 12,
       "noLow": false,
       "beers": [
         {
@@ -959,7 +985,8 @@
       "id": 13,
       "name": "Hop Hooligans",
       "location": "RO",
-      "stand": 12,
+      "stand": 1,
+      "table": 12,
       "noLow": false,
       "beers": [
         {
@@ -1007,7 +1034,8 @@
       "id": 14,
       "name": "Lyric Brewing Company",
       "location": "US",
-      "stand": 12,
+      "stand": 1,
+      "table": 12,
       "noLow": false,
       "beers": [
         {
@@ -1042,7 +1070,8 @@
       "id": 15,
       "name": "Perennial Artisan Ales",
       "location": "US",
-      "stand": 12,
+      "stand": 1,
+      "table": 12,
       "noLow": false,
       "beers": [
         {
@@ -1064,7 +1093,8 @@
       "id": 16,
       "name": "Shelton Brewing",
       "location": "US",
-      "stand": 12,
+      "stand": 1,
+      "table": 12,
       "noLow": false,
       "beers": [
         {
@@ -1086,7 +1116,8 @@
       "id": 17,
       "name": "The Bruery",
       "location": "US",
-      "stand": 12,
+      "stand": 1,
+      "table": 12,
       "noLow": false,
       "beers": [
         {
@@ -1121,7 +1152,8 @@
       "id": 18,
       "name": "Amager Bryghus",
       "location": "DK",
-      "stand": 13,
+      "stand": 1,
+      "table": 13,
       "noLow": false,
       "beers": [
         {
@@ -1205,7 +1237,8 @@
       "id": 19,
       "name": "CoolHead Brew",
       "location": "FI",
-      "stand": 14,
+      "stand": 1,
+      "table": 14,
       "noLow": false,
       "beers": [
         {
@@ -1298,7 +1331,8 @@
       "id": 20,
       "name": "Observatoriet",
       "location": "DK",
-      "stand": 15,
+      "stand": 1,
+      "table": 15,
       "noLow": false,
       "beers": [
         {
@@ -1375,7 +1409,8 @@
       "id": 21,
       "name": "Beak",
       "location": "UK",
-      "stand": 16,
+      "stand": 1,
+      "table": 16,
       "noLow": false,
       "beers": [
         {
@@ -1456,7 +1491,8 @@
       "id": 22,
       "name": "Tuletorn Brewing",
       "location": "EE",
-      "stand": 17,
+      "stand": 1,
+      "table": 17,
       "noLow": false,
       "beers": [
         {
@@ -1538,7 +1574,8 @@
       "id": 23,
       "name": "Creature Comforts Brewing Co.",
       "location": "US",
-      "stand": 18,
+      "stand": 1,
+      "table": 18,
       "noLow": false,
       "beers": [
         {
@@ -1621,7 +1658,8 @@
       "id": 24,
       "name": "Zeitgeist Brewing",
       "location": "DK",
-      "stand": 19,
+      "stand": 1,
+      "table": 19,
       "noLow": false,
       "beers": [
         {
@@ -1702,7 +1740,8 @@
       "id": 25,
       "name": "Spybrew",
       "location": "DK",
-      "stand": 20,
+      "stand": 1,
+      "table": 20,
       "noLow": false,
       "beers": [
         {
@@ -1784,7 +1823,8 @@
       "id": 26,
       "name": "Galway Bay Brewery",
       "location": "IE",
-      "stand": 21,
+      "stand": 1,
+      "table": 21,
       "noLow": false,
       "beers": [
         {
@@ -1863,7 +1903,8 @@
       "id": 27,
       "name": "Lille Holmgård Bryghus",
       "location": "DK",
-      "stand": 22,
+      "stand": 1,
+      "table": 22,
       "noLow": false,
       "beers": [
         {
@@ -1945,7 +1986,8 @@
       "id": 28,
       "name": "SOMA Beer",
       "location": "ES",
-      "stand": 23,
+      "stand": 1,
+      "table": 23,
       "noLow": false,
       "beers": [
         {
@@ -2026,7 +2068,8 @@
       "id": 29,
       "name": "Stepping Stone Brewing Company",
       "location": "DK",
-      "stand": 24,
+      "stand": 1,
+      "table": 24,
       "noLow": false,
       "beers": [
         {
@@ -2095,7 +2138,8 @@
       "id": 30,
       "name": "Sudden Death Brewing",
       "location": "DE",
-      "stand": 25,
+      "stand": 1,
+      "table": 25,
       "noLow": false,
       "beers": [
         {
@@ -2176,7 +2220,8 @@
       "id": 31,
       "name": "Ten Wasp Brewing Company",
       "location": "US",
-      "stand": 26,
+      "stand": 1,
+      "table": 26,
       "noLow": false,
       "beers": [
         {
@@ -2257,7 +2302,8 @@
       "id": 32,
       "name": "Aarhus Bryghus",
       "location": "DK",
-      "stand": 27,
+      "stand": 1,
+      "table": 27,
       "noLow": false,
       "beers": [
         {
@@ -2305,7 +2351,7 @@
           "abv": 6,
           "session": "saturday-late",
           "untappd": {
-            "rating": 3.0,
+            "rating": 3,
             "count": 26,
             "url": "https://untappd.com/b/aarhus-bryghus-fael-frugt-cider-2025/6595097"
           }
@@ -2328,7 +2374,8 @@
       "id": 33,
       "name": "Panimoyhtiö Tuju",
       "location": "FI",
-      "stand": 28,
+      "stand": 1,
+      "table": 28,
       "noLow": false,
       "beers": [
         {
@@ -2420,7 +2467,8 @@
       "id": 34,
       "name": "Vetra",
       "location": "IT",
-      "stand": 29,
+      "stand": 1,
+      "table": 29,
       "noLow": false,
       "beers": [
         {
@@ -2506,7 +2554,8 @@
       "id": 35,
       "name": "Donzoko",
       "location": "UK",
-      "stand": 30,
+      "stand": 1,
+      "table": 30,
       "noLow": false,
       "beers": [
         {
@@ -2587,7 +2636,8 @@
       "id": 36,
       "name": "Track Brewing Company",
       "location": "UK",
-      "stand": 31,
+      "stand": 1,
+      "table": 31,
       "noLow": false,
       "beers": [
         {
@@ -2668,7 +2718,8 @@
       "id": 37,
       "name": "Mad Scientist",
       "location": "HU",
-      "stand": 32,
+      "stand": 1,
+      "table": 32,
       "noLow": false,
       "beers": [
         {
@@ -2755,7 +2806,8 @@
       "id": 38,
       "name": "Warpigs Brewpub",
       "location": "DK",
-      "stand": 33,
+      "stand": 1,
+      "table": 33,
       "noLow": false,
       "beers": [
         {
@@ -2841,7 +2893,8 @@
       "id": 39,
       "name": "Friends Company",
       "location": "SE",
-      "stand": 34,
+      "stand": 1,
+      "table": 34,
       "noLow": false,
       "beers": [
         {
@@ -2922,7 +2975,8 @@
       "id": 40,
       "name": "Esbjerg Bryghus",
       "location": "DK",
-      "stand": 35,
+      "stand": 1,
+      "table": 35,
       "noLow": false,
       "beers": [
         {
@@ -3005,7 +3059,8 @@
       "id": 41,
       "name": "Seoul Brewery",
       "location": "KR",
-      "stand": 36,
+      "stand": 1,
+      "table": 36,
       "noLow": false,
       "beers": [
         {
@@ -3087,7 +3142,8 @@
       "id": 42,
       "name": "Pulpit Rock Brewing Co.",
       "location": "US",
-      "stand": 38,
+      "stand": 1,
+      "table": 38,
       "noLow": false,
       "beers": [
         {
@@ -3168,7 +3224,8 @@
       "id": 43,
       "name": "Alefarm Brewing",
       "location": "DK",
-      "stand": 39,
+      "stand": 1,
+      "table": 39,
       "noLow": false,
       "beers": [
         {
@@ -3249,7 +3306,8 @@
       "id": 44,
       "name": "Sibeeria Brewery",
       "location": "CZ",
-      "stand": 40,
+      "stand": 1,
+      "table": 40,
       "noLow": false,
       "beers": [
         {
@@ -3333,7 +3391,8 @@
       "id": 45,
       "name": "Elmeleven",
       "location": "SE",
-      "stand": 41,
+      "stand": 1,
+      "table": 41,
       "noLow": false,
       "beers": [
         {
@@ -3410,7 +3469,8 @@
       "id": 46,
       "name": "BLAS",
       "location": "DK",
-      "stand": 42,
+      "stand": 1,
+      "table": 42,
       "noLow": false,
       "beers": [
         {
@@ -3499,7 +3559,8 @@
       "id": 47,
       "name": "Revenant Brewing Project",
       "location": "FI",
-      "stand": 43,
+      "stand": 1,
+      "table": 43,
       "noLow": false,
       "beers": [
         {
@@ -3584,7 +3645,8 @@
       "id": 48,
       "name": "Gravity Well Brewing Co",
       "location": "UK",
-      "stand": 44,
+      "stand": 1,
+      "table": 44,
       "noLow": false,
       "beers": [
         {
@@ -3665,7 +3727,8 @@
       "id": 49,
       "name": "Flying Couch Brewing",
       "location": "DK",
-      "stand": 45,
+      "stand": 1,
+      "table": 45,
       "noLow": false,
       "beers": [
         {
@@ -3757,7 +3820,8 @@
       "id": 50,
       "name": "Blech.Brut / Atelier Vrai",
       "location": "DE",
-      "stand": 46,
+      "stand": 1,
+      "table": 46,
       "noLow": false,
       "beers": [
         {
@@ -3841,7 +3905,8 @@
       "id": 51,
       "name": "Anspach & Hobday",
       "location": "UK",
-      "stand": 47,
+      "stand": 1,
+      "table": 47,
       "noLow": false,
       "beers": [
         {
@@ -3922,7 +3987,8 @@
       "id": 52,
       "name": "Gamborg Brewing Co.",
       "location": "DK",
-      "stand": 48,
+      "stand": 1,
+      "table": 48,
       "noLow": false,
       "beers": [
         {
@@ -3998,7 +4064,8 @@
       "id": 53,
       "name": "Fanø Bryghus",
       "location": "DK",
-      "stand": 49,
+      "stand": 1,
+      "table": 49,
       "noLow": false,
       "beers": [
         {
@@ -4080,7 +4147,8 @@
       "id": 54,
       "name": "Popihn",
       "location": "FR",
-      "stand": 50,
+      "stand": 1,
+      "table": 50,
       "noLow": false,
       "beers": [
         {
@@ -4161,7 +4229,8 @@
       "id": 55,
       "name": "Pedra",
       "location": "ES",
-      "stand": 51,
+      "stand": 2,
+      "table": 51,
       "noLow": false,
       "beers": [
         {
@@ -4363,7 +4432,8 @@
       "id": 56,
       "name": "Bådin Bryggeri",
       "location": "NO",
-      "stand": 52,
+      "stand": 2,
+      "table": 52,
       "noLow": false,
       "beers": [
         {
@@ -4447,7 +4517,8 @@
       "id": 57,
       "name": "Mash Gang",
       "location": "UK",
-      "stand": 53,
+      "stand": 2,
+      "table": 53,
       "noLow": true,
       "beers": [
         {
@@ -4528,7 +4599,8 @@
       "id": 58,
       "name": "Weingut Achim Dürr",
       "location": "DE",
-      "stand": 54,
+      "stand": 2,
+      "table": 54,
       "noLow": false,
       "beers": [
         {
@@ -4723,7 +4795,8 @@
       "id": 59,
       "name": "Dry & Bitter Brewing Company",
       "location": "DK",
-      "stand": 55,
+      "stand": 2,
+      "table": 55,
       "noLow": false,
       "beers": [
         {
@@ -4770,7 +4843,7 @@
           "abv": 7.5,
           "session": "saturday-early",
           "untappd": {
-            "rating": 4.0,
+            "rating": 4,
             "count": 31357,
             "url": "https://untappd.com/b/dry-and-bitter-brewing-company-double-dippy-doo/2941003"
           }
@@ -4805,7 +4878,8 @@
       "id": 60,
       "name": "Sáez & Son",
       "location": "ES",
-      "stand": 56,
+      "stand": 2,
+      "table": 56,
       "noLow": false,
       "beers": [
         {
@@ -4887,7 +4961,8 @@
       "id": 61,
       "name": "Flying Guru Brewery",
       "location": "SE",
-      "stand": 57,
+      "stand": 2,
+      "table": 57,
       "noLow": false,
       "beers": [
         {
@@ -4953,7 +5028,8 @@
       "id": 62,
       "name": "Cloudwater Brew Co.",
       "location": "UK",
-      "stand": 58,
+      "stand": 2,
+      "table": 58,
       "noLow": false,
       "beers": [
         {
@@ -5036,7 +5112,8 @@
       "id": 63,
       "name": "Pissego",
       "location": "DK",
-      "stand": 59,
+      "stand": 2,
+      "table": 59,
       "noLow": false,
       "beers": [
         {
@@ -5122,7 +5199,8 @@
       "id": 64,
       "name": "Brasserie Cantillon",
       "location": "BE",
-      "stand": 60,
+      "stand": 2,
+      "table": 60,
       "noLow": false,
       "beers": [
         {
@@ -5157,7 +5235,8 @@
       "id": 65,
       "name": "Brauhaus Riegele",
       "location": "DE",
-      "stand": 60,
+      "stand": 2,
+      "table": 60,
       "noLow": false,
       "beers": [
         {
@@ -5179,7 +5258,8 @@
       "id": 66,
       "name": "Brouwerij Boon",
       "location": "BE",
-      "stand": 60,
+      "stand": 2,
+      "table": 60,
       "noLow": false,
       "beers": [
         {
@@ -5201,7 +5281,8 @@
       "id": 67,
       "name": "Donzoko",
       "location": "UK",
-      "stand": 60,
+      "stand": 2,
+      "table": 60,
       "noLow": false,
       "beers": [
         {
@@ -5223,7 +5304,8 @@
       "id": 68,
       "name": "Lyric Brewing Company",
       "location": "US",
-      "stand": 60,
+      "stand": 2,
+      "table": 60,
       "noLow": false,
       "beers": [
         {
@@ -5245,7 +5327,8 @@
       "id": 69,
       "name": "Perennial Artisan Ales",
       "location": "US",
-      "stand": 60,
+      "stand": 2,
+      "table": 60,
       "noLow": false,
       "beers": [
         {
@@ -5280,7 +5363,8 @@
       "id": 70,
       "name": "Shelton Brewing",
       "location": "US",
-      "stand": 60,
+      "stand": 2,
+      "table": 60,
       "noLow": false,
       "beers": [
         {
@@ -5310,7 +5394,8 @@
       "id": 71,
       "name": "Transient Artisan Ales",
       "location": "US",
-      "stand": 60,
+      "stand": 2,
+      "table": 60,
       "noLow": false,
       "beers": [
         {
@@ -5332,7 +5417,8 @@
       "id": 72,
       "name": "Vinohradský pivovar",
       "location": "CZ",
-      "stand": 60,
+      "stand": 2,
+      "table": 60,
       "noLow": false,
       "beers": [
         {
@@ -5354,7 +5440,8 @@
       "id": 73,
       "name": "Factory Brewing",
       "location": "FI",
-      "stand": 61,
+      "stand": 2,
+      "table": 61,
       "noLow": false,
       "beers": [
         {
@@ -5435,7 +5522,8 @@
       "id": 74,
       "name": "Humleland",
       "location": "DK",
-      "stand": 62,
+      "stand": 2,
+      "table": 62,
       "noLow": false,
       "beers": [
         {
@@ -5520,7 +5608,8 @@
       "id": 75,
       "name": "Moersleutel Craft Brewery",
       "location": "NL",
-      "stand": 63,
+      "stand": 2,
+      "table": 63,
       "noLow": false,
       "beers": [
         {
@@ -5601,7 +5690,8 @@
       "id": 76,
       "name": "HaandBryggeriet",
       "location": "NO",
-      "stand": 64,
+      "stand": 2,
+      "table": 64,
       "noLow": false,
       "beers": [
         {
@@ -5682,7 +5772,8 @@
       "id": 77,
       "name": "ØLivet",
       "location": "DK",
-      "stand": 65,
+      "stand": 2,
+      "table": 65,
       "noLow": false,
       "beers": [
         {
@@ -5738,7 +5829,8 @@
       "id": 78,
       "name": "Lough Gill Brewery",
       "location": "IE",
-      "stand": 66,
+      "stand": 2,
+      "table": 66,
       "noLow": false,
       "beers": [
         {
@@ -5826,7 +5918,8 @@
       "id": 79,
       "name": "To Øl",
       "location": "DK",
-      "stand": 67,
+      "stand": 2,
+      "table": 67,
       "noLow": false,
       "beers": [
         {
@@ -5912,7 +6005,8 @@
       "id": 80,
       "name": "Wild East Brewing Co.",
       "location": "US",
-      "stand": 68,
+      "stand": 2,
+      "table": 68,
       "noLow": false,
       "beers": [
         {
@@ -5993,7 +6087,8 @@
       "id": 81,
       "name": "Mlinarica",
       "location": "HR",
-      "stand": 69,
+      "stand": 2,
+      "table": 69,
       "noLow": false,
       "beers": [
         {
@@ -6074,7 +6169,8 @@
       "id": 82,
       "name": "JustOne",
       "location": "DK",
-      "stand": 70,
+      "stand": 2,
+      "table": 70,
       "noLow": false,
       "beers": [
         {
@@ -6140,7 +6236,8 @@
       "id": 83,
       "name": "Full Circle Brew Co",
       "location": "UK",
-      "stand": 71,
+      "stand": 2,
+      "table": 71,
       "noLow": false,
       "beers": [
         {
@@ -6222,7 +6319,8 @@
       "id": 84,
       "name": "Censurada Cerveja Artesanal",
       "location": "PT",
-      "stand": 72,
+      "stand": 2,
+      "table": 72,
       "noLow": false,
       "beers": [
         {
@@ -6298,7 +6396,8 @@
       "id": 85,
       "name": "Ølsnedkeren",
       "location": "DK",
-      "stand": 73,
+      "stand": 2,
+      "table": 73,
       "noLow": false,
       "beers": [
         {
@@ -6379,7 +6478,8 @@
       "id": 86,
       "name": "Hoppy People",
       "location": "CH",
-      "stand": 74,
+      "stand": 2,
+      "table": 74,
       "noLow": false,
       "beers": [
         {

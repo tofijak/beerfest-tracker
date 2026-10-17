@@ -87,6 +87,59 @@ export function standColor(stand) {
   return STAND_PALETTE[(Math.max(1, Number(stand) || 1) - 1) % STAND_PALETTE.length];
 }
 
+/** Named halls/areas from the festival file, or "Stand N" inferred from brewery.stand. */
+export function festivalStandDefs(festival) {
+  if (Array.isArray(festival?.stands) && festival.stands.length) return festival.stands;
+  const ids = [...new Set((festival?.breweries ?? []).map((brewery) => brewery.stand).filter(Boolean))];
+  ids.sort((a, b) => a - b);
+  return ids.map((id) => ({ id, name: `Stand ${id}`, short: String(id) }));
+}
+
+export function standMeta(festival, stand) {
+  return (
+    festivalStandDefs(festival).find((item) => item.id === stand) ?? {
+      id: stand,
+      name: `Stand ${stand}`,
+      short: String(stand ?? ""),
+    }
+  );
+}
+
+/** Filter-chip text: "Smedjen (51–74)" or "Stand 1". */
+export function standChipLabel(festival, stand) {
+  const meta = standMeta(festival, stand);
+  return meta.tables ? `${meta.name} (${meta.tables})` : meta.name;
+}
+
+export function breweryMarker(brewery) {
+  return brewery?.table ?? brewery?.stand ?? "?";
+}
+
+/** Hall + table for Aarhus Together; "stand N" for Raise the Bar. */
+export function breweryStandPhrase(festival, brewery) {
+  if (brewery?.table) {
+    return `${standMeta(festival, brewery.stand).name} · table ${brewery.table}`;
+  }
+  return brewery?.stand ? `stand ${brewery.stand}` : "";
+}
+
+/** "US · Centralværkstedet · table 12" or Raise the Bar's existing "BE · stand 1". */
+export function breweryPlaceLine(festival, brewery) {
+  const parts = [];
+  if (brewery?.location) parts.push(brewery.location);
+  const place = breweryStandPhrase(festival, brewery);
+  if (place) parts.push(place);
+  return parts.join(" · ");
+}
+
+export function compareBreweryVisit(a, b) {
+  const stand = (a.stand ?? 0) - (b.stand ?? 0);
+  if (stand) return stand;
+  const table = (a.table ?? 0) - (b.table ?? 0);
+  if (table) return table;
+  return String(a.name ?? "").localeCompare(String(b.name ?? ""));
+}
+
 /** Session label/color from the festival definition, falling back to the built-in palette. */
 export function sessionMeta(festival, session) {
   const fromFestival = festival?.sessions?.find((item) => item.id === session);
