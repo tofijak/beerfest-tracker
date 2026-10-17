@@ -18,9 +18,14 @@ function zoneStats(breweries, stand, drunkBeers) {
 }
 
 /** One isometric voxel tower: stacked CSS 3D slabs, taller = more beers. */
-function Tower({ stand, label, total, active, onSelect }) {
+function Tower({ stand, label, total, maxTotal, active, onSelect }) {
   const color = standColor(stand);
-  const layers = 6 + Math.round(total / 6);
+  const maxLayers = 22;
+  const minLayers = 8;
+  const layers =
+    maxTotal > 0
+      ? minLayers + Math.round((total / maxTotal) * (maxLayers - minLayers))
+      : minLayers;
   return (
     <Box
       component="button"
@@ -78,13 +83,14 @@ export function VenueMap({ festival, drunkBeers }) {
   const active = stats[current];
   const color = standColor(current);
   const selectedMeta = standMeta(festival, current);
+  const maxTotal = Math.max(0, ...STANDS.map((stand) => stats[stand].total));
 
   return (
     <Box>
       <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
         Schematic of the stand areas at {festival.venue} — tower height is beer count. Tap a tower.
       </Typography>
-      <Box sx={{ height: { xs: 200, sm: 280 }, display: "grid", placeItems: "center", perspective: 900, mb: 2 }}>
+      <Box sx={{ height: { xs: 200, sm: 280 }, display: "grid", placeItems: "center", perspective: 900, mb: 2, overflow: "hidden" }}>
         <Box
           sx={{
             display: "flex",
@@ -99,6 +105,7 @@ export function VenueMap({ festival, drunkBeers }) {
               stand={stand}
               label={standMeta(festival, stand).short ?? standMeta(festival, stand).name}
               total={stats[stand].total}
+              maxTotal={maxTotal}
               active={stand === current}
               onSelect={() => setSelected(stand)}
             />
