@@ -36,7 +36,7 @@ import { FestivalDialog } from "./components/FestivalDialog";
 import { HistoryView } from "./components/HistoryView";
 import { Leaderboards } from "./components/Leaderboards";
 import { Splash } from "./components/Splash";
-import { ACHIEVEMENTS } from "./data/achievements";
+import { getAchievementSet } from "./data/achievements";
 import { DEFAULT_FILTERS, applyFilters } from "./filters";
 import { FESTIVALS, festivalStats, findBeer, getFestival, knownBeerIds } from "./festivals";
 import { useAuth } from "./hooks/useAuth";
@@ -64,6 +64,7 @@ export default function App() {
   const auth = useAuth();
   const [activeSlug, setActiveSlug] = useLocalStorage(activeFestivalKey(), DEFAULT_FESTIVAL_SLUG);
   const festival = getFestival(activeSlug) ?? FESTIVALS[0];
+  const achievementSet = useMemo(() => getAchievementSet(festival), [festival]);
   const stats = festivalStats(festival);
   const [displayName, setDisplayName] = useLocalStorage(displayNameKey(), "");
   const [shareScoreboard, setShareScoreboard] = useLocalStorage(shareScoreboardKey(), true);
@@ -151,7 +152,7 @@ export default function App() {
 
   const unlockMilestone = useCallback(
     (count) => {
-      const achievement = ACHIEVEMENTS.find((item) => item.count === count);
+      const achievement = achievementSet.items.find((item) => item.count === count);
       if (!achievement) return;
       patch((current) => {
         if (current.achievedMilestones.includes(count)) return current;
@@ -162,8 +163,17 @@ export default function App() {
         };
       });
     },
-    [enqueueAchievement, patch],
+    [achievementSet, enqueueAchievement, patch],
   );
+
+  const prevFestivalSlug = useRef(festival.slug);
+  useEffect(() => {
+    if (prevFestivalSlug.current === festival.slug) return;
+    prevFestivalSlug.current = festival.slug;
+    activeRef.current = null;
+    setQueue([]);
+    setActiveAchievement(null);
+  }, [festival.slug]);
 
   useEffect(() => {
     if (!activeAchievement && queue.length > 0) {
@@ -185,12 +195,14 @@ export default function App() {
     () => ratedCountFrom(ratingsOnMenu(progress.beerRatings, menuIds)),
     [progress.beerRatings, menuIds],
   );
+  const achievementCount =
+    achievementSet.metric === "tasted" ? menuDrunkBeers.length : ratedCount;
 
   useEffect(() => {
-    ACHIEVEMENTS.forEach(({ count }) => {
-      if (ratedCount >= count) unlockMilestone(count);
+    achievementSet.items.forEach(({ count }) => {
+      if (achievementCount >= count) unlockMilestone(count);
     });
-  }, [ratedCount, unlockMilestone]);
+  }, [achievementCount, achievementSet, unlockMilestone]);
 
   const toggleDrunk = useCallback(
     (beerId) => {
@@ -317,8 +329,8 @@ export default function App() {
   );
 
   const unlocked = useMemo(
-    () => ACHIEVEMENTS.filter((item) => progress.achievedMilestones.includes(item.count)),
-    [progress.achievedMilestones],
+    () => achievementSet.items.filter((item) => progress.achievedMilestones.includes(item.count)),
+    [achievementSet, progress.achievedMilestones],
   );
   const hasAchievements = unlocked.length > 0;
 
