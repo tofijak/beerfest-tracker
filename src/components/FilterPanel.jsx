@@ -104,23 +104,22 @@ export function FilterPanel({ festival, filters, onChange, resultCount }) {
 
           {stands.length > 0 && (
             <>
-          <Label>STAND</Label>
-          <Box sx={{ display: "flex", gap: 1 }}>
-            {stands.map((stand) => (
-              <Chip
-                key={stand}
-                label={`Stand ${stand}`}
-                onClick={() => set({ stands: toggle(filters.stands, stand) })}
-                variant={filters.stands.includes(stand) ? "filled" : "outlined"}
-                sx={
-                  filters.stands.includes(stand)
-                    ? { bgcolor: `${standColor(stand)} !important`, color: "#07070f !important" }
-                    : { color: standColor(stand) }
-                }
-              />
-            ))}
-          </Box>
-
+              <Label>STAND</Label>
+              <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap" }}>
+                {stands.map((stand) => (
+                  <Chip
+                    key={stand}
+                    label={`Stand ${stand}`}
+                    onClick={() => set({ stands: toggle(filters.stands, stand) })}
+                    variant={filters.stands.includes(stand) ? "filled" : "outlined"}
+                    sx={
+                      filters.stands.includes(stand)
+                        ? { bgcolor: `${standColor(stand)} !important`, color: "#07070f !important" }
+                        : { color: standColor(stand) }
+                    }
+                  />
+                ))}
+              </Box>
             </>
           )}
 
