@@ -44,6 +44,7 @@ A React + Vite app for checking off beers, starring favorites, and rating pours 
 - **Boards**: live leaderboards for everyone signed in at the festival — most and fewest check-ins, highest and lowest average ratings, plus ratings and stars. Same boards for beers, breweries, and styles
 - Passport / history: festivals you’ve been to, plus an all-time hall of foam
 - Progress stored under `beerFest.festivals.<slug>.*`
+- **Export + Untappd sync**: `?tab=export` (or History → “Export my ratings”) shows your own ratings as JSON for your AI agent to sync to Untappd. See [docs/untappd-sync.md](docs/untappd-sync.md)
 
 ## Run locally
 

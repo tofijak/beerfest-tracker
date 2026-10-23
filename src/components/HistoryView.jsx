@@ -7,6 +7,7 @@ import {
   IconButton,
   List,
   ListItem,
+  Link,
   ListItemText,
   Typography,
 } from "@mui/material";
@@ -98,7 +99,7 @@ function BeerRow({ item }) {
   );
 }
 
-export function HistoryView({ allProgress, activeSlug, onSelectFestival }) {
+export function HistoryView({ allProgress, activeSlug, onSelectFestival, onOpenExport }) {
   const visited = FESTIVALS.filter((festival) => hasFestivalActivity(allProgress[festival.slug]));
   const topRated = collectRatedBeers(allProgress).slice(0, 20);
   const favorites = collectFavorites(allProgress).slice(0, 20);
@@ -196,6 +197,14 @@ export function HistoryView({ allProgress, activeSlug, onSelectFestival }) {
           </List>
         </Card>
       )}
+
+      {onOpenExport ? (
+        <Typography variant="caption" color="text.secondary" sx={{ display: "block", mt: 3 }}>
+          <Link component="button" type="button" onClick={onOpenExport} id="open-ratings-export">
+            Export my ratings · Sync with Untappd
+          </Link>
+        </Typography>
+      ) : null}
     </Box>
   );
 }

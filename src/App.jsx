@@ -36,6 +36,7 @@ import { FestivalDialog } from "./components/FestivalDialog";
 import { HistoryView } from "./components/HistoryView";
 import { Leaderboards } from "./components/Leaderboards";
 import { Splash } from "./components/Splash";
+import { ExportView } from "./components/ExportView";
 import { getAchievementSet } from "./data/achievements";
 import { DEFAULT_FILTERS, applyFilters } from "./filters";
 import { FESTIVALS, festivalStats, findBeer, getFestival, knownBeerIds } from "./festivals";
@@ -59,6 +60,17 @@ import {
 } from "./lib/storage";
 import { mergeAllFestivalsForUser } from "./lib/sync";
 import { PIXEL_FONT, theme } from "./theme";
+
+function readUrlParams() {
+  try {
+    const params = new URLSearchParams(window.location.search);
+    return { tab: params.get("tab"), festival: params.get("festival") };
+  } catch {
+    return { tab: null, festival: null };
+  }
+}
+
+const INITIAL_URL = readUrlParams();
 
 export default function App() {
   const auth = useAuth();
@@ -94,13 +106,17 @@ export default function App() {
     "green",
   );
   const [openedBeerId, setOpenedBeerId] = useState(null);
-  const [tab, setTab] = useState("beers");
+  const [tab, setTab] = useState(() => (INITIAL_URL.tab === "export" ? "export" : "beers"));
+  const [exportFestival, setExportFestival] = useState(() =>
+    INITIAL_URL.tab === "export" ? INITIAL_URL.festival : null,
+  );
   const [query, setQuery] = useState("");
   const [festivalOpen, setFestivalOpen] = useState(false);
   const [allProgress, setAllProgress] = useState(() =>
     Object.fromEntries(FESTIVALS.map((item) => [item.slug, loadFestivalProgress(item.slug)])),
   );
   const [splashOpen, setSplashOpen] = useState(() => {
+    if (INITIAL_URL.tab === "export") return false;
     try {
       return sessionStorage.getItem(splashStorageKey()) !== "1";
     } catch {
@@ -137,6 +153,27 @@ export default function App() {
       cancelled = true;
     };
   }, [auth.user, festival.slug, replaceProgress]);
+
+  useEffect(() => {
+    const url = new URL(window.location.href);
+    const wanted = tab === "export";
+    if (wanted) {
+      url.searchParams.set("tab", "export");
+      if (exportFestival) url.searchParams.set("festival", exportFestival);
+      else url.searchParams.delete("festival");
+    } else if (url.searchParams.get("tab") === "export") {
+      url.searchParams.delete("tab");
+      url.searchParams.delete("festival");
+    } else {
+      return;
+    }
+    if (url.href !== window.location.href) window.history.replaceState(null, "", url.href);
+  }, [tab, exportFestival]);
+
+  const openExport = useCallback(() => {
+    setExportFestival(null);
+    setTab("export");
+  }, []);
 
   useEffect(() => {
     activeRef.current = activeAchievement;
@@ -407,7 +444,7 @@ export default function App() {
             </Typography>
             <ExpandMoreIcon fontSize="small" color="action" />
           </Box>
-          {tab !== "history" && (
+          {tab !== "history" && tab !== "export" && (
             <TextField
               fullWidth
               variant="outlined"
@@ -429,7 +466,7 @@ export default function App() {
             />
           )}
           <Tabs
-            value={tab}
+            value={tab === "export" ? false : tab}
             onChange={(_event, value) => setTab(value)}
             variant="scrollable"
             scrollButtons="auto"
@@ -572,6 +609,18 @@ export default function App() {
               allProgress={allProgress}
               activeSlug={festival.slug}
               onSelectFestival={selectFestival}
+              onOpenExport={openExport}
+            />
+          )}
+          {tab === "export" && (
+            <ExportView
+              auth={auth}
+              allProgress={allProgress}
+              displayName={displayName}
+              festivalSlug={exportFestival}
+              activeFestival={festival}
+              onSignIn={requestSignIn}
+              onBack={() => setTab("history")}
             />
           )}
           </Box>
