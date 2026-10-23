@@ -24,6 +24,7 @@ import HistoryIcon from "@mui/icons-material/History";
 import LeaderboardIcon from "@mui/icons-material/Leaderboard";
 import MapIcon from "@mui/icons-material/Map";
 import RouteIcon from "@mui/icons-material/Route";
+import ExtensionIcon from "@mui/icons-material/Extension";
 import { AchievementDialog, AchievementWall } from "./components/Achievements";
 import { AuthControls } from "./components/AuthControls";
 import { BeerDialog } from "./components/BeerDialog";
@@ -34,6 +35,7 @@ import { PixelBackdrop, PixelSprite } from "./components/PixelArt";
 import { RoutePlanner } from "./components/RoutePlanner";
 import { FestivalDialog } from "./components/FestivalDialog";
 import { HistoryView } from "./components/HistoryView";
+import { Integrations } from "./components/Integrations";
 import { Leaderboards } from "./components/Leaderboards";
 import { Splash } from "./components/Splash";
 import { getAchievementSet } from "./data/achievements";
@@ -57,6 +59,7 @@ import {
   shareScoreboardKey,
   splashStorageKey,
 } from "./lib/storage";
+import { scheduleRatingHook } from "./lib/ratingHook";
 import { mergeAllFestivalsForUser } from "./lib/sync";
 import { PIXEL_FONT, theme } from "./theme";
 
@@ -230,12 +233,22 @@ export default function App() {
 
   const changeRating = useCallback(
     (beerId, rating) => {
+      const previousRating = progress.beerRatings[beerId] || 0;
       patch((current) => ({
         ...current,
         beerRatings: { ...current.beerRatings, [beerId]: rating },
       }));
+      scheduleRatingHook({
+        user: auth.user,
+        festival,
+        entry: findBeer(festival, beerId),
+        beerId,
+        rating,
+        previousRating,
+        displayName,
+      });
     },
-    [patch],
+    [auth.user, displayName, festival, patch, progress.beerRatings],
   );
 
   const togglePlan = useCallback(
@@ -339,6 +352,26 @@ export default function App() {
     if (!hasStands && (tab === "map" || tab === "route")) setTab("beers");
   }, [hasAchievements, hasStands, tab]);
 
+  useEffect(() => {
+    const apply = () => {
+      const queryTab = new URLSearchParams(window.location.search).get("tab");
+      const hashTab = window.location.hash.replace(/^#/, "");
+      if (queryTab === "integrations" || hashTab === "integrations") setTab("integrations");
+    };
+    apply();
+    window.addEventListener("hashchange", apply);
+    return () => window.removeEventListener("hashchange", apply);
+  }, []);
+
+  const selectTab = useCallback((value) => {
+    setTab(value);
+    if (value === "integrations") {
+      window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}#integrations`);
+    } else if (window.location.hash === "#integrations") {
+      window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}`);
+    }
+  }, []);
+
   const visitedCount = FESTIVALS.filter((item) => hasFestivalActivity(allProgress[item.slug])).length;
   const showList = tab === "beers" || tab === "favorites";
 
@@ -407,7 +440,7 @@ export default function App() {
             </Typography>
             <ExpandMoreIcon fontSize="small" color="action" />
           </Box>
-          {tab !== "history" && (
+          {tab !== "history" && tab !== "integrations" && (
             <TextField
               fullWidth
               variant="outlined"
@@ -430,7 +463,7 @@ export default function App() {
           )}
           <Tabs
             value={tab}
-            onChange={(_event, value) => setTab(value)}
+            onChange={(_event, value) => selectTab(value)}
             variant="scrollable"
             scrollButtons="auto"
             allowScrollButtonsMobile
@@ -462,6 +495,7 @@ export default function App() {
               />
             )}
             <Tab value="leaderboards" icon={<LeaderboardIcon />} label="Boards" iconPosition="start" />
+            <Tab value="integrations" icon={<ExtensionIcon />} label="Integrations" iconPosition="start" />
             <Tab
               value="history"
               icon={
@@ -572,6 +606,14 @@ export default function App() {
               allProgress={allProgress}
               activeSlug={festival.slug}
               onSelectFestival={selectFestival}
+            />
+          )}
+          {tab === "integrations" && (
+            <Integrations
+              user={auth.user}
+              festival={festival}
+              displayName={displayName}
+              onSignIn={requestSignIn}
             />
           )}
           </Box>

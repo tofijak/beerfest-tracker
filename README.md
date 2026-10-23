@@ -42,6 +42,7 @@ A React + Vite app for checking off beers, starring favorites, and rating pours 
 - Check-off, favorites, rating slider, search, and hide/unrated filters
 - Per-festival achievements
 - **Boards**: live leaderboards for everyone signed in at the festival — most and fewest check-ins, highest and lowest average ratings, plus ratings and stars. Same boards for beers, breweries, and styles
+- **Integrations**: signed-in users can forward ratings to their own webhook (Grok Bot, n8n, Zapier, …) so their assistant can check in on their Untappd. Setup page in the app (`#integrations`) and `docs/webhooks.md`
 - Passport / history: festivals you’ve been to, plus an all-time hall of foam
 - Progress stored under `beerFest.festivals.<slug>.*`
 
@@ -99,7 +100,7 @@ To turn on sync:
 3. Add authorized domains:
    - `localhost`
    - `beerfest-tracker.vercel.app`
-4. Create a **Firestore** database (production mode) and publish `firestore.rules` from this repo. Each person can read and write only `users/{theirUid}/**`. Festival leaderboards live at `festivals/{slug}/roster/{uid}`: any signed-in user can read them, and a person can write only their own roster doc (display name, check-ins, ratings, and stars — not their email).
+4. Create a **Firestore** database (production mode) and publish `firestore.rules` from this repo (**manually in the Firebase console** — Vercel does not deploy rules). Each person can read and write `users/{theirUid}/**` except webhook secrets. `users/{uid}/integrations/webhook` is read-only for that user (status only). `users/{uid}/integrations/webhookSecrets` is **admin-only**. Festival leaderboards live at `festivals/{slug}/roster/{uid}`: any signed-in user can read them, and a person can write only their own roster doc (display name, check-ins, ratings, and stars — not their email).
 5. Register a web app and copy the config into Vercel env vars:
 
 ```
@@ -114,6 +115,31 @@ VITE_FIREBASE_APP_ID
 The Firebase web `apiKey` is public client config — it is meant to ship in the frontend. Access is enforced by Firestore rules (private ratings under `users/{theirUid}/**`; the shared board is readable by signed-in users and writable only by the person who checked in) and by HTTP-referrer restrictions on the key in Google Cloud / Firebase.
 
 Locally, copy `.env.example` to `.env.local`. On first sign-in, device ratings merge into the account (union of check-offs / stars / milestones; highest rating wins).
+
+## Rating webhooks (optional, per user)
+
+Any signed-in person can send their own committed ratings to an HTTPS webhook they control (Grok Bot routine, n8n, Zapier, Make, …). The assistant must act on **that person’s own Untappd account** in their browser. Beerfest Tracker never asks for or stores Untappd credentials.
+
+In the app: **Integrations** tab, also `#integrations`. Spec, payload, signature, and copy-paste setup guides: [`docs/webhooks.md`](docs/webhooks.md).
+
+After a rating is committed (slider drags are coalesced), the app fire-and-forgets `POST /api/rating-hook` with the Firebase ID token. The function verifies the JWT, loads **that** user’s secrets, and POSTs a versioned payload. Disabled / unset config is a no-op (`204`). A failed hook never blocks saving a rating.
+
+**Publish `firestore.rules` manually in the Firebase console.** Vercel does not deploy rules. Until the new rules are live, do not store webhook secrets.
+
+Set this on Vercel (server-only — do **not** prefix with `VITE_`):
+
+| Variable | Required | What it does |
+| --- | --- | --- |
+| `FIREBASE_SERVICE_ACCOUNT` | to enable | Service account JSON (or base64 of it) so the function can read/write `users/{uid}/integrations/webhookSecrets`. |
+| `FIREBASE_PROJECT_ID` | no | Falls back to existing `VITE_FIREBASE_PROJECT_ID`. |
+
+Without `FIREBASE_SERVICE_ACCOUNT`, settings return `503` and delivery is a no-op.
+
+**Headers on every delivery:** `X-Beerfest-Timestamp` (unix seconds), `X-Beerfest-Signature` (`sha256=<hex>` HMAC of `timestamp + "." + body`), plus the user’s optional receiver auth header (Grok Bot: `Authorization: Bearer <routine key>`).
+
+```bash
+npm test
+```
 
 ## Deploy
 

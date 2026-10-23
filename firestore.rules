@@ -1,8 +1,25 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
+    // Webhook secrets (full URL, receiver key, HMAC signing secret).
+    // Clients have no access. The Vercel function uses a service account.
+    match /users/{userId}/integrations/webhookSecrets {
+      allow read, write: if false;
+    }
+    match /users/{userId}/integrations/webhookSecrets/{document=**} {
+      allow read, write: if false;
+    }
+
+    // Public webhook status for that user only (no URL or secrets).
+    match /users/{userId}/integrations/webhook {
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow write: if false;
+    }
+
     match /users/{userId}/{document=**} {
-      allow read, write: if request.auth != null && request.auth.uid == userId;
+      allow read, write: if request.auth != null
+        && request.auth.uid == userId
+        && !isIntegrationsPath(document);
     }
 
     // Shared festival board. Signed-in users can read every roster entry.
@@ -16,6 +33,10 @@ service cloud.firestore {
       allow delete: if request.auth != null && request.auth.uid == uid;
     }
   }
+}
+
+function isIntegrationsPath(path) {
+  return path.size() >= 1 && path[0] == 'integrations';
 }
 
 function validRoster(data) {

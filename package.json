@@ -8,7 +8,8 @@
     "build": "vite build",
     "lint": "oxlint",
     "preview": "vite preview --host 127.0.0.1 --port 43173",
-    "import-festival": "node scripts/import-festival.mjs"
+    "import-festival": "node scripts/import-festival.mjs",
+    "test": "node --test api/lib/rating-hook.test.js src/lib/ratingHook.test.js"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -16,6 +17,8 @@
     "@mui/icons-material": "^7.3.5",
     "@mui/material": "^7.3.5",
     "firebase": "^12.4.0",
+    "firebase-admin": "^14.5.0",
+    "jose": "^6.2.13",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "react-transition-group": "^4.4.5"
