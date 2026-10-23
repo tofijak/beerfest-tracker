@@ -2635,83 +2635,86 @@
     },
     {
       "id": 36,
-      "name": "Track Brewing Company",
-      "location": "UK",
+      "name": "Bad Seed Brewing",
+      "location": "DK",
       "stand": 1,
       "table": 31,
       "noLow": false,
       "beers": [
         {
-          "id": 386,
-          "name": "Flux: Phase 8",
-          "style": "IPA - Hazy",
-          "abv": 6.5,
+          "id": 476,
+          "name": "Fin Diesel",
+          "style": "IPA - West Coast Double",
+          "abv": 8.2,
           "session": "friday",
-          "notes": "Collab w/ Verdant",
           "untappd": {
-            "rating": 4.05,
-            "count": 617,
-            "url": "https://untappd.com/b/track-brewing-company-flux-phase-8/6901888"
+            "rating": 3.88,
+            "count": 655,
+            "url": "https://untappd.com/b/bad-seed-brewing-fin-diesel/6734229"
           }
         },
         {
-          "id": 387,
-          "name": "Romanticised",
-          "style": "IPA - Double",
-          "abv": 8.4,
+          "id": 477,
+          "name": "IKAROS",
+          "style": "IPA - Triple New England",
+          "abv": 10,
           "session": "friday",
-          "notes": "w/ Citra Cryo, Rakau, Motueka, Nelson Sauvin & Limequat",
+          "notes": "collab w/ Two Face Brewing",
           "untappd": {
-            "rating": 4.26,
-            "count": 104,
-            "url": "https://untappd.com/b/track-brewing-company-romanticised/7067751"
+            "rating": 4.01,
+            "count": 285,
+            "url": "https://untappd.com/b/bad-seed-brewing-ikaros/6734223"
           }
         },
         {
-          "id": 388,
-          "name": "Dreaming Of... DDH Nectaron",
-          "style": "IPA - DDH",
-          "abv": 7,
+          "id": 478,
+          "name": "Weihnachtsbock (2026)",
+          "style": "Lager Other - Helles Bock",
+          "abv": 7.8,
           "session": "saturday-early",
-          "notes": "w/ Nectaron",
           "untappd": {
-            "rating": 4.12,
-            "count": 1228,
-            "url": "https://untappd.com/b/track-brewing-company-dreaming-of-ddh-nectaron/5642008"
+            "rating": 3.53,
+            "count": 839,
+            "url": "https://untappd.com/b/bad-seed-brewing-weihnachtsbock/6425157"
           }
         },
         {
-          "id": 389,
-          "name": "Southland",
-          "style": "IPA - DDH",
-          "abv": 7,
+          "id": 479,
+          "name": "Inari",
+          "style": "Sour - IPA",
+          "abv": 6,
           "session": "saturday-early",
-          "notes": "w/ Motueka (Garston Hops)",
+          "notes": "collab w/ Totopia",
           "untappd": {
-            "rating": 4.14,
-            "count": 370,
-            "url": "https://untappd.com/b/track-brewing-company-southland/6901682"
+            "rating": 3.66,
+            "count": 78,
+            "url": "https://untappd.com/b/bad-seed-brewing-inari/7194759"
           }
         },
         {
-          "id": 390,
-          "name": "Flux: Phase 9",
-          "style": "IPA - Double",
-          "abv": 8,
+          "id": 480,
+          "name": "Neu Pilsner",
+          "style": "Pilsner - German",
+          "abv": 5,
           "session": "saturday-late",
-          "notes": "Collab w/ Verdant",
           "untappd": {
-            "rating": 4.14,
-            "count": 443,
-            "url": "https://untappd.com/b/track-brewing-company-flux-phase-9/6901942"
+            "rating": 3.37,
+            "count": 3647,
+            "url": "https://untappd.com/b/bad-seed-brewing-neu-pilsner/3121886"
           }
         },
         {
-          "id": 391,
-          "name": "TBA",
-          "style": "",
-          "abv": null,
-          "session": "saturday-late"
+          "id": 481,
+          "name": "Dolce Vita",
+          "style": "IPA - West Coast Double",
+          "abv": 7,
+          "session": "saturday-late",
+          "notes": "collab w/ Yakima Chief",
+          "untappd": {
+            "rating": 3.68,
+            "count": 458,
+            "url": "https://untappd.com/b/bad-seed-brewing-dolce-vita/6671563"
+          }
         }
       ]
     },
@@ -3243,14 +3246,14 @@
         },
         {
           "id": 2,
-          "name": "Exit-Buddy",
-          "style": "IPA - American",
-          "abv": 6.7,
+          "name": "Old Boys Classic",
+          "style": "Lager Other - Vienna",
+          "abv": 5,
           "session": "friday",
           "untappd": {
-            "rating": 3.72,
-            "count": 151,
-            "url": "https://untappd.com/b/alefarm-brewing-exit-buddy/6826231"
+            "rating": 3.36,
+            "count": 1216,
+            "url": "https://untappd.com/b/alefarm-brewing-old-boys-classic/6262163"
           }
         },
         {
@@ -4030,10 +4033,15 @@
         },
         {
           "id": 154,
-          "name": "Octo x Pastry Puzzle",
-          "style": "Sour - Pastry",
-          "abv": 6.8,
-          "session": "saturday-early"
+          "name": "Mr. Double Bean",
+          "style": "Porter - Coffee",
+          "abv": 8.3,
+          "session": "saturday-early",
+          "untappd": {
+            "rating": 3.82,
+            "count": 155,
+            "url": "https://untappd.com/b/gamborg-bryghus-mr-double-bean/6595935"
+          }
         },
         {
           "id": 155,
