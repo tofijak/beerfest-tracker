@@ -24,7 +24,8 @@ export function festivalExport(festival, progress, updatedAt = null) {
     if (!match) continue;
     const { beer, brewery } = match;
     const value = ratings[id] ?? ratings[beer.id];
-    const rating = typeof value === "number" && value > 0 ? value : null;
+    // 0 is kept: it means "checked in without a rating". null means never rated.
+    const rating = typeof value === "number" && value >= 0 ? value : null;
     const isFavorite = favorites.has(String(beer.id));
     const isTasted = tasted.has(String(beer.id));
     if (rating == null && !isFavorite && !isTasted) continue;

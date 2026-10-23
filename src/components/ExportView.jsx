@@ -17,7 +17,7 @@ import { FESTIVALS } from "../festivals";
 import { buildExport } from "../lib/export";
 import { loadFestivalProgress, mergeFestivalProgress } from "../lib/storage";
 import { fetchRemoteFestival } from "../lib/sync";
-import { exportUrl, syncAgentPrompt } from "../lib/syncGuide";
+import { exportUrl, festivalComment, syncAgentPrompt } from "../lib/syncGuide";
 
 const preSx = {
   m: 0,
@@ -74,7 +74,12 @@ function useRemoteFestivals(uid, slugs) {
 function SyncGuide({ festival }) {
   const { copied, copy } = useCopy();
   const origin = window.location.origin;
-  const prompt = syncAgentPrompt({ origin, slug: festival?.slug, venue: festival?.venue });
+  const prompt = syncAgentPrompt({
+    origin,
+    slug: festival?.slug,
+    venue: festival?.venue,
+    comment: festivalComment(festival),
+  });
 
   return (
     <Card sx={{ mb: 3 }} id="untappd-sync-guide">
@@ -104,7 +109,7 @@ function SyncGuide({ festival }) {
             <Box component="code" sx={{ fontSize: "0.85em", wordBreak: "break-all" }}>
               {exportUrl(origin, festival?.slug)}
             </Box>
-            , keeps its own log by festival + beer, and never checks in a beer twice.
+            , keeps its own log by festival + beer, comments each check-in with the festival name, tells you when a check-in needs editing in the Untappd app, and never checks in a beer twice.
           </Typography>
         </Box>
         <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 1, mb: 1 }}>
@@ -164,7 +169,7 @@ export function ExportView({ auth, allProgress, displayName, festivalSlug, activ
   const json = data ? JSON.stringify(data, null, 2) : "";
   const total = data ? data.festivals.reduce((sum, item) => sum + item.ratings.length, 0) : 0;
   const rated = data
-    ? data.festivals.reduce((sum, item) => sum + item.ratings.filter((row) => row.rating != null).length, 0)
+    ? data.festivals.reduce((sum, item) => sum + item.ratings.filter((row) => row.rating > 0).length, 0)
     : 0;
 
   const download = () => {
